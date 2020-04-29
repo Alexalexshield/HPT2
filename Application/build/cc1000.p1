@@ -904,7 +904,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 1
 .. ]
 [n E833 UHF_MODES UHF_RX_MODE UHF_TX_MODE ]
-"37 C:\Users\Shchitnikov\Desktop\HPT2\Application\..\Common\src\cc1000.c
+"37 C:\Users\Shchitnikov\Documents\GitHub\HPT2\Application\..\Common\src\cc1000.c
 [s S9 `uc 1 `uc 1 `uc 1 `uc 1 ]
 [n S9 . main_u8 current_u8 pll_u8 power_u8 ]
 [v _c_uhf_modes_ast `CS9 -> 0 `x s ]

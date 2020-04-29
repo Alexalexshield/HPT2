@@ -45,8 +45,8 @@
 #define  VLF_MU_TO_SU_PREAMBLE_SIZE          8                  // The size in bits of the packet preamble
 #define  MU_TO_SU_PREAMBLE_CRC               0x28
 
-#define  APS_PREAMBLE                        0x2C0             	// The preamble for APS messages
-#define  APS_PREAMBLE_SIZE                   10                 // The size in bits of the packet preamble
+#define  APS_PREAMBLE                        0x16       //10110	// The preamble for APS messages
+#define  APS_PREAMBLE_SIZE                   5                 // The size in bits of the packet preamble
 #define  APS_SUBPERIOD_THRESH				 22
 #define  APS_MARK_THRESH					 70
 #define  APS_TAIL_THRESH1					 70

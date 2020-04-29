@@ -1171,7 +1171,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 5
 .. ]
 [n E1317 TX_STATE VLF_TX_IDLE VLF_TX_LOCATE VLF_TX_PACKET_PREAMBLE VLF_TX_PACKET_TYPE VLF_TX_PACKET_DATA VLF_TX_PACKET_DONE ]
-"63 C:\Users\Shchitnikov\Desktop\HPT2\Application\src\main.c
+"63 C:\Users\Shchitnikov\Documents\GitHub\HPT2\Application\src\main.c
 [v _mid `S9 1 e ]
 "65
 [v _lamp_state `uc 1 e ]

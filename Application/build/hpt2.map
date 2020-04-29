@@ -18,7 +18,7 @@ Linker command line:
   -AIDLOC=02000h-02003h -pidloc=IDLOC -AEEDATA=00h-0FFh/02100h \
   -peeprom_data=EEDATA -pfloat_text0=CODE,float_text1=CODE,float_text2=CODE \
   -pfloat_text3=CODE,float_text4=CODE \
-  C:\Users\SHCHIT~1\AppData\Local\Temp\slfs.obj main.obj mobility.obj \
+  C:\Users\SHCHIT~1\AppData\Local\Temp\sc78.obj main.obj mobility.obj \
   uhf_comms.obj vlf_comms2.obj cc1000.obj init30a.obj time.obj uhf_cmn.obj \
   wait.obj C:\PICC\std\9.60\lib\pic618-p.lib \
   C:\PICC\std\9.60\lib\pic32--u.lib C:\PICC\std\9.60\lib\pic42c-c.lib \
@@ -139,7 +139,7 @@ Estimated maximum call depth: 2
 
 
 		Name          Link     Load   Length Selector Space Scale
-C:\Users\SHCHIT~1\AppData\Local\Temp\slfs.obj
+C:\Users\SHCHIT~1\AppData\Local\Temp\sc78.obj
 		reset_vec        0        0        3       0     0
 		init           226      226       10       8     0
 		end_init       23F      23F       18       8     0
@@ -169,17 +169,17 @@ vlf_comms2.obj  idata_0        26D      26D        1       8     0
 		text4          97C      97C      206    12F8     0
 		text2         155D     155D        C    2ABA     0
 		text9          B82      B82      224    1704     0
-		const4        1079     1079        A    2000     0
-		const2        106E     106E        B    2000     0
+		const4        106E     106E        A    2000     0
+		const2        108A     108A        6    2000     0
 		const1        1049     1049        D    2000     0
-		const3        108C     108C        9    2000     0
+		const3        1081     1081        9    2000     0
 cc1000.obj      idata_0        26E      26E        1       8     0
 		rdata_0         50       50        1      20     1
 		temp            74       74        1      74     1
 		text4          7FB      7FB        3       8     0
-		text6         1578     1578       10    2AF0     0
-		text7         1588     1588       10    2B10     0
-		const1        1083     1083        9    2000     0
+		text6         1588     1588       10    2B10     0
+		text7         1578     1578       10    2AF0     0
+		const1        1078     1078        9    2000     0
 		text1         1663     1663      19D    2CC6     0
 		text2         1569     1569        F    2AD2     0
 init30a.obj     config        2007     2007        2    400E     0
@@ -299,8 +299,8 @@ TOTAL		Name          Link     Load   Length
 		text2         155D     155D        C
 		text9          B82      B82      224
 		text4          7FB      7FB        3
-		text6         1578     1578       10
-		text7         1588     1588       10
+		text6         1588     1588       10
+		text7         1578     1578       10
 		text1         1663     1663      19D
 		text2         1569     1569        F
 		text1          7E3      7E3       18
@@ -318,11 +318,11 @@ TOTAL		Name          Link     Load   Length
 
 	CLASS	CONST    
 		const1        1000     1000       49
-		const4        1079     1079        A
-		const2        106E     106E        B
+		const4        106E     106E        A
+		const2        108A     108A        6
 		const1        1049     1049        D
-		const3        108C     108C        9
-		const1        1083     1083        9
+		const3        1081     1081        9
+		const1        1078     1078        9
 		const1        1063     1063        B
 		const2        1056     1056        D
 
@@ -389,15 +389,15 @@ SEGMENTS	Name		Load	Length	 Top	Selector    Space Class
 		text4           00097C	000206	000B82	    12F8       0  CODE    
 		text9           000B82	000224	000DA6	    1704       0  CODE    
 		text0           000DA6	00025A	001000	    1B4C       0  CODE    
-		const1          001000	000095	001095	    2000       0  CONST   
+		const1          001000	000090	001090	    2000       0  CONST   
 		text3           001540	000006	001546	    2A80       0  CODE    
 		text8           001546	000006	00154C	    2A8C       0  CODE    
 		text2           00154C	000007	001553	    2A98       0  CODE    
 		text1           001553	00000A	00155D	    2AA6       0  CODE    
 		text2           00155D	00000C	001569	    2ABA       0  CODE    
 		text2           001569	00000F	001578	    2AD2       0  CODE    
-		text6           001578	000010	001588	    2AF0       0  CODE    
-		text7           001588	000010	001598	    2B10       0  CODE    
+		text7           001578	000010	001588	    2AF0       0  CODE    
+		text6           001588	000010	001598	    2B10       0  CODE    
 		text0           001598	000012	0015AA	    2B30       0  CODE    
 		text0           0015AA	000020	0015CA	    2B54       0  CODE    
 		text0           0015CA	000020	0015EA	    2B94       0  CODE    
@@ -415,22 +415,22 @@ UNUSED ADDRESS RANGES
 	BANK3            01B5-01EF
 	CODE             0003-0003
 	                 07FE-0801
-	                 1095-153F
+	                 1090-153F
 	                 1800-1FFF
 	COMBANK          0070-0072
 	CONST            0003-0003
 	                 07FE-0801
-	                 1095-153F
+	                 1090-153F
 	                 1800-1FFF
 	EEDATA           2100-21FF
 	ENTRY            0003-0003
 	                 07FE-0801
-	                 1095-153F
+	                 1090-153F
 	                 1800-1FFF
 	IDLOC            2000-2003
 	STRING           0003-0003
 	                 07FE-0801
-	                 1095-153F
+	                 1090-153F
 	                 1800-1FFF
 
                                   Symbol Table
@@ -463,13 +463,13 @@ UNUSED ADDRESS RANGES
 _CalcUHFChecksum                     text2       0923
 _GetUHFMode                          text4       07FB
 _InitUHFTranceiver                   text1       1691
-_LockUHFThresh                       text6       1578
+_LockUHFThresh                       text6       1588
 _ProcessUHFPacket                    text3       034B
 _ReadADChannel                       text1       07E3
 _SetUHFMode                          text1       17AD
 _UHFBusy                             text1       1553
 _UHFCommsInit                        text0       15EA
-_UnlockUHFThresh                     text7       1588
+_UnlockUHFThresh                     text7       1578
 _VLF_Busy                            text2       155D
 _VLF_ProcessBitRead                  text4       097C
 _VLF_ProcessPacket                   text9       0BFA
@@ -612,10 +612,10 @@ __S2                                 (abs)       2100
 __end_of_CalcUHFChecksum             text2       08E9
 __end_of_GetUHFMode                  text1       17AD
 __end_of_InitUHFTranceiver           text4       07FB
-__end_of_LockUHFThresh               text7       1588
+__end_of_LockUHFThresh               text7       1578
 __end_of_ProcessUHFPacket            text3       02FB
 __end_of_ReadADChannel               text2       07FE
-__end_of_SetUHFMode                  text6       1578
+__end_of_SetUHFMode                  text6       1588
 __end_of_UHFBusy                     text3       034B
 __end_of_UHFCommsInit                text2       0923
 __end_of_UnlockUHFThresh             text8       07FE
@@ -643,7 +643,7 @@ __end_of_main                        text1       07FE
 __end_of_pager_write                 text1       1691
 __end_of_rand                        text2       07FE
 __end_of_srand                       text0       161D
-_aps_preamble                        const2      106F
+_aps_preamble                        const2      108B
 _bb                                  rbss_3      0195
 _bi                                  rbss_3      01A5
 _bid_temp                            rbss_3      0191
@@ -667,7 +667,7 @@ _lamp_tick                           rbss_0      0023
 _lamp_timeout                        rbss_0      0026
 _main                                text0       0DA6
 _mid                                 rbss_0      002A
-_mu2su_preamble                      const3      108D
+_mu2su_preamble                      const3      1082
 _mu_flags                            rbss_0      0024
 _pager_cnt                           rbss_0      0025
 _pager_write                         text2       1569
@@ -678,7 +678,7 @@ _timer                               rbss_0      0034
 _timer_last_tick                     rbss_0      0033
 _uhf                                 rbss_2      0110
 _uhf_registration_timeout            rbss_0      0031
-_uncoded_rx_data_size                const4      107A
+_uncoded_rx_data_size                const4      106F
 _vlf_state                           rdata_0     004F
 _vrx                                 rbss_1      00AF
 _vtx                                 rbss_1      00A0

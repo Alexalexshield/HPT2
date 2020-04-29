@@ -897,7 +897,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 242
 .. ]
 [n E823 LMP_STATES LAMP_POST_ERROR LAMP_FIRMWARE_disabled LAMP_SEARCH_IN_PROGRESS LAMP_EVACUATE_IN_PROGRESS_disab LAMP_IDENTIFY LAMP_PAGER_ALARM LAMP_PAGER_CALL_1 LAMP_PAGER_CALL_2 LAMP_VLF_BLOCKED_STATE LAMP_STATES_NUM LAMP_NORMAL_STATE LAMP_INVERT_STATE LAMP_TEST_STATE ]
-"37 C:\Users\Shchitnikov\Desktop\HPT2\Application\..\Common\src\init30a.c
+"37 C:\Users\Shchitnikov\Documents\GitHub\HPT2\Application\..\Common\src\init30a.c
 [; 	psect config,class=CONFIG,delta=2 ;#
 [; 	dw 0x3FF9 & 0x3FF7 & 0x3FEF & 0x3FDF & 0x3FFF & 0x3BFF & 0x37FF & 0x2FFF & 0x3FFF ;#
 "38

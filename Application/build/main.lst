@@ -1,7 +1,7 @@
 
 
 HI-TECH Software PICC Macro Assembler V9.60PL3 build 3862 
-                                                      Tue Feb 04 13:05:08 2020
+                                                      Wed Apr 29 16:34:19 2020
 
 HI-TECH Software Code Generator build 3862
      1                           	processor	16F887
@@ -956,7 +956,7 @@ HI-TECH Software Code Generator build 3862
    886  0067  1283               	bcf	3,5
    887  0068  00D5               	movwf	code_ptr+1
    888  0069  0874               	movf	btemp,w
-   889  006A  3E8D               	addlw	low _mu2su_preamble
+   889  006A  3E82               	addlw	low _mu2su_preamble
    890  006B  1803               	btfsc	3,0
    891  006C  0AD5               	incf	code_ptr+1
    892  006D  120A  118A  2257   	fcall	string_table
@@ -1114,7 +1114,7 @@ HI-TECH Software Code Generator build 3862
   1041  00D4  1C03               	btfss	3,0
   1042  00D5  29BA               	goto	l151
   1043                           ;main.c: 1073: {
-  1044  00D6  160A  118A  2588   	fcall	_UnlockUHFThresh
+  1044  00D6  160A  118A  2578   	fcall	_UnlockUHFThresh
       +       120A  118A         
   1045                           ;main.c: 1075: uhf.idx = 0;
   1046  00DB  1703               	bsf	3,6
@@ -1146,7 +1146,7 @@ HI-TECH Software Code Generator build 3862
   1070  00EB  1D03               	btfss	3,2
   1071  00EC  29BA               	goto	l151
   1072                           ;main.c: 1088: {
-  1073  00ED  160A  118A  2578   	fcall	_LockUHFThresh
+  1073  00ED  160A  118A  2588   	fcall	_LockUHFThresh
       +       120A  118A         
   1074                           ;main.c: 1090: uhf.idx = 0;
   1075  00F2  1703               	bsf	3,6
@@ -1260,7 +1260,7 @@ HI-TECH Software Code Generator build 3862
   1178  0137  1703               	bsf	3,6
   1179  0138  0191               	clrf	(_uhf+1)^(0+256)
   1180                           ;main.c: 1157: UnlockUHFThresh();
-  1181  0139  160A  118A  2588   	fcall	_UnlockUHFThresh
+  1181  0139  160A  118A  2578   	fcall	_UnlockUHFThresh
       +       120A  118A         
   1182                           ;main.c: 1158: uhf.rxt_state = UHF_RX_COMPLETE;
   1183  013E  3004               	movlw	4
@@ -1274,7 +1274,7 @@ HI-TECH Software Code Generator build 3862
   1191  0142                     l150
   1192                           ;main.c: 1166: default:
   1193                           ;main.c: 1170: UnlockUHFThresh();
-  1194  0142  160A  118A  2588   	fcall	_UnlockUHFThresh
+  1194  0142  160A  118A  2578   	fcall	_UnlockUHFThresh
       +       120A  118A         
   1195                           ;main.c: 1171: uhf.idx = 0;
   1196  0147  1703               	bsf	3,6
@@ -2025,7 +2025,7 @@ HI-TECH Software Code Generator build 3862
 
 
 HI-TECH Software PICC Macro Assembler V9.60PL3 build 3862 
-Symbol Table                                          Tue Feb 04 13:05:08 2020
+Symbol Table                                          Wed Apr 29 16:34:19 2020
 
                   ?a_main 003B                  _delay_ms 083F  
                        pc 0002              ?_chk_timeout 0047  
@@ -2084,7 +2084,7 @@ _uhf_registration_timeout 0031                 _lamp_tick 0023
               save_btemp9 0023               _int_handler 0029  
               _combine_id 0193                      _main 0DA6  
             _eeprom_write 15CA                _eeprom_tmp 0020  
-                    btemp 0074             _LockUHFThresh 1578  
+                    btemp 0074             _LockUHFThresh 1588  
                     start 0226                    saved_w 0073  
             __end_of_main 07FE                  int_entry 0004  
               _lamp_state 0022         _VLF_StartReceiver 0BD1  
@@ -2100,9 +2100,9 @@ _uhf_registration_timeout 0031                 _lamp_tick 0023
              saved_status 0051                     status 0003  
              _get_pkt_len 08E9              _UHFCommsInit 15EA  
        _uhf_reset_timeout 0028                   int_func 0029  
-          _mu2su_preamble 108D             ?_eeprom_write 0044  
+          _mu2su_preamble 1082             ?_eeprom_write 0044  
            _lamp_schedule 1001              used_code_ptr 0001  
             _lamp_min_cnt 0021                int_restore 0221  
-         _UnlockUHFThresh 1588                used_btemp0 0001  
+         _UnlockUHFThresh 1578                used_btemp0 0001  
               used_btemp1 0001                used_btemp2 0001  
             _lamp_timeout 0026  

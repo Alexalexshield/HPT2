@@ -1315,7 +1315,7 @@ VLF_TX_PACKET_TYPE 3
 VLF_TX_PACKET_DATA 4
 VLF_TX_PACKET_DONE 5
 ]
-"63 C:\Users\Shchitnikov\Desktop\HPT2\Application\src\main.c
+"63 C:\Users\Shchitnikov\Documents\GitHub\HPT2\Application\src\main.c
 [v _mid `S9  1 e 4 0 ]
 "65
 [v _lamp_state `uc  1 e 1 0 ]

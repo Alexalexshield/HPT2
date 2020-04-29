@@ -1135,7 +1135,7 @@ UHFC_TESTMODE 5
 `S28  1 pkt 74 4 
 ]
 [v _Uhf_pkt_s `S29  1 t 78 ]
-"36 C:\Users\Shchitnikov\Desktop\HPT2\Application\..\Common\src\wait.c
+"36 C:\Users\Shchitnikov\Documents\GitHub\HPT2\Application\..\Common\src\wait.c
 [v _TMR1 `Vus  1 s 2 @14 ]
 "42
 [s S30 tmr_s 2 `uc  1 lo 1 0 

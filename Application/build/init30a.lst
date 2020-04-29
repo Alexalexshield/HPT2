@@ -1,7 +1,7 @@
 
 
 HI-TECH Software PICC Macro Assembler V9.60PL3 build 3862 
-                                                      Tue Feb 04 13:05:10 2020
+                                                      Wed Apr 29 16:34:21 2020
 
 HI-TECH Software Code Generator build 3862
      1                           	processor	16F887
@@ -581,7 +581,7 @@ HI-TECH Software Code Generator build 3862
 
 
 HI-TECH Software PICC Macro Assembler V9.60PL3 build 3862 
-Symbol Table                                          Tue Feb 04 13:05:10 2020
+Symbol Table                                          Wed Apr 29 16:34:21 2020
 
    __end_of_init_board 07E3                     l11 07F0  
                    l12 07F5                     l14 07F7  

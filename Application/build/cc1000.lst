@@ -1,7 +1,7 @@
 
 
 HI-TECH Software PICC Macro Assembler V9.60PL3 build 3862 
-                                                      Tue Feb 04 13:05:10 2020
+                                                      Wed Apr 29 16:34:21 2020
 
 HI-TECH Software Code Generator build 3862
      1                           	processor	16F887
@@ -32,16 +32,16 @@ HI-TECH Software Code Generator build 3862
     24  0000                     
     25                           
     26                           	psect	const1
-    27  1083  0782               	addwf	2
-    28  1084                     _c_uhf_modes_ast
-    29  1084  3411               	retlw	17
-    30  1085  3444               	retlw	68
-    31  1086  3460               	retlw	96
-    32  1087  3400               	retlw	0
-    33  1088  34E1               	retlw	-31
-    34  1089  3481               	retlw	-127
-    35  108A  3448               	retlw	72
-    36  108B  34C0               	retlw	-64
+    27  1078  0782               	addwf	2
+    28  1079                     _c_uhf_modes_ast
+    29  1079  3411               	retlw	17
+    30  107A  3444               	retlw	68
+    31  107B  3460               	retlw	96
+    32  107C  3400               	retlw	0
+    33  107D  34E1               	retlw	-31
+    34  107E  3481               	retlw	-127
+    35  107F  3448               	retlw	72
+    36  1080  34C0               	retlw	-64
     37  0000                     _cc1000_wr$val_u8	set	?_cc1000_wr
     38                           
     39                           	psect	text1
@@ -249,7 +249,7 @@ HI-TECH Software Code Generator build 3862
    237  16EE  3010               	movlw	_c_uhf_modes_ast shr (0+8)
    238  16EF  008A               	movwf	10
    239  16F0  3002               	movlw	2
-   240  16F1  2083               	call	((_c_uhf_modes_ast+-1)& (0+2047))| (($)& 
+   240  16F1  2078               	call	((_c_uhf_modes_ast+-1)& (0+2047))| (($)& 
       +                          (0+-2048))
    241  16F2  00C5               	movwf	?_cc1000_wr
    242  16F3  300C               	movlw	12
@@ -327,7 +327,7 @@ HI-TECH Software Code Generator build 3862
    314  172E  267B               	fcall	_cc1000_wr
    315                           ;cc1000.c: 215: cc1000_wr( 0, c_uhf_modes_ast[ 
       +                          UHF_RX_MODE ].main_u8 );
-   316  172F  160A  118A  2084   	fcall	_c_uhf_modes_ast
+   316  172F  160A  118A  2079   	fcall	_c_uhf_modes_ast
       +       160A  118A         
    317  1734  00C5               	movwf	?_cc1000_wr
    318  1735  3000               	movlw	0
@@ -337,7 +337,7 @@ HI-TECH Software Code Generator build 3862
    321  1737  3010               	movlw	_c_uhf_modes_ast shr (0+8)
    322  1738  008A               	movwf	10
    323  1739  3001               	movlw	1
-   324  173A  2083               	call	((_c_uhf_modes_ast+-1)& (0+2047))| (($)& 
+   324  173A  2078               	call	((_c_uhf_modes_ast+-1)& (0+2047))| (($)& 
       +                          (0+-2048))
    325  173B  00C5               	movwf	?_cc1000_wr
    326  173C  3009               	movlw	9
@@ -347,7 +347,7 @@ HI-TECH Software Code Generator build 3862
    329  1740  3010               	movlw	_c_uhf_modes_ast shr (0+8)
    330  1741  008A               	movwf	10
    331  1742  3002               	movlw	2
-   332  1743  2083               	call	((_c_uhf_modes_ast+-1)& (0+2047))| (($)& 
+   332  1743  2078               	call	((_c_uhf_modes_ast+-1)& (0+2047))| (($)& 
       +                          (0+-2048))
    333  1744  00C5               	movwf	?_cc1000_wr
    334  1745  300C               	movlw	12
@@ -375,7 +375,7 @@ HI-TECH Software Code Generator build 3862
    354  1756  3010               	movlw	_c_uhf_modes_ast shr (0+8)
    355  1757  008A               	movwf	10
    356  1758  3004               	movlw	4
-   357  1759  2083               	call	((_c_uhf_modes_ast+-1)& (0+2047))| (($)& 
+   357  1759  2078               	call	((_c_uhf_modes_ast+-1)& (0+2047))| (($)& 
       +                          (0+-2048))
    358  175A  00C5               	movwf	?_cc1000_wr
    359  175B  3000               	movlw	0
@@ -385,7 +385,7 @@ HI-TECH Software Code Generator build 3862
    362  175F  3010               	movlw	_c_uhf_modes_ast shr (0+8)
    363  1760  008A               	movwf	10
    364  1761  3005               	movlw	5
-   365  1762  2083               	call	((_c_uhf_modes_ast+-1)& (0+2047))| (($)& 
+   365  1762  2078               	call	((_c_uhf_modes_ast+-1)& (0+2047))| (($)& 
       +                          (0+-2048))
    366  1763  00C5               	movwf	?_cc1000_wr
    367  1764  3009               	movlw	9
@@ -395,7 +395,7 @@ HI-TECH Software Code Generator build 3862
    370  1768  3010               	movlw	_c_uhf_modes_ast shr (0+8)
    371  1769  008A               	movwf	10
    372  176A  3006               	movlw	6
-   373  176B  2083               	call	((_c_uhf_modes_ast+-1)& (0+2047))| (($)& 
+   373  176B  2078               	call	((_c_uhf_modes_ast+-1)& (0+2047))| (($)& 
       +                          (0+-2048))
    374  176C  00C5               	movwf	?_cc1000_wr
    375  176D  300C               	movlw	12
@@ -493,7 +493,7 @@ HI-TECH Software Code Generator build 3862
    463  17B6  0DF4               	rlf	btemp
    464  17B7  1003               	bcf	3,0
    465  17B8  0D74               	rlf	btemp,w
-   466  17B9  2083               	call	((_c_uhf_modes_ast+-1)& (0+2047))| (($)& 
+   466  17B9  2078               	call	((_c_uhf_modes_ast+-1)& (0+2047))| (($)& 
       +                          (0+-2048))
    467  17BA  00C5               	movwf	?_cc1000_wr
    468  17BB  3000               	movlw	0
@@ -510,7 +510,7 @@ HI-TECH Software Code Generator build 3862
    478  17C6  0D74               	rlf	btemp,w
    479  17C7  00F4               	movwf	btemp
    480  17C8  0A74               	incf	btemp,w
-   481  17C9  2083               	call	((_c_uhf_modes_ast+-1)& (0+2047))| (($)& 
+   481  17C9  2078               	call	((_c_uhf_modes_ast+-1)& (0+2047))| (($)& 
       +                          (0+-2048))
    482  17CA  00C5               	movwf	?_cc1000_wr
    483  17CB  3009               	movlw	9
@@ -526,7 +526,7 @@ HI-TECH Software Code Generator build 3862
    492  17D5  1003               	bcf	3,0
    493  17D6  0D74               	rlf	btemp,w
    494  17D7  3E02               	addlw	2
-   495  17D8  2083               	call	((_c_uhf_modes_ast+-1)& (0+2047))| (($)& 
+   495  17D8  2078               	call	((_c_uhf_modes_ast+-1)& (0+2047))| (($)& 
       +                          (0+-2048))
    496  17D9  00C5               	movwf	?_cc1000_wr
    497  17DA  300C               	movlw	12
@@ -556,7 +556,7 @@ HI-TECH Software Code Generator build 3862
    520  17F1  1003               	bcf	3,0
    521  17F2  0D74               	rlf	btemp,w
    522  17F3  3E03               	addlw	3
-   523  17F4  2083               	call	((_c_uhf_modes_ast+-1)& (0+2047))| (($)& 
+   523  17F4  2078               	call	((_c_uhf_modes_ast+-1)& (0+2047))| (($)& 
       +                          (0+-2048))
    524  17F5  00C5               	movwf	?_cc1000_wr
    525  17F6  300B               	movlw	11
@@ -617,62 +617,62 @@ HI-TECH Software Code Generator build 3862
    578  026E  3400               	retlw	0
    579                           
    580                           	psect	text6
-   581  1578                     __end_of_SetUHFMode
-   582  1578                     _LockUHFThresh
+   581  1588                     __end_of_SetUHFMode
+   582  1588                     _LockUHFThresh
    583                           ;cc1000.c: 328: void LockUHFThresh(void)
-   584  1578  0183               	clrf	3	;select bank 0
-   585  1579  1007               	bcf	7,0
+   584  1588  0183               	clrf	3	;select bank 0
+   585  1589  1007               	bcf	7,0
    586                           ;cc1000.c: 331: SSPBUF = (0x10 << 1) | 0x01;
-   587  157A  3021               	movlw	33
-   588  157B  0093               	movwf	19	;volatile
+   587  158A  3021               	movlw	33
+   588  158B  0093               	movwf	19	;volatile
    589                           ;cc1000.c: 332: while( !BF );
-   590  157C                     l48
-   591  157C  1683               	bsf	3,5
-   592  157D  1C14               	btfss	20,0
-   593  157E  2D7C               	goto	l48
+   590  158C                     l48
+   591  158C  1683               	bsf	3,5
+   592  158D  1C14               	btfss	20,0
+   593  158E  2D8C               	goto	l48
    594                           ;cc1000.c: 333: RC0 = 1;
-   595  157F  1283               	bcf	3,5
-   596  1580  1407               	bsf	7,0
+   595  158F  1283               	bcf	3,5
+   596  1590  1407               	bsf	7,0
    597                           ;cc1000.c: 334: SSPBUF = 0x7B;
-   598  1581  307B               	movlw	123
-   599  1582  0093               	movwf	19	;volatile
+   598  1591  307B               	movlw	123
+   599  1592  0093               	movwf	19	;volatile
    600                           ;cc1000.c: 335: while( !BF );
-   601  1583                     l51
-   602  1583  1683               	bsf	3,5
-   603  1584  1C14               	btfss	20,0
-   604  1585  2D83               	goto	l51
+   601  1593                     l51
+   602  1593  1683               	bsf	3,5
+   603  1594  1C14               	btfss	20,0
+   604  1595  2D93               	goto	l51
    605                           ;cc1000.c: 336: }
-   606  1586  1283               	bcf	3,5
-   607  1587  0008               	return	;W free
+   606  1596  1283               	bcf	3,5
+   607  1597  0008               	return	;W free
    608                           
    609                           	psect	text7
-   610  1588                     __end_of_LockUHFThresh
-   611  1588                     _UnlockUHFThresh
+   610  1578                     __end_of_LockUHFThresh
+   611  1578                     _UnlockUHFThresh
    612                           ;cc1000.c: 343: void UnlockUHFThresh(void)
-   613  1588  0183               	clrf	3	;select bank 0
-   614  1589  1007               	bcf	7,0
+   613  1578  0183               	clrf	3	;select bank 0
+   614  1579  1007               	bcf	7,0
    615                           ;cc1000.c: 346: SSPBUF = (0x10 << 1) | 0x01;
-   616  158A  3021               	movlw	33
-   617  158B  0093               	movwf	19	;volatile
+   616  157A  3021               	movlw	33
+   617  157B  0093               	movwf	19	;volatile
    618                           ;cc1000.c: 347: while( !BF );
-   619  158C                     l55
-   620  158C  1683               	bsf	3,5
-   621  158D  1C14               	btfss	20,0
-   622  158E  2D8C               	goto	l55
+   619  157C                     l55
+   620  157C  1683               	bsf	3,5
+   621  157D  1C14               	btfss	20,0
+   622  157E  2D7C               	goto	l55
    623                           ;cc1000.c: 348: RC0 = 1;
-   624  158F  1283               	bcf	3,5
-   625  1590  1407               	bsf	7,0
+   624  157F  1283               	bcf	3,5
+   625  1580  1407               	bsf	7,0
    626                           ;cc1000.c: 350: SSPBUF = 0x6B;
-   627  1591  306B               	movlw	107
-   628  1592  0093               	movwf	19	;volatile
+   627  1581  306B               	movlw	107
+   628  1582  0093               	movwf	19	;volatile
    629                           ;cc1000.c: 351: while( !BF );
-   630  1593                     l58
-   631  1593  1683               	bsf	3,5
-   632  1594  1C14               	btfss	20,0
-   633  1595  2D93               	goto	l58
+   630  1583                     l58
+   631  1583  1683               	bsf	3,5
+   632  1584  1C14               	btfss	20,0
+   633  1585  2D83               	goto	l58
    634                           ;cc1000.c: 352: }
-   635  1596  1283               	bcf	3,5
-   636  1597  0008               	return	;W free
+   635  1586  1283               	bcf	3,5
+   636  1587  0008               	return	;W free
    637                           
    638                           	psect	text8
    639  07FE                     __end_of_UnlockUHFThresh
@@ -1100,27 +1100,27 @@ HI-TECH Software Code Generator build 3862
 
 
 HI-TECH Software PICC Macro Assembler V9.60PL3 build 3862 
-Symbol Table                                          Tue Feb 04 13:05:10 2020
+Symbol Table                                          Wed Apr 29 16:34:21 2020
 
                  _delay_ms 083F                          pc 0002  
                _SetUHFMode 17AD                         l11 1684  
                        l21 1672                         l14 168B  
                        l25 1570                         l18 166B  
-                       l51 1583                         l35 174D  
+                       l51 1593                         l35 174D  
                        l45 17E4                         l38 1775  
-                       l55 158C                         l48 157C  
-                       l58 1593                ?a_cc1000_rd 003D  
+                       l55 157C                         l48 158C  
+                       l58 1583                ?a_cc1000_rd 003D  
               ?a_cc1000_wr 0046                _pager_write 1569  
                 ?_delay_ms 0046                  _cc1000_rd 1663  
                 _cc1000_wr 167B                       btemp 0074  
-            _LockUHFThresh 1578    __end_of_UnlockUHFThresh 07FE  
-               _GetUHFMode 07FB         __end_of_SetUHFMode 1578  
-    __end_of_LockUHFThresh 1588              ?a_pager_write 003D  
+            _LockUHFThresh 1588    __end_of_UnlockUHFThresh 07FE  
+               _GetUHFMode 07FB         __end_of_SetUHFMode 1588  
+    __end_of_LockUHFThresh 1578              ?a_pager_write 003D  
 __end_of_InitUHFTranceiver 07FB          __end_of_cc1000_rd 1569  
         __end_of_cc1000_wr 1663                  _Wait250Us 154C  
                     pclath 000A               ?a_SetUHFMode 0044  
                     status 0003                 ?_cc1000_wr 0045  
                  _Wait25Us 1540         __end_of_GetUHFMode 17AD  
-          _c_uhf_modes_ast 1084                _uhf_mode_u8 0050  
+          _c_uhf_modes_ast 1079                _uhf_mode_u8 0050  
         _InitUHFTranceiver 1691        __end_of_pager_write 1691  
-          _UnlockUHFThresh 1588                 used_btemp0 0001  
+          _UnlockUHFThresh 1578                 used_btemp0 0001  

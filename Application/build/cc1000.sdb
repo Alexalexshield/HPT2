@@ -899,7 +899,7 @@ LAMP_TEST_STATE 242
 UHF_RX_MODE 0
 UHF_TX_MODE 1
 ]
-"37 C:\Users\Shchitnikov\Desktop\HPT2\Application\..\Common\src\cc1000.c
+"37 C:\Users\Shchitnikov\Documents\GitHub\HPT2\Application\..\Common\src\cc1000.c
 [s S9 . 4 `uc  1 main_u8 1 0 
 `uc  1 current_u8 1 1 
 `uc  1 pll_u8 1 2 

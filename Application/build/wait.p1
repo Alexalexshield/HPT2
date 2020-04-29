@@ -1010,7 +1010,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [s S29 `uc 1 `uc 1 `uc 1 `uc 1 `S28 1 ]
 [n S29 Uhf_pkt_s rxt_state idx len brx_pkt_cnt pkt ]
 [v _Uhf_pkt_s `S29 1 t ]
-"36 C:\Users\Shchitnikov\Desktop\HPT2\Application\..\Common\src\wait.c
+"36 C:\Users\Shchitnikov\Documents\GitHub\HPT2\Application\..\Common\src\wait.c
 [v _TMR1 `Vus 1 s@14 ]
 "42
 [s S30 `uc 1 `uc 1 ]

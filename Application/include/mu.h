@@ -85,7 +85,7 @@
 #define MU_PAGER_TESTING	0
 #define MU_R8KHZ_TESTING	0
 
-#define VLF_TEST_TAG		0					// 1- special tag for testing vlf
+#define VLF_TEST_TAG		1					// 1- special tag for testing vlf
 
 #define USE_MOBILITY 		0					//
 

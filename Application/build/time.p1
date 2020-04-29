@@ -925,7 +925,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v F919 `(i 1 tf2`*Cv`*Cv ]
 "127
 [v F928 `(i 1 tf2`*Cv`*Cv ]
-"33 C:\Users\Shchitnikov\Desktop\HPT2\Application\..\Common\src\time.c
+"33 C:\Users\Shchitnikov\Documents\GitHub\HPT2\Application\..\Common\src\time.c
 [v _timer `VS7 1 e ]
 "34
 [v _timer_last_tick `uc 1 e ]

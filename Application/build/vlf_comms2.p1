@@ -1148,7 +1148,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 1
 .. ]
 [n E1295 UHF_MODES UHF_RX_MODE UHF_TX_MODE ]
-"45 C:\Users\Shchitnikov\Desktop\HPT2\Application\src\vlf_comms2.c
+"45 C:\Users\Shchitnikov\Documents\GitHub\HPT2\Application\src\vlf_comms2.c
 [v _vrx `XS22 1 e ]
 "48
 [v _vtx `XS20 1 e ]
@@ -1187,150 +1187,140 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> & >> -> 1445 `i -> 11 `i -> 1 `i `uc
 ..
 ]"90
-[v _aps_preamble `Cuc -> 10 `i e ]
+[v _aps_preamble `Cuc -> 5 `i e ]
 [i _aps_preamble
 :U ..
 "91
--> & >> -> 704 `i -> 9 `i -> 1 `i `uc
+-> & >> -> 22 `i -> 4 `i -> 1 `i `uc
 "92
--> & >> -> 704 `i -> 8 `i -> 1 `i `uc
+-> & >> -> 22 `i -> 3 `i -> 1 `i `uc
 "93
--> & >> -> 704 `i -> 7 `i -> 1 `i `uc
+-> & >> -> 22 `i -> 2 `i -> 1 `i `uc
 "94
--> & >> -> 704 `i -> 6 `i -> 1 `i `uc
+-> & >> -> 22 `i -> 1 `i -> 1 `i `uc
 "95
--> & >> -> 704 `i -> 5 `i -> 1 `i `uc
-"96
--> & >> -> 704 `i -> 4 `i -> 1 `i `uc
-"97
--> & >> -> 704 `i -> 3 `i -> 1 `i `uc
-"98
--> & >> -> 704 `i -> 2 `i -> 1 `i `uc
-"99
--> & >> -> 704 `i -> 1 `i -> 1 `i `uc
-"100
--> & >> -> 704 `i -> 0 `i -> 1 `i `uc
+-> & >> -> 22 `i -> 0 `i -> 1 `i `uc
 ..
-]"119
+]"114
 [v _mu2su_preamble `Cuc -> 8 `i e ]
 [i _mu2su_preamble
 :U ..
-"120
+"115
 -> & -> 165 `i -> 1 `i `uc
-"121
+"116
 -> & >> -> 165 `i -> 1 `i -> 1 `i `uc
-"122
+"117
 -> & >> -> 165 `i -> 2 `i -> 1 `i `uc
-"123
+"118
 -> & >> -> 165 `i -> 3 `i -> 1 `i `uc
-"124
+"119
 -> & >> -> 165 `i -> 4 `i -> 1 `i `uc
-"125
+"120
 -> & >> -> 165 `i -> 5 `i -> 1 `i `uc
-"126
+"121
 -> & >> -> 165 `i -> 6 `i -> 1 `i `uc
-"128
+"123
 -> & >> -> 165 `i -> 7 `i -> 1 `i `uc
 ..
-]"136
+]"131
 [v _uncoded_rx_data_size `Cuc -> 0 `x e ]
 [i _uncoded_rx_data_size
 :U ..
-"137
+"132
 -> -> 2 `i `uc
-"138
+"133
 -> -> 5 `i `uc
+"134
+-> -> 0 `i `uc
+"135
+-> -> 0 `i `uc
+"136
+-> -> 4 `i `uc
+"137
+-> -> 0 `i `uc
+"138
+-> -> 0 `i `uc
 "139
 -> -> 0 `i `uc
-"140
--> -> 0 `i `uc
-"141
--> -> 4 `i `uc
-"142
--> -> 0 `i `uc
-"143
--> -> 0 `i `uc
 "144
--> -> 0 `i `uc
-"149
 -> -> 4 `i `uc
 ..
-]"155
+]"150
 [v _VLF_SendPacket `(v 0 sf ]
-"156
+"151
 [v _buffcrc `(uc 0 sf3`*uc`uc`uc ]
-"157
+"152
 [v _get_crc `(uc 0 sf2`uc`uc ]
-"163
+"158
 [v _get_crc `(uc 1 sf2`uc`uc ]
 {
 [v _crc `uc 1 r1 ]
 [v _data `uc 1 r2 ]
 [e :U _get_crc ]
 [f ]
-[; ;vlf_comms2.c: 162: static BYTE get_crc( BYTE crc, BYTE data )
-[; ;vlf_comms2.c: 163: {
-"164
+[; ;vlf_comms2.c: 157: static BYTE get_crc( BYTE crc, BYTE data )
+[; ;vlf_comms2.c: 158: {
+"159
 [v _bit_cnt `uc 1 A ]
-[; ;vlf_comms2.c: 164: register uchar bit_cnt;
-[; ;vlf_comms2.c: 166: for( bit_cnt = 0; bit_cnt < 8; bit_cnt++ )
-"166
+[; ;vlf_comms2.c: 159: register uchar bit_cnt;
+[; ;vlf_comms2.c: 161: for( bit_cnt = 0; bit_cnt < 8; bit_cnt++ )
+"161
 [e = _bit_cnt -> -> 0 `i `uc ]
 [e $ < -> _bit_cnt `i -> 8 `i 47 ]
 [e $U 48 ]
-"167
+"162
 [e :U 47 ]
-[; ;vlf_comms2.c: 167: { if( crc & 0x80 )
+[; ;vlf_comms2.c: 162: { if( crc & 0x80 )
 [e $ ! != & -> _crc `i -> 128 `i -> 0 `i 50 ]
-[; ;vlf_comms2.c: 168: { crc <<= 1;
-"168
+[; ;vlf_comms2.c: 163: { crc <<= 1;
+"163
 [e =<< _crc -> 1 `i ]
-[; ;vlf_comms2.c: 169: if( data & 0x80 )
-"169
+[; ;vlf_comms2.c: 164: if( data & 0x80 )
+"164
 [e $ ! != & -> _data `i -> 128 `i -> 0 `i 51 ]
-[; ;vlf_comms2.c: 170: crc |= 0x01;
-"170
+[; ;vlf_comms2.c: 165: crc |= 0x01;
+"165
 [e =| _crc -> -> 1 `i `uc ]
 [e :U 51 ]
-[; ;vlf_comms2.c: 171: crc = crc ^ 0x85;
-"171
+[; ;vlf_comms2.c: 166: crc = crc ^ 0x85;
+"166
 [e = _crc -> ^ -> _crc `i -> 133 `i `uc ]
-"172
-[; ;vlf_comms2.c: 172: }
+"167
+[; ;vlf_comms2.c: 167: }
 [e $U 52 ]
-"173
+"168
 [e :U 50 ]
-[; ;vlf_comms2.c: 173: else
-[; ;vlf_comms2.c: 174: { crc <<= 1;
-"174
+[; ;vlf_comms2.c: 168: else
+[; ;vlf_comms2.c: 169: { crc <<= 1;
+"169
 [e =<< _crc -> 1 `i ]
-[; ;vlf_comms2.c: 175: if( data & 0x80 )
-"175
+[; ;vlf_comms2.c: 170: if( data & 0x80 )
+"170
 [e $ ! != & -> _data `i -> 128 `i -> 0 `i 53 ]
-[; ;vlf_comms2.c: 176: crc |= 0x01;
-"176
+[; ;vlf_comms2.c: 171: crc |= 0x01;
+"171
 [e =| _crc -> -> 1 `i `uc ]
 [e :U 53 ]
-"177
+"172
 [e :U 52 ]
-[; ;vlf_comms2.c: 177: }
-[; ;vlf_comms2.c: 178: data <<= 1;
-"178
+[; ;vlf_comms2.c: 172: }
+[; ;vlf_comms2.c: 173: data <<= 1;
+"173
 [e =<< _data -> 1 `i ]
-"166
+"161
 [e ++ _bit_cnt -> -> 1 `i `uc ]
 [e $ < -> _bit_cnt `i -> 8 `i 47 ]
 [e :U 48 ]
-[; ;vlf_comms2.c: 179: }
-[; ;vlf_comms2.c: 180: return( crc );
-"180
+[; ;vlf_comms2.c: 174: }
+[; ;vlf_comms2.c: 175: return( crc );
+"175
 [e ) _crc ]
 [e $UE 46 ]
-"181
-[; ;vlf_comms2.c: 181: }
+"176
+[; ;vlf_comms2.c: 176: }
 [e :UE 46 ]
 }
-"187
+"182
 [v _buffcrc `(uc 1 sf3`*uc`uc`uc ]
 {
 [v _ptr `*uc 1 r1 ]
@@ -1338,345 +1328,345 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _len `uc 1 r3 ]
 [e :U _buffcrc ]
 [f ]
-[; ;vlf_comms2.c: 186: static BYTE buffcrc( BYTE *ptr, BYTE crc, uchar len )
-[; ;vlf_comms2.c: 187: {
-[; ;vlf_comms2.c: 188: while( len-- )
-"188
+[; ;vlf_comms2.c: 181: static BYTE buffcrc( BYTE *ptr, BYTE crc, uchar len )
+[; ;vlf_comms2.c: 182: {
+[; ;vlf_comms2.c: 183: while( len-- )
+"183
 [e $U 55 ]
 [e :U 56 ]
-[; ;vlf_comms2.c: 189: crc = get_crc( crc, *ptr++ );
-"189
+[; ;vlf_comms2.c: 184: crc = get_crc( crc, *ptr++ );
+"184
 [e = _crc ( _get_crc (2 , _crc *U ++ _ptr * -> -> 1 `i `x -> -> # `uc `i `x ]
 [e :U 55 ]
-"188
+"183
 [e $ != -> -- _len -> -> 1 `i `uc `i -> -> -> 0 `i `uc `i 56 ]
 [e :U 57 ]
-[; ;vlf_comms2.c: 190: return( crc );
-"190
+[; ;vlf_comms2.c: 185: return( crc );
+"185
 [e ) _crc ]
 [e $UE 54 ]
-"191
-[; ;vlf_comms2.c: 191: }
+"186
+[; ;vlf_comms2.c: 186: }
 [e :UE 54 ]
 }
-"201
+"196
 [v _VLF_Busy `(uc 1 ef ]
 {
 [e :U _VLF_Busy ]
 [f ]
-[; ;vlf_comms2.c: 200: uchar VLF_Busy(void)
-[; ;vlf_comms2.c: 201: {
-[; ;vlf_comms2.c: 202: if( ( vrx.state == VLF_RX_SEEKING )&&( vtx.state == VLF_TX_IDLE ) )
-"202
+[; ;vlf_comms2.c: 195: uchar VLF_Busy(void)
+[; ;vlf_comms2.c: 196: {
+[; ;vlf_comms2.c: 197: if( ( vrx.state == VLF_RX_SEEKING )&&( vtx.state == VLF_TX_IDLE ) )
+"197
 [e $ ! && == -> . _vrx 0 `i -> . `E1038 1 `i == -> . _vtx 0 `i -> . `E1044 0 `i 59 ]
-[; ;vlf_comms2.c: 203: return( (0) );
-"203
+[; ;vlf_comms2.c: 198: return( (0) );
+"198
 [e ) -> -> 0 `i `uc ]
 [e $UE 58 ]
 [e :U 59 ]
-[; ;vlf_comms2.c: 205: return( (1) );
-"205
+[; ;vlf_comms2.c: 200: return( (1) );
+"200
 [e ) -> -> 1 `i `uc ]
 [e $UE 58 ]
-"206
-[; ;vlf_comms2.c: 206: }
+"201
+[; ;vlf_comms2.c: 201: }
 [e :UE 58 ]
 }
-"217
+"212
 [v _VLF_ProcessPacket `(uc 1 ef ]
 {
 [e :U _VLF_ProcessPacket ]
 [f ]
-[; ;vlf_comms2.c: 216: BYTE VLF_ProcessPacket(void)
-[; ;vlf_comms2.c: 217: {
-"218
+[; ;vlf_comms2.c: 211: BYTE VLF_ProcessPacket(void)
+[; ;vlf_comms2.c: 212: {
+"213
 [v _crc `uc 1 a ]
-[; ;vlf_comms2.c: 218: BYTE crc;
-[; ;vlf_comms2.c: 224: if( vtx.type >= VLF_NO_PACKET )
-"224
+[; ;vlf_comms2.c: 213: BYTE crc;
+[; ;vlf_comms2.c: 219: if( vtx.type >= VLF_NO_PACKET )
+"219
 [e $ ! >= -> . _vtx 6 `i -> . `E945 9 `i 61 ]
-[; ;vlf_comms2.c: 225: { VLF_StartReceiver();
-"225
+[; ;vlf_comms2.c: 220: { VLF_StartReceiver();
+"220
 [v _VLF_StartReceiver `(v 0 ef ]
 [e ( _VLF_StartReceiver ..  ]
-[; ;vlf_comms2.c: 231: return( 1 );
-"231
+[; ;vlf_comms2.c: 226: return( 1 );
+"226
 [e ) -> -> 1 `i `uc ]
 [e $UE 60 ]
-"232
+"227
 [e :U 61 ]
-[; ;vlf_comms2.c: 232: }
-[; ;vlf_comms2.c: 234: crc = get_crc( 0xF5, (vtx.type << 4) );
-"234
+[; ;vlf_comms2.c: 227: }
+[; ;vlf_comms2.c: 229: crc = get_crc( 0xF5, (vtx.type << 4) );
+"229
 [e = _crc ( _get_crc (2 , -> -> 245 `i `uc -> << -> . _vtx 6 `i -> 4 `i `uc ]
-[; ;vlf_comms2.c: 235: crc = buffcrc( &vtx.u.data[0], crc, ( (BYTE)(uncoded_rx_data_size[vtx.type] + 1) ) - 1 );
-"235
+[; ;vlf_comms2.c: 230: crc = buffcrc( &vtx.u.data[0], crc, ( (BYTE)(uncoded_rx_data_size[vtx.type] + 1) ) - 1 );
+"230
 [e = _crc ( _buffcrc (3 , , -> &U *U + &U . . _vtx 7 0 * -> -> -> 0 `i `ui `ux -> -> # `Xuc `ui `ux `*uc _crc -> - -> -> + -> *U + &U _uncoded_rx_data_size * -> . _vtx 6 `ux -> -> # `Cuc `ui `ux `i -> 1 `i `uc `i -> 1 `i `uc ]
-[; ;vlf_comms2.c: 236: crc = get_crc( crc, 0x00 );
-"236
+[; ;vlf_comms2.c: 231: crc = get_crc( crc, 0x00 );
+"231
 [e = _crc ( _get_crc (2 , _crc -> -> 0 `i `uc ]
-[; ;vlf_comms2.c: 239: if( vtx.u.data[( (BYTE)(uncoded_rx_data_size[vtx.type] ) )] != crc )
-"239
+[; ;vlf_comms2.c: 234: if( vtx.u.data[( (BYTE)(uncoded_rx_data_size[vtx.type] ) )] != crc )
+"234
 [e $ ! != -> *U + &U . . _vtx 7 0 * -> *U + &U _uncoded_rx_data_size * -> . _vtx 6 `ux -> -> # `Cuc `ui `ux `ux -> -> # `Xuc `ui `ux `i -> _crc `i 62 ]
-[; ;vlf_comms2.c: 240: { VLF_StartReceiver();
-"240
+[; ;vlf_comms2.c: 235: { VLF_StartReceiver();
+"235
 [e ( _VLF_StartReceiver ..  ]
-[; ;vlf_comms2.c: 244: return( 2 );
-"244
+[; ;vlf_comms2.c: 239: return( 2 );
+"239
 [e ) -> -> 2 `i `uc ]
 [e $UE 60 ]
-"245
+"240
 [e :U 62 ]
-[; ;vlf_comms2.c: 245: }
-[; ;vlf_comms2.c: 248: switch( vtx.type )
-"248
+[; ;vlf_comms2.c: 240: }
+[; ;vlf_comms2.c: 243: switch( vtx.type )
+"243
 [e $U 64 ]
-[; ;vlf_comms2.c: 249: {
-[; ;vlf_comms2.c: 250: case VLF_MU_DETECT:
-"250
+[; ;vlf_comms2.c: 244: {
+[; ;vlf_comms2.c: 245: case VLF_MU_DETECT:
+"245
 [e :U 65 ]
-[; ;vlf_comms2.c: 252: if( ( vtx.u.det_cmd.sid != vtx.sid )||( vtx.u.det_cmd.seq != vtx.seq ) )
-"252
+[; ;vlf_comms2.c: 247: if( ( vtx.u.det_cmd.sid != vtx.sid )||( vtx.u.det_cmd.seq != vtx.seq ) )
+"247
 [e $ ! || != -> . . . _vtx 7 1 0 `i -> . _vtx 5 `i != -> . . . _vtx 7 1 1 `i -> . _vtx 4 `i 66 ]
-[; ;vlf_comms2.c: 253: {
-[; ;vlf_comms2.c: 255: if( lamp_state == LAMP_SEARCH_IN_PROGRESS )
-"255
+[; ;vlf_comms2.c: 248: {
+[; ;vlf_comms2.c: 250: if( lamp_state == LAMP_SEARCH_IN_PROGRESS )
+"250
 [v _lamp_state `uc 0 e ]
 [e $ ! == -> _lamp_state `i -> . `E914 2 `i 67 ]
-[; ;vlf_comms2.c: 256: { lamp_state = LAMP_NORMAL_STATE;
-"256
+[; ;vlf_comms2.c: 251: { lamp_state = LAMP_NORMAL_STATE;
+"251
 [e = _lamp_state -> . `E914 10 `uc ]
-[; ;vlf_comms2.c: 259: RC1 = ( mu_flags & (0x04) ) ? 1 : 0;
-"259
+[; ;vlf_comms2.c: 254: RC1 = ( mu_flags & (0x04) ) ? 1 : 0;
+"254
 [v _mu_flags `uc 0 e ]
 [e = _RC1 -> ? != & -> _mu_flags `i -> 4 `i -> 0 `i : -> 1 `i -> 0 `i `b ]
-"263
-[; ;vlf_comms2.c: 263: }
+"258
+[; ;vlf_comms2.c: 258: }
 [e $U 68 ]
-"264
+"259
 [e :U 67 ]
-[; ;vlf_comms2.c: 264: else if( lamp_state == LAMP_VLF_BLOCKED_STATE )
+[; ;vlf_comms2.c: 259: else if( lamp_state == LAMP_VLF_BLOCKED_STATE )
 [e $ ! == -> _lamp_state `i -> . `E914 8 `i 69 ]
-[; ;vlf_comms2.c: 265: {
-[; ;vlf_comms2.c: 278: { VLF_StartReceiver();
-"278
+[; ;vlf_comms2.c: 260: {
+[; ;vlf_comms2.c: 273: { VLF_StartReceiver();
+"273
 [e ( _VLF_StartReceiver ..  ]
-[; ;vlf_comms2.c: 279: return( 0 );
-"279
+[; ;vlf_comms2.c: 274: return( 0 );
+"274
 [e ) -> -> 0 `i `uc ]
 [e $UE 60 ]
-"281
+"276
 [e :U 69 ]
-"284
+"279
 [e :U 68 ]
-[; ;vlf_comms2.c: 280: }
-[; ;vlf_comms2.c: 281: }
-[; ;vlf_comms2.c: 284: delay_ms( ((5*85)+20) * 2 );
+[; ;vlf_comms2.c: 275: }
+[; ;vlf_comms2.c: 276: }
+[; ;vlf_comms2.c: 279: delay_ms( ((5*85)+20) * 2 );
 [v _delay_ms `(v 0 ef1`us ]
 [e ( _delay_ms (1 -> * + * -> 5 `i -> 85 `i -> 20 `i -> 2 `i `us ]
-[; ;vlf_comms2.c: 286: VLF_ReplyToBroadcastRequest( 10 );
-"286
+[; ;vlf_comms2.c: 281: VLF_ReplyToBroadcastRequest( 10 );
+"281
 [v _VLF_ReplyToBroadcastRequest `(v 0 ef1`uc ]
 [e ( _VLF_ReplyToBroadcastRequest (1 -> -> 10 `i `uc ]
-[; ;vlf_comms2.c: 287: return( 0 );
-"287
+[; ;vlf_comms2.c: 282: return( 0 );
+"282
 [e ) -> -> 0 `i `uc ]
 [e $UE 60 ]
-"288
+"283
 [e :U 66 ]
-[; ;vlf_comms2.c: 288: }
-[; ;vlf_comms2.c: 289: break;
-"289
+[; ;vlf_comms2.c: 283: }
+[; ;vlf_comms2.c: 284: break;
+"284
 [e $U 63 ]
-[; ;vlf_comms2.c: 292: case VLF_MU_MASK:
-"292
+[; ;vlf_comms2.c: 287: case VLF_MU_MASK:
+"287
 [e :U 70 ]
-[; ;vlf_comms2.c: 293: if(
-"294
+[; ;vlf_comms2.c: 288: if(
+"289
 [v _mid `S9 0 e ]
-"296
-[; ;vlf_comms2.c: 294: ( vtx.u.msk_cmd.mid_s.val[2] == mid.b[1] )&&
-[; ;vlf_comms2.c: 295: ( vtx.u.msk_cmd.mid_s.val[1] == mid.b[2] )&&
-[; ;vlf_comms2.c: 296: ( vtx.u.msk_cmd.mid_s.val[0] == mid.b[3] ) )
+"291
+[; ;vlf_comms2.c: 289: ( vtx.u.msk_cmd.mid_s.val[2] == mid.b[1] )&&
+[; ;vlf_comms2.c: 290: ( vtx.u.msk_cmd.mid_s.val[1] == mid.b[2] )&&
+[; ;vlf_comms2.c: 291: ( vtx.u.msk_cmd.mid_s.val[0] == mid.b[3] ) )
 [e $ ! && && == -> *U + &U . . . . _vtx 7 3 0 0 * -> -> -> 2 `i `ui `ux -> -> # `Xuc `ui `ux `i -> *U + &U . _mid 0 * -> -> -> 1 `i `ui `ux -> -> # `uc `ui `ux `i == -> *U + &U . . . . _vtx 7 3 0 0 * -> -> -> 1 `i `ui `ux -> -> # `Xuc `ui `ux `i -> *U + &U . _mid 0 * -> -> -> 2 `i `ui `ux -> -> # `uc `ui `ux `i == -> *U + &U . . . . _vtx 7 3 0 0 * -> -> -> 0 `i `ui `ux -> -> # `Xuc `ui `ux `i -> *U + &U . _mid 0 * -> -> -> 3 `i `ui `ux -> -> # `uc `ui `ux `i 71 ]
-[; ;vlf_comms2.c: 297: {
-[; ;vlf_comms2.c: 298: delay_ms( ((8*85)+20) * 2 );
-"298
+[; ;vlf_comms2.c: 292: {
+[; ;vlf_comms2.c: 293: delay_ms( ((8*85)+20) * 2 );
+"293
 [e ( _delay_ms (1 -> * + * -> 8 `i -> 85 `i -> 20 `i -> 2 `i `us ]
-[; ;vlf_comms2.c: 300: if( lamp_state != LAMP_SEARCH_IN_PROGRESS )
-"300
+[; ;vlf_comms2.c: 295: if( lamp_state != LAMP_SEARCH_IN_PROGRESS )
+"295
 [e $ ! != -> _lamp_state `i -> . `E914 2 `i 72 ]
-[; ;vlf_comms2.c: 301: { lamp_state = LAMP_SEARCH_IN_PROGRESS;
-"301
+[; ;vlf_comms2.c: 296: { lamp_state = LAMP_SEARCH_IN_PROGRESS;
+"296
 [e = _lamp_state -> . `E914 2 `uc ]
-[; ;vlf_comms2.c: 302: lamp_timeout = (timer.cnt + (ushort)((ushort)( 3*60*(15.2588))));
-"302
+[; ;vlf_comms2.c: 297: lamp_timeout = (timer.cnt + (ushort)((ushort)( 3*60*(15.2588))));
+"297
 [v _lamp_timeout `us 0 e ]
 [v _timer `VS11 0 e ]
 [e = _lamp_timeout -> + -> . _timer 2 `ui -> -> * -> * -> 3 `i -> 60 `i `d .15.2588 `us `ui `us ]
-"303
+"298
 [e :U 72 ]
-[; ;vlf_comms2.c: 303: }
-[; ;vlf_comms2.c: 304: vtx.seq = vtx.u.msk_cmd.seq;
-"304
+[; ;vlf_comms2.c: 298: }
+[; ;vlf_comms2.c: 299: vtx.seq = vtx.u.msk_cmd.seq;
+"299
 [e = . _vtx 4 . . . _vtx 7 3 2 ]
-[; ;vlf_comms2.c: 305: vtx.sid = vtx.u.msk_cmd.sid;
-"305
+[; ;vlf_comms2.c: 300: vtx.sid = vtx.u.msk_cmd.sid;
+"300
 [e = . _vtx 5 . . . _vtx 7 3 1 ]
-[; ;vlf_comms2.c: 306: VLF_SendGeneric();
-"306
+[; ;vlf_comms2.c: 301: VLF_SendGeneric();
+"301
 [v _VLF_SendGeneric `(v 0 ef ]
 [e ( _VLF_SendGeneric ..  ]
-[; ;vlf_comms2.c: 307: return( 0 );
-"307
+[; ;vlf_comms2.c: 302: return( 0 );
+"302
 [e ) -> -> 0 `i `uc ]
 [e $UE 60 ]
-"308
+"303
 [e :U 71 ]
-[; ;vlf_comms2.c: 308: }
-[; ;vlf_comms2.c: 309: break;
-"309
+[; ;vlf_comms2.c: 303: }
+[; ;vlf_comms2.c: 304: break;
+"304
 [e $U 63 ]
-[; ;vlf_comms2.c: 311: case VLF_MU_QUICK_SEARCH_X:
-"311
+[; ;vlf_comms2.c: 306: case VLF_MU_QUICK_SEARCH_X:
+"306
 [e :U 73 ]
-[; ;vlf_comms2.c: 312: delay_ms( ((3*85)+20) );
-"312
+[; ;vlf_comms2.c: 307: delay_ms( ((3*85)+20) );
+"307
 [e ( _delay_ms (1 -> + * -> 3 `i -> 85 `i -> 20 `i `us ]
-[; ;vlf_comms2.c: 314: case VLF_MU_QUICK_SEARCH_Y:
-"314
+[; ;vlf_comms2.c: 309: case VLF_MU_QUICK_SEARCH_Y:
+"309
 [e :U 74 ]
-[; ;vlf_comms2.c: 315: delay_ms( ((3*85)+20) );
-"315
+[; ;vlf_comms2.c: 310: delay_ms( ((3*85)+20) );
+"310
 [e ( _delay_ms (1 -> + * -> 3 `i -> 85 `i -> 20 `i `us ]
-[; ;vlf_comms2.c: 317: case VLF_MU_QUICK_SEARCH_Z:
-"317
+[; ;vlf_comms2.c: 312: case VLF_MU_QUICK_SEARCH_Z:
+"312
 [e :U 75 ]
-[; ;vlf_comms2.c: 319: if( lamp_state == LAMP_VLF_BLOCKED_STATE )
-"319
+[; ;vlf_comms2.c: 314: if( lamp_state == LAMP_VLF_BLOCKED_STATE )
+"314
 [e $ ! == -> _lamp_state `i -> . `E914 8 `i 76 ]
-[; ;vlf_comms2.c: 320: VLF_StartReceiver();
-"320
+[; ;vlf_comms2.c: 315: VLF_StartReceiver();
+"315
 [e ( _VLF_StartReceiver ..  ]
 [e $U 77 ]
-"321
+"316
 [e :U 76 ]
-[; ;vlf_comms2.c: 321: else
-[; ;vlf_comms2.c: 322: VLF_ReplyToBroadcastRequest( 5 );
-"322
+[; ;vlf_comms2.c: 316: else
+[; ;vlf_comms2.c: 317: VLF_ReplyToBroadcastRequest( 5 );
+"317
 [e ( _VLF_ReplyToBroadcastRequest (1 -> -> 5 `i `uc ]
 [e :U 77 ]
-[; ;vlf_comms2.c: 323: return( 0 );
-"323
+[; ;vlf_comms2.c: 318: return( 0 );
+"318
 [e ) -> -> 0 `i `uc ]
 [e $UE 60 ]
-[; ;vlf_comms2.c: 325: case VLF_MU_LOCATE:
-"325
+[; ;vlf_comms2.c: 320: case VLF_MU_LOCATE:
+"320
 [e :U 78 ]
-[; ;vlf_comms2.c: 326: if(
-"329
-[; ;vlf_comms2.c: 327: ( vtx.u.msk_cmd.mid_s.val[2] == mid.b[1]) &&
-[; ;vlf_comms2.c: 328: ( vtx.u.msk_cmd.mid_s.val[1] == mid.b[2]) &&
-[; ;vlf_comms2.c: 329: ( vtx.u.msk_cmd.mid_s.val[0] == mid.b[3]) )
+[; ;vlf_comms2.c: 321: if(
+"324
+[; ;vlf_comms2.c: 322: ( vtx.u.msk_cmd.mid_s.val[2] == mid.b[1]) &&
+[; ;vlf_comms2.c: 323: ( vtx.u.msk_cmd.mid_s.val[1] == mid.b[2]) &&
+[; ;vlf_comms2.c: 324: ( vtx.u.msk_cmd.mid_s.val[0] == mid.b[3]) )
 [e $ ! && && == -> *U + &U . . . . _vtx 7 3 0 0 * -> -> -> 2 `i `ui `ux -> -> # `Xuc `ui `ux `i -> *U + &U . _mid 0 * -> -> -> 1 `i `ui `ux -> -> # `uc `ui `ux `i == -> *U + &U . . . . _vtx 7 3 0 0 * -> -> -> 1 `i `ui `ux -> -> # `Xuc `ui `ux `i -> *U + &U . _mid 0 * -> -> -> 2 `i `ui `ux -> -> # `uc `ui `ux `i == -> *U + &U . . . . _vtx 7 3 0 0 * -> -> -> 0 `i `ui `ux -> -> # `Xuc `ui `ux `i -> *U + &U . _mid 0 * -> -> -> 3 `i `ui `ux -> -> # `uc `ui `ux `i 79 ]
-[; ;vlf_comms2.c: 330: { delay_ms( ((7*85)+20) * 2 );
-"330
+[; ;vlf_comms2.c: 325: { delay_ms( ((7*85)+20) * 2 );
+"325
 [e ( _delay_ms (1 -> * + * -> 7 `i -> 85 `i -> 20 `i -> 2 `i `us ]
-[; ;vlf_comms2.c: 331: VLF_ReplyLocateRequest( vtx.u.loc_cmd.duration );
-"331
+[; ;vlf_comms2.c: 326: VLF_ReplyLocateRequest( vtx.u.loc_cmd.duration );
+"326
 [v _VLF_ReplyLocateRequest `(v 0 ef1`uc ]
 [e ( _VLF_ReplyLocateRequest (1 . . . _vtx 7 2 1 ]
-[; ;vlf_comms2.c: 332: VLF_StartReceiver();
-"332
+[; ;vlf_comms2.c: 327: VLF_StartReceiver();
+"327
 [e ( _VLF_StartReceiver ..  ]
-[; ;vlf_comms2.c: 333: return( 0 );
-"333
+[; ;vlf_comms2.c: 328: return( 0 );
+"328
 [e ) -> -> 0 `i `uc ]
 [e $UE 60 ]
-"334
+"329
 [e :U 79 ]
-[; ;vlf_comms2.c: 334: }
-[; ;vlf_comms2.c: 335: break;
-"335
+[; ;vlf_comms2.c: 329: }
+[; ;vlf_comms2.c: 330: break;
+"330
 [e $U 63 ]
-[; ;vlf_comms2.c: 337: case VLF_MU_TEST:
-"337
+[; ;vlf_comms2.c: 332: case VLF_MU_TEST:
+"332
 [e :U 80 ]
-[; ;vlf_comms2.c: 339: VLF_SendGeneric();
-"339
+[; ;vlf_comms2.c: 334: VLF_SendGeneric();
+"334
 [e ( _VLF_SendGeneric ..  ]
-[; ;vlf_comms2.c: 341: return( 0 );
-"341
+[; ;vlf_comms2.c: 336: return( 0 );
+"336
 [e ) -> -> 0 `i `uc ]
 [e $UE 60 ]
-[; ;vlf_comms2.c: 344: case VLF_MU_MASK_FULL:
-"344
+[; ;vlf_comms2.c: 339: case VLF_MU_MASK_FULL:
+"339
 [e :U 81 ]
-[; ;vlf_comms2.c: 345: if(
-"348
-[; ;vlf_comms2.c: 346: ( vtx.u.msk_full_cmd.mid_s.val[2] == mid.b[1] )&&
-[; ;vlf_comms2.c: 347: ( vtx.u.msk_full_cmd.mid_s.val[1] == mid.b[2] )&&
-[; ;vlf_comms2.c: 348: ( vtx.u.msk_full_cmd.mid_s.val[0] == mid.b[3] ) )
+[; ;vlf_comms2.c: 340: if(
+"343
+[; ;vlf_comms2.c: 341: ( vtx.u.msk_full_cmd.mid_s.val[2] == mid.b[1] )&&
+[; ;vlf_comms2.c: 342: ( vtx.u.msk_full_cmd.mid_s.val[1] == mid.b[2] )&&
+[; ;vlf_comms2.c: 343: ( vtx.u.msk_full_cmd.mid_s.val[0] == mid.b[3] ) )
 [e $ ! && && == -> *U + &U . . . . _vtx 7 4 0 0 * -> -> -> 2 `i `ui `ux -> -> # `Xuc `ui `ux `i -> *U + &U . _mid 0 * -> -> -> 1 `i `ui `ux -> -> # `uc `ui `ux `i == -> *U + &U . . . . _vtx 7 4 0 0 * -> -> -> 1 `i `ui `ux -> -> # `Xuc `ui `ux `i -> *U + &U . _mid 0 * -> -> -> 2 `i `ui `ux -> -> # `uc `ui `ux `i == -> *U + &U . . . . _vtx 7 4 0 0 * -> -> -> 0 `i `ui `ux -> -> # `Xuc `ui `ux `i -> *U + &U . _mid 0 * -> -> -> 3 `i `ui `ux -> -> # `uc `ui `ux `i 82 ]
-[; ;vlf_comms2.c: 349: {
-[; ;vlf_comms2.c: 350: delay_ms( ((8*85)+20) * 2 );
-"350
+[; ;vlf_comms2.c: 344: {
+[; ;vlf_comms2.c: 345: delay_ms( ((8*85)+20) * 2 );
+"345
 [e ( _delay_ms (1 -> * + * -> 8 `i -> 85 `i -> 20 `i -> 2 `i `us ]
-[; ;vlf_comms2.c: 352: lamp_min_cnt = vtx.u.msk_full_cmd.timer;
-"352
+[; ;vlf_comms2.c: 347: lamp_min_cnt = vtx.u.msk_full_cmd.timer;
+"347
 [v _lamp_min_cnt `uc 0 e ]
 [e = _lamp_min_cnt . . . _vtx 7 4 1 ]
-[; ;vlf_comms2.c: 353: if( lamp_min_cnt )
-"353
+[; ;vlf_comms2.c: 348: if( lamp_min_cnt )
+"348
 [e $ ! != -> _lamp_min_cnt `i -> -> -> 0 `i `uc `i 83 ]
-[; ;vlf_comms2.c: 354: { lamp_state = LAMP_VLF_BLOCKED_STATE;
-"354
+[; ;vlf_comms2.c: 349: { lamp_state = LAMP_VLF_BLOCKED_STATE;
+"349
 [e = _lamp_state -> . `E914 8 `uc ]
-[; ;vlf_comms2.c: 355: lamp_timeout = (timer.cnt + (ushort)((ushort)( 60*(15.2588))));
-"355
+[; ;vlf_comms2.c: 350: lamp_timeout = (timer.cnt + (ushort)((ushort)( 60*(15.2588))));
+"350
 [e = _lamp_timeout -> + -> . _timer 2 `ui -> -> * -> -> 60 `i `d .15.2588 `us `ui `us ]
-"356
-[; ;vlf_comms2.c: 356: }
+"351
+[; ;vlf_comms2.c: 351: }
 [e $U 84 ]
-"357
+"352
 [e :U 83 ]
-[; ;vlf_comms2.c: 357: else
-[; ;vlf_comms2.c: 358: { lamp_state = LAMP_NORMAL_STATE;
-"358
+[; ;vlf_comms2.c: 352: else
+[; ;vlf_comms2.c: 353: { lamp_state = LAMP_NORMAL_STATE;
+"353
 [e = _lamp_state -> . `E914 10 `uc ]
-[; ;vlf_comms2.c: 360: RC1 = ( mu_flags & (0x04) ) ? 1 : 0;
-"360
+[; ;vlf_comms2.c: 355: RC1 = ( mu_flags & (0x04) ) ? 1 : 0;
+"355
 [e = _RC1 -> ? != & -> _mu_flags `i -> 4 `i -> 0 `i : -> 1 `i -> 0 `i `b ]
-"364
+"359
 [e :U 84 ]
-[; ;vlf_comms2.c: 364: }
-[; ;vlf_comms2.c: 365: VLF_SendGeneric();
-"365
+[; ;vlf_comms2.c: 359: }
+[; ;vlf_comms2.c: 360: VLF_SendGeneric();
+"360
 [e ( _VLF_SendGeneric ..  ]
-[; ;vlf_comms2.c: 366: return( 0 );
-"366
+[; ;vlf_comms2.c: 361: return( 0 );
+"361
 [e ) -> -> 0 `i `uc ]
 [e $UE 60 ]
-"367
+"362
 [e :U 82 ]
-[; ;vlf_comms2.c: 367: }
-[; ;vlf_comms2.c: 368: break;
-"368
+[; ;vlf_comms2.c: 362: }
+[; ;vlf_comms2.c: 363: break;
+"363
 [e $U 63 ]
-[; ;vlf_comms2.c: 401: default:
-"401
+[; ;vlf_comms2.c: 396: default:
+"396
 [e :U 85 ]
-[; ;vlf_comms2.c: 402: VLF_StartReceiver();
-"402
+[; ;vlf_comms2.c: 397: VLF_StartReceiver();
+"397
 [e ( _VLF_StartReceiver ..  ]
-[; ;vlf_comms2.c: 403: return( 3 );
-"403
+[; ;vlf_comms2.c: 398: return( 3 );
+"398
 [e ) -> -> 3 `i `uc ]
 [e $UE 60 ]
-"405
-[; ;vlf_comms2.c: 405: }
+"400
+[; ;vlf_comms2.c: 400: }
 [e $U 63 ]
-"248
+"243
 [e :U 64 ]
 [e [\ . _vtx 6 , $ -> . `E945 0 `uc 65
  , $ -> . `E945 1 `uc 70
@@ -1687,491 +1677,491 @@ Version 3.2 HI-TECH Software Intermediate Code
  , $ -> . `E945 7 `uc 80
  , $ -> . `E945 8 `uc 81
  85 ]
-"405
+"400
 [e :U 63 ]
-[; ;vlf_comms2.c: 406: VLF_StartReceiver();
-"406
+[; ;vlf_comms2.c: 401: VLF_StartReceiver();
+"401
 [e ( _VLF_StartReceiver ..  ]
-[; ;vlf_comms2.c: 407: return( 0 );
-"407
+[; ;vlf_comms2.c: 402: return( 0 );
+"402
 [e ) -> -> 0 `i `uc ]
 [e $UE 60 ]
-"408
-[; ;vlf_comms2.c: 408: }
+"403
+[; ;vlf_comms2.c: 403: }
 [e :UE 60 ]
 }
-"420
+"415
 [v _VLF_ProcessBitRead `(uc 1 ef ]
 {
 [e :U _VLF_ProcessBitRead ]
 [f ]
-[; ;vlf_comms2.c: 419: char VLF_ProcessBitRead(void)
-[; ;vlf_comms2.c: 420: {
-"421
+[; ;vlf_comms2.c: 414: char VLF_ProcessBitRead(void)
+[; ;vlf_comms2.c: 415: {
+"416
 [v _ii `uc 1 A ]
-[; ;vlf_comms2.c: 421: register BYTE ii;
-[; ;vlf_comms2.c: 424: vrx.state = VLF_RX_APS;
-"424
+[; ;vlf_comms2.c: 416: register BYTE ii;
+[; ;vlf_comms2.c: 419: vrx.state = VLF_RX_APS;
+"419
 [e = . _vrx 0 -> . `E1038 0 `uc ]
-[; ;vlf_comms2.c: 427: switch( vrx.state )
-"427
+[; ;vlf_comms2.c: 422: switch( vrx.state )
+"422
 [e $U 88 ]
-[; ;vlf_comms2.c: 428: {
-[; ;vlf_comms2.c: 431: case VLF_RX_APS:
-"431
+[; ;vlf_comms2.c: 423: {
+[; ;vlf_comms2.c: 426: case VLF_RX_APS:
+"426
 [e :U 89 ]
-[; ;vlf_comms2.c: 432: {
-[; ;vlf_comms2.c: 433: if( vrx.cnt >= (10 *(4)) )
-"433
-[e $ ! >= -> . _vrx 1 `i * -> 10 `i -> 4 `i 90 ]
-[; ;vlf_comms2.c: 434: {
-[; ;vlf_comms2.c: 435: for( ii = 0, vrx.unlocked = 0, vrx.preamble_score = 0;
-"435
+[; ;vlf_comms2.c: 427: {
+[; ;vlf_comms2.c: 428: if( vrx.cnt >= (5 *(4)) )
+"428
+[e $ ! >= -> . _vrx 1 `i * -> 5 `i -> 4 `i 90 ]
+[; ;vlf_comms2.c: 429: {
+[; ;vlf_comms2.c: 430: for( ii = 0, vrx.unlocked = 0, vrx.preamble_score = 0;
+"430
 [e ; ; = _ii -> -> 0 `i `uc = . _vrx 8 -> -> 0 `i `uc = . _vrx 5 -> -> 0 `i `us ]
-[; ;vlf_comms2.c: 436: ( ii < 10 )&&( !vrx.unlocked ); ii++ )
+[; ;vlf_comms2.c: 431: ( ii < 5 )&&( !vrx.unlocked ); ii++ )
 [e $U 94 ]
-"437
+"432
 [e :U 91 ]
-[; ;vlf_comms2.c: 437: {
-[; ;vlf_comms2.c: 438: vrx.score = vrx.preamble[ (ii<<2) ] +
-"441
-[; ;vlf_comms2.c: 439: vrx.preamble[ (ii<<2) + 1 ] +
-[; ;vlf_comms2.c: 440: vrx.preamble[ (ii<<2) + 2 ] +
-[; ;vlf_comms2.c: 441: vrx.preamble[ (ii<<2) + 3 ];
+[; ;vlf_comms2.c: 432: {
+[; ;vlf_comms2.c: 433: vrx.score = vrx.preamble[ (ii<<2) ] +
+"436
+[; ;vlf_comms2.c: 434: vrx.preamble[ (ii<<2) + 1 ] +
+[; ;vlf_comms2.c: 435: vrx.preamble[ (ii<<2) + 2 ] +
+[; ;vlf_comms2.c: 436: vrx.preamble[ (ii<<2) + 3 ];
 [e = . _vrx 7 -> + + + -> *U + &U . _vrx 9 * -> -> << -> _ii `i -> 2 `i `ui `ux -> -> # `Xuc `ui `ux `i -> *U + &U . _vrx 9 * -> -> + << -> _ii `i -> 2 `i -> 1 `i `ui `ux -> -> # `Xuc `ui `ux `i -> *U + &U . _vrx 9 * -> -> + << -> _ii `i -> 2 `i -> 2 `i `ui `ux -> -> # `Xuc `ui `ux `i -> *U + &U . _vrx 9 * -> -> + << -> _ii `i -> 2 `i -> 3 `i `ui `ux -> -> # `Xuc `ui `ux `i `uc ]
-[; ;vlf_comms2.c: 443: vrx.score >>= 3;
-"443
+[; ;vlf_comms2.c: 438: vrx.score >>= 3;
+"438
 [e =>> . _vrx 7 -> 3 `i ]
-[; ;vlf_comms2.c: 445: if( aps_preamble[ii] )
-"445
+[; ;vlf_comms2.c: 440: if( aps_preamble[ii] )
+"440
 [e $ ! != -> *U + &U _aps_preamble * -> _ii `ux -> -> # `Cuc `ui `ux `i -> -> -> 0 `i `Cuc `i 95 ]
-[; ;vlf_comms2.c: 446: { if( vrx.score <= 3 )
-"446
+[; ;vlf_comms2.c: 441: { if( vrx.score <= 3 )
+"441
 [e $ ! <= -> . _vrx 7 `i -> 3 `i 96 ]
-[; ;vlf_comms2.c: 447: vrx.unlocked = 1;
-"447
+[; ;vlf_comms2.c: 442: vrx.unlocked = 1;
+"442
 [e = . _vrx 8 -> -> 1 `i `uc ]
 [e $U 97 ]
-"448
+"443
 [e :U 96 ]
-[; ;vlf_comms2.c: 448: else
-[; ;vlf_comms2.c: 449: vrx.preamble_score += ((((8000)/(100)) >> 3) - vrx.score );
-"449
+[; ;vlf_comms2.c: 443: else
+[; ;vlf_comms2.c: 444: vrx.preamble_score += ((((8000)/(100)) >> 3) - vrx.score );
+"444
 [e =+ . _vrx 5 -> - >> / -> 8000 `i -> 100 `i -> 3 `i -> . _vrx 7 `i `us ]
 [e :U 97 ]
-"450
-[; ;vlf_comms2.c: 450: }
+"445
+[; ;vlf_comms2.c: 445: }
 [e $U 98 ]
-"451
+"446
 [e :U 95 ]
-[; ;vlf_comms2.c: 451: else
-[; ;vlf_comms2.c: 452: { if( vrx.score >= 2 )
-"452
+[; ;vlf_comms2.c: 446: else
+[; ;vlf_comms2.c: 447: { if( vrx.score >= 2 )
+"447
 [e $ ! >= -> . _vrx 7 `i -> 2 `i 99 ]
-[; ;vlf_comms2.c: 453: vrx.unlocked = 1;
-"453
+[; ;vlf_comms2.c: 448: vrx.unlocked = 1;
+"448
 [e = . _vrx 8 -> -> 1 `i `uc ]
 [e $U 100 ]
-"454
+"449
 [e :U 99 ]
-[; ;vlf_comms2.c: 454: else
-[; ;vlf_comms2.c: 455: vrx.preamble_score += vrx.score;
-"455
+[; ;vlf_comms2.c: 449: else
+[; ;vlf_comms2.c: 450: vrx.preamble_score += vrx.score;
+"450
 [e =+ . _vrx 5 -> . _vrx 7 `us ]
 [e :U 100 ]
-"456
+"451
 [e :U 98 ]
-"436
+"431
 [e ++ _ii -> -> 1 `i `uc ]
 [e :U 94 ]
-[e $ && < -> _ii `i -> 10 `i ! != -> . _vrx 8 `i -> -> -> 0 `i `Xuc `i 91 ]
+[e $ && < -> _ii `i -> 5 `i ! != -> . _vrx 8 `i -> -> -> 0 `i `Xuc `i 91 ]
 [e :U 92 ]
-[; ;vlf_comms2.c: 456: }
-[; ;vlf_comms2.c: 457: }
-[; ;vlf_comms2.c: 459: if( vrx.prev_preamble_score != 0xFFFF )
-"459
+[; ;vlf_comms2.c: 451: }
+[; ;vlf_comms2.c: 452: }
+[; ;vlf_comms2.c: 454: if( vrx.prev_preamble_score != 0xFFFF )
+"454
 [e $ ! != -> . _vrx 6 `ui -> 65535 `ui 101 ]
-[; ;vlf_comms2.c: 460: { if( ( vrx.unlocked )||( vrx.preamble_score > vrx.prev_preamble_score ) )
-"460
+[; ;vlf_comms2.c: 455: { if( ( vrx.unlocked )||( vrx.preamble_score > vrx.prev_preamble_score ) )
+"455
 [e $ ! || != -> . _vrx 8 `i -> -> -> 0 `i `Xuc `i > -> . _vrx 5 `ui -> . _vrx 6 `ui 102 ]
-[; ;vlf_comms2.c: 461: {
-[; ;vlf_comms2.c: 462: vrx.cnt = 1;
-"462
+[; ;vlf_comms2.c: 456: {
+[; ;vlf_comms2.c: 457: vrx.cnt = 1;
+"457
 [e = . _vrx 1 -> -> 1 `i `uc ]
-[; ;vlf_comms2.c: 463: vrx.prev_preamble_score = 0xFFFF;
-"463
+[; ;vlf_comms2.c: 458: vrx.prev_preamble_score = 0xFFFF;
+"458
 [e = . _vrx 6 -> -> 65535 `ui `us ]
-[; ;vlf_comms2.c: 464: RB0 ^= 1;
-"464
+[; ;vlf_comms2.c: 459: RB0 ^= 1;
+"459
 [e =^ _RB0 -> -> 1 `i `b ]
-[; ;vlf_comms2.c: 466: if(vrx.flags.aps.combiner == (0))
-"466
+[; ;vlf_comms2.c: 461: if(vrx.flags.aps.combiner == (0))
+"461
 [e $ ! == -> . . . _vrx 10 0 4 `i -> 0 `i 103 ]
-[; ;vlf_comms2.c: 467: {
-[; ;vlf_comms2.c: 469: mu_flags |= (0x80);
-"469
+[; ;vlf_comms2.c: 462: {
+[; ;vlf_comms2.c: 464: mu_flags |= (0x80);
+"464
 [e =| _mu_flags -> -> 128 `i `uc ]
-[; ;vlf_comms2.c: 471: if( lamp_state == LAMP_NORMAL_STATE )
-"471
+[; ;vlf_comms2.c: 466: if( lamp_state == LAMP_NORMAL_STATE )
+"466
 [e $ ! == -> _lamp_state `i -> . `E914 10 `i 104 ]
-[; ;vlf_comms2.c: 472: {
-[; ;vlf_comms2.c: 473: lamp_state = LAMP_IDENTIFY;
-"473
+[; ;vlf_comms2.c: 467: {
+[; ;vlf_comms2.c: 468: lamp_state = LAMP_IDENTIFY;
+"468
 [e = _lamp_state -> . `E914 4 `uc ]
-[; ;vlf_comms2.c: 474: lamp_timeout = (timer.cnt + (ushort)((ushort)( 1*(15.2588))));
-"474
+[; ;vlf_comms2.c: 469: lamp_timeout = (timer.cnt + (ushort)((ushort)( 1*(15.2588))));
+"469
 [e = _lamp_timeout -> + -> . _timer 2 `ui -> -> * -> -> 1 `i `d .15.2588 `us `ui `us ]
-"475
+"470
 [e :U 104 ]
-"476
+"471
 [e :U 103 ]
-[; ;vlf_comms2.c: 475: }
-[; ;vlf_comms2.c: 476: }
-[; ;vlf_comms2.c: 477: mu_flags |= (0x80);
-"477
+[; ;vlf_comms2.c: 470: }
+[; ;vlf_comms2.c: 471: }
+[; ;vlf_comms2.c: 472: mu_flags |= (0x80);
+"472
 [e =| _mu_flags -> -> 128 `i `uc ]
-"478
-[; ;vlf_comms2.c: 478: }
+"473
+[; ;vlf_comms2.c: 473: }
 [e $U 105 ]
-"479
+"474
 [e :U 102 ]
-[; ;vlf_comms2.c: 479: else
-[; ;vlf_comms2.c: 480: vrx.prev_preamble_score = vrx.preamble_score;
-"480
+[; ;vlf_comms2.c: 474: else
+[; ;vlf_comms2.c: 475: vrx.prev_preamble_score = vrx.preamble_score;
+"475
 [e = . _vrx 6 . _vrx 5 ]
 [e :U 105 ]
-"481
-[; ;vlf_comms2.c: 481: }
+"476
+[; ;vlf_comms2.c: 476: }
 [e $U 106 ]
-"482
+"477
 [e :U 101 ]
-[; ;vlf_comms2.c: 482: else if( !vrx.unlocked )
+[; ;vlf_comms2.c: 477: else if( !vrx.unlocked )
 [e $ ! ! != -> . _vrx 8 `i -> -> -> 0 `i `Xuc `i 107 ]
-[; ;vlf_comms2.c: 483: {
-[; ;vlf_comms2.c: 484: vrx.prev_preamble_score = vrx.preamble_score;
-"484
+[; ;vlf_comms2.c: 478: {
+[; ;vlf_comms2.c: 479: vrx.prev_preamble_score = vrx.preamble_score;
+"479
 [e = . _vrx 6 . _vrx 5 ]
-"485
+"480
 [e :U 107 ]
-"486
+"481
 [e :U 106 ]
-[; ;vlf_comms2.c: 485: }
-[; ;vlf_comms2.c: 486: }
+[; ;vlf_comms2.c: 480: }
+[; ;vlf_comms2.c: 481: }
 [e $U 108 ]
-"487
+"482
 [e :U 90 ]
-[; ;vlf_comms2.c: 487: else
-[; ;vlf_comms2.c: 488: vrx.cnt++;
-"488
+[; ;vlf_comms2.c: 482: else
+[; ;vlf_comms2.c: 483: vrx.cnt++;
+"483
 [e ++ . _vrx 1 -> -> 1 `i `uc ]
 [e :U 108 ]
-[; ;vlf_comms2.c: 493: }
-[; ;vlf_comms2.c: 494: break;
-"494
+[; ;vlf_comms2.c: 488: }
+[; ;vlf_comms2.c: 489: break;
+"489
 [e $U 87 ]
-[; ;vlf_comms2.c: 497: case VLF_RX_SEEKING:
-"497
+[; ;vlf_comms2.c: 492: case VLF_RX_SEEKING:
+"492
 [e :U 109 ]
-[; ;vlf_comms2.c: 499: {
-[; ;vlf_comms2.c: 500: if( vrx.cnt >= (12*(4)) )
-"500
+[; ;vlf_comms2.c: 494: {
+[; ;vlf_comms2.c: 495: if( vrx.cnt >= (12*(4)) )
+"495
 [e $ ! >= -> . _vrx 1 `i * -> 12 `i -> 4 `i 110 ]
-[; ;vlf_comms2.c: 501: {
-[; ;vlf_comms2.c: 502: for( ii = 0, vrx.unlocked = 0, vrx.preamble_score = 0;
-"502
+[; ;vlf_comms2.c: 496: {
+[; ;vlf_comms2.c: 497: for( ii = 0, vrx.unlocked = 0, vrx.preamble_score = 0;
+"497
 [e ; ; = _ii -> -> 0 `i `uc = . _vrx 8 -> -> 0 `i `uc = . _vrx 5 -> -> 0 `i `us ]
-[; ;vlf_comms2.c: 503: ( ii < 12 )&&( !vrx.unlocked ); ii++ )
+[; ;vlf_comms2.c: 498: ( ii < 12 )&&( !vrx.unlocked ); ii++ )
 [e $U 114 ]
-"504
+"499
 [e :U 111 ]
-[; ;vlf_comms2.c: 504: {
-[; ;vlf_comms2.c: 513: vrx.score = vrx.preamble[ (ii<<2) ] +
-"516
-[; ;vlf_comms2.c: 514: vrx.preamble[ (ii<<2) + 1 ] +
-[; ;vlf_comms2.c: 515: vrx.preamble[ (ii<<2) + 2 ] +
-[; ;vlf_comms2.c: 516: vrx.preamble[ (ii<<2) + 3 ];
+[; ;vlf_comms2.c: 499: {
+[; ;vlf_comms2.c: 508: vrx.score = vrx.preamble[ (ii<<2) ] +
+"511
+[; ;vlf_comms2.c: 509: vrx.preamble[ (ii<<2) + 1 ] +
+[; ;vlf_comms2.c: 510: vrx.preamble[ (ii<<2) + 2 ] +
+[; ;vlf_comms2.c: 511: vrx.preamble[ (ii<<2) + 3 ];
 [e = . _vrx 7 -> + + + -> *U + &U . _vrx 9 * -> -> << -> _ii `i -> 2 `i `ui `ux -> -> # `Xuc `ui `ux `i -> *U + &U . _vrx 9 * -> -> + << -> _ii `i -> 2 `i -> 1 `i `ui `ux -> -> # `Xuc `ui `ux `i -> *U + &U . _vrx 9 * -> -> + << -> _ii `i -> 2 `i -> 2 `i `ui `ux -> -> # `Xuc `ui `ux `i -> *U + &U . _vrx 9 * -> -> + << -> _ii `i -> 2 `i -> 3 `i `ui `ux -> -> # `Xuc `ui `ux `i `uc ]
-[; ;vlf_comms2.c: 518: vrx.score >>= 3;
-"518
+[; ;vlf_comms2.c: 513: vrx.score >>= 3;
+"513
 [e =>> . _vrx 7 -> 3 `i ]
-[; ;vlf_comms2.c: 534: if( su2mu_preamble[ii] )
-"534
+[; ;vlf_comms2.c: 529: if( su2mu_preamble[ii] )
+"529
 [e $ ! != -> *U + &U _su2mu_preamble * -> _ii `ux -> -> # `Cuc `ui `ux `i -> -> -> 0 `i `Cuc `i 115 ]
-[; ;vlf_comms2.c: 535: { if( vrx.score <= 3 )
-"535
+[; ;vlf_comms2.c: 530: { if( vrx.score <= 3 )
+"530
 [e $ ! <= -> . _vrx 7 `i -> 3 `i 116 ]
-[; ;vlf_comms2.c: 536: vrx.unlocked = 1;
-"536
+[; ;vlf_comms2.c: 531: vrx.unlocked = 1;
+"531
 [e = . _vrx 8 -> -> 1 `i `uc ]
 [e $U 117 ]
-"537
+"532
 [e :U 116 ]
-[; ;vlf_comms2.c: 537: else
-[; ;vlf_comms2.c: 538: vrx.preamble_score += ((((8000)/(100)) >> 3) - vrx.score );
-"538
+[; ;vlf_comms2.c: 532: else
+[; ;vlf_comms2.c: 533: vrx.preamble_score += ((((8000)/(100)) >> 3) - vrx.score );
+"533
 [e =+ . _vrx 5 -> - >> / -> 8000 `i -> 100 `i -> 3 `i -> . _vrx 7 `i `us ]
 [e :U 117 ]
-"539
-[; ;vlf_comms2.c: 539: }
+"534
+[; ;vlf_comms2.c: 534: }
 [e $U 118 ]
-"540
+"535
 [e :U 115 ]
-[; ;vlf_comms2.c: 540: else
-[; ;vlf_comms2.c: 541: { if( vrx.score >= 2 )
-"541
+[; ;vlf_comms2.c: 535: else
+[; ;vlf_comms2.c: 536: { if( vrx.score >= 2 )
+"536
 [e $ ! >= -> . _vrx 7 `i -> 2 `i 119 ]
-[; ;vlf_comms2.c: 542: vrx.unlocked = 1;
-"542
+[; ;vlf_comms2.c: 537: vrx.unlocked = 1;
+"537
 [e = . _vrx 8 -> -> 1 `i `uc ]
 [e $U 120 ]
-"543
+"538
 [e :U 119 ]
-[; ;vlf_comms2.c: 543: else
-[; ;vlf_comms2.c: 544: vrx.preamble_score += vrx.score;
-"544
+[; ;vlf_comms2.c: 538: else
+[; ;vlf_comms2.c: 539: vrx.preamble_score += vrx.score;
+"539
 [e =+ . _vrx 5 -> . _vrx 7 `us ]
 [e :U 120 ]
-"545
+"540
 [e :U 118 ]
-"503
+"498
 [e ++ _ii -> -> 1 `i `uc ]
 [e :U 114 ]
 [e $ && < -> _ii `i -> 12 `i ! != -> . _vrx 8 `i -> -> -> 0 `i `Xuc `i 111 ]
 [e :U 112 ]
-[; ;vlf_comms2.c: 545: }
-[; ;vlf_comms2.c: 546: }
-[; ;vlf_comms2.c: 548: if( vrx.prev_preamble_score != 0xFFFF )
-"548
+[; ;vlf_comms2.c: 540: }
+[; ;vlf_comms2.c: 541: }
+[; ;vlf_comms2.c: 543: if( vrx.prev_preamble_score != 0xFFFF )
+"543
 [e $ ! != -> . _vrx 6 `ui -> 65535 `ui 121 ]
-[; ;vlf_comms2.c: 549: { if( ( vrx.unlocked )||( vrx.preamble_score > vrx.prev_preamble_score ) )
-"549
+[; ;vlf_comms2.c: 544: { if( ( vrx.unlocked )||( vrx.preamble_score > vrx.prev_preamble_score ) )
+"544
 [e $ ! || != -> . _vrx 8 `i -> -> -> 0 `i `Xuc `i > -> . _vrx 5 `ui -> . _vrx 6 `ui 122 ]
-[; ;vlf_comms2.c: 550: { vrx.state = VLF_RX_LOCKED;
-"550
+[; ;vlf_comms2.c: 545: { vrx.state = VLF_RX_LOCKED;
+"545
 [e = . _vrx 0 -> . `E1038 2 `uc ]
-[; ;vlf_comms2.c: 551: vrx.cnt = 1;
-"551
+[; ;vlf_comms2.c: 546: vrx.cnt = 1;
+"546
 [e = . _vrx 1 -> -> 1 `i `uc ]
-[; ;vlf_comms2.c: 552: vrx.prev_preamble_score = 0xFFFF;
-"552
+[; ;vlf_comms2.c: 547: vrx.prev_preamble_score = 0xFFFF;
+"547
 [e = . _vrx 6 -> -> 65535 `ui `us ]
-"553
-[; ;vlf_comms2.c: 553: }
+"548
+[; ;vlf_comms2.c: 548: }
 [e $U 123 ]
-"554
+"549
 [e :U 122 ]
-[; ;vlf_comms2.c: 554: else
-[; ;vlf_comms2.c: 555: vrx.prev_preamble_score = vrx.preamble_score;
-"555
+[; ;vlf_comms2.c: 549: else
+[; ;vlf_comms2.c: 550: vrx.prev_preamble_score = vrx.preamble_score;
+"550
 [e = . _vrx 6 . _vrx 5 ]
 [e :U 123 ]
-"556
-[; ;vlf_comms2.c: 556: }
+"551
+[; ;vlf_comms2.c: 551: }
 [e $U 124 ]
-"557
+"552
 [e :U 121 ]
-[; ;vlf_comms2.c: 557: else if( !vrx.unlocked )
+[; ;vlf_comms2.c: 552: else if( !vrx.unlocked )
 [e $ ! ! != -> . _vrx 8 `i -> -> -> 0 `i `Xuc `i 125 ]
-[; ;vlf_comms2.c: 558: {
-[; ;vlf_comms2.c: 559: vrx.prev_preamble_score = vrx.preamble_score;
-"559
+[; ;vlf_comms2.c: 553: {
+[; ;vlf_comms2.c: 554: vrx.prev_preamble_score = vrx.preamble_score;
+"554
 [e = . _vrx 6 . _vrx 5 ]
-"560
+"555
 [e :U 125 ]
-"561
+"556
 [e :U 124 ]
-[; ;vlf_comms2.c: 560: }
-[; ;vlf_comms2.c: 561: }
+[; ;vlf_comms2.c: 555: }
+[; ;vlf_comms2.c: 556: }
 [e $U 126 ]
-"562
+"557
 [e :U 110 ]
-[; ;vlf_comms2.c: 562: else
-[; ;vlf_comms2.c: 563: vrx.cnt++;
-"563
+[; ;vlf_comms2.c: 557: else
+[; ;vlf_comms2.c: 558: vrx.cnt++;
+"558
 [e ++ . _vrx 1 -> -> 1 `i `uc ]
 [e :U 126 ]
-[; ;vlf_comms2.c: 576: }
-[; ;vlf_comms2.c: 579: break;
-"579
+[; ;vlf_comms2.c: 571: }
+[; ;vlf_comms2.c: 574: break;
+"574
 [e $U 87 ]
-[; ;vlf_comms2.c: 582: case VLF_RX_LOCKED:
-"582
+[; ;vlf_comms2.c: 577: case VLF_RX_LOCKED:
+"577
 [e :U 127 ]
-[; ;vlf_comms2.c: 583: vtx.type = 0x00;
-"583
+[; ;vlf_comms2.c: 578: vtx.type = 0x00;
+"578
 [e = . _vtx 6 -> -> 0 `i `uc ]
-[; ;vlf_comms2.c: 585: if( (vrx.cnt & (((4)*4) - 1) ) ==
-"586
-[; ;vlf_comms2.c: 586: (((4)*4) - 1) )
+[; ;vlf_comms2.c: 580: if( (vrx.cnt & (((4)*4) - 1) ) ==
+"581
+[; ;vlf_comms2.c: 581: (((4)*4) - 1) )
 [e $ ! == & -> . _vrx 1 `i - * -> 4 `i -> 4 `i -> 1 `i - * -> 4 `i -> 4 `i -> 1 `i 128 ]
-[; ;vlf_comms2.c: 587: {
-[; ;vlf_comms2.c: 588: for( ii = 0; (ii < 4); ii++ )
-"588
+[; ;vlf_comms2.c: 582: {
+[; ;vlf_comms2.c: 583: for( ii = 0; (ii < 4); ii++ )
+"583
 [e = _ii -> -> 0 `i `uc ]
 [e $ < -> _ii `i -> 4 `i 129 ]
 [e $U 130 ]
-"589
+"584
 [e :U 129 ]
-[; ;vlf_comms2.c: 589: {
-[; ;vlf_comms2.c: 590: vrx.score = vrx.preamble[sizeof(vrx.preamble) - ((ii << 2) + 1)] +
-"593
-[; ;vlf_comms2.c: 591: vrx.preamble[sizeof(vrx.preamble) - ((ii << 2) + 2)] +
-[; ;vlf_comms2.c: 592: vrx.preamble[sizeof(vrx.preamble) - ((ii << 2) + 3)] +
-[; ;vlf_comms2.c: 593: vrx.preamble[sizeof(vrx.preamble) - ((ii << 2) + 4)];
+[; ;vlf_comms2.c: 584: {
+[; ;vlf_comms2.c: 585: vrx.score = vrx.preamble[sizeof(vrx.preamble) - ((ii << 2) + 1)] +
+"588
+[; ;vlf_comms2.c: 586: vrx.preamble[sizeof(vrx.preamble) - ((ii << 2) + 2)] +
+[; ;vlf_comms2.c: 587: vrx.preamble[sizeof(vrx.preamble) - ((ii << 2) + 3)] +
+[; ;vlf_comms2.c: 588: vrx.preamble[sizeof(vrx.preamble) - ((ii << 2) + 4)];
 [e = . _vrx 7 -> + + + -> *U + &U . _vrx 9 * -> - * -> # `uc `ui -> * -> 12 `i -> 4 `i `ui -> + << -> _ii `i -> 2 `i -> 1 `i `ui `ux -> -> # `Xuc `ui `ux `i -> *U + &U . _vrx 9 * -> - * -> # `uc `ui -> * -> 12 `i -> 4 `i `ui -> + << -> _ii `i -> 2 `i -> 2 `i `ui `ux -> -> # `Xuc `ui `ux `i -> *U + &U . _vrx 9 * -> - * -> # `uc `ui -> * -> 12 `i -> 4 `i `ui -> + << -> _ii `i -> 2 `i -> 3 `i `ui `ux -> -> # `Xuc `ui `ux `i -> *U + &U . _vrx 9 * -> - * -> # `uc `ui -> * -> 12 `i -> 4 `i `ui -> + << -> _ii `i -> 2 `i -> 4 `i `ui `ux -> -> # `Xuc `ui `ux `i `uc ]
-[; ;vlf_comms2.c: 595: vrx.score >>= 3;
-"595
+[; ;vlf_comms2.c: 590: vrx.score >>= 3;
+"590
 [e =>> . _vrx 7 -> 3 `i ]
-[; ;vlf_comms2.c: 597: vtx.type <<= 1;
-"597
+[; ;vlf_comms2.c: 592: vtx.type <<= 1;
+"592
 [e =<< . _vtx 6 -> 1 `i ]
-[; ;vlf_comms2.c: 598: if( vrx.score >= ((((8000)/(100)) >> 3)*3/5) )
-"598
+[; ;vlf_comms2.c: 593: if( vrx.score >= ((((8000)/(100)) >> 3)*3/5) )
+"593
 [e $ ! >= -> . _vrx 7 `i / * >> / -> 8000 `i -> 100 `i -> 3 `i -> 3 `i -> 5 `i 132 ]
-[; ;vlf_comms2.c: 599: vtx.type |= 0x01;
-"599
+[; ;vlf_comms2.c: 594: vtx.type |= 0x01;
+"594
 [e =| . _vtx 6 -> -> 1 `i `uc ]
 [e :U 132 ]
-"588
+"583
 [e ++ _ii -> -> 1 `i `uc ]
 [e $ < -> _ii `i -> 4 `i 129 ]
 [e :U 130 ]
-[; ;vlf_comms2.c: 600: }
-[; ;vlf_comms2.c: 602: if( vtx.type < VLF_NO_PACKET )
-"602
+[; ;vlf_comms2.c: 595: }
+[; ;vlf_comms2.c: 597: if( vtx.type < VLF_NO_PACKET )
+"597
 [e $ ! < -> . _vtx 6 `i -> . `E945 9 `i 133 ]
-[; ;vlf_comms2.c: 603: {
-[; ;vlf_comms2.c: 604: vrx.len = ( (BYTE)(uncoded_rx_data_size[vtx.type] + 1) );
-"604
+[; ;vlf_comms2.c: 598: {
+[; ;vlf_comms2.c: 599: vrx.len = ( (BYTE)(uncoded_rx_data_size[vtx.type] + 1) );
+"599
 [e = . _vrx 2 -> + -> *U + &U _uncoded_rx_data_size * -> . _vtx 6 `ux -> -> # `Cuc `ui `ux `i -> 1 `i `uc ]
-[; ;vlf_comms2.c: 605: vrx.ptr = &vtx.u.data[0];
-"605
+[; ;vlf_comms2.c: 600: vrx.ptr = &vtx.u.data[0];
+"600
 [e = . _vrx 3 -> &U *U + &U . . _vtx 7 0 * -> -> -> 0 `i `ui `ux -> -> # `Xuc `ui `ux `X*uc ]
-[; ;vlf_comms2.c: 606: vrx.shifter = 0x01;
-"606
+[; ;vlf_comms2.c: 601: vrx.shifter = 0x01;
+"601
 [e = . _vrx 4 -> -> 1 `i `uc ]
-[; ;vlf_comms2.c: 607: vrx.state = VLF_RX_RECEIVING;
-"607
+[; ;vlf_comms2.c: 602: vrx.state = VLF_RX_RECEIVING;
+"602
 [e = . _vrx 0 -> . `E1038 3 `uc ]
-[; ;vlf_comms2.c: 608: vrx.cnt = 1;
-"608
+[; ;vlf_comms2.c: 603: vrx.cnt = 1;
+"603
 [e = . _vrx 1 -> -> 1 `i `uc ]
-"609
-[; ;vlf_comms2.c: 609: }
+"604
+[; ;vlf_comms2.c: 604: }
 [e $U 134 ]
-"610
+"605
 [e :U 133 ]
-[; ;vlf_comms2.c: 610: else
-[; ;vlf_comms2.c: 611: { vrx.state = VLF_RX_SEEKING;
-"611
+[; ;vlf_comms2.c: 605: else
+[; ;vlf_comms2.c: 606: { vrx.state = VLF_RX_SEEKING;
+"606
 [e = . _vrx 0 -> . `E1038 1 `uc ]
-[; ;vlf_comms2.c: 612: vrx.cnt = 0;
-"612
+[; ;vlf_comms2.c: 607: vrx.cnt = 0;
+"607
 [e = . _vrx 1 -> -> 0 `i `uc ]
-"617
+"612
 [e :U 134 ]
-"618
-[; ;vlf_comms2.c: 617: }
-[; ;vlf_comms2.c: 618: }
+"613
+[; ;vlf_comms2.c: 612: }
+[; ;vlf_comms2.c: 613: }
 [e $U 135 ]
-"619
+"614
 [e :U 128 ]
-[; ;vlf_comms2.c: 619: else
-[; ;vlf_comms2.c: 620: vrx.cnt++;
-"620
+[; ;vlf_comms2.c: 614: else
+[; ;vlf_comms2.c: 615: vrx.cnt++;
+"615
 [e ++ . _vrx 1 -> -> 1 `i `uc ]
 [e :U 135 ]
-[; ;vlf_comms2.c: 621: break;
-"621
+[; ;vlf_comms2.c: 616: break;
+"616
 [e $U 87 ]
-[; ;vlf_comms2.c: 624: case VLF_RX_RECEIVING:
-"624
+[; ;vlf_comms2.c: 619: case VLF_RX_RECEIVING:
+"619
 [e :U 136 ]
-[; ;vlf_comms2.c: 625: if( ( vrx.cnt & ((4) - 1) ) == ((4)-1) )
-"625
+[; ;vlf_comms2.c: 620: if( ( vrx.cnt & ((4) - 1) ) == ((4)-1) )
+"620
 [e $ ! == & -> . _vrx 1 `i - -> 4 `i -> 1 `i - -> 4 `i -> 1 `i 137 ]
-[; ;vlf_comms2.c: 626: {
-[; ;vlf_comms2.c: 627: vrx.score = vrx.preamble[sizeof(vrx.preamble) - 1] +
-"630
-[; ;vlf_comms2.c: 628: vrx.preamble[sizeof(vrx.preamble) - 2] +
-[; ;vlf_comms2.c: 629: vrx.preamble[sizeof(vrx.preamble) - 3] +
-[; ;vlf_comms2.c: 630: vrx.preamble[sizeof(vrx.preamble) - 4];
+[; ;vlf_comms2.c: 621: {
+[; ;vlf_comms2.c: 622: vrx.score = vrx.preamble[sizeof(vrx.preamble) - 1] +
+"625
+[; ;vlf_comms2.c: 623: vrx.preamble[sizeof(vrx.preamble) - 2] +
+[; ;vlf_comms2.c: 624: vrx.preamble[sizeof(vrx.preamble) - 3] +
+[; ;vlf_comms2.c: 625: vrx.preamble[sizeof(vrx.preamble) - 4];
 [e = . _vrx 7 -> + + + -> *U + &U . _vrx 9 * -> - * -> # `uc `ui -> * -> 12 `i -> 4 `i `ui -> -> 1 `i `ui `ux -> -> # `Xuc `ui `ux `i -> *U + &U . _vrx 9 * -> - * -> # `uc `ui -> * -> 12 `i -> 4 `i `ui -> -> 2 `i `ui `ux -> -> # `Xuc `ui `ux `i -> *U + &U . _vrx 9 * -> - * -> # `uc `ui -> * -> 12 `i -> 4 `i `ui -> -> 3 `i `ui `ux -> -> # `Xuc `ui `ux `i -> *U + &U . _vrx 9 * -> - * -> # `uc `ui -> * -> 12 `i -> 4 `i `ui -> -> 4 `i `ui `ux -> -> # `Xuc `ui `ux `i `uc ]
-[; ;vlf_comms2.c: 631: vrx.score >>= 3;
-"631
+[; ;vlf_comms2.c: 626: vrx.score >>= 3;
+"626
 [e =>> . _vrx 7 -> 3 `i ]
-[; ;vlf_comms2.c: 634: if ( vrx.score >= ((((8000)/(100)) >> 3)*3/5) )
-"634
+[; ;vlf_comms2.c: 629: if ( vrx.score >= ((((8000)/(100)) >> 3)*3/5) )
+"629
 [e $ ! >= -> . _vrx 7 `i / * >> / -> 8000 `i -> 100 `i -> 3 `i -> 3 `i -> 5 `i 138 ]
-[; ;vlf_comms2.c: 635: *vrx.ptr |= vrx.shifter;
-"635
+[; ;vlf_comms2.c: 630: *vrx.ptr |= vrx.shifter;
+"630
 [e =| *U . _vrx 3 . _vrx 4 ]
 [e $U 139 ]
-"636
+"631
 [e :U 138 ]
-[; ;vlf_comms2.c: 636: else
-[; ;vlf_comms2.c: 637: *vrx.ptr &= ~vrx.shifter;
-"637
+[; ;vlf_comms2.c: 631: else
+[; ;vlf_comms2.c: 632: *vrx.ptr &= ~vrx.shifter;
+"632
 [e =& *U . _vrx 3 -> ~ -> . _vrx 4 `i `uc ]
 [e :U 139 ]
-[; ;vlf_comms2.c: 639: if( vrx.shifter < 0x80 )
-"639
+[; ;vlf_comms2.c: 634: if( vrx.shifter < 0x80 )
+"634
 [e $ ! < -> . _vrx 4 `i -> 128 `i 140 ]
-[; ;vlf_comms2.c: 640: vrx.shifter <<= 1;
-"640
+[; ;vlf_comms2.c: 635: vrx.shifter <<= 1;
+"635
 [e =<< . _vrx 4 -> 1 `i ]
 [e $U 141 ]
-"641
+"636
 [e :U 140 ]
-[; ;vlf_comms2.c: 641: else
-[; ;vlf_comms2.c: 642: { vrx.shifter = 0x01;
-"642
+[; ;vlf_comms2.c: 636: else
+[; ;vlf_comms2.c: 637: { vrx.shifter = 0x01;
+"637
 [e = . _vrx 4 -> -> 1 `i `uc ]
-[; ;vlf_comms2.c: 643: vrx.ptr++;
-"643
+[; ;vlf_comms2.c: 638: vrx.ptr++;
+"638
 [e ++ . _vrx 3 * -> -> 1 `i `x -> -> # `uc `i `x ]
-[; ;vlf_comms2.c: 645: if( !(--vrx.len ) )
-"645
+[; ;vlf_comms2.c: 640: if( !(--vrx.len ) )
+"640
 [e $ ! ! != -> =- . _vrx 2 -> -> 1 `i `uc `i -> -> -> 0 `i `Xuc `i 142 ]
-[; ;vlf_comms2.c: 646: { TMR2IE = 0;
-"646
+[; ;vlf_comms2.c: 641: { TMR2IE = 0;
+"641
 [e = _TMR2IE -> -> 0 `i `b ]
-[; ;vlf_comms2.c: 647: TMR2ON = 0;
-"647
+[; ;vlf_comms2.c: 642: TMR2ON = 0;
+"642
 [e = _TMR2ON -> -> 0 `i `b ]
-[; ;vlf_comms2.c: 648: vrx.state = VLF_PACKET_READY;
-"648
+[; ;vlf_comms2.c: 643: vrx.state = VLF_PACKET_READY;
+"643
 [e = . _vrx 0 -> . `E1038 4 `uc ]
-[; ;vlf_comms2.c: 649: return( (1) );
-"649
+[; ;vlf_comms2.c: 644: return( (1) );
+"644
 [e ) -> -> 1 `i `uc ]
 [e $UE 86 ]
-"650
+"645
 [e :U 142 ]
-"651
+"646
 [e :U 141 ]
-"660
+"655
 [e :U 137 ]
-[; ;vlf_comms2.c: 650: }
-[; ;vlf_comms2.c: 651: }
-[; ;vlf_comms2.c: 660: }
-[; ;vlf_comms2.c: 661: vrx.cnt++;
-"661
+[; ;vlf_comms2.c: 645: }
+[; ;vlf_comms2.c: 646: }
+[; ;vlf_comms2.c: 655: }
+[; ;vlf_comms2.c: 656: vrx.cnt++;
+"656
 [e ++ . _vrx 1 -> -> 1 `i `uc ]
-[; ;vlf_comms2.c: 662: break;
-"662
+[; ;vlf_comms2.c: 657: break;
+"657
 [e $U 87 ]
-[; ;vlf_comms2.c: 664: case VLF_PACKET_READY:
-"664
+[; ;vlf_comms2.c: 659: case VLF_PACKET_READY:
+"659
 [e :U 143 ]
-[; ;vlf_comms2.c: 665: return( (1) );
-"665
+[; ;vlf_comms2.c: 660: return( (1) );
+"660
 [e ) -> -> 1 `i `uc ]
 [e $UE 86 ]
-"666
-[; ;vlf_comms2.c: 666: }
+"661
+[; ;vlf_comms2.c: 661: }
 [e $U 87 ]
-"427
+"422
 [e :U 88 ]
 [e [\ . _vrx 0 , $ -> . `E1038 0 `uc 89
  , $ -> . `E1038 1 `uc 109
@@ -2179,319 +2169,319 @@ Version 3.2 HI-TECH Software Intermediate Code
  , $ -> . `E1038 3 `uc 136
  , $ -> . `E1038 4 `uc 143
  87 ]
-"666
+"661
 [e :U 87 ]
-[; ;vlf_comms2.c: 669: for( ii = 0; ii < sizeof(vrx.preamble) - 1; ii++ )
-"669
+[; ;vlf_comms2.c: 664: for( ii = 0; ii < sizeof(vrx.preamble) - 1; ii++ )
+"664
 [e = _ii -> -> 0 `i `uc ]
 [e $ < -> _ii `ui - * -> # `uc `ui -> * -> 12 `i -> 4 `i `ui -> -> 1 `i `ui 144 ]
 [e $U 145 ]
-"670
+"665
 [e :U 144 ]
-[; ;vlf_comms2.c: 670: vrx.preamble[ii] = vrx.preamble[ii+1];
+[; ;vlf_comms2.c: 665: vrx.preamble[ii] = vrx.preamble[ii+1];
 [e = *U + &U . _vrx 9 * -> _ii `ux -> -> # `Xuc `ui `ux *U + &U . _vrx 9 * -> -> + -> _ii `i -> 1 `i `ui `ux -> -> # `Xuc `ui `ux ]
-"669
+"664
 [e ++ _ii -> -> 1 `i `uc ]
 [e $ < -> _ii `ui - * -> # `uc `ui -> * -> 12 `i -> 4 `i `ui -> -> 1 `i `ui 144 ]
 [e :U 145 ]
-[; ;vlf_comms2.c: 672: return( (0) );
-"672
+[; ;vlf_comms2.c: 667: return( (0) );
+"667
 [e ) -> -> 0 `i `uc ]
 [e $UE 86 ]
-"673
-[; ;vlf_comms2.c: 673: }
+"668
+[; ;vlf_comms2.c: 668: }
 [e :UE 86 ]
 }
-"682
+"677
 [v _VLF_ReplyToBroadcastRequest `(v 1 ef1`uc ]
 {
 [v _intervals `uc 1 r1 ]
 [e :U _VLF_ReplyToBroadcastRequest ]
 [f ]
-[; ;vlf_comms2.c: 681: void VLF_ReplyToBroadcastRequest( BYTE intervals )
-[; ;vlf_comms2.c: 682: {
-"683
+[; ;vlf_comms2.c: 676: void VLF_ReplyToBroadcastRequest( BYTE intervals )
+[; ;vlf_comms2.c: 677: {
+"678
 [v _rand_time_u8 `uc 1 a ]
-[; ;vlf_comms2.c: 683: BYTE rand_time_u8;
-[; ;vlf_comms2.c: 684: rand_time_u8 = rand() % intervals;
-"684
+[; ;vlf_comms2.c: 678: BYTE rand_time_u8;
+[; ;vlf_comms2.c: 679: rand_time_u8 = rand() % intervals;
+"679
 [v _rand `(i 0 ef ]
 [e = _rand_time_u8 -> % ( _rand ..  -> _intervals `i `uc ]
-[; ;vlf_comms2.c: 685: while( rand_time_u8-- )
-"685
+[; ;vlf_comms2.c: 680: while( rand_time_u8-- )
+"680
 [e $U 148 ]
 [e :U 149 ]
-[; ;vlf_comms2.c: 686: delay_ms( 290 );
-"686
+[; ;vlf_comms2.c: 681: delay_ms( 290 );
+"681
 [e ( _delay_ms (1 -> -> 290 `i `us ]
 [e :U 148 ]
-"685
+"680
 [e $ != -> -- _rand_time_u8 -> -> 1 `i `uc `i -> -> -> 0 `i `uc `i 149 ]
 [e :U 150 ]
-[; ;vlf_comms2.c: 687: VLF_SendGeneric();
-"687
+[; ;vlf_comms2.c: 682: VLF_SendGeneric();
+"682
 [e ( _VLF_SendGeneric ..  ]
-"688
-[; ;vlf_comms2.c: 688: }
+"683
+[; ;vlf_comms2.c: 683: }
 [e :UE 147 ]
 }
-"694
+"689
 [v _VLF_ReplyLocateRequest `(v 1 ef1`uc ]
 {
 [v _locate_seconds `uc 1 r1 ]
 [e :U _VLF_ReplyLocateRequest ]
 [f ]
-[; ;vlf_comms2.c: 693: void VLF_ReplyLocateRequest( uchar locate_seconds )
-[; ;vlf_comms2.c: 694: {
-"719
+[; ;vlf_comms2.c: 688: void VLF_ReplyLocateRequest( uchar locate_seconds )
+[; ;vlf_comms2.c: 689: {
+"714
 [v _timeout `us 1 a ]
-[; ;vlf_comms2.c: 719: ushort timeout;
-[; ;vlf_comms2.c: 721: locate_seconds <<= 1;
-"721
+[; ;vlf_comms2.c: 714: ushort timeout;
+[; ;vlf_comms2.c: 716: locate_seconds <<= 1;
+"716
 [e =<< _locate_seconds -> 1 `i ]
-[; ;vlf_comms2.c: 723: while( locate_seconds-- )
-"723
+[; ;vlf_comms2.c: 718: while( locate_seconds-- )
+"718
 [e $U 152 ]
 [e :U 153 ]
-[; ;vlf_comms2.c: 724: {
-[; ;vlf_comms2.c: 725: timeout = (timer.cnt + (ushort)((15.2588 + 1) / 2));
-"725
+[; ;vlf_comms2.c: 719: {
+[; ;vlf_comms2.c: 720: timeout = (timer.cnt + (ushort)((15.2588 + 1) / 2));
+"720
 [e = _timeout -> + -> . _timer 2 `ui -> -> / + .15.2588 -> -> 1 `i `d -> -> 2 `i `d `us `ui `us ]
-[; ;vlf_comms2.c: 727: VLF_SendGeneric();
-"727
+[; ;vlf_comms2.c: 722: VLF_SendGeneric();
+"722
 [e ( _VLF_SendGeneric ..  ]
-[; ;vlf_comms2.c: 728: while( vtx.state != VLF_TX_IDLE );
-"728
+[; ;vlf_comms2.c: 723: while( vtx.state != VLF_TX_IDLE );
+"723
 [e $U 155 ]
 [e :U 156 ]
 [e :U 155 ]
 [e $ != -> . _vtx 0 `i -> . `E1044 0 `i 156 ]
 [e :U 157 ]
-[; ;vlf_comms2.c: 730: while( chk_timeout( timeout ) == (0) )
-"730
+[; ;vlf_comms2.c: 725: while( chk_timeout( timeout ) == (0) )
+"725
 [v _chk_timeout `(uc 0 ef1`us ]
 [e $U 158 ]
 [e :U 159 ]
-[; ;vlf_comms2.c: 731: {
-"733
+[; ;vlf_comms2.c: 726: {
+"728
 [e :U 158 ]
-"730
+"725
 [e $ == -> ( _chk_timeout (1 _timeout `i -> 0 `i 159 ]
 [e :U 160 ]
-"734
+"729
 [e :U 152 ]
-"723
+"718
 [e $ != -> -- _locate_seconds -> -> 1 `i `uc `i -> -> -> 0 `i `uc `i 153 ]
 [e :U 154 ]
-"736
-[; ;vlf_comms2.c: 733: }
-[; ;vlf_comms2.c: 734: }
-[; ;vlf_comms2.c: 736: }
+"731
+[; ;vlf_comms2.c: 728: }
+[; ;vlf_comms2.c: 729: }
+[; ;vlf_comms2.c: 731: }
 [e :UE 151 ]
 }
-"746
+"741
 [v _VLF_StartReceiver `(v 1 ef ]
 {
 [e :U _VLF_StartReceiver ]
 [f ]
-[; ;vlf_comms2.c: 745: void VLF_StartReceiver(void)
-[; ;vlf_comms2.c: 746: {
-[; ;vlf_comms2.c: 747: vtx.type = VLF_NO_PACKET;
-"747
+[; ;vlf_comms2.c: 740: void VLF_StartReceiver(void)
+[; ;vlf_comms2.c: 741: {
+[; ;vlf_comms2.c: 742: vtx.type = VLF_NO_PACKET;
+"742
 [e = . _vtx 6 -> . `E945 9 `uc ]
-[; ;vlf_comms2.c: 748: vrx.len = 0;
-"748
+[; ;vlf_comms2.c: 743: vrx.len = 0;
+"743
 [e = . _vrx 2 -> -> 0 `i `uc ]
-[; ;vlf_comms2.c: 749: vrx.cnt = 0;
-"749
+[; ;vlf_comms2.c: 744: vrx.cnt = 0;
+"744
 [e = . _vrx 1 -> -> 0 `i `uc ]
-[; ;vlf_comms2.c: 750: vtx.state = VLF_TX_IDLE;
-"750
+[; ;vlf_comms2.c: 745: vtx.state = VLF_TX_IDLE;
+"745
 [e = . _vtx 0 -> . `E1044 0 `uc ]
-[; ;vlf_comms2.c: 751: vrx.state = VLF_RX_SEEKING;
-"751
+[; ;vlf_comms2.c: 746: vrx.state = VLF_RX_SEEKING;
+"746
 [e = . _vrx 0 -> . `E1038 1 `uc ]
-[; ;vlf_comms2.c: 752: vlf_state = VLF_STATE_IDLE;
-"752
+[; ;vlf_comms2.c: 747: vlf_state = VLF_STATE_IDLE;
+"747
 [e = _vlf_state -> . `E1034 0 `uc ]
-[; ;vlf_comms2.c: 754: vrx.prev_preamble_score = 0xFFFF;
-"754
+[; ;vlf_comms2.c: 749: vrx.prev_preamble_score = 0xFFFF;
+"749
 [e = . _vrx 6 -> -> 65535 `ui `us ]
-[; ;vlf_comms2.c: 756: SWDTEN = 0;
-"756
+[; ;vlf_comms2.c: 751: SWDTEN = 0;
+"751
 [e = _SWDTEN -> -> 0 `i `b ]
-[; ;vlf_comms2.c: 759: OPTION = 0x68;
-"759
+[; ;vlf_comms2.c: 754: OPTION = 0x68;
+"754
 [e = _OPTION -> -> 104 `i `uc ]
-[; ;vlf_comms2.c: 761: asm("clrwdt");
-"761
+[; ;vlf_comms2.c: 756: asm("clrwdt");
+"756
 [; clrwdt ;#
-[; ;vlf_comms2.c: 762: SWDTEN = 1;
-"762
+[; ;vlf_comms2.c: 757: SWDTEN = 1;
+"757
 [e = _SWDTEN -> -> 1 `i `b ]
-[; ;vlf_comms2.c: 769: TMR0 = 0;
-"769
+[; ;vlf_comms2.c: 764: TMR0 = 0;
+"764
 [e = _TMR0 -> -> 0 `i `uc ]
-[; ;vlf_comms2.c: 770: T2CON = ( 4 << 3 ) | 1;
-"770
+[; ;vlf_comms2.c: 765: T2CON = ( 4 << 3 ) | 1;
+"765
 [e = _T2CON -> | << -> 4 `i -> 3 `i -> 1 `i `uc ]
-[; ;vlf_comms2.c: 771: PR2 = ((2000000/(1<<(2*1))/(4+1)/((100))/((4))) - 1);
-"771
+[; ;vlf_comms2.c: 766: PR2 = ((2000000/(1<<(2*1))/(4+1)/((100))/((4))) - 1);
+"766
 [e = _PR2 -> - / / / / -> 2000000 `l -> << -> 1 `i * -> 2 `i -> 1 `i `l -> + -> 4 `i -> 1 `i `l -> -> 100 `i `l -> -> 4 `i `l -> -> 1 `i `l `uc ]
-[; ;vlf_comms2.c: 772: TMR2 = 0;
-"772
+[; ;vlf_comms2.c: 767: TMR2 = 0;
+"767
 [e = _TMR2 -> -> 0 `i `uc ]
-[; ;vlf_comms2.c: 773: TMR2ON = 1;
-"773
+[; ;vlf_comms2.c: 768: TMR2ON = 1;
+"768
 [e = _TMR2ON -> -> 1 `i `b ]
-[; ;vlf_comms2.c: 775: TMR2IF = 0;
-"775
+[; ;vlf_comms2.c: 770: TMR2IF = 0;
+"770
 [e = _TMR2IF -> -> 0 `i `b ]
-[; ;vlf_comms2.c: 776: TMR2IE = 1;
-"776
+[; ;vlf_comms2.c: 771: TMR2IE = 1;
+"771
 [e = _TMR2IE -> -> 1 `i `b ]
-"777
-[; ;vlf_comms2.c: 777: }
+"772
+[; ;vlf_comms2.c: 772: }
 [e :UE 161 ]
 }
-"783
+"778
 [v _VLF_StopReceiver `(v 1 ef ]
 {
 [e :U _VLF_StopReceiver ]
 [f ]
-[; ;vlf_comms2.c: 782: void VLF_StopReceiver(void)
-[; ;vlf_comms2.c: 783: {
-[; ;vlf_comms2.c: 784: TMR2IE = 0;
-"784
+[; ;vlf_comms2.c: 777: void VLF_StopReceiver(void)
+[; ;vlf_comms2.c: 778: {
+[; ;vlf_comms2.c: 779: TMR2IE = 0;
+"779
 [e = _TMR2IE -> -> 0 `i `b ]
-[; ;vlf_comms2.c: 785: TMR2ON = 0;
-"785
+[; ;vlf_comms2.c: 780: TMR2ON = 0;
+"780
 [e = _TMR2ON -> -> 0 `i `b ]
-"786
-[; ;vlf_comms2.c: 786: }
+"781
+[; ;vlf_comms2.c: 781: }
 [e :UE 162 ]
 }
-"794
+"789
 [v _VLF_SendPacket `(v 1 sf ]
 {
 [e :U _VLF_SendPacket ]
 [f ]
-[; ;vlf_comms2.c: 793: static void VLF_SendPacket(void)
-[; ;vlf_comms2.c: 794: {
-[; ;vlf_comms2.c: 799: TMR2IE = 0;
-"799
+[; ;vlf_comms2.c: 788: static void VLF_SendPacket(void)
+[; ;vlf_comms2.c: 789: {
+[; ;vlf_comms2.c: 794: TMR2IE = 0;
+"794
 [e = _TMR2IE -> -> 0 `i `b ]
-[; ;vlf_comms2.c: 800: TMR2ON = 0;
-"800
+[; ;vlf_comms2.c: 795: TMR2ON = 0;
+"795
 [e = _TMR2ON -> -> 0 `i `b ]
-[; ;vlf_comms2.c: 801: TMR2 = 0;
-"801
+[; ;vlf_comms2.c: 796: TMR2 = 0;
+"796
 [e = _TMR2 -> -> 0 `i `uc ]
-[; ;vlf_comms2.c: 804: T2CON = (4 << 3) | 0;
-"804
+[; ;vlf_comms2.c: 799: T2CON = (4 << 3) | 0;
+"799
 [e = _T2CON -> | << -> 4 `i -> 3 `i -> 0 `i `uc ]
-[; ;vlf_comms2.c: 805: PR2 = (BYTE)((2000000/(1<<(2*0))/((35714.2857))) - 1);
-"805
+[; ;vlf_comms2.c: 800: PR2 = (BYTE)((2000000/(1<<(2*0))/((35714.2857))) - 1);
+"800
 [e = _PR2 -> - / -> / -> 2000000 `l -> << -> 1 `i * -> 2 `i -> 0 `i `l `d .35714.2857 -> -> 1 `i `d `uc ]
-[; ;vlf_comms2.c: 811: CCPR1L = (BYTE)(2000000/(1<<(2*0))*4/((35714.2857))/2) >> 2;
-"811
+[; ;vlf_comms2.c: 806: CCPR1L = (BYTE)(2000000/(1<<(2*0))*4/((35714.2857))/2) >> 2;
+"806
 [e = _CCPR1L -> >> -> -> / / -> * / -> 2000000 `l -> << -> 1 `i * -> 2 `i -> 0 `i `l -> -> 4 `i `l `d .35714.2857 -> -> 2 `i `d `uc `i -> 2 `i `uc ]
-[; ;vlf_comms2.c: 812: CCP1CON = ( ( (BYTE)(2000000/(1<<(2*0))*4/((35714.2857))/2) & 3 ) << 4 );
-"812
+[; ;vlf_comms2.c: 807: CCP1CON = ( ( (BYTE)(2000000/(1<<(2*0))*4/((35714.2857))/2) & 3 ) << 4 );
+"807
 [e = _CCP1CON -> << & -> -> / / -> * / -> 2000000 `l -> << -> 1 `i * -> 2 `i -> 0 `i `l -> -> 4 `i `l `d .35714.2857 -> -> 2 `i `d `uc `i -> 3 `i -> 4 `i `uc ]
-[; ;vlf_comms2.c: 814: vtx.cnt = 0;
-"814
+[; ;vlf_comms2.c: 809: vtx.cnt = 0;
+"809
 [e = . _vtx 1 -> -> 0 `i `uc ]
-[; ;vlf_comms2.c: 815: vtx.state = VLF_TX_PACKET_PREAMBLE;
-"815
+[; ;vlf_comms2.c: 810: vtx.state = VLF_TX_PACKET_PREAMBLE;
+"810
 [e = . _vtx 0 -> . `E1044 2 `uc ]
-[; ;vlf_comms2.c: 817: SWDTEN = 0;
-"817
+[; ;vlf_comms2.c: 812: SWDTEN = 0;
+"812
 [e = _SWDTEN -> -> 0 `i `b ]
-[; ;vlf_comms2.c: 818: OPTION = 0xC0 | 5;
-"818
+[; ;vlf_comms2.c: 813: OPTION = 0xC0 | 5;
+"813
 [e = _OPTION -> | -> 192 `i -> 5 `i `uc ]
-[; ;vlf_comms2.c: 822: asm("clrwdt");
-"822
+[; ;vlf_comms2.c: 817: asm("clrwdt");
+"817
 [; clrwdt ;#
-[; ;vlf_comms2.c: 823: SWDTEN = 1;
-"823
+[; ;vlf_comms2.c: 818: SWDTEN = 1;
+"818
 [e = _SWDTEN -> -> 1 `i `b ]
-[; ;vlf_comms2.c: 825: T0IF = 0;
-"825
+[; ;vlf_comms2.c: 820: T0IF = 0;
+"820
 [e = _T0IF -> -> 0 `i `b ]
-[; ;vlf_comms2.c: 826: TMR0 = 0xFF;
-"826
+[; ;vlf_comms2.c: 821: TMR0 = 0xFF;
+"821
 [e = _TMR0 -> -> 255 `i `uc ]
-[; ;vlf_comms2.c: 827: T0IE = 1;
-"827
+[; ;vlf_comms2.c: 822: T0IE = 1;
+"822
 [e = _T0IE -> -> 1 `i `b ]
-[; ;vlf_comms2.c: 828: TMR2ON = 1;
-"828
+[; ;vlf_comms2.c: 823: TMR2ON = 1;
+"823
 [e = _TMR2ON -> -> 1 `i `b ]
-"829
-[; ;vlf_comms2.c: 829: }
+"824
+[; ;vlf_comms2.c: 824: }
 [e :UE 163 ]
 }
-"835
+"830
 [v _VLF_SendGeneric `(v 1 ef ]
 {
 [e :U _VLF_SendGeneric ]
 [f ]
-[; ;vlf_comms2.c: 834: void VLF_SendGeneric(void)
-[; ;vlf_comms2.c: 835: {
-"836
+[; ;vlf_comms2.c: 829: void VLF_SendGeneric(void)
+[; ;vlf_comms2.c: 830: {
+"831
 [v _crc `uc 1 a ]
-[; ;vlf_comms2.c: 836: BYTE crc;
-[; ;vlf_comms2.c: 837: vtx.type = VLF_MU_DETECT;
-"837
+[; ;vlf_comms2.c: 831: BYTE crc;
+[; ;vlf_comms2.c: 832: vtx.type = VLF_MU_DETECT;
+"832
 [e = . _vtx 6 -> . `E945 0 `uc ]
-[; ;vlf_comms2.c: 838: vtx.u.responce.mid_s.val[0] = mid.b[3];
-"838
+[; ;vlf_comms2.c: 833: vtx.u.responce.mid_s.val[0] = mid.b[3];
+"833
 [e = *U + &U . . . . _vtx 7 5 0 0 * -> -> -> 0 `i `ui `ux -> -> # `Xuc `ui `ux *U + &U . _mid 0 * -> -> -> 3 `i `ui `ux -> -> # `uc `ui `ux ]
-[; ;vlf_comms2.c: 839: vtx.u.responce.mid_s.val[1] = mid.b[2];
-"839
+[; ;vlf_comms2.c: 834: vtx.u.responce.mid_s.val[1] = mid.b[2];
+"834
 [e = *U + &U . . . . _vtx 7 5 0 0 * -> -> -> 1 `i `ui `ux -> -> # `Xuc `ui `ux *U + &U . _mid 0 * -> -> -> 2 `i `ui `ux -> -> # `uc `ui `ux ]
-[; ;vlf_comms2.c: 840: vtx.u.responce.mid_s.val[2] = mid.b[1];
-"840
+[; ;vlf_comms2.c: 835: vtx.u.responce.mid_s.val[2] = mid.b[1];
+"835
 [e = *U + &U . . . . _vtx 7 5 0 0 * -> -> -> 2 `i `ui `ux -> -> # `Xuc `ui `ux *U + &U . _mid 0 * -> -> -> 1 `i `ui `ux -> -> # `uc `ui `ux ]
-[; ;vlf_comms2.c: 841: vtx.u.responce.m.status = 0;
-"841
+[; ;vlf_comms2.c: 836: vtx.u.responce.m.status = 0;
+"836
 [e = . . . . _vtx 7 5 1 1 -> -> 0 `i `uc ]
-[; ;vlf_comms2.c: 845: vtx.u.responce.m.s.mobility = 1;
-"845
+[; ;vlf_comms2.c: 840: vtx.u.responce.m.s.mobility = 1;
+"840
 [e = . . . . . _vtx 7 5 1 0 0 -> -> 1 `i `uc ]
-[; ;vlf_comms2.c: 847: vtx.u.responce.m.s.masked = ( lamp_state == LAMP_SEARCH_IN_PROGRESS ) ? 1 : 0;
-"847
+[; ;vlf_comms2.c: 842: vtx.u.responce.m.s.masked = ( lamp_state == LAMP_SEARCH_IN_PROGRESS ) ? 1 : 0;
+"842
 [e = . . . . . _vtx 7 5 1 0 4 -> ? == -> _lamp_state `i -> . `E914 2 `i : -> 1 `i -> 0 `i `uc ]
-[; ;vlf_comms2.c: 849: crc = buffcrc( vtx.u.data, 0x28, 4 );
-"849
+[; ;vlf_comms2.c: 844: crc = buffcrc( vtx.u.data, 0x28, 4 );
+"844
 [e = _crc ( _buffcrc (3 , , -> &U . . _vtx 7 0 `*uc -> -> 40 `i `uc -> -> 4 `i `uc ]
-[; ;vlf_comms2.c: 850: crc = get_crc( crc, 0x00 );
-"850
+[; ;vlf_comms2.c: 845: crc = get_crc( crc, 0x00 );
+"845
 [e = _crc ( _get_crc (2 , _crc -> -> 0 `i `uc ]
-[; ;vlf_comms2.c: 853: if( crc == 0xA5 )
-"853
+[; ;vlf_comms2.c: 848: if( crc == 0xA5 )
+"848
 [e $ ! == -> _crc `i -> 165 `i 165 ]
-[; ;vlf_comms2.c: 854: { vtx.u.responce.m.s.bit6 = 1;
-"854
+[; ;vlf_comms2.c: 849: { vtx.u.responce.m.s.bit6 = 1;
+"849
 [e = . . . . . _vtx 7 5 1 0 2 -> -> 1 `i `uc ]
-[; ;vlf_comms2.c: 855: crc = buffcrc( &vtx.u.data[0], 0x28, 4 );
-"855
+[; ;vlf_comms2.c: 850: crc = buffcrc( &vtx.u.data[0], 0x28, 4 );
+"850
 [e = _crc ( _buffcrc (3 , , -> &U *U + &U . . _vtx 7 0 * -> -> -> 0 `i `ui `ux -> -> # `Xuc `ui `ux `*uc -> -> 40 `i `uc -> -> 4 `i `uc ]
-[; ;vlf_comms2.c: 856: crc = get_crc( crc, 0x00 );
-"856
+[; ;vlf_comms2.c: 851: crc = get_crc( crc, 0x00 );
+"851
 [e = _crc ( _get_crc (2 , _crc -> -> 0 `i `uc ]
-"857
+"852
 [e :U 165 ]
-[; ;vlf_comms2.c: 857: }
-[; ;vlf_comms2.c: 858: vtx.u.data[4] = crc;
-"858
+[; ;vlf_comms2.c: 852: }
+[; ;vlf_comms2.c: 853: vtx.u.data[4] = crc;
+"853
 [e = *U + &U . . _vtx 7 0 * -> -> -> 4 `i `ui `ux -> -> # `Xuc `ui `ux _crc ]
-[; ;vlf_comms2.c: 859: VLF_SendPacket();
-"859
+[; ;vlf_comms2.c: 854: VLF_SendPacket();
+"854
 [e ( _VLF_SendPacket ..  ]
-"860
-[; ;vlf_comms2.c: 860: }
+"855
+[; ;vlf_comms2.c: 855: }
 [e :UE 164 ]
 }

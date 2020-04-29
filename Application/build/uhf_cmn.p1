@@ -1036,7 +1036,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 1
 .. ]
 [n E1069 UHF_MODES UHF_RX_MODE UHF_TX_MODE ]
-"42 C:\Users\Shchitnikov\Desktop\HPT2\Application\..\Common\src\uhf_cmn.c
+"42 C:\Users\Shchitnikov\Documents\GitHub\HPT2\Application\..\Common\src\uhf_cmn.c
 [v _pkt_len_au `CS1 -> 0 `x s ]
 [i _pkt_len_au
 :U ..

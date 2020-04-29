@@ -88,15 +88,10 @@ const BYTE su2mu_preamble[VLF_SU_TO_MU_PREAMBLE_SIZE] = {
 
 #if( USE_APS )
 const BYTE aps_preamble[APS_PREAMBLE_SIZE] = {
-   (APS_PREAMBLE >> 9 ) & 0x01,		// 1
-   (APS_PREAMBLE >> 8 ) & 0x01,		// 0
-   (APS_PREAMBLE >> 7 ) & 0x01,		// 1
-   (APS_PREAMBLE >> 6 ) & 0x01,		// 1
-   (APS_PREAMBLE >> 5 ) & 0x01,		// 0
-   (APS_PREAMBLE >> 4 ) & 0x01,		// 0
+   (APS_PREAMBLE >> 4 ) & 0x01,		// 1
    (APS_PREAMBLE >> 3 ) & 0x01,		// 0
-   (APS_PREAMBLE >> 2 ) & 0x01,		// 0
-   (APS_PREAMBLE >> 1 ) & 0x01,		// 0
+   (APS_PREAMBLE >> 2 ) & 0x01,		// 1
+   (APS_PREAMBLE >> 1 ) & 0x01,		// 1
    (APS_PREAMBLE >> 0 ) & 0x01,		// 0
 };
 #endif
