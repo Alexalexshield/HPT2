@@ -1,0 +1,2172 @@
+
+
+HI-TECH Software PICC Macro Assembler V9.60PL3 build 3862 
+                                                      Tue Feb 04 13:05:10 2020
+
+HI-TECH Software Code Generator build 3862
+     1                           	processor	16F887
+     2                           	opt	pw 79
+     3                           	psect	rdata_0,global,class=BANK0,space=1,delta
+      +                          =1
+     4                           	psect	idata_0,global,class=CODE,delta=2
+     5                           	psect	strings,global,class=STRING,delta=2
+     6                           	psect	const1,local,class=CONST,delta=2
+     7                           	psect	const2,local,class=CONST,delta=2
+     8                           	psect	const3,local,class=CONST,delta=2
+     9                           	psect	const4,local,class=CONST,delta=2
+    10                           	psect	text2,local,class=CODE,delta=2
+    11                           	psect	text4,local,class=CODE,delta=2
+    12                           	psect	text8,local,class=CODE,delta=2
+    13                           	psect	text9,local,class=CODE,delta=2
+    14                           	psect	text11,local,class=CODE,delta=2
+    15                           	psect	rbss_1,global,class=BANK1,space=1,delta=
+      +                          1
+    16                           	psect	temp,global,ovrld,class=BANK0,space=1,de
+      +                          lta=1
+    17  0000                     
+    18  0000                     
+    19  0000                     
+    20  0000                     
+    21  0000                     
+    22  0000                     
+    23  0000                     
+    24  0000                     
+    25  0000                     
+    26  0000                     
+    27  0000                     
+    28                           
+    29                           	psect	rdata_0
+    30  004F                     _vlf_state
+                     _vlf_state
+    31  004F                     	ds	1
+    32                           
+    33                           	psect	idata_0
+    34  026D  3400               	retlw	0
+    35                           
+    36                           	psect	const1
+    37  1049  0782               	addwf	2
+    38  104A                     _su2mu_preamble
+    39  104A  3401               	retlw	1
+    40  104B  3400               	retlw	0
+    41  104C  3401               	retlw	1
+    42  104D  3400               	retlw	0
+    43  104E  3400               	retlw	0
+    44  104F  3401               	retlw	1
+    45  1050  3400               	retlw	0
+    46  1051  3401               	retlw	1
+    47  1052  3401               	retlw	1
+    48  1053  3400               	retlw	0
+    49  1054  3401               	retlw	1
+    50  1055  3400               	retlw	0
+    51                           
+    52                           	psect	const2
+    53  106E  0782               	addwf	2
+    54  106F                     _aps_preamble
+    55  106F  3401               	retlw	1
+    56  1070  3400               	retlw	0
+    57  1071  3401               	retlw	1
+    58  1072  3401               	retlw	1
+    59  1073  3400               	retlw	0
+    60  1074  3400               	retlw	0
+    61  1075  3400               	retlw	0
+    62  1076  3400               	retlw	0
+    63  1077  3400               	retlw	0
+    64  1078  3400               	retlw	0
+    65                           
+    66                           	psect	const3
+    67  108C  0782               	addwf	2
+    68  108D                     _mu2su_preamble
+    69  108D  3401               	retlw	1
+    70  108E  3400               	retlw	0
+    71  108F  3401               	retlw	1
+    72  1090  3400               	retlw	0
+    73  1091  3400               	retlw	0
+    74  1092  3401               	retlw	1
+    75  1093  3400               	retlw	0
+    76  1094  3401               	retlw	1
+    77                           
+    78                           	psect	const4
+    79  1079  0782               	addwf	2
+    80  107A                     _uncoded_rx_data_size
+    81  107A  3402               	retlw	2
+    82  107B  3405               	retlw	5
+    83  107C  3400               	retlw	0
+    84  107D  3400               	retlw	0
+    85  107E  3404               	retlw	4
+    86  107F  3400               	retlw	0
+    87  1080  3400               	retlw	0
+    88  1081  3400               	retlw	0
+    89  1082  3404               	retlw	4
+    90  0000                     _get_crc$data	set	?_get_crc
+    91                           
+    92                           	psect	text2
+    93  155D                     __end_of_buffcrc
+    94  155D                     _VLF_Busy
+    95                           ;vlf_comms2.c: 200: uchar VLF_Busy(void)
+    96  155D  1683               	bsf	3,5
+    97  155E  1303               	bcf	3,6	;carry unused
+    98  155F  0B2F               	decfsz	_vrx^(0+128),w
+    99  1560  2D66               	goto	l59
+   100  1561  08A0               	movf	_vtx^(0+128)
+   101  1562  1D03               	btfss	3,2
+   102  1563  2D66               	goto	l59
+   103                           ;vlf_comms2.c: 203: return( (0) );
+   104  1564  3000               	movlw	0
+   105  1565  2D67               	goto	l58
+   106  1566                     l59
+   107                           ;vlf_comms2.c: 205: return( (1) );
+   108  1566  3001               	movlw	1
+   109                           ;vlf_comms2.c: 206: }
+   110  1567                     l58
+   111  1567  1283               	bcf	3,5
+   112  1568  0008               	return	;uses W
+   113                           
+   114                           	psect	text4
+   115  097C                     __end_of_VLF_ProcessPacket
+   116  097C                     _VLF_ProcessBitRead
+   117                           ;	_ii assigned to ?a_VLF_ProcessBitRead+0
+   118  0000                     _VLF_ProcessBitRead$ii	set	?a_VLF_ProcessBitRea
+      +                          d
+   119                           ;vlf_comms2.c: 419: char VLF_ProcessBitRead(voi
+      +                          d)
+   120  097C  1683               	bsf	3,5
+   121  097D  1303               	bcf	3,6	;carry unused
+   122  097E  01AF               	clrf	_vrx^(0+128)
+   123                           ;vlf_comms2.c: 427: switch( vrx.state )
+   124  097F  2B5D               	goto	l88
+   125  0980                     l89
+   126                           ;vlf_comms2.c: 428: {
+   127                           ;vlf_comms2.c: 432: {
+   128  0980  3028               	movlw	40
+   129  0981  0230               	subwf	(_vrx+1)^(0+128),w
+   130  0982  1C03               	btfss	3,0
+   131  0983  2B59               	goto	l137
+   132                           ;vlf_comms2.c: 434: {
+   133  0984  1283               	bcf	3,5
+   134  0985  01BD               	clrf	?a_VLF_ProcessBitRead
+   135  0986  1683               	bsf	3,5
+   136  0987  01B9               	clrf	(_vrx+10)^(0+128)
+   137  0988  01B4               	clrf	(_vrx+5)^(0+128)
+   138  0989  01B5               	clrf	(_vrx+6)^(0+128)
+   139                           ;vlf_comms2.c: 436: ( ii < 10 )&&( !vrx.unlocke
+      +                          d ); ii++ )
+   140  098A  29F1               	goto	l94
+   141  098B                     l91
+   142                           ;vlf_comms2.c: 437: {
+   143  098B  1283               	bcf	3,5
+   144  098C  083D               	movf	?a_VLF_ProcessBitRead,w
+   145  098D  00F4               	movwf	btemp
+   146  098E  1003               	bcf	3,0
+   147  098F  0DF4               	rlf	btemp
+   148  0990  1003               	bcf	3,0
+   149  0991  0D74               	rlf	btemp,w
+   150  0992  3E0C               	addlw	12
+   151  0993  3EAF               	addlw	_vrx
+   152  0994  0084               	movwf	4
+   153  0995  1383               	bcf	3,7
+   154  0996  0800               	movf	0,w
+   155  0997  00F7               	movwf	btemp+3
+   156  0998  083D               	movf	?a_VLF_ProcessBitRead,w
+   157  0999  00F4               	movwf	btemp
+   158  099A  1003               	bcf	3,0
+   159  099B  0DF4               	rlf	btemp
+   160  099C  1003               	bcf	3,0
+   161  099D  0D74               	rlf	btemp,w
+   162  099E  3E0B               	addlw	11
+   163  099F  3EAF               	addlw	_vrx
+   164  09A0  0084               	movwf	4
+   165  09A1  1383               	bcf	3,7
+   166  09A2  0800               	movf	0,w
+   167  09A3  00F6               	movwf	btemp+2
+   168  09A4  083D               	movf	?a_VLF_ProcessBitRead,w
+   169  09A5  00F4               	movwf	btemp
+   170  09A6  1003               	bcf	3,0
+   171  09A7  0DF4               	rlf	btemp
+   172  09A8  1003               	bcf	3,0
+   173  09A9  0D74               	rlf	btemp,w
+   174  09AA  3E0D               	addlw	13
+   175  09AB  3EAF               	addlw	_vrx
+   176  09AC  0084               	movwf	4
+   177  09AD  1383               	bcf	3,7
+   178  09AE  0800               	movf	0,w
+   179  09AF  00F5               	movwf	btemp+1
+   180  09B0  083D               	movf	?a_VLF_ProcessBitRead,w
+   181  09B1  00F4               	movwf	btemp
+   182  09B2  1003               	bcf	3,0
+   183  09B3  0DF4               	rlf	btemp
+   184  09B4  1003               	bcf	3,0
+   185  09B5  0D74               	rlf	btemp,w
+   186  09B6  3E0E               	addlw	14
+   187  09B7  3EAF               	addlw	_vrx
+   188  09B8  0084               	movwf	4
+   189  09B9  1383               	bcf	3,7
+   190  09BA  0800               	movf	0,w
+   191  09BB  0775               	addwf	btemp+1,w
+   192  09BC  0776               	addwf	btemp+2,w
+   193  09BD  0777               	addwf	btemp+3,w
+   194  09BE  1683               	bsf	3,5
+   195  09BF  00B8               	movwf	(_vrx+9)^(0+128)
+   196                           ;vlf_comms2.c: 443: vrx.score >>= 3;
+   197  09C0  1003               	bcf	3,0
+   198  09C1  0CB8               	rrf	(_vrx+9)^(0+128)
+   199  09C2  1003               	bcf	3,0
+   200  09C3  0CB8               	rrf	(_vrx+9)^(0+128)
+   201  09C4  1003               	bcf	3,0
+   202  09C5  0CB8               	rrf	(_vrx+9)^(0+128)
+   203                           ;vlf_comms2.c: 445: if( aps_preamble[ii] )
+   204  09C6  3010               	movlw	_aps_preamble shr (0+8)
+   205  09C7  008A               	movwf	10
+   206  09C8  1283               	bcf	3,5
+   207  09C9  083D               	movf	?a_VLF_ProcessBitRead,w
+   208  09CA  206E               	call	((_aps_preamble+-1)& (0+2047))| (($)& (0+
+      +                          -2048))
+   209  09CB  120A  158A         	pagesel	$
+   210  09CD  3800               	iorlw	0
+   211  09CE  1903               	btfsc	3,2
+   212  09CF  29E3               	goto	l95
+   213                           ;vlf_comms2.c: 446: { if( vrx.score <= 3 )
+   214  09D0  3004               	movlw	4
+   215  09D1  1683               	bsf	3,5
+   216  09D2  0238               	subwf	(_vrx+9)^(0+128),w
+   217  09D3  1C03               	btfss	3,0
+   218  09D4  29E8               	goto	u410
+   219                           ;vlf_comms2.c: 447: vrx.unlocked = 1;
+   220                           ;vlf_comms2.c: 448: else
+   221  09D5  300A               	movlw	10
+   222  09D6  00F4               	movwf	btemp
+   223  09D7  01F5               	clrf	btemp+1
+   224  09D8  0838               	movf	(_vrx+9)^(0+128),w
+   225  09D9  02F4               	subwf	btemp
+   226  09DA  1C03               	btfss	3,0
+   227  09DB  03F5               	decf	btemp+1
+   228  09DC  0874               	movf	btemp,w
+   229  09DD  07B4               	addwf	(_vrx+5)^(0+128)
+   230  09DE  1803               	btfsc	3,0
+   231  09DF  0AB5               	incf	(_vrx+6)^(0+128)
+   232  09E0  0875               	movf	btemp+1,w
+   233  09E1  07B5               	addwf	(_vrx+6)^(0+128)
+   234                           ;vlf_comms2.c: 450: }
+   235  09E2  29EF               	goto	l98
+   236  09E3                     l95
+   237                           ;vlf_comms2.c: 451: else
+   238  09E3  3002               	movlw	2
+   239  09E4  1683               	bsf	3,5
+   240  09E5  0238               	subwf	(_vrx+9)^(0+128),w
+   241  09E6  1C03               	btfss	3,0
+   242  09E7  29EB               	goto	l99
+   243  09E8                     u410
+   244                           ;vlf_comms2.c: 453: vrx.unlocked = 1;
+   245  09E8  01B9               	clrf	(_vrx+10)^(0+128)
+   246  09E9  0AB9               	incf	(_vrx+10)^(0+128)
+   247  09EA  29EF               	goto	l98
+   248  09EB                     l99
+   249                           ;vlf_comms2.c: 454: else
+   250  09EB  0838               	movf	(_vrx+9)^(0+128),w
+   251  09EC  07B4               	addwf	(_vrx+5)^(0+128)
+   252  09ED  1803               	btfsc	3,0
+   253  09EE  0AB5               	incf	(_vrx+6)^(0+128)
+   254  09EF                     l98
+   255  09EF  1283               	bcf	3,5
+   256  09F0  0ABD               	incf	?a_VLF_ProcessBitRead
+   257  09F1                     l94
+   258  09F1  300A               	movlw	10
+   259  09F2  1283               	bcf	3,5
+   260  09F3  023D               	subwf	?a_VLF_ProcessBitRead,w
+   261  09F4  1683               	bsf	3,5
+   262  09F5  1803               	btfsc	3,0
+   263  09F6  29FA               	goto	L5
+   264  09F7  08B9               	movf	(_vrx+10)^(0+128)
+   265  09F8  1903               	btfsc	3,2
+   266  09F9  298B               	goto	l91
+   267                           ;vlf_comms2.c: 456: }
+   268  09FA                     L5
+   269  09FA  0A36               	incf	(_vrx+7)^(0+128),w
+   270  09FB  1903               	btfsc	3,2
+   271  09FC  0A37               	incf	(_vrx+8)^(0+128),w
+   272  09FD  1903               	btfsc	3,2
+   273  09FE  2ABA               	goto	l121
+   274                           ;vlf_comms2.c: 460: { if( ( vrx.unlocked )||( v
+      +                          rx.preamble_score > vrx.prev_preamble_score ) )
+   275  09FF  08B9               	movf	(_vrx+10)^(0+128)
+   276  0A00  1D03               	btfss	3,2
+   277  0A01  2A0A               	goto	u480
+   278  0A02  0835               	movf	(_vrx+6)^(0+128),w
+   279  0A03  0237               	subwf	(_vrx+8)^(0+128),w
+   280  0A04  1D03               	btfss	3,2
+   281  0A05  2A08               	goto	u475
+   282  0A06  0834               	movf	(_vrx+5)^(0+128),w
+   283  0A07  0236               	subwf	(_vrx+7)^(0+128),w
+   284  0A08                     u475
+   285  0A08  1803               	btfsc	3,0
+   286  0A09  2ABD               	goto	L4
+   287  0A0A                     u480
+   288                           ;vlf_comms2.c: 461: {
+   289  0A0A  01B0               	clrf	(_vrx+1)^(0+128)
+   290  0A0B  0AB0               	incf	(_vrx+1)^(0+128)
+   291                           ;vlf_comms2.c: 463: vrx.prev_preamble_score = 0
+      +                          xFFFF;
+   292  0A0C  30FF               	movlw	255
+   293  0A0D  00B6               	movwf	(_vrx+7)^(0+128)
+   294  0A0E  00B7               	movwf	((_vrx+7)^(0+128)+1)
+   295                           ;vlf_comms2.c: 464: RB0 ^= 1;
+   296  0A0F  1283               	bcf	3,5
+   297  0A10  3001               	movlw	1
+   298  0A11  0686               	xorwf	6
+   299                           ;vlf_comms2.c: 466: if(vrx.flags.aps.combiner =
+      +                          = (0))
+   300  0A12  1683               	bsf	3,5
+   301  0A13  1BEA               	btfsc	(_vrx+59)^(0+128),7
+   302  0A14  2A25               	goto	l103
+   303                           ;vlf_comms2.c: 467: {
+   304  0A15  1283               	bcf	3,5
+   305  0A16  17A4               	bsf	_mu_flags,7
+   306                           ;vlf_comms2.c: 471: if( lamp_state == LAMP_NORM
+      +                          AL_STATE )
+   307  0A17  0822               	movf	_lamp_state,w
+   308  0A18  3AF0               	xorlw	-16
+   309  0A19  1D03               	btfss	3,2
+   310  0A1A  2A25               	goto	l103
+   311                           ;vlf_comms2.c: 472: {
+   312  0A1B  3004               	movlw	4
+   313  0A1C  00A2               	movwf	_lamp_state
+   314                           ;vlf_comms2.c: 474: lamp_timeout = (timer.cnt +
+      +                           (ushort)((ushort)( 1*(15.2588))));
+   315  0A1D  300F               	movlw	15
+   316  0A1E  0734               	addwf	_timer,w	;volatile
+   317  0A1F  00A6               	movwf	_lamp_timeout
+   318  0A20  3000               	movlw	0
+   319  0A21  1803               	btfsc	3,0
+   320  0A22  3001               	movlw	1
+   321  0A23  0735               	addwf	_timer+1,w	;volatile
+   322  0A24  00A7               	movwf	_lamp_timeout+1
+   323  0A25                     l103
+   324                           ;vlf_comms2.c: 475: }
+   325  0A25  1283               	bcf	3,5
+   326  0A26  17A4               	bsf	_mu_flags,7
+   327                           ;vlf_comms2.c: 478: }
+   328  0A27  2B6C               	goto	l87
+   329                           ;vlf_comms2.c: 479: else
+   330                           ;vlf_comms2.c: 481: }
+   331                           ;vlf_comms2.c: 482: else if( !vrx.unlocked )
+   332                           ;vlf_comms2.c: 483: {
+   333                           ;vlf_comms2.c: 485: }
+   334                           ;vlf_comms2.c: 487: else
+   335                           ;vlf_comms2.c: 493: }
+   336  0A28                     l109
+   337                           ;vlf_comms2.c: 497: case VLF_RX_SEEKING:
+   338                           ;vlf_comms2.c: 499: {
+   339  0A28  3030               	movlw	48
+   340  0A29  0230               	subwf	(_vrx+1)^(0+128),w
+   341  0A2A  1C03               	btfss	3,0
+   342  0A2B  2B59               	goto	l137
+   343                           ;vlf_comms2.c: 501: {
+   344  0A2C  1283               	bcf	3,5
+   345  0A2D  01BD               	clrf	?a_VLF_ProcessBitRead
+   346  0A2E  1683               	bsf	3,5
+   347  0A2F  01B9               	clrf	(_vrx+10)^(0+128)
+   348  0A30  01B4               	clrf	(_vrx+5)^(0+128)
+   349  0A31  01B5               	clrf	(_vrx+6)^(0+128)
+   350                           ;vlf_comms2.c: 503: ( ii < 12 )&&( !vrx.unlocke
+      +                          d ); ii++ )
+   351  0A32  2A99               	goto	l114
+   352  0A33                     l111
+   353                           ;vlf_comms2.c: 504: {
+   354  0A33  1283               	bcf	3,5
+   355  0A34  083D               	movf	?a_VLF_ProcessBitRead,w
+   356  0A35  00F4               	movwf	btemp
+   357  0A36  1003               	bcf	3,0
+   358  0A37  0DF4               	rlf	btemp
+   359  0A38  1003               	bcf	3,0
+   360  0A39  0D74               	rlf	btemp,w
+   361  0A3A  3E0C               	addlw	12
+   362  0A3B  3EAF               	addlw	_vrx
+   363  0A3C  0084               	movwf	4
+   364  0A3D  1383               	bcf	3,7
+   365  0A3E  0800               	movf	0,w
+   366  0A3F  00F7               	movwf	btemp+3
+   367  0A40  083D               	movf	?a_VLF_ProcessBitRead,w
+   368  0A41  00F4               	movwf	btemp
+   369  0A42  1003               	bcf	3,0
+   370  0A43  0DF4               	rlf	btemp
+   371  0A44  1003               	bcf	3,0
+   372  0A45  0D74               	rlf	btemp,w
+   373  0A46  3E0B               	addlw	11
+   374  0A47  3EAF               	addlw	_vrx
+   375  0A48  0084               	movwf	4
+   376  0A49  1383               	bcf	3,7
+   377  0A4A  0800               	movf	0,w
+   378  0A4B  00F6               	movwf	btemp+2
+   379  0A4C  083D               	movf	?a_VLF_ProcessBitRead,w
+   380  0A4D  00F4               	movwf	btemp
+   381  0A4E  1003               	bcf	3,0
+   382  0A4F  0DF4               	rlf	btemp
+   383  0A50  1003               	bcf	3,0
+   384  0A51  0D74               	rlf	btemp,w
+   385  0A52  3E0D               	addlw	13
+   386  0A53  3EAF               	addlw	_vrx
+   387  0A54  0084               	movwf	4
+   388  0A55  1383               	bcf	3,7
+   389  0A56  0800               	movf	0,w
+   390  0A57  00F5               	movwf	btemp+1
+   391  0A58  083D               	movf	?a_VLF_ProcessBitRead,w
+   392  0A59  00F4               	movwf	btemp
+   393  0A5A  1003               	bcf	3,0
+   394  0A5B  0DF4               	rlf	btemp
+   395  0A5C  1003               	bcf	3,0
+   396  0A5D  0D74               	rlf	btemp,w
+   397  0A5E  3E0E               	addlw	14
+   398  0A5F  3EAF               	addlw	_vrx
+   399  0A60  0084               	movwf	4
+   400  0A61  1383               	bcf	3,7
+   401  0A62  0800               	movf	0,w
+   402  0A63  0775               	addwf	btemp+1,w
+   403  0A64  0776               	addwf	btemp+2,w
+   404  0A65  0777               	addwf	btemp+3,w
+   405  0A66  1683               	bsf	3,5
+   406  0A67  00B8               	movwf	(_vrx+9)^(0+128)
+   407                           ;vlf_comms2.c: 518: vrx.score >>= 3;
+   408  0A68  1003               	bcf	3,0
+   409  0A69  0CB8               	rrf	(_vrx+9)^(0+128)
+   410  0A6A  1003               	bcf	3,0
+   411  0A6B  0CB8               	rrf	(_vrx+9)^(0+128)
+   412  0A6C  1003               	bcf	3,0
+   413  0A6D  0CB8               	rrf	(_vrx+9)^(0+128)
+   414                           ;vlf_comms2.c: 534: if( su2mu_preamble[ii] )
+   415  0A6E  3010               	movlw	_su2mu_preamble shr (0+8)
+   416  0A6F  008A               	movwf	10
+   417  0A70  1283               	bcf	3,5
+   418  0A71  083D               	movf	?a_VLF_ProcessBitRead,w
+   419  0A72  2049               	call	((_su2mu_preamble+-1)& (0+2047))| (($)& (
+      +                          0+-2048))
+   420  0A73  120A  158A         	pagesel	$
+   421  0A75  3800               	iorlw	0
+   422  0A76  1903               	btfsc	3,2
+   423  0A77  2A8B               	goto	l115
+   424                           ;vlf_comms2.c: 535: { if( vrx.score <= 3 )
+   425  0A78  3004               	movlw	4
+   426  0A79  1683               	bsf	3,5
+   427  0A7A  0238               	subwf	(_vrx+9)^(0+128),w
+   428  0A7B  1C03               	btfss	3,0
+   429  0A7C  2A90               	goto	u550
+   430                           ;vlf_comms2.c: 536: vrx.unlocked = 1;
+   431                           ;vlf_comms2.c: 537: else
+   432  0A7D  300A               	movlw	10
+   433  0A7E  00F4               	movwf	btemp
+   434  0A7F  01F5               	clrf	btemp+1
+   435  0A80  0838               	movf	(_vrx+9)^(0+128),w
+   436  0A81  02F4               	subwf	btemp
+   437  0A82  1C03               	btfss	3,0
+   438  0A83  03F5               	decf	btemp+1
+   439  0A84  0874               	movf	btemp,w
+   440  0A85  07B4               	addwf	(_vrx+5)^(0+128)
+   441  0A86  1803               	btfsc	3,0
+   442  0A87  0AB5               	incf	(_vrx+6)^(0+128)
+   443  0A88  0875               	movf	btemp+1,w
+   444  0A89  07B5               	addwf	(_vrx+6)^(0+128)
+   445                           ;vlf_comms2.c: 539: }
+   446  0A8A  2A97               	goto	l118
+   447  0A8B                     l115
+   448                           ;vlf_comms2.c: 540: else
+   449  0A8B  3002               	movlw	2
+   450  0A8C  1683               	bsf	3,5
+   451  0A8D  0238               	subwf	(_vrx+9)^(0+128),w
+   452  0A8E  1C03               	btfss	3,0
+   453  0A8F  2A93               	goto	l119
+   454  0A90                     u550
+   455                           ;vlf_comms2.c: 542: vrx.unlocked = 1;
+   456  0A90  01B9               	clrf	(_vrx+10)^(0+128)
+   457  0A91  0AB9               	incf	(_vrx+10)^(0+128)
+   458  0A92  2A97               	goto	l118
+   459  0A93                     l119
+   460                           ;vlf_comms2.c: 543: else
+   461  0A93  0838               	movf	(_vrx+9)^(0+128),w
+   462  0A94  07B4               	addwf	(_vrx+5)^(0+128)
+   463  0A95  1803               	btfsc	3,0
+   464  0A96  0AB5               	incf	(_vrx+6)^(0+128)
+   465  0A97                     l118
+   466  0A97  1283               	bcf	3,5
+   467  0A98  0ABD               	incf	?a_VLF_ProcessBitRead
+   468  0A99                     l114
+   469  0A99  300C               	movlw	12
+   470  0A9A  1283               	bcf	3,5
+   471  0A9B  023D               	subwf	?a_VLF_ProcessBitRead,w
+   472  0A9C  1683               	bsf	3,5
+   473  0A9D  1803               	btfsc	3,0
+   474  0A9E  2AA2               	goto	L6
+   475  0A9F  08B9               	movf	(_vrx+10)^(0+128)
+   476  0AA0  1903               	btfsc	3,2
+   477  0AA1  2A33               	goto	l111
+   478                           ;vlf_comms2.c: 545: }
+   479  0AA2                     L6
+   480  0AA2  0A36               	incf	(_vrx+7)^(0+128),w
+   481  0AA3  1903               	btfsc	3,2
+   482  0AA4  0A37               	incf	(_vrx+8)^(0+128),w
+   483  0AA5  1903               	btfsc	3,2
+   484  0AA6  2ABA               	goto	l121
+   485                           ;vlf_comms2.c: 549: { if( ( vrx.unlocked )||( v
+      +                          rx.preamble_score > vrx.prev_preamble_score ) )
+   486  0AA7  08B9               	movf	(_vrx+10)^(0+128)
+   487  0AA8  1D03               	btfss	3,2
+   488  0AA9  2AB2               	goto	u620
+   489  0AAA  0835               	movf	(_vrx+6)^(0+128),w
+   490  0AAB  0237               	subwf	(_vrx+8)^(0+128),w
+   491  0AAC  1D03               	btfss	3,2
+   492  0AAD  2AB0               	goto	u615
+   493  0AAE  0834               	movf	(_vrx+5)^(0+128),w
+   494  0AAF  0236               	subwf	(_vrx+7)^(0+128),w
+   495  0AB0                     u615
+   496  0AB0  1803               	btfsc	3,0
+   497  0AB1  2ABD               	goto	L4
+   498  0AB2                     u620
+   499                           ;vlf_comms2.c: 550: { vrx.state = VLF_RX_LOCKED
+      +                          ;
+   500  0AB2  3002               	movlw	2
+   501  0AB3  00AF               	movwf	_vrx^(0+128)
+   502                           ;vlf_comms2.c: 551: vrx.cnt = 1;
+   503  0AB4  01B0               	clrf	(_vrx+1)^(0+128)
+   504  0AB5  0AB0               	incf	(_vrx+1)^(0+128)
+   505                           ;vlf_comms2.c: 552: vrx.prev_preamble_score = 0
+      +                          xFFFF;
+   506  0AB6  30FF               	movlw	255
+   507  0AB7  00B6               	movwf	(_vrx+7)^(0+128)
+   508  0AB8  00B7               	movwf	((_vrx+7)^(0+128)+1)
+   509                           ;vlf_comms2.c: 553: }
+   510  0AB9  2B6C               	goto	l87
+   511                           ;vlf_comms2.c: 554: else
+   512                           ;vlf_comms2.c: 556: }
+   513  0ABA                     l121
+   514                           ;vlf_comms2.c: 557: else if( !vrx.unlocked )
+   515  0ABA  08B9               	movf	(_vrx+10)^(0+128)
+   516  0ABB  1D03               	btfss	3,2
+   517  0ABC  2B6C               	goto	l87
+   518  0ABD                     L4
+   519                           ;vlf_comms2.c: 558: {
+   520  0ABD  0834               	movf	(_vrx+5)^(0+128),w
+   521  0ABE  00B6               	movwf	(_vrx+7)^(0+128)
+   522  0ABF  0835               	movf	(_vrx+6)^(0+128),w
+   523  0AC0  00B7               	movwf	(_vrx+8)^(0+128)
+   524                           ;vlf_comms2.c: 560: }
+   525  0AC1  2B6C               	goto	l87
+   526                           ;vlf_comms2.c: 562: else
+   527                           ;vlf_comms2.c: 576: }
+   528  0AC2                     l127
+   529                           ;vlf_comms2.c: 582: case VLF_RX_LOCKED:
+   530                           ;vlf_comms2.c: 583: vtx.type = 0x00;
+   531  0AC2  01A6               	clrf	(_vtx+6)^(0+128)
+   532                           ;vlf_comms2.c: 585: if( (vrx.cnt & (((4)*4) - 1
+      +                          ) ) ==
+   533  0AC3  0830               	movf	(_vrx+1)^(0+128),w
+   534  0AC4  390F               	andlw	15
+   535  0AC5  3A0F               	xorlw	15
+   536  0AC6  1D03               	btfss	3,2
+   537  0AC7  2B59               	goto	l137
+   538                           ;vlf_comms2.c: 587: {
+   539  0AC8  1283               	bcf	3,5
+   540  0AC9  01BD               	clrf	?a_VLF_ProcessBitRead
+   541  0ACA                     l129
+   542                           ;vlf_comms2.c: 589: {
+   543  0ACA  083D               	movf	?a_VLF_ProcessBitRead,w
+   544  0ACB  00F4               	movwf	btemp
+   545  0ACC  1003               	bcf	3,0
+   546  0ACD  0DF4               	rlf	btemp
+   547  0ACE  1003               	bcf	3,0
+   548  0ACF  0D74               	rlf	btemp,w
+   549  0AD0  3C30               	sublw	48
+   550  0AD1  3EB7               	addlw	_vrx+8
+   551  0AD2  0084               	movwf	4
+   552  0AD3  1383               	bcf	3,7
+   553  0AD4  0800               	movf	0,w
+   554  0AD5  00F7               	movwf	btemp+3
+   555  0AD6  083D               	movf	?a_VLF_ProcessBitRead,w
+   556  0AD7  00F4               	movwf	btemp
+   557  0AD8  1003               	bcf	3,0
+   558  0AD9  0DF4               	rlf	btemp
+   559  0ADA  1003               	bcf	3,0
+   560  0ADB  0D74               	rlf	btemp,w
+   561  0ADC  3C30               	sublw	48
+   562  0ADD  3EB9               	addlw	_vrx+10
+   563  0ADE  0084               	movwf	4
+   564  0ADF  1383               	bcf	3,7
+   565  0AE0  0800               	movf	0,w
+   566  0AE1  00F6               	movwf	btemp+2
+   567  0AE2  083D               	movf	?a_VLF_ProcessBitRead,w
+   568  0AE3  00F4               	movwf	btemp
+   569  0AE4  1003               	bcf	3,0
+   570  0AE5  0DF4               	rlf	btemp
+   571  0AE6  1003               	bcf	3,0
+   572  0AE7  0D74               	rlf	btemp,w
+   573  0AE8  3C30               	sublw	48
+   574  0AE9  3EB8               	addlw	_vrx+9
+   575  0AEA  0084               	movwf	4
+   576  0AEB  1383               	bcf	3,7
+   577  0AEC  0800               	movf	0,w
+   578  0AED  00F5               	movwf	btemp+1
+   579  0AEE  083D               	movf	?a_VLF_ProcessBitRead,w
+   580  0AEF  00F4               	movwf	btemp
+   581  0AF0  1003               	bcf	3,0
+   582  0AF1  0DF4               	rlf	btemp
+   583  0AF2  1003               	bcf	3,0
+   584  0AF3  0D74               	rlf	btemp,w
+   585  0AF4  3C30               	sublw	48
+   586  0AF5  3EB6               	addlw	_vrx+7
+   587  0AF6  0084               	movwf	4
+   588  0AF7  1383               	bcf	3,7
+   589  0AF8  0800               	movf	0,w
+   590  0AF9  0775               	addwf	btemp+1,w
+   591  0AFA  0776               	addwf	btemp+2,w
+   592  0AFB  0777               	addwf	btemp+3,w
+   593  0AFC  1683               	bsf	3,5
+   594  0AFD  00B8               	movwf	(_vrx+9)^(0+128)
+   595                           ;vlf_comms2.c: 595: vrx.score >>= 3;
+   596  0AFE  1003               	bcf	3,0
+   597  0AFF  0CB8               	rrf	(_vrx+9)^(0+128)
+   598  0B00  1003               	bcf	3,0
+   599  0B01  0CB8               	rrf	(_vrx+9)^(0+128)
+   600  0B02  1003               	bcf	3,0
+   601  0B03  0CB8               	rrf	(_vrx+9)^(0+128)
+   602                           ;vlf_comms2.c: 597: vtx.type <<= 1;
+   603  0B04  1003               	bcf	3,0
+   604  0B05  0DA6               	rlf	(_vtx+6)^(0+128)
+   605                           ;vlf_comms2.c: 598: if( vrx.score >= ((((8000)/
+      +                          (100)) >> 3)*3/5) )
+   606  0B06  3006               	movlw	6
+   607  0B07  0238               	subwf	(_vrx+9)^(0+128),w
+   608  0B08  1803               	btfsc	3,0
+   609                           ;vlf_comms2.c: 599: vtx.type |= 0x01;
+   610  0B09  1426               	bsf	(_vtx+6)^(0+128),0
+   611  0B0A  1283               	bcf	3,5
+   612  0B0B  0ABD               	incf	?a_VLF_ProcessBitRead
+   613  0B0C  3004               	movlw	4
+   614  0B0D  023D               	subwf	?a_VLF_ProcessBitRead,w
+   615  0B0E  1C03               	btfss	3,0
+   616  0B0F  2ACA               	goto	l129
+   617                           ;vlf_comms2.c: 600: }
+   618  0B10  3009               	movlw	9
+   619  0B11  1683               	bsf	3,5
+   620  0B12  0226               	subwf	(_vtx+6)^(0+128),w
+   621  0B13  1803               	btfsc	3,0
+   622  0B14  2B26               	goto	l133
+   623                           ;vlf_comms2.c: 603: {
+   624  0B15  3010               	movlw	_uncoded_rx_data_size shr (0+8)
+   625  0B16  008A               	movwf	10
+   626  0B17  0826               	movf	(_vtx+6)^(0+128),w
+   627  0B18  2079               	call	((_uncoded_rx_data_size+-1)& (0+2047))| (
+      +                          ($)& (0+-2048))
+   628  0B19  120A  158A         	pagesel	$
+   629  0B1B  00F4               	movwf	btemp
+   630  0B1C  0A74               	incf	btemp,w
+   631  0B1D  00B1               	movwf	(_vrx+2)^(0+128)
+   632                           ;vlf_comms2.c: 605: vrx.ptr = &vtx.u.data[0];
+   633  0B1E  30A7               	movlw	_vtx+7
+   634  0B1F  00B2               	movwf	(_vrx+3)^(0+128)
+   635                           ;vlf_comms2.c: 606: vrx.shifter = 0x01;
+   636  0B20  01B3               	clrf	(_vrx+4)^(0+128)
+   637  0B21  0AB3               	incf	(_vrx+4)^(0+128)
+   638                           ;vlf_comms2.c: 607: vrx.state = VLF_RX_RECEIVIN
+      +                          G;
+   639  0B22  3003               	movlw	3
+   640  0B23  00AF               	movwf	_vrx^(0+128)
+   641                           ;vlf_comms2.c: 608: vrx.cnt = 1;
+   642  0B24  01B0               	clrf	(_vrx+1)^(0+128)
+   643  0B25  2B59               	goto	l137
+   644                           ;vlf_comms2.c: 609: }
+   645  0B26                     l133
+   646                           ;vlf_comms2.c: 610: else
+   647  0B26  01AF               	clrf	_vrx^(0+128)
+   648  0B27  0AAF               	incf	_vrx^(0+128)
+   649                           ;vlf_comms2.c: 612: vrx.cnt = 0;
+   650  0B28  01B0               	clrf	(_vrx+1)^(0+128)
+   651                           ;vlf_comms2.c: 617: }
+   652  0B29  2B6C               	goto	l87
+   653                           ;vlf_comms2.c: 619: else
+   654                           ;vlf_comms2.c: 621: break;
+   655  0B2A                     l136
+   656                           ;vlf_comms2.c: 624: case VLF_RX_RECEIVING:
+   657                           ;vlf_comms2.c: 625: if( ( vrx.cnt & ((4) - 1) )
+      +                           == ((4)-1) )
+   658  0B2A  0830               	movf	(_vrx+1)^(0+128),w
+   659  0B2B  3903               	andlw	3
+   660  0B2C  3A03               	xorlw	3
+   661  0B2D  1D03               	btfss	3,2
+   662  0B2E  2B59               	goto	l137
+   663                           ;vlf_comms2.c: 626: {
+   664  0B2F  0866               	movf	(_vrx+55)^(0+128),w
+   665  0B30  0767               	addwf	(_vrx+56)^(0+128),w
+   666  0B31  0769               	addwf	(_vrx+58)^(0+128),w
+   667  0B32  0768               	addwf	(_vrx+57)^(0+128),w
+   668  0B33  00B8               	movwf	(_vrx+9)^(0+128)
+   669                           ;vlf_comms2.c: 631: vrx.score >>= 3;
+   670  0B34  1003               	bcf	3,0
+   671  0B35  0CB8               	rrf	(_vrx+9)^(0+128)
+   672  0B36  1003               	bcf	3,0
+   673  0B37  0CB8               	rrf	(_vrx+9)^(0+128)
+   674  0B38  1003               	bcf	3,0
+   675  0B39  0CB8               	rrf	(_vrx+9)^(0+128)
+   676                           ;vlf_comms2.c: 634: if ( vrx.score >= ((((8000)
+      +                          /(100)) >> 3)*3/5) )
+   677  0B3A  3006               	movlw	6
+   678  0B3B  0238               	subwf	(_vrx+9)^(0+128),w
+   679                           ;vlf_comms2.c: 635: *vrx.ptr |= vrx.shifter;
+   680  0B3C  0832               	movf	(_vrx+3)^(0+128),w
+   681  0B3D  0084               	movwf	4
+   682  0B3E  1383               	bcf	3,7
+   683  0B3F  1C03               	btfss	3,0
+   684  0B40  2B44               	goto	L7
+   685  0B41  0833               	movf	(_vrx+4)^(0+128),w
+   686  0B42  0480               	iorwf	0
+   687  0B43  2B46               	goto	l139
+   688                           ;vlf_comms2.c: 636: else
+   689  0B44                     L7
+   690  0B44  0933               	comf	(_vrx+4)^(0+128),w
+   691  0B45  0580               	andwf	0
+   692  0B46                     l139
+   693                           ;vlf_comms2.c: 639: if( vrx.shifter < 0x80 )
+   694  0B46  3080               	movlw	-128
+   695  0B47  0233               	subwf	(_vrx+4)^(0+128),w
+   696  0B48  1803               	btfsc	3,0
+   697  0B49  2B4D               	goto	l140
+   698                           ;vlf_comms2.c: 640: vrx.shifter <<= 1;
+   699  0B4A  1003               	bcf	3,0
+   700  0B4B  0DB3               	rlf	(_vrx+4)^(0+128)
+   701  0B4C  2B59               	goto	l137
+   702  0B4D                     l140
+   703                           ;vlf_comms2.c: 641: else
+   704  0B4D  01B3               	clrf	(_vrx+4)^(0+128)
+   705  0B4E  0AB3               	incf	(_vrx+4)^(0+128)
+   706                           ;vlf_comms2.c: 643: vrx.ptr++;
+   707  0B4F  0AB2               	incf	(_vrx+3)^(0+128)
+   708                           ;vlf_comms2.c: 645: if( !(--vrx.len ) )
+   709  0B50  0BB1               	decfsz	(_vrx+2)^(0+128)
+   710  0B51  2B59               	goto	l137
+   711                           ;vlf_comms2.c: 646: { TMR2IE = 0;
+   712  0B52  108C               	bcf	12,1
+   713                           ;vlf_comms2.c: 647: TMR2ON = 0;
+   714  0B53  1283               	bcf	3,5
+   715  0B54  1112               	bcf	18,2
+   716                           ;vlf_comms2.c: 648: vrx.state = VLF_PACKET_READ
+      +                          Y;
+   717  0B55  3004               	movlw	4
+   718  0B56  1683               	bsf	3,5
+   719  0B57  00AF               	movwf	_vrx^(0+128)
+   720  0B58  2B5B               	goto	l143
+   721                           ;vlf_comms2.c: 649: return( (1) );
+   722  0B59                     l137
+   723                           ;vlf_comms2.c: 650: }
+   724  0B59  0AB0               	incf	(_vrx+1)^(0+128)
+   725                           ;vlf_comms2.c: 662: break;
+   726  0B5A  2B6C               	goto	l87
+   727  0B5B                     l143
+   728                           ;vlf_comms2.c: 664: case VLF_PACKET_READY:
+   729                           ;vlf_comms2.c: 665: return( (1) );
+   730  0B5B  3001               	movlw	1
+   731  0B5C  2B80               	goto	l86
+   732  0B5D                     l88
+   733  0B5D  082F               	movf	_vrx^(0+128),w
+   734  0B5E  1903               	btfsc	3,2
+   735  0B5F  2980               	goto	l89
+   736  0B60  3A01               	xorlw	1
+   737  0B61  1903               	btfsc	3,2
+   738  0B62  2A28               	goto	l109
+   739  0B63  3A03               	xorlw	3
+   740  0B64  1903               	btfsc	3,2
+   741  0B65  2AC2               	goto	l127
+   742  0B66  3A01               	xorlw	1
+   743  0B67  1903               	btfsc	3,2
+   744  0B68  2B2A               	goto	l136
+   745  0B69  3A07               	xorlw	7
+   746  0B6A  1903               	btfsc	3,2
+   747  0B6B  2B5B               	goto	l143
+   748  0B6C                     l87
+   749                           ;vlf_comms2.c: 669: for( ii = 0; ii < sizeof(vr
+      +                          x.preamble) - 1; ii++ )
+   750  0B6C  1283               	bcf	3,5
+   751  0B6D  01BD               	clrf	?a_VLF_ProcessBitRead
+   752  0B6E                     l144
+   753                           ;vlf_comms2.c: 670: vrx.preamble[ii] = vrx.prea
+      +                          mble[ii+1];
+   754  0B6E  083D               	movf	?a_VLF_ProcessBitRead,w
+   755  0B6F  3EBB               	addlw	_vrx+12
+   756  0B70  0084               	movwf	4
+   757  0B71  1383               	bcf	3,7
+   758  0B72  0800               	movf	0,w
+   759  0B73  00F4               	movwf	btemp
+   760  0B74  083D               	movf	?a_VLF_ProcessBitRead,w
+   761  0B75  3EBA               	addlw	_vrx+11
+   762  0B76  0084               	movwf	4
+   763  0B77  1383               	bcf	3,7
+   764  0B78  0874               	movf	btemp,w
+   765  0B79  0080               	movwf	0
+   766  0B7A  0ABD               	incf	?a_VLF_ProcessBitRead
+   767  0B7B  302F               	movlw	47
+   768  0B7C  023D               	subwf	?a_VLF_ProcessBitRead,w
+   769  0B7D  1C03               	btfss	3,0
+   770  0B7E  2B6E               	goto	l144
+   771                           ;vlf_comms2.c: 672: return( (0) );
+   772  0B7F  3000               	movlw	0
+   773                           ;vlf_comms2.c: 673: }
+   774  0B80                     l86
+   775  0B80  1283               	bcf	3,5
+   776  0B81  0008               	return	;uses W
+   777                           
+   778                           	psect	text8
+   779  1546                     __end_of_VLF_StartReceiver
+   780  1546                     _VLF_StopReceiver
+   781                           ;vlf_comms2.c: 782: void VLF_StopReceiver(void)
+   782  1546  1683               	bsf	3,5
+   783  1547  1303               	bcf	3,6	;carry unused
+   784  1548  108C               	bcf	12,1
+   785                           ;vlf_comms2.c: 785: TMR2ON = 0;
+   786  1549  1283               	bcf	3,5
+   787  154A  1112               	bcf	18,2
+   788                           ;vlf_comms2.c: 786: }
+   789  154B  0008               	return	;W free
+   790                           
+   791                           	psect	text9
+   792  0B82                     __end_of_VLF_StopReceiver
+   793  0B82                     _VLF_SendPacket
+   794                           ;vlf_comms2.c: 793: static void VLF_SendPacket(
+      +                          void)
+   795  0B82  1683               	bsf	3,5
+   796  0B83  1303               	bcf	3,6	;carry unused
+   797  0B84  108C               	bcf	12,1
+   798                           ;vlf_comms2.c: 800: TMR2ON = 0;
+   799  0B85  1283               	bcf	3,5
+   800  0B86  1112               	bcf	18,2
+   801                           ;vlf_comms2.c: 801: TMR2 = 0;
+   802  0B87  0191               	clrf	17	;volatile
+   803                           ;vlf_comms2.c: 804: T2CON = (4 << 3) | 0;
+   804  0B88  3020               	movlw	32
+   805  0B89  0092               	movwf	18
+   806                           ;vlf_comms2.c: 805: PR2 = (BYTE)((2000000/(1<<(
+      +                          2*0))/((35714.2857))) - 1);
+   807  0B8A  3037               	movlw	55
+   808  0B8B  1683               	bsf	3,5
+   809  0B8C  0092               	movwf	18
+   810                           ;vlf_comms2.c: 811: CCPR1L = (BYTE)(2000000/(1<
+      +                          <(2*0))*4/((35714.2857))/2) >> 2;
+   811  0B8D  301C               	movlw	28
+   812  0B8E  1283               	bcf	3,5
+   813  0B8F  0095               	movwf	21	;volatile
+   814                           ;vlf_comms2.c: 812: CCP1CON = ( ( (BYTE)(200000
+      +                          0/(1<<(2*0))*4/((35714.2857))/2) & 3 ) << 4 );
+   815  0B90  0197               	clrf	23	;volatile
+   816                           ;vlf_comms2.c: 814: vtx.cnt = 0;
+   817  0B91  1683               	bsf	3,5
+   818  0B92  01A1               	clrf	(_vtx+1)^(0+128)
+   819                           ;vlf_comms2.c: 815: vtx.state = VLF_TX_PACKET_P
+      +                          REAMBLE;
+   820  0B93  3002               	movlw	2
+   821  0B94  00A0               	movwf	_vtx^(0+128)
+   822                           ;vlf_comms2.c: 817: SWDTEN = 0;
+   823  0B95  1283               	bcf	3,5
+   824  0B96  1703               	bsf	3,6
+   825  0B97  1005               	bcf	5,0
+   826                           ;vlf_comms2.c: 818: OPTION = 0xC0 | 5;
+   827  0B98  30C5               	movlw	-59
+   828  0B99  1683               	bsf	3,5
+   829  0B9A  1303               	bcf	3,6	;carry unused
+   830  0B9B  0081               	movwf	1
+   831                           ;vlf_comms2.c: 822: asm("clrwdt");
+   832  0B9C  0064               	clrwdt	;#
+   833                           ;vlf_comms2.c: 823: SWDTEN = 1;
+   834  0B9D  1283               	bcf	3,5
+   835  0B9E  1703               	bsf	3,6
+   836  0B9F  1405               	bsf	5,0
+   837                           ;vlf_comms2.c: 825: T0IF = 0;
+   838  0BA0  110B               	bcf	11,2
+   839                           ;vlf_comms2.c: 826: TMR0 = 0xFF;
+   840  0BA1  30FF               	movlw	-1
+   841  0BA2  1303               	bcf	3,6	;carry unused
+   842  0BA3  0081               	movwf	1	;volatile
+   843                           ;vlf_comms2.c: 827: T0IE = 1;
+   844  0BA4  168B               	bsf	11,5
+   845                           ;vlf_comms2.c: 828: TMR2ON = 1;
+   846  0BA5  1512               	bsf	18,2
+   847                           ;vlf_comms2.c: 829: }
+   848  0BA6  0008               	return	;W free
+   849  0BA7                     _get_crc
+   850                           ;	_bit_cnt assigned to ?a_get_crc+0
+   851  0000                     _get_crc$bit_cnt	set	?a_get_crc
+   852                           ;	_crc assigned to ?a_get_crc+1
+   853  0000                     _get_crc$crc	set	?a_get_crc+1
+   854                           ;_crc stored from w
+   855  0BA7  0183               	clrf	3	;select bank 0
+   856  0BA8  00CD               	movwf	?a_get_crc+1
+   857                           ;vlf_comms2.c: 162: static BYTE get_crc( BYTE c
+      +                          rc, BYTE data )
+   858  0BA9  01CC               	clrf	?a_get_crc
+   859                           ;vlf_comms2.c: 168: { crc <<= 1;
+   860  0BAA  1003               	bcf	3,0
+   861  0BAB                     L2
+   862                           ;vlf_comms2.c: 167: { if( crc & 0x80 )
+   863  0BAB  1FCD               	btfss	?a_get_crc+1,7
+   864  0BAC  2BB4               	goto	L1
+   865  0BAD  0DCD               	rlf	?a_get_crc+1
+   866                           ;vlf_comms2.c: 169: if( data & 0x80 )
+   867  0BAE  1FCB               	btfss	?_get_crc,7
+   868  0BAF  2BB1               	goto	l51
+   869                           ;vlf_comms2.c: 170: crc |= 0x01;
+   870  0BB0  144D               	bsf	?a_get_crc+1,0
+   871  0BB1                     l51
+   872                           ;vlf_comms2.c: 171: crc = crc ^ 0x85;
+   873  0BB1  3085               	movlw	-123
+   874  0BB2  06CD               	xorwf	?a_get_crc+1
+   875                           ;vlf_comms2.c: 172: }
+   876  0BB3  2BB7               	goto	l52
+   877                           ;vlf_comms2.c: 173: else
+   878  0BB4                     L1
+   879  0BB4  0DCD               	rlf	?a_get_crc+1
+   880                           ;vlf_comms2.c: 175: if( data & 0x80 )
+   881  0BB5  1BCB               	btfsc	?_get_crc,7
+   882                           ;vlf_comms2.c: 176: crc |= 0x01;
+   883  0BB6  144D               	bsf	?a_get_crc+1,0
+   884  0BB7                     l52
+   885                           ;vlf_comms2.c: 177: }
+   886  0BB7  1003               	bcf	3,0
+   887  0BB8  0DCB               	rlf	?_get_crc
+   888  0BB9  0ACC               	incf	?a_get_crc
+   889  0BBA  3008               	movlw	8
+   890  0BBB  024C               	subwf	?a_get_crc,w
+   891  0BBC  1C03               	btfss	3,0
+   892  0BBD  2BAB               	goto	L2
+   893                           ;vlf_comms2.c: 179: }
+   894  0BBE  084D               	movf	?a_get_crc+1,w
+   895                           ;vlf_comms2.c: 181: }
+   896  0BBF  0008               	return	;uses W
+   897  0BC0                     __end_of_get_crc
+   898                           ;       param _crc assigned to ?_buffcrc+0
+   899  0000                     _buffcrc$crc	set	?_buffcrc
+   900                           ;       param _len assigned to ?_buffcrc+1
+   901  0000                     _buffcrc$len	set	?_buffcrc+1
+   902  0BC0                     _buffcrc
+   903                           ;	_ptr assigned to ?a_buffcrc+0
+   904  0000                     _buffcrc$ptr	set	?a_buffcrc
+   905                           ;_ptr stored from w
+   906  0BC0  0183               	clrf	3	;select bank 0
+   907  0BC1  00CA               	movwf	?a_buffcrc
+   908                           ;vlf_comms2.c: 186: static BYTE buffcrc( BYTE *
+      +                          ptr, BYTE crc, uchar len )
+   909  0BC2  2BCC               	goto	l55
+   910  0BC3                     l56
+   911                           ;vlf_comms2.c: 189: crc = get_crc( crc, *ptr++ 
+      +                          );
+   912  0BC3  0ACA               	incf	?a_buffcrc
+   913  0BC4  034A               	decf	?a_buffcrc,w
+   914  0BC5  0084               	movwf	4
+   915  0BC6  1383               	bcf	3,7
+   916  0BC7  0800               	movf	0,w
+   917  0BC8  00CB               	movwf	?_get_crc
+   918  0BC9  0848               	movf	?_buffcrc,w
+   919  0BCA  23A7               	fcall	_get_crc
+   920  0BCB  00C8               	movwf	?_buffcrc
+   921  0BCC                     l55
+   922  0BCC  03C9               	decf	?_buffcrc+1
+   923  0BCD  0F49               	incfsz	?_buffcrc+1,w
+   924  0BCE  2BC3               	goto	l56
+   925                           ;vlf_comms2.c: 190: return( crc );
+   926  0BCF  0848               	movf	?_buffcrc,w
+   927                           ;vlf_comms2.c: 191: }
+   928  0BD0  0008               	return	;uses W
+   929  0BD1                     __end_of_VLF_ReplyLocateRequest
+   930  0BD1                     _VLF_StartReceiver
+   931                           ;vlf_comms2.c: 745: void VLF_StartReceiver(void
+      +                          )
+   932  0BD1  3009               	movlw	9
+   933  0BD2  1683               	bsf	3,5
+   934  0BD3  1303               	bcf	3,6	;carry unused
+   935  0BD4  00A6               	movwf	(_vtx+6)^(0+128)
+   936                           ;vlf_comms2.c: 748: vrx.len = 0;
+   937  0BD5  01B1               	clrf	(_vrx+2)^(0+128)
+   938                           ;vlf_comms2.c: 749: vrx.cnt = 0;
+   939  0BD6  01B0               	clrf	(_vrx+1)^(0+128)
+   940                           ;vlf_comms2.c: 750: vtx.state = VLF_TX_IDLE;
+   941  0BD7  01A0               	clrf	_vtx^(0+128)
+   942                           ;vlf_comms2.c: 751: vrx.state = VLF_RX_SEEKING;
+   943  0BD8  01AF               	clrf	_vrx^(0+128)
+   944  0BD9  0AAF               	incf	_vrx^(0+128)
+   945                           ;vlf_comms2.c: 752: vlf_state = VLF_STATE_IDLE;
+   946  0BDA  1283               	bcf	3,5
+   947  0BDB  01CF               	clrf	_vlf_state	;volatile
+   948                           ;vlf_comms2.c: 754: vrx.prev_preamble_score = 0
+      +                          xFFFF;
+   949  0BDC  30FF               	movlw	255
+   950  0BDD  1683               	bsf	3,5
+   951  0BDE  00B6               	movwf	(_vrx+7)^(0+128)
+   952  0BDF  00B7               	movwf	((_vrx+7)^(0+128)+1)
+   953                           ;vlf_comms2.c: 756: SWDTEN = 0;
+   954  0BE0  1283               	bcf	3,5
+   955  0BE1  1703               	bsf	3,6
+   956  0BE2  1005               	bcf	5,0
+   957                           ;vlf_comms2.c: 759: OPTION = 0x68;
+   958  0BE3  3068               	movlw	104
+   959  0BE4  1683               	bsf	3,5
+   960  0BE5  1303               	bcf	3,6	;carry unused
+   961  0BE6  0081               	movwf	1
+   962                           ;vlf_comms2.c: 761: asm("clrwdt");
+   963  0BE7  0064               	clrwdt	;#
+   964                           ;vlf_comms2.c: 762: SWDTEN = 1;
+   965  0BE8  1283               	bcf	3,5
+   966  0BE9  1703               	bsf	3,6
+   967  0BEA  1405               	bsf	5,0
+   968                           ;vlf_comms2.c: 769: TMR0 = 0;
+   969  0BEB  1303               	bcf	3,6	;carry unused
+   970  0BEC  0181               	clrf	1	;volatile
+   971                           ;vlf_comms2.c: 770: T2CON = ( 4 << 3 ) | 1;
+   972  0BED  3021               	movlw	33
+   973  0BEE  0092               	movwf	18
+   974                           ;vlf_comms2.c: 771: PR2 = ((2000000/(1<<(2*1))/
+      +                          (4+1)/((100))/((4))) - 1);
+   975  0BEF  30F9               	movlw	-7
+   976  0BF0  1683               	bsf	3,5
+   977  0BF1  0092               	movwf	18
+   978                           ;vlf_comms2.c: 772: TMR2 = 0;
+   979  0BF2  1283               	bcf	3,5
+   980  0BF3  0191               	clrf	17	;volatile
+   981                           ;vlf_comms2.c: 773: TMR2ON = 1;
+   982  0BF4  1512               	bsf	18,2
+   983                           ;vlf_comms2.c: 775: TMR2IF = 0;
+   984  0BF5  108C               	bcf	12,1
+   985                           ;vlf_comms2.c: 776: TMR2IE = 1;
+   986  0BF6  1683               	bsf	3,5
+   987  0BF7  148C               	bsf	12,1
+   988                           ;vlf_comms2.c: 777: }
+   989  0BF8  1283               	bcf	3,5
+   990  0BF9  0008               	return	;W free
+   991  0BFA                     __end_of_VLF_Busy
+   992  0BFA                     _VLF_ProcessPacket
+   993                           ;	_crc assigned to ?a_VLF_ProcessPacket+0
+   994  0000                     _VLF_ProcessPacket$crc	set	?a_VLF_ProcessPacket
+   995                           ;vlf_comms2.c: 216: BYTE VLF_ProcessPacket(void
+      +                          )
+   996  0BFA  3009               	movlw	9
+   997  0BFB  1683               	bsf	3,5
+   998  0BFC  1303               	bcf	3,6	;carry unused
+   999  0BFD  0226               	subwf	(_vtx+6)^(0+128),w
+  1000  0BFE  1C03               	btfss	3,0
+  1001  0BFF  2C02               	goto	l61
+  1002                           ;vlf_comms2.c: 225: { VLF_StartReceiver();
+  1003  0C00  23D1               	fcall	_VLF_StartReceiver
+  1004                           ;vlf_comms2.c: 231: return( 1 );
+  1005  0C01  3401               	retlw	1
+  1006  0C02                     l61
+  1007                           ;vlf_comms2.c: 232: }
+  1008  0C02  0E26               	swapf	(_vtx+6)^(0+128),w
+  1009  0C03  39F0               	andlw	240
+  1010  0C04  1283               	bcf	3,5
+  1011  0C05  00CB               	movwf	?_get_crc
+  1012  0C06  30F5               	movlw	-11
+  1013  0C07  23A7               	fcall	_get_crc
+  1014  0C08  00BD               	movwf	?a_VLF_ProcessPacket
+  1015                           ;vlf_comms2.c: 235: crc = buffcrc( &vtx.u.data[
+      +                          0], crc, ( (BYTE)(uncoded_rx_data_size[vtx.type
+      +                          ] + 1) ) - 1 );
+  1016  0C09  00C8               	movwf	?_buffcrc
+  1017  0C0A  3010               	movlw	_uncoded_rx_data_size shr (0+8)
+  1018  0C0B  008A               	movwf	10
+  1019  0C0C  1683               	bsf	3,5
+  1020  0C0D  0826               	movf	(_vtx+6)^(0+128),w
+  1021  0C0E  2079               	call	((_uncoded_rx_data_size+-1)& (0+2047))| (
+      +                          ($)& (0+-2048))
+  1022  0C0F  3E00               	addlw	256
+  1023  0C10  1283               	bcf	3,5
+  1024  0C11  00C9               	movwf	?_buffcrc+1
+  1025  0C12  30A7               	movlw	_vtx+7
+  1026  0C13  120A  158A  23C0   	fcall	_buffcrc
+  1027  0C16  00BD               	movwf	?a_VLF_ProcessPacket
+  1028                           ;vlf_comms2.c: 236: crc = get_crc( crc, 0x00 );
+  1029  0C17  01CB               	clrf	?_get_crc
+  1030  0C18  23A7               	fcall	_get_crc
+  1031  0C19  00BD               	movwf	?a_VLF_ProcessPacket
+  1032                           ;vlf_comms2.c: 239: if( vtx.u.data[( (BYTE)(unc
+      +                          oded_rx_data_size[vtx.type] ) )] != crc )
+  1033  0C1A  3010               	movlw	_uncoded_rx_data_size shr (0+8)
+  1034  0C1B  008A               	movwf	10
+  1035  0C1C  1683               	bsf	3,5
+  1036  0C1D  0826               	movf	(_vtx+6)^(0+128),w
+  1037  0C1E  2079               	call	((_uncoded_rx_data_size+-1)& (0+2047))| (
+      +                          ($)& (0+-2048))
+  1038  0C1F  120A  158A         	pagesel	$
+  1039  0C21  3EA7               	addlw	_vtx+7
+  1040  0C22  0084               	movwf	4
+  1041  0C23  1383               	bcf	3,7
+  1042  0C24  0800               	movf	0,w
+  1043  0C25  1283               	bcf	3,5
+  1044  0C26  063D               	xorwf	?a_VLF_ProcessPacket,w
+  1045  0C27  1903               	btfsc	3,2
+  1046  0C28  2D00               	goto	l64
+  1047                           ;vlf_comms2.c: 240: { VLF_StartReceiver();
+  1048  0C29  23D1               	fcall	_VLF_StartReceiver
+  1049                           ;vlf_comms2.c: 244: return( 2 );
+  1050  0C2A  3402               	retlw	2
+  1051                           ;vlf_comms2.c: 245: }
+  1052  0C2B                     l65
+  1053                           ;vlf_comms2.c: 249: {
+  1054                           ;vlf_comms2.c: 252: if( ( vtx.u.det_cmd.sid != 
+      +                          vtx.sid )||( vtx.u.det_cmd.seq != vtx.seq ) )
+  1055  0C2B  0827               	movf	(_vtx+7)^(0+128),w
+  1056  0C2C  0625               	xorwf	(_vtx+5)^(0+128),w
+  1057  0C2D  1D03               	btfss	3,2
+  1058  0C2E  2C33               	goto	u130
+  1059  0C2F  0828               	movf	(_vtx+8)^(0+128),w
+  1060  0C30  0624               	xorwf	(_vtx+4)^(0+128),w
+  1061  0C31  1903               	btfsc	3,2
+  1062  0C32  2D1A               	goto	l63
+  1063  0C33                     u130
+  1064                           ;vlf_comms2.c: 253: {
+  1065  0C33  1283               	bcf	3,5
+  1066  0C34  0822               	movf	_lamp_state,w
+  1067  0C35  3A02               	xorlw	2
+  1068  0C36  1D03               	btfss	3,2
+  1069  0C37  2C40               	goto	l67
+  1070                           ;vlf_comms2.c: 256: { lamp_state = LAMP_NORMAL_
+      +                          STATE;
+  1071  0C38  30F0               	movlw	-16
+  1072  0C39  00A2               	movwf	_lamp_state
+  1073                           ;vlf_comms2.c: 259: RC1 = ( mu_flags & (0x04) )
+      +                           ? 1 : 0;
+  1074  0C3A  1D24               	btfss	_mu_flags,2
+  1075  0C3B  2C3E               	goto	u150
+  1076  0C3C  1487               	bsf	7,1
+  1077  0C3D  2C46               	goto	l68
+  1078  0C3E                     u150
+  1079  0C3E  1087               	bcf	7,1
+  1080                           ;vlf_comms2.c: 263: }
+  1081  0C3F  2C46               	goto	l68
+  1082  0C40                     l67
+  1083                           ;vlf_comms2.c: 264: else if( lamp_state == LAMP
+      +                          _VLF_BLOCKED_STATE )
+  1084  0C40  0822               	movf	_lamp_state,w
+  1085  0C41  3A08               	xorlw	8
+  1086  0C42  1D03               	btfss	3,2
+  1087  0C43  2C46               	goto	l68
+  1088                           ;vlf_comms2.c: 265: {
+  1089  0C44  23D1               	fcall	_VLF_StartReceiver
+  1090                           ;vlf_comms2.c: 279: return( 0 );
+  1091  0C45  3400               	retlw	0
+  1092  0C46                     l68
+  1093                           ;vlf_comms2.c: 280: }
+  1094  0C46  307A               	movlw	122
+  1095  0C47  1303               	bcf	3,6	;carry unused
+  1096  0C48  00C6               	movwf	?_delay_ms
+  1097  0C49  3003               	movlw	3
+  1098  0C4A  00C7               	movwf	?_delay_ms+1
+  1099  0C4B  120A  158A  203F   	fcall	_delay_ms
+      +       120A  158A         
+  1100                           ;vlf_comms2.c: 286: VLF_ReplyToBroadcastRequest
+      +                          ( 10 );
+  1101  0C50  300A               	movlw	10
+  1102  0C51  255F  120A  158A   	fcall	_VLF_ReplyToBroadcastRequest
+  1103                           ;vlf_comms2.c: 287: return( 0 );
+  1104  0C54  3400               	retlw	0
+  1105                           ;vlf_comms2.c: 288: }
+  1106  0C55                     l70
+  1107                           ;vlf_comms2.c: 292: case VLF_MU_MASK:
+  1108                           ;vlf_comms2.c: 293: if(
+  1109  0C55  0829               	movf	(_vtx+9)^(0+128),w
+  1110  0C56  1283               	bcf	3,5
+  1111  0C57  062B               	xorwf	_mid+1,w
+  1112  0C58  1D03               	btfss	3,2
+  1113  0C59  2D1A               	goto	l63
+  1114  0C5A  1683               	bsf	3,5
+  1115  0C5B  0828               	movf	(_vtx+8)^(0+128),w
+  1116  0C5C  1283               	bcf	3,5
+  1117  0C5D  062C               	xorwf	_mid+2,w
+  1118  0C5E  1D03               	btfss	3,2
+  1119  0C5F  2D1A               	goto	l63
+  1120  0C60  1683               	bsf	3,5
+  1121  0C61  0827               	movf	(_vtx+7)^(0+128),w
+  1122  0C62  1283               	bcf	3,5
+  1123  0C63  062D               	xorwf	_mid+3,w
+  1124  0C64  1D03               	btfss	3,2
+  1125  0C65  2D1A               	goto	l63
+  1126                           ;vlf_comms2.c: 297: {
+  1127  0C66  3078               	movlw	120
+  1128  0C67  00C6               	movwf	?_delay_ms
+  1129  0C68  3005               	movlw	5
+  1130  0C69  00C7               	movwf	?_delay_ms+1
+  1131  0C6A  120A  158A  203F   	fcall	_delay_ms
+      +       120A  158A         
+  1132                           ;vlf_comms2.c: 300: if( lamp_state != LAMP_SEAR
+      +                          CH_IN_PROGRESS )
+  1133  0C6F  0822               	movf	_lamp_state,w
+  1134  0C70  3A02               	xorlw	2
+  1135  0C71  1903               	btfsc	3,2
+  1136  0C72  2C7D               	goto	l72
+  1137                           ;vlf_comms2.c: 301: { lamp_state = LAMP_SEARCH_
+      +                          IN_PROGRESS;
+  1138  0C73  3002               	movlw	2
+  1139  0C74  00A2               	movwf	_lamp_state
+  1140                           ;vlf_comms2.c: 302: lamp_timeout = (timer.cnt +
+      +                           (ushort)((ushort)( 3*60*(15.2588))));
+  1141  0C75  30BA               	movlw	186
+  1142  0C76  0734               	addwf	_timer,w	;volatile
+  1143  0C77  00A6               	movwf	_lamp_timeout
+  1144  0C78  300A               	movlw	10
+  1145  0C79  1803               	btfsc	3,0
+  1146  0C7A  300B               	movlw	11
+  1147  0C7B  0735               	addwf	_timer+1,w	;volatile
+  1148  0C7C  00A7               	movwf	_lamp_timeout+1
+  1149  0C7D                     l72
+  1150                           ;vlf_comms2.c: 303: }
+  1151  0C7D  1683               	bsf	3,5
+  1152  0C7E  082B               	movf	(_vtx+11)^(0+128),w
+  1153  0C7F  00A4               	movwf	(_vtx+4)^(0+128)
+  1154                           ;vlf_comms2.c: 305: vtx.sid = vtx.u.msk_cmd.sid
+      +                          ;
+  1155  0C80  082A               	movf	(_vtx+10)^(0+128),w
+  1156  0C81  00A5               	movwf	(_vtx+5)^(0+128)
+  1157                           ;vlf_comms2.c: 306: VLF_SendGeneric();
+  1158  0C82  251C  120A  158A   	fcall	_VLF_SendGeneric
+  1159                           ;vlf_comms2.c: 307: return( 0 );
+  1160  0C85  3400               	retlw	0
+  1161                           ;vlf_comms2.c: 308: }
+  1162  0C86                     l73
+  1163                           ;vlf_comms2.c: 311: case VLF_MU_QUICK_SEARCH_X:
+  1164                           ;vlf_comms2.c: 312: delay_ms( ((3*85)+20) );
+  1165  0C86  3013               	movlw	19
+  1166  0C87  1283               	bcf	3,5
+  1167  0C88  00C6               	movwf	?_delay_ms
+  1168  0C89  3001               	movlw	1
+  1169  0C8A  00C7               	movwf	?_delay_ms+1
+  1170  0C8B  120A  158A  203F   	fcall	_delay_ms
+  1171  0C8E                     l74
+  1172                           ;vlf_comms2.c: 314: case VLF_MU_QUICK_SEARCH_Y:
+  1173                           ;vlf_comms2.c: 315: delay_ms( ((3*85)+20) );
+  1174  0C8E  3013               	movlw	19
+  1175  0C8F  1283               	bcf	3,5
+  1176  0C90  00C6               	movwf	?_delay_ms
+  1177  0C91  3001               	movlw	1
+  1178  0C92  00C7               	movwf	?_delay_ms+1
+  1179  0C93  120A  158A  203F   	fcall	_delay_ms
+      +       120A  158A         
+  1180  0C98                     l75
+  1181                           ;vlf_comms2.c: 317: case VLF_MU_QUICK_SEARCH_Z:
+  1182                           ;vlf_comms2.c: 319: if( lamp_state == LAMP_VLF_
+      +                          BLOCKED_STATE )
+  1183  0C98  1283               	bcf	3,5
+  1184  0C99  0822               	movf	_lamp_state,w
+  1185  0C9A  3A08               	xorlw	8
+  1186  0C9B  1D03               	btfss	3,2
+  1187  0C9C  2C9F               	goto	l76
+  1188                           ;vlf_comms2.c: 320: VLF_StartReceiver();
+  1189  0C9D  23D1               	fcall	_VLF_StartReceiver
+  1190  0C9E  3400               	retlw	0
+  1191  0C9F                     l76
+  1192                           ;vlf_comms2.c: 321: else
+  1193  0C9F  3005               	movlw	5
+  1194  0CA0  255F  120A  158A   	fcall	_VLF_ReplyToBroadcastRequest
+  1195                           ;vlf_comms2.c: 323: return( 0 );
+  1196  0CA3  3400               	retlw	0
+  1197  0CA4                     l78
+  1198                           ;vlf_comms2.c: 325: case VLF_MU_LOCATE:
+  1199                           ;vlf_comms2.c: 326: if(
+  1200  0CA4  0829               	movf	(_vtx+9)^(0+128),w
+  1201  0CA5  1283               	bcf	3,5
+  1202  0CA6  062B               	xorwf	_mid+1,w
+  1203  0CA7  1D03               	btfss	3,2
+  1204  0CA8  2D1A               	goto	l63
+  1205  0CA9  1683               	bsf	3,5
+  1206  0CAA  0828               	movf	(_vtx+8)^(0+128),w
+  1207  0CAB  1283               	bcf	3,5
+  1208  0CAC  062C               	xorwf	_mid+2,w
+  1209  0CAD  1D03               	btfss	3,2
+  1210  0CAE  2D1A               	goto	l63
+  1211  0CAF  1683               	bsf	3,5
+  1212  0CB0  0827               	movf	(_vtx+7)^(0+128),w
+  1213  0CB1  1283               	bcf	3,5
+  1214  0CB2  062D               	xorwf	_mid+3,w
+  1215  0CB3  1D03               	btfss	3,2
+  1216  0CB4  2D1A               	goto	l63
+  1217                           ;vlf_comms2.c: 330: { delay_ms( ((7*85)+20) * 2
+      +                           );
+  1218  0CB5  30CE               	movlw	206
+  1219  0CB6  00C6               	movwf	?_delay_ms
+  1220  0CB7  3004               	movlw	4
+  1221  0CB8  00C7               	movwf	?_delay_ms+1
+  1222  0CB9  120A  158A  203F   	fcall	_delay_ms
+      +       120A  158A         
+  1223                           ;vlf_comms2.c: 331: VLF_ReplyLocateRequest( vtx
+      +                          .u.loc_cmd.duration );
+  1224  0CBE  1683               	bsf	3,5
+  1225  0CBF  082A               	movf	(_vtx+10)^(0+128),w
+  1226  0CC0  257F               	fcall	_VLF_ReplyLocateRequest
+  1227                           ;vlf_comms2.c: 332: VLF_StartReceiver();
+  1228  0CC1  23D1               	fcall	_VLF_StartReceiver
+  1229                           ;vlf_comms2.c: 333: return( 0 );
+  1230  0CC2  3400               	retlw	0
+  1231                           ;vlf_comms2.c: 334: }
+  1232  0CC3                     l80
+  1233                           ;vlf_comms2.c: 337: case VLF_MU_TEST:
+  1234                           ;vlf_comms2.c: 339: VLF_SendGeneric();
+  1235  0CC3  251C  120A  158A   	fcall	_VLF_SendGeneric
+  1236                           ;vlf_comms2.c: 341: return( 0 );
+  1237  0CC6  3400               	retlw	0
+  1238  0CC7                     l81
+  1239                           ;vlf_comms2.c: 344: case VLF_MU_MASK_FULL:
+  1240                           ;vlf_comms2.c: 345: if(
+  1241  0CC7  0829               	movf	(_vtx+9)^(0+128),w
+  1242  0CC8  1283               	bcf	3,5
+  1243  0CC9  062B               	xorwf	_mid+1,w
+  1244  0CCA  1D03               	btfss	3,2
+  1245  0CCB  2D1A               	goto	l63
+  1246  0CCC  1683               	bsf	3,5
+  1247  0CCD  0828               	movf	(_vtx+8)^(0+128),w
+  1248  0CCE  1283               	bcf	3,5
+  1249  0CCF  062C               	xorwf	_mid+2,w
+  1250  0CD0  1D03               	btfss	3,2
+  1251  0CD1  2D1A               	goto	l63
+  1252  0CD2  1683               	bsf	3,5
+  1253  0CD3  0827               	movf	(_vtx+7)^(0+128),w
+  1254  0CD4  1283               	bcf	3,5
+  1255  0CD5  062D               	xorwf	_mid+3,w
+  1256  0CD6  1D03               	btfss	3,2
+  1257  0CD7  2D1A               	goto	l63
+  1258                           ;vlf_comms2.c: 349: {
+  1259  0CD8  3078               	movlw	120
+  1260  0CD9  00C6               	movwf	?_delay_ms
+  1261  0CDA  3005               	movlw	5
+  1262  0CDB  00C7               	movwf	?_delay_ms+1
+  1263  0CDC  120A  158A  203F   	fcall	_delay_ms
+      +       120A  158A         
+  1264                           ;vlf_comms2.c: 352: lamp_min_cnt = vtx.u.msk_fu
+      +                          ll_cmd.timer;
+  1265  0CE1  1683               	bsf	3,5
+  1266  0CE2  082A               	movf	(_vtx+10)^(0+128),w
+  1267  0CE3  1283               	bcf	3,5
+  1268  0CE4  00A1               	movwf	_lamp_min_cnt
+  1269                           ;vlf_comms2.c: 353: if( lamp_min_cnt )
+  1270  0CE5  08A1               	movf	_lamp_min_cnt
+  1271  0CE6  1903               	btfsc	3,2
+  1272  0CE7  2CF3               	goto	l83
+  1273                           ;vlf_comms2.c: 354: { lamp_state = LAMP_VLF_BLO
+      +                          CKED_STATE;
+  1274  0CE8  3008               	movlw	8
+  1275  0CE9  00A2               	movwf	_lamp_state
+  1276                           ;vlf_comms2.c: 355: lamp_timeout = (timer.cnt +
+      +                           (ushort)((ushort)( 60*(15.2588))));
+  1277  0CEA  3093               	movlw	147
+  1278  0CEB  0734               	addwf	_timer,w	;volatile
+  1279  0CEC  00A6               	movwf	_lamp_timeout
+  1280  0CED  3003               	movlw	3
+  1281  0CEE  1803               	btfsc	3,0
+  1282  0CEF  3004               	movlw	4
+  1283  0CF0  0735               	addwf	_timer+1,w	;volatile
+  1284  0CF1  00A7               	movwf	_lamp_timeout+1
+  1285                           ;vlf_comms2.c: 356: }
+  1286  0CF2  2CFA               	goto	l84
+  1287  0CF3                     l83
+  1288                           ;vlf_comms2.c: 357: else
+  1289  0CF3  30F0               	movlw	-16
+  1290  0CF4  00A2               	movwf	_lamp_state
+  1291                           ;vlf_comms2.c: 360: RC1 = ( mu_flags & (0x04) )
+      +                           ? 1 : 0;
+  1292  0CF5  1D24               	btfss	_mu_flags,2
+  1293  0CF6  2CF9               	goto	u360
+  1294  0CF7  1487               	bsf	7,1
+  1295  0CF8  2CFA               	goto	l84
+  1296  0CF9                     u360
+  1297  0CF9  1087               	bcf	7,1
+  1298  0CFA                     l84
+  1299                           ;vlf_comms2.c: 364: }
+  1300  0CFA  251C  120A  158A   	fcall	_VLF_SendGeneric
+  1301                           ;vlf_comms2.c: 366: return( 0 );
+  1302  0CFD  3400               	retlw	0
+  1303                           ;vlf_comms2.c: 367: }
+  1304  0CFE                     l85
+  1305                           ;vlf_comms2.c: 401: default:
+  1306                           ;vlf_comms2.c: 402: VLF_StartReceiver();
+  1307  0CFE  23D1               	fcall	_VLF_StartReceiver
+  1308                           ;vlf_comms2.c: 403: return( 3 );
+  1309  0CFF  3403               	retlw	3
+  1310  0D00                     l64
+  1311  0D00  1683               	bsf	3,5
+  1312  0D01  0826               	movf	(_vtx+6)^(0+128),w
+  1313  0D02  1903               	btfsc	3,2
+  1314  0D03  2C2B               	goto	l65
+  1315  0D04  3A01               	xorlw	1
+  1316  0D05  1903               	btfsc	3,2
+  1317  0D06  2C55               	goto	l70
+  1318  0D07  3A03               	xorlw	3
+  1319  0D08  1903               	btfsc	3,2
+  1320  0D09  2C8E               	goto	l74
+  1321  0D0A  3A01               	xorlw	1
+  1322  0D0B  1903               	btfsc	3,2
+  1323  0D0C  2C98               	goto	l75
+  1324  0D0D  3A07               	xorlw	7
+  1325  0D0E  1903               	btfsc	3,2
+  1326  0D0F  2CA4               	goto	l78
+  1327  0D10  3A02               	xorlw	2
+  1328  0D11  1903               	btfsc	3,2
+  1329  0D12  2C86               	goto	l73
+  1330  0D13  3A01               	xorlw	1
+  1331  0D14  1903               	btfsc	3,2
+  1332  0D15  2CC3               	goto	l80
+  1333  0D16  3A0F               	xorlw	15
+  1334  0D17  1903               	btfsc	3,2
+  1335  0D18  2CC7               	goto	l81
+  1336  0D19  2CFE               	goto	l85
+  1337  0D1A                     l63
+  1338                           ;vlf_comms2.c: 406: VLF_StartReceiver();
+  1339  0D1A  23D1               	fcall	_VLF_StartReceiver
+  1340                           ;vlf_comms2.c: 407: return( 0 );
+  1341  0D1B  3400               	retlw	0
+  1342  0D1C                     __end_of_VLF_SendPacket
+  1343  0D1C                     _VLF_SendGeneric
+  1344                           ;	_crc assigned to ?a_VLF_SendGeneric+0
+  1345  0000                     _VLF_SendGeneric$crc	set	?a_VLF_SendGeneric
+  1346                           ;vlf_comms2.c: 834: void VLF_SendGeneric(void)
+  1347  0D1C  1683               	bsf	3,5
+  1348  0D1D  1303               	bcf	3,6	;carry unused
+  1349  0D1E  01A6               	clrf	(_vtx+6)^(0+128)
+  1350                           ;vlf_comms2.c: 838: vtx.u.responce.mid_s.val[0]
+      +                           = mid.b[3];
+  1351  0D1F  1283               	bcf	3,5
+  1352  0D20  082D               	movf	_mid+3,w
+  1353  0D21  1683               	bsf	3,5
+  1354  0D22  00A7               	movwf	(_vtx+7)^(0+128)
+  1355                           ;vlf_comms2.c: 839: vtx.u.responce.mid_s.val[1]
+      +                           = mid.b[2];
+  1356  0D23  1283               	bcf	3,5
+  1357  0D24  082C               	movf	_mid+2,w
+  1358  0D25  1683               	bsf	3,5
+  1359  0D26  00A8               	movwf	(_vtx+8)^(0+128)
+  1360                           ;vlf_comms2.c: 840: vtx.u.responce.mid_s.val[2]
+      +                           = mid.b[1];
+  1361  0D27  1283               	bcf	3,5
+  1362  0D28  082B               	movf	_mid+1,w
+  1363  0D29  1683               	bsf	3,5
+  1364  0D2A  00A9               	movwf	(_vtx+9)^(0+128)
+  1365                           ;vlf_comms2.c: 841: vtx.u.responce.m.status = 0
+      +                          ;
+  1366  0D2B  01AA               	clrf	(_vtx+10)^(0+128)
+  1367                           ;vlf_comms2.c: 845: vtx.u.responce.m.s.mobility
+      +                           = 1;
+  1368  0D2C  082A               	movf	(_vtx+10)^(0+128),w
+  1369  0D2D  39F0               	andlw	-16
+  1370  0D2E  3801               	iorlw	1
+  1371  0D2F  00AA               	movwf	(_vtx+10)^(0+128)
+  1372                           ;vlf_comms2.c: 847: vtx.u.responce.m.s.masked =
+      +                           ( lamp_state == LAMP_SEARCH_IN_PROGRESS ) ? 1 
+      +                          : 0;
+  1373  0D30  1283               	bcf	3,5
+  1374  0D31  0822               	movf	_lamp_state,w
+  1375  0D32  3A02               	xorlw	2
+  1376  0D33  3000               	movlw	0
+  1377  0D34  1903               	btfsc	3,2
+  1378  0D35  3001               	movlw	1
+  1379  0D36  00F4               	movwf	btemp
+  1380  0D37  0CF4               	rrf	btemp
+  1381  0D38  0CF4               	rrf	btemp
+  1382  0D39  1683               	bsf	3,5
+  1383  0D3A  082A               	movf	(_vtx+10)^(0+128),w
+  1384  0D3B  0674               	xorwf	btemp,w
+  1385  0D3C  397F               	andlw	-129
+  1386  0D3D  0674               	xorwf	btemp,w
+  1387  0D3E  00AA               	movwf	(_vtx+10)^(0+128)
+  1388                           ;vlf_comms2.c: 849: crc = buffcrc( vtx.u.data, 
+      +                          0x28, 4 );
+  1389  0D3F  3028               	movlw	40
+  1390  0D40  1283               	bcf	3,5
+  1391  0D41  00C8               	movwf	?_buffcrc
+  1392  0D42  3004               	movlw	4
+  1393  0D43  00C9               	movwf	?_buffcrc+1
+  1394  0D44  30A7               	movlw	_vtx+7
+  1395  0D45  23C0               	fcall	_buffcrc
+  1396  0D46  00C7               	movwf	?a_VLF_SendGeneric
+  1397                           ;vlf_comms2.c: 850: crc = get_crc( crc, 0x00 );
+  1398  0D47  01CB               	clrf	?_get_crc
+  1399  0D48  23A7               	fcall	_get_crc
+  1400  0D49  00C7               	movwf	?a_VLF_SendGeneric
+  1401                           ;vlf_comms2.c: 853: if( crc == 0xA5 )
+  1402  0D4A  3AA5               	xorlw	-91
+  1403  0D4B  1D03               	btfss	3,2
+  1404  0D4C  2D5A               	goto	l165
+  1405                           ;vlf_comms2.c: 854: { vtx.u.responce.m.s.bit6 =
+      +                           1;
+  1406  0D4D  1683               	bsf	3,5
+  1407  0D4E  16AA               	bsf	(_vtx+10)^(0+128),5
+  1408                           ;vlf_comms2.c: 855: crc = buffcrc( &vtx.u.data[
+      +                          0], 0x28, 4 );
+  1409  0D4F  3028               	movlw	40
+  1410  0D50  1283               	bcf	3,5
+  1411  0D51  00C8               	movwf	?_buffcrc
+  1412  0D52  3004               	movlw	4
+  1413  0D53  00C9               	movwf	?_buffcrc+1
+  1414  0D54  30A7               	movlw	_vtx+7
+  1415  0D55  23C0               	fcall	_buffcrc
+  1416  0D56  00C7               	movwf	?a_VLF_SendGeneric
+  1417                           ;vlf_comms2.c: 856: crc = get_crc( crc, 0x00 );
+  1418  0D57  01CB               	clrf	?_get_crc
+  1419  0D58  23A7               	fcall	_get_crc
+  1420  0D59  00C7               	movwf	?a_VLF_SendGeneric
+  1421  0D5A                     l165
+  1422                           ;vlf_comms2.c: 857: }
+  1423  0D5A  0847               	movf	?a_VLF_SendGeneric,w
+  1424  0D5B  1683               	bsf	3,5
+  1425  0D5C  00AB               	movwf	(_vtx+11)^(0+128)
+  1426                           ;vlf_comms2.c: 859: VLF_SendPacket();
+  1427  0D5D  2382               	fcall	_VLF_SendPacket
+  1428                           ;vlf_comms2.c: 860: }
+  1429  0D5E  0008               	return	;W free
+  1430  0D5F                     __end_of_VLF_ProcessBitRead
+  1431  0D5F                     _VLF_ReplyToBroadcastRequest
+  1432                           ;	_intervals assigned to ?a_VLF_ReplyToBroadcas
+      +                          tRequest+0
+  1433  0000                     _VLF_ReplyToBroadcastRequest$intervals	set	?a_V
+      +                          LF_ReplyToBroadcastRequest
+  1434                           ;	_rand_time_u8 assigned to ?a_VLF_ReplyToBroad
+      +                          castRequest+1
+  1435  0000                     _VLF_ReplyToBroadcastRequest$rand_time_u8	set	?
+      +                          a_VLF_ReplyToBroadcastRequest+1
+  1436                           ;_intervals stored from w
+  1437  0D5F  0183               	clrf	3	;select bank 0
+  1438  0D60  00C4               	movwf	?a_VLF_ReplyToBroadcastRequest
+  1439                           ;vlf_comms2.c: 681: void VLF_ReplyToBroadcastRe
+      +                          quest( BYTE intervals )
+  1440  0D61  160A  118A  261D   	fcall	_rand
+  1441  0D64  0844               	movf	?a_VLF_ReplyToBroadcastRequest,w
+  1442  0D65  00F6               	movwf	btemp+2
+  1443  0D66  01F7               	clrf	btemp+3
+  1444  0D67  120A  118A  22AC   	fcall	awmod
+      +       120A  158A         
+  1445  0D6C  0874               	movf	btemp,w
+  1446  0D6D  00C5               	movwf	?a_VLF_ReplyToBroadcastRequest+1
+  1447                           ;vlf_comms2.c: 685: while( rand_time_u8-- )
+  1448  0D6E  2D78               	goto	l148
+  1449  0D6F                     l149
+  1450                           ;vlf_comms2.c: 686: delay_ms( 290 );
+  1451  0D6F  3022               	movlw	34
+  1452  0D70  00C6               	movwf	?_delay_ms
+  1453  0D71  3001               	movlw	1
+  1454  0D72  00C7               	movwf	?_delay_ms+1
+  1455  0D73  120A  158A  203F   	fcall	_delay_ms
+      +       120A  158A         
+  1456  0D78                     l148
+  1457  0D78  03C5               	decf	?a_VLF_ReplyToBroadcastRequest+1
+  1458  0D79  0F45               	incfsz	?a_VLF_ReplyToBroadcastRequest+1,w
+  1459  0D7A  2D6F               	goto	l149
+  1460                           ;vlf_comms2.c: 687: VLF_SendGeneric();
+  1461  0D7B  251C  120A  158A   	fcall	_VLF_SendGeneric
+  1462                           ;vlf_comms2.c: 688: }
+  1463  0D7E  0008               	return	;W free
+  1464  0D7F                     __end_of_VLF_ReplyToBroadcastRequest
+  1465  0D7F                     _VLF_ReplyLocateRequest
+  1466                           ;	_locate_seconds assigned to ?a_VLF_ReplyLocat
+      +                          eRequest+0
+  1467  0000                     _VLF_ReplyLocateRequest$locate_seconds	set	?a_V
+      +                          LF_ReplyLocateRequest
+  1468                           ;	_timeout assigned to ?a_VLF_ReplyLocateReques
+      +                          t+1
+  1469  0000                     _VLF_ReplyLocateRequest$timeout	set	?a_VLF_Repl
+      +                          yLocateRequest+1
+  1470                           ;_locate_seconds stored from w
+  1471  0D7F  0183               	clrf	3	;select bank 0
+  1472  0D80  00C4               	movwf	?a_VLF_ReplyLocateRequest
+  1473                           ;vlf_comms2.c: 693: void VLF_ReplyLocateRequest
+      +                          ( uchar locate_seconds )
+  1474  0D81  1003               	bcf	3,0
+  1475  0D82  0DC4               	rlf	?a_VLF_ReplyLocateRequest
+  1476                           ;vlf_comms2.c: 723: while( locate_seconds-- )
+  1477  0D83  2DA2               	goto	l152
+  1478  0D84                     l153
+  1479                           ;vlf_comms2.c: 724: {
+  1480  0D84  3008               	movlw	8
+  1481  0D85  0734               	addwf	_timer,w	;volatile
+  1482  0D86  00C5               	movwf	?a_VLF_ReplyLocateRequest+1
+  1483  0D87  3000               	movlw	0
+  1484  0D88  1803               	btfsc	3,0
+  1485  0D89  3001               	movlw	1
+  1486  0D8A  0735               	addwf	_timer+1,w	;volatile
+  1487  0D8B  00C6               	movwf	?a_VLF_ReplyLocateRequest+2
+  1488                           ;vlf_comms2.c: 727: VLF_SendGeneric();
+  1489  0D8C  251C  120A  158A   	fcall	_VLF_SendGeneric
+  1490                           ;vlf_comms2.c: 728: while( vtx.state != VLF_TX_
+      +                          IDLE );
+  1491  0D8F                     l155
+  1492  0D8F  1683               	bsf	3,5
+  1493  0D90  08A0               	movf	_vtx^(0+128)
+  1494  0D91  1D03               	btfss	3,2
+  1495  0D92  2D8F               	goto	l155
+  1496                           ;vlf_comms2.c: 730: while( chk_timeout( timeout
+      +                           ) == (0) )
+  1497  0D93                     l158
+  1498                           ;vlf_comms2.c: 731: {
+  1499  0D93  1283               	bcf	3,5
+  1500  0D94  0845               	movf	?a_VLF_ReplyLocateRequest+1,w
+  1501  0D95  00C7               	movwf	?_chk_timeout
+  1502  0D96  0846               	movf	?a_VLF_ReplyLocateRequest+2,w
+  1503  0D97  00C8               	movwf	?_chk_timeout+1
+  1504  0D98  160A  118A  25AA   	fcall	_chk_timeout
+      +       120A  158A         
+  1505  0D9D  00F4               	movwf	btemp
+  1506  0D9E  01F5               	clrf	btemp+1
+  1507  0D9F  0475               	iorwf	btemp+1,w
+  1508  0DA0  1903               	btfsc	3,2
+  1509  0DA1  2D93               	goto	l158
+  1510  0DA2                     l152
+  1511  0DA2  03C4               	decf	?a_VLF_ReplyLocateRequest
+  1512  0DA3  0F44               	incfsz	?a_VLF_ReplyLocateRequest,w
+  1513  0DA4  2D84               	goto	l153
+  1514  0DA5  0008               	return
+  1515                           
+  1516                           	psect	text11
+  1517  07FE                     __end_of_VLF_SendGeneric
+  1518  0000                     
+  1519  0000                     
+  1520  0000                     
+  1521  0000                     
+  1522  0000                     
+  1523  0000                     
+  1524  0000                     
+  1525  0000                     
+  1526  0000                     
+  1527  0000                     
+  1528  0000                     
+  1529  0000                     
+  1530  0000                     
+  1531  0000                     
+  1532  0000                     
+  1533  0000                     
+  1534  0000                     
+  1535  0000                     
+  1536  0000                     
+  1537  0000                     
+  1538  0000                     
+  1539  0000                     
+  1540  0000                     
+  1541  0000                     
+  1542  0000                     
+  1543  0000                     
+  1544  0000                     
+  1545  0000                     
+  1546  0000                     
+  1547  0000                     
+  1548  0000                     
+  1549  0000                     
+  1550  0000                     
+  1551  0000                     
+  1552  0000                     
+  1553  0000                     
+  1554  0000                     
+  1555  0000                     
+  1556  0000                     
+  1557  0000                     
+  1558  0000                     
+  1559  0000                     
+  1560  0000                     
+  1561  0000                     
+  1562  0000                     
+  1563  0000                     
+  1564  0000                     
+  1565  0000                     
+  1566  0000                     
+  1567  0000                     
+  1568  0000                     
+  1569  0000                     
+  1570  0000                     
+  1571  0000                     
+  1572  0000                     
+  1573  0000                     
+  1574  0000                     
+  1575  0000                     
+  1576  0000                     
+  1577  0000                     
+  1578  0000                     
+  1579  0000                     
+  1580  0000                     
+  1581  0000                     
+  1582  0000                     
+  1583  0000                     
+  1584  0000                     
+  1585  0000                     
+  1586  0000                     
+  1587  0000                     
+  1588  0000                     
+  1589  0000                     
+  1590  0000                     
+  1591  0000                     
+  1592  0000                     
+  1593  0000                     
+  1594  0000                     
+  1595  0000                     
+  1596  0000                     
+  1597  0000                     
+  1598  0000                     
+  1599  0000                     
+  1600  0000                     
+  1601  0000                     
+  1602  0000                     
+  1603  0000                     
+  1604  0000                     
+  1605  0000                     
+  1606  0000                     
+  1607  0000                     
+  1608  0000                     
+  1609  0000                     
+  1610  0000                     
+  1611  0000                     
+  1612  0000                     
+  1613  0000                     
+  1614  0000                     
+  1615  0000                     
+  1616  0000                     
+  1617  0000                     
+  1618  0000                     
+  1619  0000                     
+  1620  0000                     
+  1621  0000                     
+  1622  0000                     
+  1623  0000                     
+  1624  0000                     
+  1625  0000                     
+  1626  0000                     
+  1627  0000                     
+  1628  0000                     
+  1629  0000                     
+  1630  0000                     
+  1631  0000                     
+  1632  0000                     
+  1633  0000                     
+  1634  0000                     
+  1635  0000                     
+  1636  0000                     
+  1637  0000                     
+  1638  0000                     
+  1639  0000                     
+  1640  0000                     
+  1641  0000                     
+  1642  0000                     
+  1643  0000                     
+  1644  0000                     
+  1645  0000                     
+  1646  0000                     
+  1647  0000                     
+  1648  0000                     
+  1649  0000                     
+  1650  0000                     
+  1651  0000                     
+  1652  0000                     
+  1653  0000                     
+  1654  0000                     
+  1655  0000                     
+  1656  0000                     
+  1657  0000                     
+  1658  0000                     
+  1659  0000                     
+  1660  0000                     
+  1661  0000                     
+  1662  0000                     
+  1663  0000                     
+  1664  0000                     
+  1665  0000                     
+  1666  0000                     
+  1667  0000                     
+  1668  0000                     
+  1669  0000                     
+  1670  0000                     
+  1671  0000                     
+  1672  0000                     
+  1673  0000                     
+  1674  0000                     
+  1675  0000                     
+  1676  0000                     
+  1677  0000                     
+  1678  0000                     
+  1679  0000                     
+  1680  0000                     
+  1681  0000                     
+  1682  0000                     
+  1683  0000                     
+  1684  0000                     
+  1685  0000                     
+  1686  0000                     
+  1687  0000                     
+  1688  0000                     
+  1689  0000                     
+  1690  0000                     
+  1691  0000                     
+  1692  0000                     
+  1693  0000                     
+  1694  0000                     
+  1695  0000                     
+  1696  0000                     
+  1697  0000                     
+  1698  0000                     
+  1699  0000                     
+  1700  0000                     
+  1701  0000                     
+  1702  0000                     
+  1703  0000                     
+  1704  0000                     
+  1705  0000                     
+  1706  0000                     
+  1707  0000                     
+  1708  0000                     
+  1709  0000                     
+  1710  0000                     
+  1711  0000                     
+  1712  0000                     
+  1713  0000                     
+  1714  0000                     
+  1715  0000                     
+  1716  0000                     
+  1717  0000                     
+  1718  0000                     
+  1719  0000                     
+  1720  0000                     
+  1721  0000                     
+  1722  0000                     
+  1723  0000                     
+  1724  0000                     
+  1725  0000                     
+  1726  0000                     
+  1727  0000                     
+  1728  0000                     
+  1729  0000                     
+  1730  0000                     
+  1731  0000                     
+  1732  0000                     
+  1733  0000                     
+  1734  0000                     
+  1735  0000                     
+  1736  0000                     
+  1737  0000                     
+  1738  0000                     
+  1739  0000                     
+  1740  0000                     
+  1741  0000                     
+  1742  0000                     
+  1743  0000                     
+  1744  0000                     
+  1745  0000                     
+  1746  0000                     
+  1747  0000                     
+  1748  0000                     
+  1749  0000                     
+  1750  0000                     
+  1751  0000                     
+  1752  0000                     
+  1753  0000                     
+  1754  0000                     
+  1755  0000                     
+  1756  0000                     
+  1757  0000                     
+  1758  0000                     
+  1759  0000                     
+  1760  0000                     
+  1761  0000                     
+  1762  0000                     
+  1763  0000                     
+  1764  0000                     
+  1765  0000                     
+  1766  0000                     
+  1767  0000                     
+  1768  0000                     
+  1769  0000                     
+  1770  0000                     
+  1771  0000                     
+  1772  0000                     
+  1773  0000                     
+  1774  0000                     
+  1775  0000                     
+  1776  0000                     
+  1777  0000                     
+  1778  0000                     
+  1779  0000                     
+  1780  0000                     
+  1781  0000                     
+  1782  0000                     
+  1783  0000                     
+  1784  0000                     
+  1785  0000                     
+  1786  0000                     
+  1787  0000                     
+  1788  0000                     
+  1789  0000                     
+  1790  0000                     
+  1791  0000                     
+  1792  0000                     
+  1793  0000                     
+  1794  0000                     
+  1795  0000                     
+  1796  0000                     
+  1797  0000                     
+  1798  0000                     
+  1799  0000                     
+  1800  0000                     
+  1801  0000                     
+  1802  0000                     
+  1803  0000                     
+  1804  0000                     
+  1805  0000                     
+  1806  0000                     
+  1807  0000                     
+  1808  0000                     
+  1809  0000                     
+  1810  0000                     
+  1811  0000                     
+  1812  0000                     
+  1813  0000                     
+  1814  0000                     
+  1815  0000                     
+  1816  0000                     
+  1817  0000                     
+  1818  0000                     
+  1819  0000                     
+  1820  0000                     
+  1821  0000                     
+  1822  0000                     
+  1823  0000                     
+  1824  0000                     
+  1825  0000                     
+  1826  0000                     
+  1827  0000                     
+  1828  0000                     
+  1829  0000                     
+  1830  0000                     
+  1831  0000                     
+  1832  0000                     
+  1833  0000                     
+  1834  0000                     
+  1835  0000                     
+  1836  0000                     
+  1837  0000                     
+  1838  0000                     
+  1839  0000                     
+  1840  0000                     
+  1841  0000                     
+  1842  0000                     
+  1843  0000                     
+  1844  0000                     
+  1845  0000                     
+  1846  0000                     
+  1847  0000                     
+  1848  0000                     
+  1849  0000                     
+  1850  0000                     
+  1851  0000                     
+  1852  0000                     
+  1853  0000                     
+  1854  0000                     
+  1855  0000                     
+  1856  0000                     
+  1857  0000                     
+  1858  0000                     
+  1859  0000                     
+  1860  0000                     
+  1861  0000                     
+  1862  0000                     
+  1863  0000                     
+  1864  0000                     
+  1865  0000                     
+  1866  0000                     
+  1867  0000                     
+  1868  0000                     
+  1869  0000                     
+  1870  0000                     
+  1871  0000                     
+  1872  0000                     
+  1873  0000                     
+  1874  0000                     
+  1875  0000                     
+  1876  0000                     
+  1877  0000                     
+  1878  0000                     
+  1879  0000                     
+  1880  0000                     
+  1881  0000                     
+  1882  0000                     
+  1883  0000                     
+  1884  0000                     
+  1885  0000                     
+  1886  0000                     
+  1887  0000                     
+  1888  0000                     
+  1889  0000                     
+  1890  0000                     
+  1891  0000                     
+  1892  0000                     
+  1893  0000                     
+  1894  0000                     
+  1895  0000                     
+  1896  0000                     
+  1897  0000                     
+  1898  0000                     
+  1899  0000                     
+  1900  0000                     
+  1901  0000                     
+  1902  0000                     
+  1903  0000                     
+  1904  0000                     
+  1905  0000                     
+  1906  0000                     
+  1907  0000                     
+  1908  0000                     
+  1909  0000                     
+  1910  0000                     
+  1911  0000                     
+  1912  0000                     
+  1913  0000                     
+  1914  0000                     
+  1915  0000                     
+  1916  0000                     
+  1917  0000                     
+  1918  0000                     
+  1919  0000                     
+  1920  0000                     
+  1921  0000                     
+  1922  0000                     
+  1923  0000                     
+  1924  0000                     
+  1925  0000                     
+  1926  0000                     
+  1927  0000                     
+  1928  0000                     
+  1929  0000                     
+  1930  0000                     
+  1931  0000                     
+  1932  0000                     
+  1933  0000                     
+  1934                           
+  1935                           	psect	rbss_1
+  1936  00A0                     _vtx
+                     _vtx
+  1937  00A0                     	ds	15
+  1938  00AF                     _vrx
+                     _vrx
+  1939  00AF                     	ds	64
+  1940                           
+  1941                           	psect	temp
+  1942  0074                     btemp
+                     btemp
+  1943  0074                     	ds	4
+
+
+HI-TECH Software PICC Macro Assembler V9.60PL3 build 3862 
+Symbol Table                                          Tue Feb 04 13:05:10 2020
+
+                                _delay_ms 083F  
+                __end_of_VLF_StopReceiver 0B82  
+                                       pc 0002  
+                            ?_chk_timeout 0047  
+                         _VLF_SendGeneric 0D1C  
+                                      l51 0BB1  
+                                      l52 0BB7  
+                                      l61 0C02  
+                                      l70 0C55  
+                                      l63 0D1A  
+                                      l55 0BCC  
+                                      l80 0CC3  
+                                      l72 0C7D  
+                                      l64 0D00  
+                                      l56 0BC3  
+               __end_of_VLF_StartReceiver 1546  
+                                      l81 0CC7  
+                                      l73 0C86  
+                                      l65 0C2B  
+                                      l74 0C8E  
+                                      l58 1567  
+                                      l91 098B  
+                                      l83 0CF3  
+                                      l75 0C98  
+                                      l67 0C40  
+                                      l59 1566  
+                                      l84 0CFA  
+                                      l76 0C9F  
+                                      l68 0C46  
+                                      l85 0CFE  
+                                      l86 0B80  
+                                      l94 09F1  
+                                      l78 0CA4  
+                                      l87 0B6C  
+                                      l95 09E3  
+                                      l88 0B5D  
+                                      l89 0980  
+                                      l98 09EF  
+                                      l99 09EB  
+                  _VLF_ReplyLocateRequest 0D7F  
+                                      fsr 0004  
+                                     l111 0A33  
+                                     l103 0A25  
+                        _VLF_StopReceiver 1546  
+                                     l121 0ABA  
+                                     l114 0A99  
+                                     l115 0A8B  
+                                     l140 0B4D  
+                                     l133 0B26  
+                                     l109 0A28  
+                                     l118 0A97  
+                                     l143 0B5B  
+                                     l127 0AC2  
+                                     l119 0A93  
+                                     l152 0DA2  
+                                     l144 0B6E  
+                                     l136 0B2A  
+                                     l153 0D84  
+                                     l137 0B59  
+                                     l129 0ACA  
+                                     l155 0D8F  
+                                     l139 0B46  
+                                     l148 0D78  
+                                     l165 0D5A  
+                                     l149 0D6F  
+                                     l158 0D93  
+                        __end_of_VLF_Busy 0BFA  
+                                     u130 0C33  
+                                     u150 0C3E  
+                                     u410 09E8  
+                                     u360 0CF9  
+                                     u620 0AB2  
+                                     u550 0A90  
+                                     u615 0AB0  
+                                     u480 0A0A  
+                                     u475 0A08  
+               __end_of_VLF_ProcessPacket 097C  
+                                ?_get_crc 004B  
+                                ?_buffcrc 0048  
+                                     _mid 002A  
+                                     _vrx 00AF  
+                                     _vtx 00A0  
+                          _su2mu_preamble 104A  
+                ?a_VLF_ReplyLocateRequest 0044  
+                      _VLF_ProcessBitRead 097C  
+                                _mu_flags 0024  
+                               ?a_get_crc 004C  
+                               ?a_buffcrc 004A  
+                               ?_delay_ms 0046  
+                             _chk_timeout 15AA  
+                            _aps_preamble 106F  
+                                    _rand 161D  
+                                    btemp 0074  
+                                    awmod 02AC  
+                         __end_of_get_crc 0BC0  
+                         __end_of_buffcrc 155D  
+                     ?a_VLF_ProcessPacket 003D  
+                       ?a_VLF_SendGeneric 0047  
+                              _lamp_state 0022  
+     __end_of_VLF_ReplyToBroadcastRequest 0D7F  
+             _VLF_ReplyToBroadcastRequest 0D5F  
+                 __end_of_VLF_SendGeneric 07FE  
+                                _VLF_Busy 155D  
+                                 _get_crc 0BA7  
+                                 _buffcrc 0BC0  
+                          _VLF_SendPacket 0B82  
+                       _VLF_StartReceiver 0BD1  
+                               _vlf_state 004F  
+                       _VLF_ProcessPacket 0BFA  
+                    ?a_VLF_ProcessBitRead 003D  
+                                   _timer 0034  
+                                   pclath 000A  
+                                   status 0003  
+           ?a_VLF_ReplyToBroadcastRequest 0044  
+                  __end_of_VLF_SendPacket 0D1C  
+                    _uncoded_rx_data_size 107A  
+                          _mu2su_preamble 108D  
+          __end_of_VLF_ReplyLocateRequest 0BD1  
+                            _lamp_min_cnt 0021  
+              __end_of_VLF_ProcessBitRead 0D5F  
+                              used_btemp0 0001  
+                              used_btemp1 0001  
+                              used_btemp2 0001  
+                              used_btemp3 0001  
+                            _lamp_timeout 0026  

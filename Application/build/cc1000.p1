@@ -1,0 +1,1469 @@
+Version 3.2 HI-TECH Software Intermediate Code
+"19 C:\PICC\std\9.60\include\pic16f887.h
+[v _INDF `Vuc 1 s@0 ]
+"20
+[v _TMR0 `Vuc 1 s@1 ]
+"21
+[v _PCL `Vuc 1 s@2 ]
+"22
+[v _STATUS `Vuc 1 s@3 ]
+"23
+[v _FSR `uc 1 s@4 ]
+"24
+[v _PORTA `Vuc 1 s@5 ]
+"25
+[v _PORTB `Vuc 1 s@6 ]
+"26
+[v _PORTC `Vuc 1 s@7 ]
+"28
+[v _PORTD `Vuc 1 s@8 ]
+"30
+[v _PORTE `Vuc 1 s@9 ]
+"31
+[v _PCLATH `Vuc 1 s@10 ]
+"32
+[v _INTCON `Vuc 1 s@11 ]
+"33
+[v _PIR1 `Vuc 1 s@12 ]
+"34
+[v _PIR2 `Vuc 1 s@13 ]
+"35
+[v _TMR1L `Vuc 1 s@14 ]
+"36
+[v _TMR1H `Vuc 1 s@15 ]
+"37
+[v _T1CON `uc 1 s@16 ]
+"38
+[v _TMR2 `Vuc 1 s@17 ]
+"39
+[v _T2CON `uc 1 s@18 ]
+"40
+[v _SSPBUF `Vuc 1 s@19 ]
+"41
+[v _SSPCON `Vuc 1 s@20 ]
+"42
+[v _CCPR1L `Vuc 1 s@21 ]
+"43
+[v _CCPR1H `Vuc 1 s@22 ]
+"44
+[v _CCP1CON `Vuc 1 s@23 ]
+"45
+[v _RCSTA `Vuc 1 s@24 ]
+"46
+[v _TXREG `Vuc 1 s@25 ]
+"47
+[v _RCREG `Vuc 1 s@26 ]
+"48
+[v _CCPR2L `Vuc 1 s@27 ]
+"49
+[v _CCPR2H `Vuc 1 s@28 ]
+"50
+[v _CCP2CON `Vuc 1 s@29 ]
+"51
+[v _ADRESH `Vuc 1 s@30 ]
+"52
+[v _ADCON0 `Vuc 1 s@31 ]
+"53
+[v _OPTION `Xuc 1 s@129 ]
+"54
+[v _TRISA `VXuc 1 s@133 ]
+"55
+[v _TRISB `VXuc 1 s@134 ]
+"56
+[v _TRISC `VXuc 1 s@135 ]
+"58
+[v _TRISD `VXuc 1 s@136 ]
+"60
+[v _TRISE `VXuc 1 s@137 ]
+"61
+[v _PIE1 `Xuc 1 s@140 ]
+"62
+[v _PIE2 `Xuc 1 s@141 ]
+"63
+[v _PCON `VXuc 1 s@142 ]
+"64
+[v _OSCCON `VXuc 1 s@143 ]
+"65
+[v _OSCTUNE `Xuc 1 s@144 ]
+"66
+[v _SSPCON2 `VXuc 1 s@145 ]
+"67
+[v _PR2 `Xuc 1 s@146 ]
+"68
+[v _SSPADD `Xuc 1 s@147 ]
+"69
+[v _SSPMSK `Xuc 1 s@147 ]
+"70
+[v _SSPSTAT `VXuc 1 s@148 ]
+"71
+[v _WPUB `Xuc 1 s@149 ]
+"72
+[v _IOCB `Xuc 1 s@150 ]
+"73
+[v _VRCON `Xuc 1 s@151 ]
+"74
+[v _TXSTA `VXuc 1 s@152 ]
+"75
+[v _SPBRG `Xuc 1 s@153 ]
+"76
+[v _SPBRGH `Xuc 1 s@154 ]
+"77
+[v _PWM1CON `VXuc 1 s@155 ]
+"78
+[v _ECCPAS `VXuc 1 s@156 ]
+"79
+[v _PSTRCON `VXuc 1 s@157 ]
+"80
+[v _ADRESL `VXuc 1 s@158 ]
+"81
+[v _ADCON1 `Xuc 1 s@159 ]
+"82
+[v _WDTCON `VYuc 1 s@261 ]
+"83
+[v _CM1CON0 `VYuc 1 s@263 ]
+"84
+[v _CM2CON0 `VYuc 1 s@264 ]
+"85
+[v _CM2CON1 `VYuc 1 s@265 ]
+"86
+[v _EEDAT `VYuc 1 s@268 ]
+"88
+[v _EEDATA `VYuc 1 s@268 ]
+"89
+[v _EEADR `Yuc 1 s@269 ]
+"91
+[v _EEADRL `Yuc 1 s@269 ]
+"92
+[v _EEDATH `VYuc 1 s@270 ]
+"93
+[v _EEADRH `Yuc 1 s@271 ]
+"94
+[v _SRCON `VZuc 1 s@389 ]
+"95
+[v _BAUDCTL `VZuc 1 s@391 ]
+"96
+[v _ANSEL `Zuc 1 s@392 ]
+"97
+[v _ANSELH `Zuc 1 s@393 ]
+"98
+[v _EECON1 `VZuc 1 s@396 ]
+"99
+[v _EECON2 `VZuc 1 s@397 ]
+"103
+[v _CARRY `Vb 1 s@24 ]
+"104
+[v _DC `Vb 1 s@25 ]
+"105
+[v _ZERO `Vb 1 s@26 ]
+"106
+[v _PD `Vb 1 s@27 ]
+"107
+[v _TO `Vb 1 s@28 ]
+"108
+[v _RP0 `b 1 s@29 ]
+"109
+[v _RP1 `b 1 s@30 ]
+"110
+[v _IRP `b 1 s@31 ]
+"113
+[v _RA0 `Vb 1 s@40 ]
+"114
+[v _RA1 `Vb 1 s@41 ]
+"115
+[v _RA2 `Vb 1 s@42 ]
+"116
+[v _RA3 `Vb 1 s@43 ]
+"117
+[v _RA4 `Vb 1 s@44 ]
+"118
+[v _RA5 `Vb 1 s@45 ]
+"119
+[v _RA6 `Vb 1 s@46 ]
+"120
+[v _RA7 `Vb 1 s@47 ]
+"123
+[v _RB0 `Vb 1 s@48 ]
+"124
+[v _RB1 `Vb 1 s@49 ]
+"125
+[v _RB2 `Vb 1 s@50 ]
+"126
+[v _RB3 `Vb 1 s@51 ]
+"127
+[v _RB4 `Vb 1 s@52 ]
+"128
+[v _RB5 `Vb 1 s@53 ]
+"129
+[v _RB6 `Vb 1 s@54 ]
+"130
+[v _RB7 `Vb 1 s@55 ]
+"133
+[v _RC0 `Vb 1 s@56 ]
+"134
+[v _RC1 `Vb 1 s@57 ]
+"135
+[v _RC2 `Vb 1 s@58 ]
+"136
+[v _RC3 `Vb 1 s@59 ]
+"137
+[v _RC4 `Vb 1 s@60 ]
+"138
+[v _RC5 `Vb 1 s@61 ]
+"139
+[v _RC6 `Vb 1 s@62 ]
+"140
+[v _RC7 `Vb 1 s@63 ]
+"144
+[v _RD0 `Vb 1 s@64 ]
+"145
+[v _RD1 `Vb 1 s@65 ]
+"146
+[v _RD2 `Vb 1 s@66 ]
+"147
+[v _RD3 `Vb 1 s@67 ]
+"148
+[v _RD4 `Vb 1 s@68 ]
+"149
+[v _RD5 `Vb 1 s@69 ]
+"150
+[v _RD6 `Vb 1 s@70 ]
+"151
+[v _RD7 `Vb 1 s@71 ]
+"154
+[v _RE0 `Vb 1 s@72 ]
+"155
+[v _RE1 `Vb 1 s@73 ]
+"156
+[v _RE2 `Vb 1 s@74 ]
+"158
+[v _RE3 `Vb 1 s@75 ]
+"161
+[v _RBIF `Vb 1 s@88 ]
+"163
+[v _RABIF `Vb 1 s@88 ]
+"164
+[v _INTF `Vb 1 s@89 ]
+"165
+[v _T0IF `Vb 1 s@90 ]
+"166
+[v _RBIE `b 1 s@91 ]
+"168
+[v _RABIE `b 1 s@91 ]
+"169
+[v _INTE `b 1 s@92 ]
+"170
+[v _T0IE `b 1 s@93 ]
+"171
+[v _PEIE `b 1 s@94 ]
+"172
+[v _GIE `b 1 s@95 ]
+"175
+[v _TMR1IF `Vb 1 s@96 ]
+"176
+[v _TMR2IF `Vb 1 s@97 ]
+"177
+[v _CCP1IF `Vb 1 s@98 ]
+"178
+[v _SSPIF `Vb 1 s@99 ]
+"179
+[v _TXIF `Vb 1 s@100 ]
+"180
+[v _RCIF `Vb 1 s@101 ]
+"181
+[v _ADIF `Vb 1 s@102 ]
+"184
+[v _CCP2IF `Vb 1 s@104 ]
+"185
+[v _ULPWUIF `Vb 1 s@106 ]
+"186
+[v _BCLIF `Vb 1 s@107 ]
+"187
+[v _EEIF `Vb 1 s@108 ]
+"188
+[v _C1IF `Vb 1 s@109 ]
+"189
+[v _C2IF `Vb 1 s@110 ]
+"190
+[v _OSFIF `Vb 1 s@111 ]
+"193
+[v _TMR1ON `b 1 s@128 ]
+"194
+[v _TMR1CS `b 1 s@129 ]
+"195
+[v _T1SYNC `b 1 s@130 ]
+"196
+[v _T1OSCEN `b 1 s@131 ]
+"197
+[v _T1CKPS0 `b 1 s@132 ]
+"198
+[v _T1CKPS1 `b 1 s@133 ]
+"199
+[v _TMR1GE `b 1 s@134 ]
+"200
+[v _T1GINV `b 1 s@135 ]
+"203
+[v _T2CKPS0 `b 1 s@144 ]
+"204
+[v _T2CKPS1 `b 1 s@145 ]
+"205
+[v _TMR2ON `b 1 s@146 ]
+"206
+[v _TOUTPS0 `b 1 s@147 ]
+"207
+[v _TOUTPS1 `b 1 s@148 ]
+"208
+[v _TOUTPS2 `b 1 s@149 ]
+"209
+[v _TOUTPS3 `b 1 s@150 ]
+"212
+[v _SSPM0 `b 1 s@160 ]
+"213
+[v _SSPM1 `b 1 s@161 ]
+"214
+[v _SSPM2 `b 1 s@162 ]
+"215
+[v _SSPM3 `b 1 s@163 ]
+"216
+[v _CKP `b 1 s@164 ]
+"217
+[v _SSPEN `b 1 s@165 ]
+"218
+[v _SSPOV `Vb 1 s@166 ]
+"219
+[v _WCOL `Vb 1 s@167 ]
+"222
+[v _CCP1M0 `b 1 s@184 ]
+"223
+[v _CCP1M1 `b 1 s@185 ]
+"224
+[v _CCP1M2 `b 1 s@186 ]
+"225
+[v _CCP1M3 `b 1 s@187 ]
+"226
+[v _DC1B0 `b 1 s@188 ]
+"227
+[v _DC1B1 `b 1 s@189 ]
+"228
+[v _P1M0 `b 1 s@190 ]
+"229
+[v _P1M1 `b 1 s@191 ]
+"232
+[v _RX9D `Vb 1 s@192 ]
+"233
+[v _OERR `Vb 1 s@193 ]
+"234
+[v _FERR `Vb 1 s@194 ]
+"235
+[v _ADDEN `b 1 s@195 ]
+"236
+[v _CREN `b 1 s@196 ]
+"237
+[v _SREN `b 1 s@197 ]
+"238
+[v _RX9 `b 1 s@198 ]
+"239
+[v _SPEN `b 1 s@199 ]
+"242
+[v _CCP2M0 `b 1 s@232 ]
+"243
+[v _CCP2M1 `b 1 s@233 ]
+"244
+[v _CCP2M2 `b 1 s@234 ]
+"245
+[v _CCP2M3 `b 1 s@235 ]
+"246
+[v _CCP2Y `Vb 1 s@236 ]
+"247
+[v _CCP2X `Vb 1 s@237 ]
+"250
+[v _ADON `b 1 s@248 ]
+"251
+[v _GODONE `Vb 1 s@249 ]
+"252
+[v _CHS0 `b 1 s@250 ]
+"253
+[v _CHS1 `b 1 s@251 ]
+"254
+[v _CHS2 `b 1 s@252 ]
+"255
+[v _CHS3 `b 1 s@253 ]
+"256
+[v _ADCS0 `b 1 s@254 ]
+"257
+[v _ADCS1 `b 1 s@255 ]
+"260
+[v _PS0 `Xb 1 s@1032 ]
+"261
+[v _PS1 `Xb 1 s@1033 ]
+"262
+[v _PS2 `Xb 1 s@1034 ]
+"263
+[v _PSA `Xb 1 s@1035 ]
+"264
+[v _T0SE `Xb 1 s@1036 ]
+"265
+[v _T0CS `Xb 1 s@1037 ]
+"266
+[v _INTEDG `Xb 1 s@1038 ]
+"267
+[v _RBPU `Xb 1 s@1039 ]
+"269
+[v _RABPU `Xb 1 s@1039 ]
+"272
+[v _TRISA0 `Xb 1 s@1064 ]
+"273
+[v _TRISA1 `Xb 1 s@1065 ]
+"274
+[v _TRISA2 `Xb 1 s@1066 ]
+"275
+[v _TRISA3 `Xb 1 s@1067 ]
+"276
+[v _TRISA4 `Xb 1 s@1068 ]
+"277
+[v _TRISA5 `Xb 1 s@1069 ]
+"278
+[v _TRISA6 `Xb 1 s@1070 ]
+"279
+[v _TRISA7 `Xb 1 s@1071 ]
+"282
+[v _TRISB0 `VXb 1 s@1072 ]
+"283
+[v _TRISB1 `VXb 1 s@1073 ]
+"284
+[v _TRISB2 `VXb 1 s@1074 ]
+"285
+[v _TRISB3 `VXb 1 s@1075 ]
+"286
+[v _TRISB4 `VXb 1 s@1076 ]
+"287
+[v _TRISB5 `VXb 1 s@1077 ]
+"288
+[v _TRISB6 `VXb 1 s@1078 ]
+"289
+[v _TRISB7 `VXb 1 s@1079 ]
+"292
+[v _TRISC0 `VXb 1 s@1080 ]
+"293
+[v _TRISC1 `VXb 1 s@1081 ]
+"294
+[v _TRISC2 `VXb 1 s@1082 ]
+"295
+[v _TRISC3 `VXb 1 s@1083 ]
+"296
+[v _TRISC4 `VXb 1 s@1084 ]
+"297
+[v _TRISC5 `VXb 1 s@1085 ]
+"298
+[v _TRISC6 `VXb 1 s@1086 ]
+"299
+[v _TRISC7 `VXb 1 s@1087 ]
+"303
+[v _TRISD0 `VXb 1 s@1088 ]
+"304
+[v _TRISD1 `VXb 1 s@1089 ]
+"305
+[v _TRISD2 `VXb 1 s@1090 ]
+"306
+[v _TRISD3 `VXb 1 s@1091 ]
+"307
+[v _TRISD4 `VXb 1 s@1092 ]
+"308
+[v _TRISD5 `VXb 1 s@1093 ]
+"309
+[v _TRISD6 `VXb 1 s@1094 ]
+"310
+[v _TRISD7 `VXb 1 s@1095 ]
+"313
+[v _TRISE0 `VXb 1 s@1096 ]
+"314
+[v _TRISE1 `VXb 1 s@1097 ]
+"315
+[v _TRISE2 `VXb 1 s@1098 ]
+"317
+[v _TRISE3 `VXb 1 s@1099 ]
+"320
+[v _TMR1IE `Xb 1 s@1120 ]
+"321
+[v _TMR2IE `Xb 1 s@1121 ]
+"322
+[v _CCP1IE `Xb 1 s@1122 ]
+"323
+[v _SSPIE `Xb 1 s@1123 ]
+"324
+[v _TXIE `Xb 1 s@1124 ]
+"325
+[v _RCIE `Xb 1 s@1125 ]
+"326
+[v _ADIE `Xb 1 s@1126 ]
+"329
+[v _CCP2IE `Xb 1 s@1128 ]
+"330
+[v _ULPWUIE `Xb 1 s@1130 ]
+"331
+[v _BCLIE `Xb 1 s@1131 ]
+"332
+[v _EEIE `Xb 1 s@1132 ]
+"333
+[v _C1IE `Xb 1 s@1133 ]
+"334
+[v _C2IE `Xb 1 s@1134 ]
+"335
+[v _OSFIE `Xb 1 s@1135 ]
+"338
+[v _BOR `VXb 1 s@1136 ]
+"339
+[v _POR `VXb 1 s@1137 ]
+"340
+[v _SBOREN `Xb 1 s@1140 ]
+"341
+[v _ULPWUE `Xb 1 s@1141 ]
+"344
+[v _SCS `Xb 1 s@1144 ]
+"345
+[v _LTS `VXb 1 s@1145 ]
+"346
+[v _HTS `VXb 1 s@1146 ]
+"347
+[v _OSTS `VXb 1 s@1147 ]
+"348
+[v _IRCF0 `Xb 1 s@1148 ]
+"349
+[v _IRCF1 `Xb 1 s@1149 ]
+"350
+[v _IRCF2 `Xb 1 s@1150 ]
+"353
+[v _TUN0 `Xb 1 s@1152 ]
+"354
+[v _TUN1 `Xb 1 s@1153 ]
+"355
+[v _TUN2 `Xb 1 s@1154 ]
+"356
+[v _TUN3 `Xb 1 s@1155 ]
+"357
+[v _TUN4 `Xb 1 s@1156 ]
+"360
+[v _SEN `Xb 1 s@1160 ]
+"361
+[v _RSEN `VXb 1 s@1161 ]
+"362
+[v _PEN `VXb 1 s@1162 ]
+"363
+[v _RCEN `VXb 1 s@1163 ]
+"364
+[v _ACKEN `VXb 1 s@1164 ]
+"365
+[v _ACKDT `VXb 1 s@1165 ]
+"366
+[v _ACKSTAT `VXb 1 s@1166 ]
+"367
+[v _GCEN `Xb 1 s@1167 ]
+"370
+[v _BF `VXb 1 s@1184 ]
+"371
+[v _UA `VXb 1 s@1185 ]
+"372
+[v _RW `VXb 1 s@1186 ]
+"373
+[v _START `VXb 1 s@1187 ]
+"374
+[v _STOP `VXb 1 s@1188 ]
+"375
+[v _DA `VXb 1 s@1189 ]
+"376
+[v _CKE `Xb 1 s@1190 ]
+"377
+[v _SMP `Xb 1 s@1191 ]
+"380
+[v _WPUB0 `Xb 1 s@1192 ]
+"381
+[v _WPUB1 `Xb 1 s@1193 ]
+"382
+[v _WPUB2 `Xb 1 s@1194 ]
+"383
+[v _WPUB3 `Xb 1 s@1195 ]
+"384
+[v _WPUB4 `Xb 1 s@1196 ]
+"385
+[v _WPUB5 `Xb 1 s@1197 ]
+"386
+[v _WPUB6 `Xb 1 s@1198 ]
+"387
+[v _WPUB7 `Xb 1 s@1199 ]
+"390
+[v _IOCB0 `Xb 1 s@1200 ]
+"391
+[v _IOCB1 `Xb 1 s@1201 ]
+"392
+[v _IOCB2 `Xb 1 s@1202 ]
+"393
+[v _IOCB3 `Xb 1 s@1203 ]
+"394
+[v _IOCB4 `Xb 1 s@1204 ]
+"395
+[v _IOCB5 `Xb 1 s@1205 ]
+"396
+[v _IOCB6 `Xb 1 s@1206 ]
+"397
+[v _IOCB7 `Xb 1 s@1207 ]
+"400
+[v _VR0 `Xb 1 s@1208 ]
+"401
+[v _VR1 `Xb 1 s@1209 ]
+"402
+[v _VR2 `Xb 1 s@1210 ]
+"403
+[v _VR3 `Xb 1 s@1211 ]
+"404
+[v _VRSS `Xb 1 s@1212 ]
+"405
+[v _VRR `Xb 1 s@1213 ]
+"406
+[v _VROE `Xb 1 s@1214 ]
+"407
+[v _VREN `Xb 1 s@1215 ]
+"410
+[v _TX9D `VXb 1 s@1216 ]
+"411
+[v _TRMT `VXb 1 s@1217 ]
+"412
+[v _BRGH `Xb 1 s@1218 ]
+"413
+[v _SENDB `Xb 1 s@1219 ]
+"414
+[v _SYNC `Xb 1 s@1220 ]
+"415
+[v _TXEN `Xb 1 s@1221 ]
+"416
+[v _TX9 `Xb 1 s@1222 ]
+"417
+[v _CSRC `Xb 1 s@1223 ]
+"420
+[v _BRG0 `Xb 1 s@1224 ]
+"421
+[v _BRG1 `Xb 1 s@1225 ]
+"422
+[v _BRG2 `Xb 1 s@1226 ]
+"423
+[v _BRG3 `Xb 1 s@1227 ]
+"424
+[v _BRG4 `Xb 1 s@1228 ]
+"425
+[v _BRG5 `Xb 1 s@1229 ]
+"426
+[v _BRG6 `Xb 1 s@1230 ]
+"427
+[v _BRG7 `Xb 1 s@1231 ]
+"430
+[v _BRG8 `Xb 1 s@1232 ]
+"431
+[v _BRG9 `Xb 1 s@1233 ]
+"432
+[v _BRG10 `Xb 1 s@1234 ]
+"433
+[v _BRG11 `Xb 1 s@1235 ]
+"434
+[v _BRG12 `Xb 1 s@1236 ]
+"435
+[v _BRG13 `Xb 1 s@1237 ]
+"436
+[v _BRG14 `Xb 1 s@1238 ]
+"437
+[v _BRG15 `Xb 1 s@1239 ]
+"440
+[v _PDC0 `VXb 1 s@1240 ]
+"441
+[v _PDC1 `VXb 1 s@1241 ]
+"442
+[v _PDC2 `VXb 1 s@1242 ]
+"443
+[v _PDC3 `VXb 1 s@1243 ]
+"444
+[v _PDC4 `VXb 1 s@1244 ]
+"445
+[v _PDC5 `VXb 1 s@1245 ]
+"446
+[v _PDC6 `VXb 1 s@1246 ]
+"447
+[v _PRSEN `VXb 1 s@1247 ]
+"450
+[v _PSSBD0 `Xb 1 s@1248 ]
+"451
+[v _PSSBD1 `Xb 1 s@1249 ]
+"452
+[v _PSSAC0 `Xb 1 s@1250 ]
+"453
+[v _PSSAC1 `Xb 1 s@1251 ]
+"454
+[v _ECCPAS0 `Xb 1 s@1252 ]
+"455
+[v _ECCPAS1 `Xb 1 s@1253 ]
+"456
+[v _ECCPAS2 `Xb 1 s@1254 ]
+"457
+[v _ECCPASE `VXb 1 s@1255 ]
+"460
+[v _STRA `VXb 1 s@1256 ]
+"461
+[v _STRB `VXb 1 s@1257 ]
+"462
+[v _STRC `VXb 1 s@1258 ]
+"463
+[v _STRD `VXb 1 s@1259 ]
+"464
+[v _STRSYNC `VXb 1 s@1260 ]
+"467
+[v _VCFG0 `Xb 1 s@1276 ]
+"468
+[v _VCFG1 `Xb 1 s@1277 ]
+"469
+[v _ADFM `Xb 1 s@1279 ]
+"472
+[v _SWDTEN `Yb 1 s@2088 ]
+"473
+[v _WDTPS0 `Yb 1 s@2089 ]
+"474
+[v _WDTPS1 `Yb 1 s@2090 ]
+"475
+[v _WDTPS2 `Yb 1 s@2091 ]
+"476
+[v _WDTPS3 `Yb 1 s@2092 ]
+"479
+[v _C1CH0 `Yb 1 s@2104 ]
+"480
+[v _C1CH1 `Yb 1 s@2105 ]
+"481
+[v _C1R `Yb 1 s@2106 ]
+"482
+[v _C1POL `Yb 1 s@2108 ]
+"483
+[v _C1OE `Yb 1 s@2109 ]
+"484
+[v _C1OUT `VYb 1 s@2110 ]
+"485
+[v _C1ON `Yb 1 s@2111 ]
+"488
+[v _C2CH0 `Yb 1 s@2112 ]
+"489
+[v _C2CH1 `Yb 1 s@2113 ]
+"490
+[v _C2R `Yb 1 s@2114 ]
+"491
+[v _C2POL `Yb 1 s@2116 ]
+"492
+[v _C2OE `Yb 1 s@2117 ]
+"493
+[v _C2OUT `VYb 1 s@2118 ]
+"494
+[v _C2ON `Yb 1 s@2119 ]
+"497
+[v _C2SYNC `Yb 1 s@2120 ]
+"498
+[v _T1GSS `Yb 1 s@2121 ]
+"499
+[v _C2RSEL `Yb 1 s@2124 ]
+"500
+[v _C1RSEL `Yb 1 s@2125 ]
+"501
+[v _MC2OUT `VYb 1 s@2126 ]
+"502
+[v _MC1OUT `VYb 1 s@2127 ]
+"505
+[v _FVREN `Zb 1 s@3112 ]
+"506
+[v _PULSR `VZb 1 s@3114 ]
+"507
+[v _PULSS `VZb 1 s@3115 ]
+"508
+[v _C2REN `Zb 1 s@3116 ]
+"509
+[v _C1SEN `Zb 1 s@3117 ]
+"510
+[v _SR0 `Zb 1 s@3118 ]
+"511
+[v _SR1 `Zb 1 s@3119 ]
+"514
+[v _ABDEN `VZb 1 s@3128 ]
+"515
+[v _WUE `VZb 1 s@3129 ]
+"516
+[v _BRG16 `Zb 1 s@3131 ]
+"517
+[v _SCKP `VZb 1 s@3132 ]
+"518
+[v _RCIDL `VZb 1 s@3134 ]
+"519
+[v _ABDOVF `VZb 1 s@3135 ]
+"522
+[v _ANS0 `Zb 1 s@3136 ]
+"523
+[v _ANS1 `Zb 1 s@3137 ]
+"524
+[v _ANS2 `Zb 1 s@3138 ]
+"525
+[v _ANS3 `Zb 1 s@3139 ]
+"526
+[v _ANS4 `Zb 1 s@3140 ]
+"528
+[v _ANS5 `Zb 1 s@3141 ]
+"529
+[v _ANS6 `Zb 1 s@3142 ]
+"530
+[v _ANS7 `Zb 1 s@3143 ]
+"534
+[v _ANS8 `Zb 1 s@3144 ]
+"535
+[v _ANS9 `Zb 1 s@3145 ]
+"536
+[v _ANS10 `Zb 1 s@3146 ]
+"537
+[v _ANS11 `Zb 1 s@3147 ]
+"538
+[v _ANS12 `Zb 1 s@3148 ]
+"539
+[v _ANS13 `Zb 1 s@3149 ]
+"542
+[v _RD `VZb 1 s@3168 ]
+"543
+[v _WR `VZb 1 s@3169 ]
+"544
+[v _WREN `Zb 1 s@3170 ]
+"545
+[v _WRERR `VZb 1 s@3171 ]
+"546
+[v _EEPGD `Zb 1 s@3175 ]
+"28 ..\..\Common\include\types.h
+[v _ushort `us 1 t ]
+"29
+[v _ulong `ul 1 t ]
+"30
+[v _BYTE `uc 1 t ]
+"31
+[v _uchar `uc 1 t ]
+"57
+[s S2 `uc 1 `uc 1 ]
+[n S2 . lo hi ]
+"58
+[u S1 `uc -> 2 `i `us 1 `S2 1 ]
+[n S1 . b w st ]
+[v _short_u `S1 1 t ]
+"66
+[s S4 `uc 1 `uc 1 ]
+[n S4 . hi lo ]
+"67
+[u S3 `uc -> 2 `i `us 1 `S4 1 ]
+[n S3 . b w ho ]
+[v _bid_u `S3 1 t ]
+"78
+[u S5 `uc -> 4 `i `ul 1 ]
+[n S5 . b w ]
+[v _long_u `S5 1 t ]
+"88
+[s S6 `uc -> 3 `i ]
+[n S6 mid24 val ]
+[v _mid24_s `S6 1 t ]
+"41 ..\..\Common\include\time.h
+[s S8 `uc 1 `uc 1 ]
+[n S8 . lo hi ]
+"43
+[u S7 `uc 1 `S8 1 `us 1 ]
+[n S7 . cnt_byte s cnt ]
+[v _Timer_u `S7 1 t ]
+[c E811
+"279 ..\include\mu.h
+0
+"280
+1
+"281
+2
+"282
+3
+"284
+4
+"286
+5
+"287
+6
+"288
+7
+"289
+8
+"290
+9
+"292
+240
+"293
+241
+"294
+242
+.. ]
+[n E811 LMP_STATES LAMP_POST_ERROR LAMP_FIRMWARE_disabled LAMP_SEARCH_IN_PROGRESS LAMP_EVACUATE_IN_PROGRESS_disab LAMP_IDENTIFY LAMP_PAGER_ALARM LAMP_PAGER_CALL_1 LAMP_PAGER_CALL_2 LAMP_VLF_BLOCKED_STATE LAMP_STATES_NUM LAMP_NORMAL_STATE LAMP_INVERT_STATE LAMP_TEST_STATE ]
+[c E833
+"65 ..\..\Common\include\cc1000.h
+0
+"67
+1
+.. ]
+[n E833 UHF_MODES UHF_RX_MODE UHF_TX_MODE ]
+"37 C:\Users\Shchitnikov\Desktop\HPT2\Application\..\Common\src\cc1000.c
+[s S9 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S9 . main_u8 current_u8 pll_u8 power_u8 ]
+[v _c_uhf_modes_ast `CS9 -> 0 `x s ]
+[i _c_uhf_modes_ast
+:U ..
+:U ..
+"42
+-> -> 17 `i `uc
+-> -> 68 `i `uc
+-> -> 96 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+"50
+-> -> 225 `i `uc
+-> -> 129 `i `uc
+-> -> 72 `i `uc
+-> -> 192 `i `uc
+..
+..
+]"59
+[v _cc1000_wr `(v 1 ef2`uc`uc ]
+{
+[v _addr_u8 `uc 1 r1 ]
+[v _val_u8 `uc 1 r2 ]
+[e :U _cc1000_wr ]
+[f ]
+[; ;cc1000.c: 58: void cc1000_wr( BYTE addr_u8, BYTE val_u8 )
+[; ;cc1000.c: 59: {
+[; ;cc1000.c: 60: addr_u8 <<= 1;
+"60
+[e =<< _addr_u8 -> 1 `i ]
+[; ;cc1000.c: 61: addr_u8 |= 1;
+"61
+[e =| _addr_u8 -> -> 1 `i `uc ]
+[; ;cc1000.c: 63: (GIE = 0);
+"63
+[e = _GIE -> -> 0 `i `b ]
+[; ;cc1000.c: 64: RC0 = 0;
+"64
+[e = _RC0 -> -> 0 `i `b ]
+[; ;cc1000.c: 65: SSPBUF = addr_u8;
+"65
+[e = _SSPBUF _addr_u8 ]
+[; ;cc1000.c: 66: while ( !BF );
+"66
+[e $U 11 ]
+[e :U 12 ]
+[e :U 11 ]
+[e $ ! _BF 12 ]
+[e :U 13 ]
+[; ;cc1000.c: 67: RC0 = 1;
+"67
+[e = _RC0 -> -> 1 `i `b ]
+[; ;cc1000.c: 69: SSPBUF = val_u8;
+"69
+[e = _SSPBUF _val_u8 ]
+[; ;cc1000.c: 70: while ( !BF );
+"70
+[e $U 14 ]
+[e :U 15 ]
+[e :U 14 ]
+[e $ ! _BF 15 ]
+[e :U 16 ]
+[; ;cc1000.c: 71: (GIE = 1);
+"71
+[e = _GIE -> -> 1 `i `b ]
+"72
+[; ;cc1000.c: 72: }
+[e :UE 10 ]
+}
+"78
+[v _cc1000_rd `(uc 1 ef1`uc ]
+{
+[v _addr_u8 `uc 1 r1 ]
+[e :U _cc1000_rd ]
+[f ]
+[; ;cc1000.c: 77: BYTE cc1000_rd( BYTE addr_u8 )
+[; ;cc1000.c: 78: {
+[; ;cc1000.c: 79: addr_u8 <<= 1;
+"79
+[e =<< _addr_u8 -> 1 `i ]
+[; ;cc1000.c: 81: (GIE = 0);
+"81
+[e = _GIE -> -> 0 `i `b ]
+[; ;cc1000.c: 82: RC0 = 0;
+"82
+[e = _RC0 -> -> 0 `i `b ]
+[; ;cc1000.c: 83: SSPBUF = addr_u8;
+"83
+[e = _SSPBUF _addr_u8 ]
+[; ;cc1000.c: 84: while ( !BF );
+"84
+[e $U 18 ]
+[e :U 19 ]
+[e :U 18 ]
+[e $ ! _BF 19 ]
+[e :U 20 ]
+[; ;cc1000.c: 87: TRISC |= 0x20;
+"87
+[e =| _TRISC -> -> 32 `i `uc ]
+[; ;cc1000.c: 88: RC0 = 1;
+"88
+[e = _RC0 -> -> 1 `i `b ]
+[; ;cc1000.c: 90: SSPBUF = 0x00;
+"90
+[e = _SSPBUF -> -> 0 `i `uc ]
+[; ;cc1000.c: 91: while ( !BF );
+"91
+[e $U 21 ]
+[e :U 22 ]
+[e :U 21 ]
+[e $ ! _BF 22 ]
+[e :U 23 ]
+[; ;cc1000.c: 92: TRISC &= ~0x20;
+"92
+[e =& _TRISC -> ~ -> 32 `i `uc ]
+[; ;cc1000.c: 94: addr_u8 = SSPBUF;
+"94
+[e = _addr_u8 _SSPBUF ]
+[; ;cc1000.c: 95: (GIE = 1);
+"95
+[e = _GIE -> -> 1 `i `b ]
+[; ;cc1000.c: 97: return( addr_u8 );
+"97
+[e ) _addr_u8 ]
+[e $UE 17 ]
+"98
+[; ;cc1000.c: 98: }
+[e :UE 17 ]
+}
+"105
+[v _pager_write `(v 1 ef1`uc ]
+{
+[v _value `uc 1 r1 ]
+[e :U _pager_write ]
+[f ]
+[; ;cc1000.c: 104: void pager_write( BYTE value )
+[; ;cc1000.c: 105: {
+[; ;cc1000.c: 106: (GIE = 0);
+"106
+[e = _GIE -> -> 0 `i `b ]
+[; ;cc1000.c: 107: RB2 = 0;
+"107
+[e = _RB2 -> -> 0 `i `b ]
+[; ;cc1000.c: 108: asm("nop");
+"108
+[; nop ;#
+[; ;cc1000.c: 109: SSPBUF = value;
+"109
+[e = _SSPBUF _value ]
+[; ;cc1000.c: 110: while ( !BF );
+"110
+[e $U 25 ]
+[e :U 26 ]
+[e :U 25 ]
+[e $ ! _BF 26 ]
+[e :U 27 ]
+[; ;cc1000.c: 111: asm("nop");
+"111
+[; nop ;#
+[; ;cc1000.c: 112: RB2 = 1;
+"112
+[e = _RB2 -> -> 1 `i `b ]
+[; ;cc1000.c: 113: (GIE = 1);
+"113
+[e = _GIE -> -> 1 `i `b ]
+"114
+[; ;cc1000.c: 114: }
+[e :UE 24 ]
+}
+"125
+[v _InitUHFTranceiver `(uc 1 ef ]
+{
+[e :U _InitUHFTranceiver ]
+[f ]
+[; ;cc1000.c: 124: BYTE InitUHFTranceiver( void )
+[; ;cc1000.c: 125: {
+[; ;cc1000.c: 127: cc1000_wr( 0, 0x3A );
+"127
+[e ( _cc1000_wr (2 , -> -> 0 `i `uc -> -> 58 `i `uc ]
+[; ;cc1000.c: 129: delay_ms( 10 );
+"129
+[v _delay_ms `(v 0 ef1`us ]
+[e ( _delay_ms (1 -> -> 10 `i `us ]
+[; ;cc1000.c: 133: cc1000_wr( 0, 0x3B );
+"133
+[e ( _cc1000_wr (2 , -> -> 0 `i `uc -> -> 59 `i `uc ]
+[; ;cc1000.c: 135: delay_ms( 10 );
+"135
+[e ( _delay_ms (1 -> -> 10 `i `us ]
+[; ;cc1000.c: 139: cc1000_wr( 0x01, 0x58 );
+"139
+[e ( _cc1000_wr (2 , -> -> 1 `i `uc -> -> 88 `i `uc ]
+[; ;cc1000.c: 140: cc1000_wr( 0x02, 0x20 );
+"140
+[e ( _cc1000_wr (2 , -> -> 2 `i `uc -> -> 32 `i `uc ]
+[; ;cc1000.c: 141: cc1000_wr( 0x03, 0 );
+"141
+[e ( _cc1000_wr (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
+[; ;cc1000.c: 144: if( cc1000_rd( 0x01 ) != 0x58 )
+"144
+[e $ ! != -> ( _cc1000_rd (1 -> -> 1 `i `uc `i -> 88 `i 29 ]
+[; ;cc1000.c: 145: return( 1 );
+"145
+[e ) -> -> 1 `i `uc ]
+[e $UE 28 ]
+[e :U 29 ]
+[; ;cc1000.c: 146: if( cc1000_rd( 0x02 ) != 0x20 )
+"146
+[e $ ! != -> ( _cc1000_rd (1 -> -> 2 `i `uc `i -> 32 `i 30 ]
+[; ;cc1000.c: 147: return( 1 );
+"147
+[e ) -> -> 1 `i `uc ]
+[e $UE 28 ]
+[e :U 30 ]
+[; ;cc1000.c: 148: if( cc1000_rd( 0x03 ) != 0 )
+"148
+[e $ ! != -> ( _cc1000_rd (1 -> -> 3 `i `uc `i -> 0 `i 31 ]
+[; ;cc1000.c: 149: return( 1 );
+"149
+[e ) -> -> 1 `i `uc ]
+[e $UE 28 ]
+[e :U 31 ]
+[; ;cc1000.c: 152: cc1000_wr( 0x04, 0x42 );
+"152
+[e ( _cc1000_wr (2 , -> -> 4 `i `uc -> -> 66 `i `uc ]
+[; ;cc1000.c: 153: cc1000_wr( 0x05, 0x14 );
+"153
+[e ( _cc1000_wr (2 , -> -> 5 `i `uc -> -> 20 `i `uc ]
+[; ;cc1000.c: 154: cc1000_wr( 0x06, 0x9c );
+"154
+[e ( _cc1000_wr (2 , -> -> 6 `i `uc -> -> 156 `i `uc ]
+[; ;cc1000.c: 157: if( cc1000_rd( 0x04 ) != 0x42 )
+"157
+[e $ ! != -> ( _cc1000_rd (1 -> -> 4 `i `uc `i -> 66 `i 32 ]
+[; ;cc1000.c: 158: return( 1 );
+"158
+[e ) -> -> 1 `i `uc ]
+[e $UE 28 ]
+[e :U 32 ]
+[; ;cc1000.c: 159: if( cc1000_rd( 0x05 ) != 0x14 )
+"159
+[e $ ! != -> ( _cc1000_rd (1 -> -> 5 `i `uc `i -> 20 `i 33 ]
+[; ;cc1000.c: 160: return( 1 );
+"160
+[e ) -> -> 1 `i `uc ]
+[e $UE 28 ]
+[e :U 33 ]
+[; ;cc1000.c: 161: if( cc1000_rd( 0x06 ) != 0x9c )
+"161
+[e $ ! != -> ( _cc1000_rd (1 -> -> 6 `i `uc `i -> 156 `i 34 ]
+[; ;cc1000.c: 162: return( 1 );
+"162
+[e ) -> -> 1 `i `uc ]
+[e $UE 28 ]
+[e :U 34 ]
+[; ;cc1000.c: 169: cc1000_wr( 0x07, 0x02 );
+"169
+[e ( _cc1000_wr (2 , -> -> 7 `i `uc -> -> 2 `i `uc ]
+[; ;cc1000.c: 170: cc1000_wr( 0x08, 0x80 );
+"170
+[e ( _cc1000_wr (2 , -> -> 8 `i `uc -> -> 128 `i `uc ]
+[; ;cc1000.c: 177: cc1000_wr( 0x0A, 0x12 );
+"177
+[e ( _cc1000_wr (2 , -> -> 10 `i `uc -> -> 18 `i `uc ]
+[; ;cc1000.c: 180: cc1000_wr( 0x0B, 0 );
+"180
+[e ( _cc1000_wr (2 , -> -> 11 `i `uc -> -> 0 `i `uc ]
+[; ;cc1000.c: 182: cc1000_wr( 0x0C, c_uhf_modes_ast[ UHF_RX_MODE ].pll_u8 );
+"182
+[e ( _cc1000_wr (2 , -> -> 12 `i `uc . *U + &U _c_uhf_modes_ast * -> . `E833 0 `ux -> -> # `CS9 `ui `ux 2 ]
+[; ;cc1000.c: 188: cc1000_wr( 0x0D, 0x10 );
+"188
+[e ( _cc1000_wr (2 , -> -> 13 `i `uc -> -> 16 `i `uc ]
+[; ;cc1000.c: 191: cc1000_wr( 0x0E, 0x26 );
+"191
+[e ( _cc1000_wr (2 , -> -> 14 `i `uc -> -> 38 `i `uc ]
+[; ;cc1000.c: 198: cc1000_wr( 0x0F, 0x9C );
+"198
+[e ( _cc1000_wr (2 , -> -> 15 `i `uc -> -> 156 `i `uc ]
+[; ;cc1000.c: 199: cc1000_wr( 0x10, 0x6B );
+"199
+[e ( _cc1000_wr (2 , -> -> 16 `i `uc -> -> 107 `i `uc ]
+[; ;cc1000.c: 200: cc1000_wr( 0x11, 0x5B );
+"200
+[e ( _cc1000_wr (2 , -> -> 17 `i `uc -> -> 91 `i `uc ]
+[; ;cc1000.c: 202: cc1000_wr( 0x12, 0x70 );
+"202
+[e ( _cc1000_wr (2 , -> -> 18 `i `uc -> -> 112 `i `uc ]
+[; ;cc1000.c: 203: cc1000_wr( 0x13, 0x01 );
+"203
+[e ( _cc1000_wr (2 , -> -> 19 `i `uc -> -> 1 `i `uc ]
+[; ;cc1000.c: 204: cc1000_wr( 0x1C, 0 );
+"204
+[e ( _cc1000_wr (2 , -> -> 28 `i `uc -> -> 0 `i `uc ]
+[; ;cc1000.c: 205: cc1000_wr( 0x40, 0x10 );
+"205
+[e ( _cc1000_wr (2 , -> -> 64 `i `uc -> -> 16 `i `uc ]
+[; ;cc1000.c: 206: cc1000_wr( 0x41, 0x08 );
+"206
+[e ( _cc1000_wr (2 , -> -> 65 `i `uc -> -> 8 `i `uc ]
+[; ;cc1000.c: 207: cc1000_wr( 0x42, 0x3F );
+"207
+[e ( _cc1000_wr (2 , -> -> 66 `i `uc -> -> 63 `i `uc ]
+[; ;cc1000.c: 208: cc1000_wr( 0x43, 0x04 );
+"208
+[e ( _cc1000_wr (2 , -> -> 67 `i `uc -> -> 4 `i `uc ]
+[; ;cc1000.c: 209: cc1000_wr( 0x44, 0 );
+"209
+[e ( _cc1000_wr (2 , -> -> 68 `i `uc -> -> 0 `i `uc ]
+[; ;cc1000.c: 210: cc1000_wr( 0x45, 0 );
+"210
+[e ( _cc1000_wr (2 , -> -> 69 `i `uc -> -> 0 `i `uc ]
+[; ;cc1000.c: 211: cc1000_wr( 0x46, 0 );
+"211
+[e ( _cc1000_wr (2 , -> -> 70 `i `uc -> -> 0 `i `uc ]
+[; ;cc1000.c: 215: cc1000_wr( 0, c_uhf_modes_ast[ UHF_RX_MODE ].main_u8 );
+"215
+[e ( _cc1000_wr (2 , -> -> 0 `i `uc . *U + &U _c_uhf_modes_ast * -> . `E833 0 `ux -> -> # `CS9 `ui `ux 0 ]
+[; ;cc1000.c: 217: cc1000_wr( 0x09, c_uhf_modes_ast[ UHF_RX_MODE ].current_u8 );
+"217
+[e ( _cc1000_wr (2 , -> -> 9 `i `uc . *U + &U _c_uhf_modes_ast * -> . `E833 0 `ux -> -> # `CS9 `ui `ux 1 ]
+[; ;cc1000.c: 219: cc1000_wr( 0x0C , c_uhf_modes_ast[ UHF_RX_MODE ].pll_u8 );
+"219
+[e ( _cc1000_wr (2 , -> -> 12 `i `uc . *U + &U _c_uhf_modes_ast * -> . `E833 0 `ux -> -> # `CS9 `ui `ux 2 ]
+[; ;cc1000.c: 220: cc1000_wr( 0x0E, 0xA6 );
+"220
+[e ( _cc1000_wr (2 , -> -> 14 `i `uc -> -> 166 `i `uc ]
+[; ;cc1000.c: 221: while ( (cc1000_rd( 0x0E ) & 0x08 ) == 0 );
+"221
+[e $U 35 ]
+[e :U 36 ]
+[e :U 35 ]
+[e $ == & -> ( _cc1000_rd (1 -> -> 14 `i `uc `i -> 8 `i -> 0 `i 36 ]
+[e :U 37 ]
+[; ;cc1000.c: 226: cc1000_wr( 0x0E, 0x26 );
+"226
+[e ( _cc1000_wr (2 , -> -> 14 `i `uc -> -> 38 `i `uc ]
+[; ;cc1000.c: 229: cc1000_wr( 0, c_uhf_modes_ast[ UHF_TX_MODE ].main_u8 );
+"229
+[e ( _cc1000_wr (2 , -> -> 0 `i `uc . *U + &U _c_uhf_modes_ast * -> . `E833 1 `ux -> -> # `CS9 `ui `ux 0 ]
+[; ;cc1000.c: 230: cc1000_wr( 0x09, c_uhf_modes_ast[ UHF_TX_MODE ].current_u8 );
+"230
+[e ( _cc1000_wr (2 , -> -> 9 `i `uc . *U + &U _c_uhf_modes_ast * -> . `E833 1 `ux -> -> # `CS9 `ui `ux 1 ]
+[; ;cc1000.c: 231: cc1000_wr( 0x0C , c_uhf_modes_ast[ UHF_TX_MODE ].pll_u8 );
+"231
+[e ( _cc1000_wr (2 , -> -> 12 `i `uc . *U + &U _c_uhf_modes_ast * -> . `E833 1 `ux -> -> # `CS9 `ui `ux 2 ]
+[; ;cc1000.c: 232: cc1000_wr( 0x0E, 0xA6 );
+"232
+[e ( _cc1000_wr (2 , -> -> 14 `i `uc -> -> 166 `i `uc ]
+[; ;cc1000.c: 233: while ( ( cc1000_rd( 0x0E ) & 0x08 ) == 0 );
+"233
+[e $U 38 ]
+[e :U 39 ]
+[e :U 38 ]
+[e $ == & -> ( _cc1000_rd (1 -> -> 14 `i `uc `i -> 8 `i -> 0 `i 39 ]
+[e :U 40 ]
+[; ;cc1000.c: 236: cc1000_wr( 0x0E, 0x26 );
+"236
+[e ( _cc1000_wr (2 , -> -> 14 `i `uc -> -> 38 `i `uc ]
+[; ;cc1000.c: 240: cc1000_wr( 0, 0x3F );
+"240
+[e ( _cc1000_wr (2 , -> -> 0 `i `uc -> -> 63 `i `uc ]
+[; ;cc1000.c: 243: cc1000_wr( 0x0B, 0x55 );
+"243
+[e ( _cc1000_wr (2 , -> -> 11 `i `uc -> -> 85 `i `uc ]
+[; ;cc1000.c: 244: if( cc1000_rd( 0x0B ) != 0x55 )
+"244
+[e $ ! != -> ( _cc1000_rd (1 -> -> 11 `i `uc `i -> 85 `i 41 ]
+[; ;cc1000.c: 245: return( 1 );
+"245
+[e ) -> -> 1 `i `uc ]
+[e $UE 28 ]
+[e :U 41 ]
+[; ;cc1000.c: 247: cc1000_wr( 0x0B, 0xAA );
+"247
+[e ( _cc1000_wr (2 , -> -> 11 `i `uc -> -> 170 `i `uc ]
+[; ;cc1000.c: 248: if( cc1000_rd( 0x0B ) != 0xAA )
+"248
+[e $ ! != -> ( _cc1000_rd (1 -> -> 11 `i `uc `i -> 170 `i 42 ]
+[; ;cc1000.c: 249: return( 2 );
+"249
+[e ) -> -> 2 `i `uc ]
+[e $UE 28 ]
+[e :U 42 ]
+[; ;cc1000.c: 251: cc1000_wr( 0x0B, 0 );
+"251
+[e ( _cc1000_wr (2 , -> -> 11 `i `uc -> -> 0 `i `uc ]
+[; ;cc1000.c: 255: cc1000_wr( 0, 0x7B );
+"255
+[e ( _cc1000_wr (2 , -> -> 0 `i `uc -> -> 123 `i `uc ]
+[; ;cc1000.c: 256: delay_ms( 2 );
+"256
+[e ( _delay_ms (1 -> -> 2 `i `us ]
+[; ;cc1000.c: 257: cc1000_wr( 0, 0x79 );
+"257
+[e ( _cc1000_wr (2 , -> -> 0 `i `uc -> -> 121 `i `uc ]
+[; ;cc1000.c: 258: Wait250Us();
+"258
+[v _Wait250Us `(v 0 ef ]
+[e ( _Wait250Us ..  ]
+[; ;cc1000.c: 260: return( 0 );
+"260
+[e ) -> -> 0 `i `uc ]
+[e $UE 28 ]
+"262
+[; ;cc1000.c: 262: }
+[e :UE 28 ]
+}
+"267
+[v _uhf_mode_u8 `uc 1 s ]
+[i _uhf_mode_u8
+-> . `E833 0 `uc
+]
+"269
+[v _GetUHFMode `(uc 1 ef ]
+{
+[e :U _GetUHFMode ]
+[f ]
+[; ;cc1000.c: 268: BYTE GetUHFMode(void)
+[; ;cc1000.c: 269: {
+[; ;cc1000.c: 270: return( uhf_mode_u8 );
+"270
+[e ) _uhf_mode_u8 ]
+[e $UE 43 ]
+"271
+[; ;cc1000.c: 271: };
+[e :UE 43 ]
+}
+"280
+[v _SetUHFMode `(uc 1 ef1`uc ]
+{
+[v _mode_u8 `uc 1 r1 ]
+[e :U _SetUHFMode ]
+[f ]
+[; ;cc1000.c: 279: BYTE SetUHFMode( BYTE mode_u8 )
+[; ;cc1000.c: 280: {
+[; ;cc1000.c: 281: asm("clrwdt");
+"281
+[; clrwdt ;#
+[; ;cc1000.c: 283: uhf_mode_u8 = mode_u8;
+"283
+[e = _uhf_mode_u8 _mode_u8 ]
+[; ;cc1000.c: 290: cc1000_wr( 0, c_uhf_modes_ast[ mode_u8 ].main_u8 );
+"290
+[e ( _cc1000_wr (2 , -> -> 0 `i `uc . *U + &U _c_uhf_modes_ast * -> _mode_u8 `ux -> -> # `CS9 `ui `ux 0 ]
+[; ;cc1000.c: 291: cc1000_wr( 0x09, c_uhf_modes_ast[ mode_u8 ].current_u8 );
+"291
+[e ( _cc1000_wr (2 , -> -> 9 `i `uc . *U + &U _c_uhf_modes_ast * -> _mode_u8 `ux -> -> # `CS9 `ui `ux 1 ]
+[; ;cc1000.c: 292: cc1000_wr( 0x0C , c_uhf_modes_ast[ mode_u8 ].pll_u8 );
+"292
+[e ( _cc1000_wr (2 , -> -> 12 `i `uc . *U + &U _c_uhf_modes_ast * -> _mode_u8 `ux -> -> # `CS9 `ui `ux 2 ]
+[; ;cc1000.c: 293: if( mode_u8 == UHF_RX_MODE )
+"293
+[e $ ! == -> _mode_u8 `i -> . `E833 0 `i 45 ]
+[; ;cc1000.c: 294: {
+[; ;cc1000.c: 295: cc1000_wr( 0x0B , 0x00 );
+"295
+[e ( _cc1000_wr (2 , -> -> 11 `i `uc -> -> 0 `i `uc ]
+"296
+[e :U 45 ]
+[; ;cc1000.c: 296: }
+[; ;cc1000.c: 297: Wait250Us();
+"297
+[e ( _Wait250Us ..  ]
+[; ;cc1000.c: 299: if( mode_u8 == UHF_TX_MODE )
+"299
+[e $ ! == -> _mode_u8 `i -> . `E833 1 `i 46 ]
+[; ;cc1000.c: 300: {
+[; ;cc1000.c: 301: cc1000_wr( 0x0B , c_uhf_modes_ast[mode_u8].power_u8 );
+"301
+[e ( _cc1000_wr (2 , -> -> 11 `i `uc . *U + &U _c_uhf_modes_ast * -> _mode_u8 `ux -> -> # `CS9 `ui `ux 3 ]
+[; ;cc1000.c: 302: Wait25Us();
+"302
+[v _Wait25Us `(v 0 ef ]
+[e ( _Wait25Us ..  ]
+"303
+[e :U 46 ]
+[; ;cc1000.c: 303: }
+[; ;cc1000.c: 319: return( 0 );
+"319
+[e ) -> -> 0 `i `uc ]
+[e $UE 44 ]
+"321
+[; ;cc1000.c: 321: }
+[e :UE 44 ]
+}
+"329
+[v _LockUHFThresh `(v 1 ef ]
+{
+[e :U _LockUHFThresh ]
+[f ]
+[; ;cc1000.c: 328: void LockUHFThresh(void)
+[; ;cc1000.c: 329: {
+[; ;cc1000.c: 330: RC0 = 0;
+"330
+[e = _RC0 -> -> 0 `i `b ]
+[; ;cc1000.c: 331: SSPBUF = (0x10 << 1) | 0x01;
+"331
+[e = _SSPBUF -> | << -> 16 `i -> 1 `i -> 1 `i `uc ]
+[; ;cc1000.c: 332: while( !BF );
+"332
+[e $U 48 ]
+[e :U 49 ]
+[e :U 48 ]
+[e $ ! _BF 49 ]
+[e :U 50 ]
+[; ;cc1000.c: 333: RC0 = 1;
+"333
+[e = _RC0 -> -> 1 `i `b ]
+[; ;cc1000.c: 334: SSPBUF = 0x7B;
+"334
+[e = _SSPBUF -> -> 123 `i `uc ]
+[; ;cc1000.c: 335: while( !BF );
+"335
+[e $U 51 ]
+[e :U 52 ]
+[e :U 51 ]
+[e $ ! _BF 52 ]
+[e :U 53 ]
+"336
+[; ;cc1000.c: 336: }
+[e :UE 47 ]
+}
+"344
+[v _UnlockUHFThresh `(v 1 ef ]
+{
+[e :U _UnlockUHFThresh ]
+[f ]
+[; ;cc1000.c: 343: void UnlockUHFThresh(void)
+[; ;cc1000.c: 344: {
+[; ;cc1000.c: 345: RC0 = 0;
+"345
+[e = _RC0 -> -> 0 `i `b ]
+[; ;cc1000.c: 346: SSPBUF = (0x10 << 1) | 0x01;
+"346
+[e = _SSPBUF -> | << -> 16 `i -> 1 `i -> 1 `i `uc ]
+[; ;cc1000.c: 347: while( !BF );
+"347
+[e $U 55 ]
+[e :U 56 ]
+[e :U 55 ]
+[e $ ! _BF 56 ]
+[e :U 57 ]
+[; ;cc1000.c: 348: RC0 = 1;
+"348
+[e = _RC0 -> -> 1 `i `b ]
+[; ;cc1000.c: 350: SSPBUF = 0x6B;
+"350
+[e = _SSPBUF -> -> 107 `i `uc ]
+[; ;cc1000.c: 351: while( !BF );
+"351
+[e $U 58 ]
+[e :U 59 ]
+[e :U 58 ]
+[e $ ! _BF 59 ]
+[e :U 60 ]
+"352
+[; ;cc1000.c: 352: }
+[e :UE 54 ]
+}

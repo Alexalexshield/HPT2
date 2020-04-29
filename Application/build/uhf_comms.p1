@@ -1,0 +1,2283 @@
+Version 3.2 HI-TECH Software Intermediate Code
+"19 C:\PICC\std\9.60\include\pic16f887.h
+[v _INDF `Vuc 1 s@0 ]
+"20
+[v _TMR0 `Vuc 1 s@1 ]
+"21
+[v _PCL `Vuc 1 s@2 ]
+"22
+[v _STATUS `Vuc 1 s@3 ]
+"23
+[v _FSR `uc 1 s@4 ]
+"24
+[v _PORTA `Vuc 1 s@5 ]
+"25
+[v _PORTB `Vuc 1 s@6 ]
+"26
+[v _PORTC `Vuc 1 s@7 ]
+"28
+[v _PORTD `Vuc 1 s@8 ]
+"30
+[v _PORTE `Vuc 1 s@9 ]
+"31
+[v _PCLATH `Vuc 1 s@10 ]
+"32
+[v _INTCON `Vuc 1 s@11 ]
+"33
+[v _PIR1 `Vuc 1 s@12 ]
+"34
+[v _PIR2 `Vuc 1 s@13 ]
+"35
+[v _TMR1L `Vuc 1 s@14 ]
+"36
+[v _TMR1H `Vuc 1 s@15 ]
+"37
+[v _T1CON `uc 1 s@16 ]
+"38
+[v _TMR2 `Vuc 1 s@17 ]
+"39
+[v _T2CON `uc 1 s@18 ]
+"40
+[v _SSPBUF `Vuc 1 s@19 ]
+"41
+[v _SSPCON `Vuc 1 s@20 ]
+"42
+[v _CCPR1L `Vuc 1 s@21 ]
+"43
+[v _CCPR1H `Vuc 1 s@22 ]
+"44
+[v _CCP1CON `Vuc 1 s@23 ]
+"45
+[v _RCSTA `Vuc 1 s@24 ]
+"46
+[v _TXREG `Vuc 1 s@25 ]
+"47
+[v _RCREG `Vuc 1 s@26 ]
+"48
+[v _CCPR2L `Vuc 1 s@27 ]
+"49
+[v _CCPR2H `Vuc 1 s@28 ]
+"50
+[v _CCP2CON `Vuc 1 s@29 ]
+"51
+[v _ADRESH `Vuc 1 s@30 ]
+"52
+[v _ADCON0 `Vuc 1 s@31 ]
+"53
+[v _OPTION `Xuc 1 s@129 ]
+"54
+[v _TRISA `VXuc 1 s@133 ]
+"55
+[v _TRISB `VXuc 1 s@134 ]
+"56
+[v _TRISC `VXuc 1 s@135 ]
+"58
+[v _TRISD `VXuc 1 s@136 ]
+"60
+[v _TRISE `VXuc 1 s@137 ]
+"61
+[v _PIE1 `Xuc 1 s@140 ]
+"62
+[v _PIE2 `Xuc 1 s@141 ]
+"63
+[v _PCON `VXuc 1 s@142 ]
+"64
+[v _OSCCON `VXuc 1 s@143 ]
+"65
+[v _OSCTUNE `Xuc 1 s@144 ]
+"66
+[v _SSPCON2 `VXuc 1 s@145 ]
+"67
+[v _PR2 `Xuc 1 s@146 ]
+"68
+[v _SSPADD `Xuc 1 s@147 ]
+"69
+[v _SSPMSK `Xuc 1 s@147 ]
+"70
+[v _SSPSTAT `VXuc 1 s@148 ]
+"71
+[v _WPUB `Xuc 1 s@149 ]
+"72
+[v _IOCB `Xuc 1 s@150 ]
+"73
+[v _VRCON `Xuc 1 s@151 ]
+"74
+[v _TXSTA `VXuc 1 s@152 ]
+"75
+[v _SPBRG `Xuc 1 s@153 ]
+"76
+[v _SPBRGH `Xuc 1 s@154 ]
+"77
+[v _PWM1CON `VXuc 1 s@155 ]
+"78
+[v _ECCPAS `VXuc 1 s@156 ]
+"79
+[v _PSTRCON `VXuc 1 s@157 ]
+"80
+[v _ADRESL `VXuc 1 s@158 ]
+"81
+[v _ADCON1 `Xuc 1 s@159 ]
+"82
+[v _WDTCON `VYuc 1 s@261 ]
+"83
+[v _CM1CON0 `VYuc 1 s@263 ]
+"84
+[v _CM2CON0 `VYuc 1 s@264 ]
+"85
+[v _CM2CON1 `VYuc 1 s@265 ]
+"86
+[v _EEDAT `VYuc 1 s@268 ]
+"88
+[v _EEDATA `VYuc 1 s@268 ]
+"89
+[v _EEADR `Yuc 1 s@269 ]
+"91
+[v _EEADRL `Yuc 1 s@269 ]
+"92
+[v _EEDATH `VYuc 1 s@270 ]
+"93
+[v _EEADRH `Yuc 1 s@271 ]
+"94
+[v _SRCON `VZuc 1 s@389 ]
+"95
+[v _BAUDCTL `VZuc 1 s@391 ]
+"96
+[v _ANSEL `Zuc 1 s@392 ]
+"97
+[v _ANSELH `Zuc 1 s@393 ]
+"98
+[v _EECON1 `VZuc 1 s@396 ]
+"99
+[v _EECON2 `VZuc 1 s@397 ]
+"103
+[v _CARRY `Vb 1 s@24 ]
+"104
+[v _DC `Vb 1 s@25 ]
+"105
+[v _ZERO `Vb 1 s@26 ]
+"106
+[v _PD `Vb 1 s@27 ]
+"107
+[v _TO `Vb 1 s@28 ]
+"108
+[v _RP0 `b 1 s@29 ]
+"109
+[v _RP1 `b 1 s@30 ]
+"110
+[v _IRP `b 1 s@31 ]
+"113
+[v _RA0 `Vb 1 s@40 ]
+"114
+[v _RA1 `Vb 1 s@41 ]
+"115
+[v _RA2 `Vb 1 s@42 ]
+"116
+[v _RA3 `Vb 1 s@43 ]
+"117
+[v _RA4 `Vb 1 s@44 ]
+"118
+[v _RA5 `Vb 1 s@45 ]
+"119
+[v _RA6 `Vb 1 s@46 ]
+"120
+[v _RA7 `Vb 1 s@47 ]
+"123
+[v _RB0 `Vb 1 s@48 ]
+"124
+[v _RB1 `Vb 1 s@49 ]
+"125
+[v _RB2 `Vb 1 s@50 ]
+"126
+[v _RB3 `Vb 1 s@51 ]
+"127
+[v _RB4 `Vb 1 s@52 ]
+"128
+[v _RB5 `Vb 1 s@53 ]
+"129
+[v _RB6 `Vb 1 s@54 ]
+"130
+[v _RB7 `Vb 1 s@55 ]
+"133
+[v _RC0 `Vb 1 s@56 ]
+"134
+[v _RC1 `Vb 1 s@57 ]
+"135
+[v _RC2 `Vb 1 s@58 ]
+"136
+[v _RC3 `Vb 1 s@59 ]
+"137
+[v _RC4 `Vb 1 s@60 ]
+"138
+[v _RC5 `Vb 1 s@61 ]
+"139
+[v _RC6 `Vb 1 s@62 ]
+"140
+[v _RC7 `Vb 1 s@63 ]
+"144
+[v _RD0 `Vb 1 s@64 ]
+"145
+[v _RD1 `Vb 1 s@65 ]
+"146
+[v _RD2 `Vb 1 s@66 ]
+"147
+[v _RD3 `Vb 1 s@67 ]
+"148
+[v _RD4 `Vb 1 s@68 ]
+"149
+[v _RD5 `Vb 1 s@69 ]
+"150
+[v _RD6 `Vb 1 s@70 ]
+"151
+[v _RD7 `Vb 1 s@71 ]
+"154
+[v _RE0 `Vb 1 s@72 ]
+"155
+[v _RE1 `Vb 1 s@73 ]
+"156
+[v _RE2 `Vb 1 s@74 ]
+"158
+[v _RE3 `Vb 1 s@75 ]
+"161
+[v _RBIF `Vb 1 s@88 ]
+"163
+[v _RABIF `Vb 1 s@88 ]
+"164
+[v _INTF `Vb 1 s@89 ]
+"165
+[v _T0IF `Vb 1 s@90 ]
+"166
+[v _RBIE `b 1 s@91 ]
+"168
+[v _RABIE `b 1 s@91 ]
+"169
+[v _INTE `b 1 s@92 ]
+"170
+[v _T0IE `b 1 s@93 ]
+"171
+[v _PEIE `b 1 s@94 ]
+"172
+[v _GIE `b 1 s@95 ]
+"175
+[v _TMR1IF `Vb 1 s@96 ]
+"176
+[v _TMR2IF `Vb 1 s@97 ]
+"177
+[v _CCP1IF `Vb 1 s@98 ]
+"178
+[v _SSPIF `Vb 1 s@99 ]
+"179
+[v _TXIF `Vb 1 s@100 ]
+"180
+[v _RCIF `Vb 1 s@101 ]
+"181
+[v _ADIF `Vb 1 s@102 ]
+"184
+[v _CCP2IF `Vb 1 s@104 ]
+"185
+[v _ULPWUIF `Vb 1 s@106 ]
+"186
+[v _BCLIF `Vb 1 s@107 ]
+"187
+[v _EEIF `Vb 1 s@108 ]
+"188
+[v _C1IF `Vb 1 s@109 ]
+"189
+[v _C2IF `Vb 1 s@110 ]
+"190
+[v _OSFIF `Vb 1 s@111 ]
+"193
+[v _TMR1ON `b 1 s@128 ]
+"194
+[v _TMR1CS `b 1 s@129 ]
+"195
+[v _T1SYNC `b 1 s@130 ]
+"196
+[v _T1OSCEN `b 1 s@131 ]
+"197
+[v _T1CKPS0 `b 1 s@132 ]
+"198
+[v _T1CKPS1 `b 1 s@133 ]
+"199
+[v _TMR1GE `b 1 s@134 ]
+"200
+[v _T1GINV `b 1 s@135 ]
+"203
+[v _T2CKPS0 `b 1 s@144 ]
+"204
+[v _T2CKPS1 `b 1 s@145 ]
+"205
+[v _TMR2ON `b 1 s@146 ]
+"206
+[v _TOUTPS0 `b 1 s@147 ]
+"207
+[v _TOUTPS1 `b 1 s@148 ]
+"208
+[v _TOUTPS2 `b 1 s@149 ]
+"209
+[v _TOUTPS3 `b 1 s@150 ]
+"212
+[v _SSPM0 `b 1 s@160 ]
+"213
+[v _SSPM1 `b 1 s@161 ]
+"214
+[v _SSPM2 `b 1 s@162 ]
+"215
+[v _SSPM3 `b 1 s@163 ]
+"216
+[v _CKP `b 1 s@164 ]
+"217
+[v _SSPEN `b 1 s@165 ]
+"218
+[v _SSPOV `Vb 1 s@166 ]
+"219
+[v _WCOL `Vb 1 s@167 ]
+"222
+[v _CCP1M0 `b 1 s@184 ]
+"223
+[v _CCP1M1 `b 1 s@185 ]
+"224
+[v _CCP1M2 `b 1 s@186 ]
+"225
+[v _CCP1M3 `b 1 s@187 ]
+"226
+[v _DC1B0 `b 1 s@188 ]
+"227
+[v _DC1B1 `b 1 s@189 ]
+"228
+[v _P1M0 `b 1 s@190 ]
+"229
+[v _P1M1 `b 1 s@191 ]
+"232
+[v _RX9D `Vb 1 s@192 ]
+"233
+[v _OERR `Vb 1 s@193 ]
+"234
+[v _FERR `Vb 1 s@194 ]
+"235
+[v _ADDEN `b 1 s@195 ]
+"236
+[v _CREN `b 1 s@196 ]
+"237
+[v _SREN `b 1 s@197 ]
+"238
+[v _RX9 `b 1 s@198 ]
+"239
+[v _SPEN `b 1 s@199 ]
+"242
+[v _CCP2M0 `b 1 s@232 ]
+"243
+[v _CCP2M1 `b 1 s@233 ]
+"244
+[v _CCP2M2 `b 1 s@234 ]
+"245
+[v _CCP2M3 `b 1 s@235 ]
+"246
+[v _CCP2Y `Vb 1 s@236 ]
+"247
+[v _CCP2X `Vb 1 s@237 ]
+"250
+[v _ADON `b 1 s@248 ]
+"251
+[v _GODONE `Vb 1 s@249 ]
+"252
+[v _CHS0 `b 1 s@250 ]
+"253
+[v _CHS1 `b 1 s@251 ]
+"254
+[v _CHS2 `b 1 s@252 ]
+"255
+[v _CHS3 `b 1 s@253 ]
+"256
+[v _ADCS0 `b 1 s@254 ]
+"257
+[v _ADCS1 `b 1 s@255 ]
+"260
+[v _PS0 `Xb 1 s@1032 ]
+"261
+[v _PS1 `Xb 1 s@1033 ]
+"262
+[v _PS2 `Xb 1 s@1034 ]
+"263
+[v _PSA `Xb 1 s@1035 ]
+"264
+[v _T0SE `Xb 1 s@1036 ]
+"265
+[v _T0CS `Xb 1 s@1037 ]
+"266
+[v _INTEDG `Xb 1 s@1038 ]
+"267
+[v _RBPU `Xb 1 s@1039 ]
+"269
+[v _RABPU `Xb 1 s@1039 ]
+"272
+[v _TRISA0 `Xb 1 s@1064 ]
+"273
+[v _TRISA1 `Xb 1 s@1065 ]
+"274
+[v _TRISA2 `Xb 1 s@1066 ]
+"275
+[v _TRISA3 `Xb 1 s@1067 ]
+"276
+[v _TRISA4 `Xb 1 s@1068 ]
+"277
+[v _TRISA5 `Xb 1 s@1069 ]
+"278
+[v _TRISA6 `Xb 1 s@1070 ]
+"279
+[v _TRISA7 `Xb 1 s@1071 ]
+"282
+[v _TRISB0 `VXb 1 s@1072 ]
+"283
+[v _TRISB1 `VXb 1 s@1073 ]
+"284
+[v _TRISB2 `VXb 1 s@1074 ]
+"285
+[v _TRISB3 `VXb 1 s@1075 ]
+"286
+[v _TRISB4 `VXb 1 s@1076 ]
+"287
+[v _TRISB5 `VXb 1 s@1077 ]
+"288
+[v _TRISB6 `VXb 1 s@1078 ]
+"289
+[v _TRISB7 `VXb 1 s@1079 ]
+"292
+[v _TRISC0 `VXb 1 s@1080 ]
+"293
+[v _TRISC1 `VXb 1 s@1081 ]
+"294
+[v _TRISC2 `VXb 1 s@1082 ]
+"295
+[v _TRISC3 `VXb 1 s@1083 ]
+"296
+[v _TRISC4 `VXb 1 s@1084 ]
+"297
+[v _TRISC5 `VXb 1 s@1085 ]
+"298
+[v _TRISC6 `VXb 1 s@1086 ]
+"299
+[v _TRISC7 `VXb 1 s@1087 ]
+"303
+[v _TRISD0 `VXb 1 s@1088 ]
+"304
+[v _TRISD1 `VXb 1 s@1089 ]
+"305
+[v _TRISD2 `VXb 1 s@1090 ]
+"306
+[v _TRISD3 `VXb 1 s@1091 ]
+"307
+[v _TRISD4 `VXb 1 s@1092 ]
+"308
+[v _TRISD5 `VXb 1 s@1093 ]
+"309
+[v _TRISD6 `VXb 1 s@1094 ]
+"310
+[v _TRISD7 `VXb 1 s@1095 ]
+"313
+[v _TRISE0 `VXb 1 s@1096 ]
+"314
+[v _TRISE1 `VXb 1 s@1097 ]
+"315
+[v _TRISE2 `VXb 1 s@1098 ]
+"317
+[v _TRISE3 `VXb 1 s@1099 ]
+"320
+[v _TMR1IE `Xb 1 s@1120 ]
+"321
+[v _TMR2IE `Xb 1 s@1121 ]
+"322
+[v _CCP1IE `Xb 1 s@1122 ]
+"323
+[v _SSPIE `Xb 1 s@1123 ]
+"324
+[v _TXIE `Xb 1 s@1124 ]
+"325
+[v _RCIE `Xb 1 s@1125 ]
+"326
+[v _ADIE `Xb 1 s@1126 ]
+"329
+[v _CCP2IE `Xb 1 s@1128 ]
+"330
+[v _ULPWUIE `Xb 1 s@1130 ]
+"331
+[v _BCLIE `Xb 1 s@1131 ]
+"332
+[v _EEIE `Xb 1 s@1132 ]
+"333
+[v _C1IE `Xb 1 s@1133 ]
+"334
+[v _C2IE `Xb 1 s@1134 ]
+"335
+[v _OSFIE `Xb 1 s@1135 ]
+"338
+[v _BOR `VXb 1 s@1136 ]
+"339
+[v _POR `VXb 1 s@1137 ]
+"340
+[v _SBOREN `Xb 1 s@1140 ]
+"341
+[v _ULPWUE `Xb 1 s@1141 ]
+"344
+[v _SCS `Xb 1 s@1144 ]
+"345
+[v _LTS `VXb 1 s@1145 ]
+"346
+[v _HTS `VXb 1 s@1146 ]
+"347
+[v _OSTS `VXb 1 s@1147 ]
+"348
+[v _IRCF0 `Xb 1 s@1148 ]
+"349
+[v _IRCF1 `Xb 1 s@1149 ]
+"350
+[v _IRCF2 `Xb 1 s@1150 ]
+"353
+[v _TUN0 `Xb 1 s@1152 ]
+"354
+[v _TUN1 `Xb 1 s@1153 ]
+"355
+[v _TUN2 `Xb 1 s@1154 ]
+"356
+[v _TUN3 `Xb 1 s@1155 ]
+"357
+[v _TUN4 `Xb 1 s@1156 ]
+"360
+[v _SEN `Xb 1 s@1160 ]
+"361
+[v _RSEN `VXb 1 s@1161 ]
+"362
+[v _PEN `VXb 1 s@1162 ]
+"363
+[v _RCEN `VXb 1 s@1163 ]
+"364
+[v _ACKEN `VXb 1 s@1164 ]
+"365
+[v _ACKDT `VXb 1 s@1165 ]
+"366
+[v _ACKSTAT `VXb 1 s@1166 ]
+"367
+[v _GCEN `Xb 1 s@1167 ]
+"370
+[v _BF `VXb 1 s@1184 ]
+"371
+[v _UA `VXb 1 s@1185 ]
+"372
+[v _RW `VXb 1 s@1186 ]
+"373
+[v _START `VXb 1 s@1187 ]
+"374
+[v _STOP `VXb 1 s@1188 ]
+"375
+[v _DA `VXb 1 s@1189 ]
+"376
+[v _CKE `Xb 1 s@1190 ]
+"377
+[v _SMP `Xb 1 s@1191 ]
+"380
+[v _WPUB0 `Xb 1 s@1192 ]
+"381
+[v _WPUB1 `Xb 1 s@1193 ]
+"382
+[v _WPUB2 `Xb 1 s@1194 ]
+"383
+[v _WPUB3 `Xb 1 s@1195 ]
+"384
+[v _WPUB4 `Xb 1 s@1196 ]
+"385
+[v _WPUB5 `Xb 1 s@1197 ]
+"386
+[v _WPUB6 `Xb 1 s@1198 ]
+"387
+[v _WPUB7 `Xb 1 s@1199 ]
+"390
+[v _IOCB0 `Xb 1 s@1200 ]
+"391
+[v _IOCB1 `Xb 1 s@1201 ]
+"392
+[v _IOCB2 `Xb 1 s@1202 ]
+"393
+[v _IOCB3 `Xb 1 s@1203 ]
+"394
+[v _IOCB4 `Xb 1 s@1204 ]
+"395
+[v _IOCB5 `Xb 1 s@1205 ]
+"396
+[v _IOCB6 `Xb 1 s@1206 ]
+"397
+[v _IOCB7 `Xb 1 s@1207 ]
+"400
+[v _VR0 `Xb 1 s@1208 ]
+"401
+[v _VR1 `Xb 1 s@1209 ]
+"402
+[v _VR2 `Xb 1 s@1210 ]
+"403
+[v _VR3 `Xb 1 s@1211 ]
+"404
+[v _VRSS `Xb 1 s@1212 ]
+"405
+[v _VRR `Xb 1 s@1213 ]
+"406
+[v _VROE `Xb 1 s@1214 ]
+"407
+[v _VREN `Xb 1 s@1215 ]
+"410
+[v _TX9D `VXb 1 s@1216 ]
+"411
+[v _TRMT `VXb 1 s@1217 ]
+"412
+[v _BRGH `Xb 1 s@1218 ]
+"413
+[v _SENDB `Xb 1 s@1219 ]
+"414
+[v _SYNC `Xb 1 s@1220 ]
+"415
+[v _TXEN `Xb 1 s@1221 ]
+"416
+[v _TX9 `Xb 1 s@1222 ]
+"417
+[v _CSRC `Xb 1 s@1223 ]
+"420
+[v _BRG0 `Xb 1 s@1224 ]
+"421
+[v _BRG1 `Xb 1 s@1225 ]
+"422
+[v _BRG2 `Xb 1 s@1226 ]
+"423
+[v _BRG3 `Xb 1 s@1227 ]
+"424
+[v _BRG4 `Xb 1 s@1228 ]
+"425
+[v _BRG5 `Xb 1 s@1229 ]
+"426
+[v _BRG6 `Xb 1 s@1230 ]
+"427
+[v _BRG7 `Xb 1 s@1231 ]
+"430
+[v _BRG8 `Xb 1 s@1232 ]
+"431
+[v _BRG9 `Xb 1 s@1233 ]
+"432
+[v _BRG10 `Xb 1 s@1234 ]
+"433
+[v _BRG11 `Xb 1 s@1235 ]
+"434
+[v _BRG12 `Xb 1 s@1236 ]
+"435
+[v _BRG13 `Xb 1 s@1237 ]
+"436
+[v _BRG14 `Xb 1 s@1238 ]
+"437
+[v _BRG15 `Xb 1 s@1239 ]
+"440
+[v _PDC0 `VXb 1 s@1240 ]
+"441
+[v _PDC1 `VXb 1 s@1241 ]
+"442
+[v _PDC2 `VXb 1 s@1242 ]
+"443
+[v _PDC3 `VXb 1 s@1243 ]
+"444
+[v _PDC4 `VXb 1 s@1244 ]
+"445
+[v _PDC5 `VXb 1 s@1245 ]
+"446
+[v _PDC6 `VXb 1 s@1246 ]
+"447
+[v _PRSEN `VXb 1 s@1247 ]
+"450
+[v _PSSBD0 `Xb 1 s@1248 ]
+"451
+[v _PSSBD1 `Xb 1 s@1249 ]
+"452
+[v _PSSAC0 `Xb 1 s@1250 ]
+"453
+[v _PSSAC1 `Xb 1 s@1251 ]
+"454
+[v _ECCPAS0 `Xb 1 s@1252 ]
+"455
+[v _ECCPAS1 `Xb 1 s@1253 ]
+"456
+[v _ECCPAS2 `Xb 1 s@1254 ]
+"457
+[v _ECCPASE `VXb 1 s@1255 ]
+"460
+[v _STRA `VXb 1 s@1256 ]
+"461
+[v _STRB `VXb 1 s@1257 ]
+"462
+[v _STRC `VXb 1 s@1258 ]
+"463
+[v _STRD `VXb 1 s@1259 ]
+"464
+[v _STRSYNC `VXb 1 s@1260 ]
+"467
+[v _VCFG0 `Xb 1 s@1276 ]
+"468
+[v _VCFG1 `Xb 1 s@1277 ]
+"469
+[v _ADFM `Xb 1 s@1279 ]
+"472
+[v _SWDTEN `Yb 1 s@2088 ]
+"473
+[v _WDTPS0 `Yb 1 s@2089 ]
+"474
+[v _WDTPS1 `Yb 1 s@2090 ]
+"475
+[v _WDTPS2 `Yb 1 s@2091 ]
+"476
+[v _WDTPS3 `Yb 1 s@2092 ]
+"479
+[v _C1CH0 `Yb 1 s@2104 ]
+"480
+[v _C1CH1 `Yb 1 s@2105 ]
+"481
+[v _C1R `Yb 1 s@2106 ]
+"482
+[v _C1POL `Yb 1 s@2108 ]
+"483
+[v _C1OE `Yb 1 s@2109 ]
+"484
+[v _C1OUT `VYb 1 s@2110 ]
+"485
+[v _C1ON `Yb 1 s@2111 ]
+"488
+[v _C2CH0 `Yb 1 s@2112 ]
+"489
+[v _C2CH1 `Yb 1 s@2113 ]
+"490
+[v _C2R `Yb 1 s@2114 ]
+"491
+[v _C2POL `Yb 1 s@2116 ]
+"492
+[v _C2OE `Yb 1 s@2117 ]
+"493
+[v _C2OUT `VYb 1 s@2118 ]
+"494
+[v _C2ON `Yb 1 s@2119 ]
+"497
+[v _C2SYNC `Yb 1 s@2120 ]
+"498
+[v _T1GSS `Yb 1 s@2121 ]
+"499
+[v _C2RSEL `Yb 1 s@2124 ]
+"500
+[v _C1RSEL `Yb 1 s@2125 ]
+"501
+[v _MC2OUT `VYb 1 s@2126 ]
+"502
+[v _MC1OUT `VYb 1 s@2127 ]
+"505
+[v _FVREN `Zb 1 s@3112 ]
+"506
+[v _PULSR `VZb 1 s@3114 ]
+"507
+[v _PULSS `VZb 1 s@3115 ]
+"508
+[v _C2REN `Zb 1 s@3116 ]
+"509
+[v _C1SEN `Zb 1 s@3117 ]
+"510
+[v _SR0 `Zb 1 s@3118 ]
+"511
+[v _SR1 `Zb 1 s@3119 ]
+"514
+[v _ABDEN `VZb 1 s@3128 ]
+"515
+[v _WUE `VZb 1 s@3129 ]
+"516
+[v _BRG16 `Zb 1 s@3131 ]
+"517
+[v _SCKP `VZb 1 s@3132 ]
+"518
+[v _RCIDL `VZb 1 s@3134 ]
+"519
+[v _ABDOVF `VZb 1 s@3135 ]
+"522
+[v _ANS0 `Zb 1 s@3136 ]
+"523
+[v _ANS1 `Zb 1 s@3137 ]
+"524
+[v _ANS2 `Zb 1 s@3138 ]
+"525
+[v _ANS3 `Zb 1 s@3139 ]
+"526
+[v _ANS4 `Zb 1 s@3140 ]
+"528
+[v _ANS5 `Zb 1 s@3141 ]
+"529
+[v _ANS6 `Zb 1 s@3142 ]
+"530
+[v _ANS7 `Zb 1 s@3143 ]
+"534
+[v _ANS8 `Zb 1 s@3144 ]
+"535
+[v _ANS9 `Zb 1 s@3145 ]
+"536
+[v _ANS10 `Zb 1 s@3146 ]
+"537
+[v _ANS11 `Zb 1 s@3147 ]
+"538
+[v _ANS12 `Zb 1 s@3148 ]
+"539
+[v _ANS13 `Zb 1 s@3149 ]
+"542
+[v _RD `VZb 1 s@3168 ]
+"543
+[v _WR `VZb 1 s@3169 ]
+"544
+[v _WREN `Zb 1 s@3170 ]
+"545
+[v _WRERR `VZb 1 s@3171 ]
+"546
+[v _EEPGD `Zb 1 s@3175 ]
+"28 ..\..\Common\include\types.h
+[v _ushort `us 1 t ]
+"29
+[v _ulong `ul 1 t ]
+"30
+[v _BYTE `uc 1 t ]
+"31
+[v _uchar `uc 1 t ]
+"57
+[s S2 `uc 1 `uc 1 ]
+[n S2 . lo hi ]
+"58
+[u S1 `uc -> 2 `i `us 1 `S2 1 ]
+[n S1 . b w st ]
+[v _short_u `S1 1 t ]
+"66
+[s S4 `uc 1 `uc 1 ]
+[n S4 . hi lo ]
+"67
+[u S3 `uc -> 2 `i `us 1 `S4 1 ]
+[n S3 . b w ho ]
+[v _bid_u `S3 1 t ]
+"78
+[u S5 `uc -> 4 `i `ul 1 ]
+[n S5 . b w ]
+[v _long_u `S5 1 t ]
+"88
+[s S6 `uc -> 3 `i ]
+[n S6 mid24 val ]
+[v _mid24_s `S6 1 t ]
+"41 ..\..\Common\include\time.h
+[s S8 `uc 1 `uc 1 ]
+[n S8 . lo hi ]
+"43
+[u S7 `uc 1 `S8 1 `us 1 ]
+[n S7 . cnt_byte s cnt ]
+[v _Timer_u `S7 1 t ]
+[c E811
+"279 ..\include\mu.h
+0
+"280
+1
+"281
+2
+"282
+3
+"284
+4
+"286
+5
+"287
+6
+"288
+7
+"289
+8
+"290
+9
+"292
+240
+"293
+241
+"294
+242
+.. ]
+[n E811 LMP_STATES LAMP_POST_ERROR LAMP_FIRMWARE_disabled LAMP_SEARCH_IN_PROGRESS LAMP_EVACUATE_IN_PROGRESS_disab LAMP_IDENTIFY LAMP_PAGER_ALARM LAMP_PAGER_CALL_1 LAMP_PAGER_CALL_2 LAMP_VLF_BLOCKED_STATE LAMP_STATES_NUM LAMP_NORMAL_STATE LAMP_INVERT_STATE LAMP_TEST_STATE ]
+"53 ..\..\Common\include\eeprom.h
+[s S9 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S9 . warm_boot valid_img_u8 wdog_resets bl_ver app_ver_u8 tx_hw_power_u8 lamp_mode d7 warm_boot_sec ]
+[v _EeSharedDataTSt `S9 1 t ]
+"88 ..\..\Common\include\uhf_pkt.h
+[s S10 `uc 1 :3 `uc 1 :4 `uc 1 :1 `uc 1 `S3 1 :7 `uc 1 :1 `uc 1 :3 `uc 1 :3 `uc 1 :2 `uc 1 `S1 1 ]
+[n S10 . mark no_slt type ms bid cur_grp reserv no_grp_u3 ext ext_reserv sum_u ]
+[v _UHF_BI_s `S10 1 t ]
+"104
+[s S11 `uc 1 :3 `uc 1 :4 `uc 1 :1 `uc 1 `uc 1 `uc 1 `S6 1 `S1 1 ]
+[n S11 . mark vlf_cmd type ms sid seq_dur mid_s sum_u ]
+[v _UHF_VLF_s `S11 1 t ]
+"115
+[s S12 `uc 1 :3 `uc 1 :4 `uc 1 :1 `uc 1 `S5 1 `S1 1 ]
+[n S12 . mark ext type ms mid sum_u ]
+[v _UHF_BIRC_s `S12 1 t ]
+"127
+[s S13 `uc 1 :3 `uc 1 :4 `uc 1 :1 `uc 1 `S5 1 `uc 1 `S1 1 ]
+[n S13 . mark ext type ms mid ext_data sum_u ]
+[v _UHF_BIRC_E_s `S13 1 t ]
+"139
+[s S14 `uc 1 :3 `uc 1 :4 `uc 1 :1 `uc 1 `S3 1 `S5 1 `S1 1 ]
+[n S14 . mark ext type ms bid mid sum_u ]
+[v _UHF_II_s `S14 1 t ]
+"150
+[s S15 :1 `uc 1 :1 `uc 1 :1 `uc 1 :4 `uc 1 :1 `uc 1 ]
+[n S15 . ack ack_manual trap_8khz type ms ]
+[v _bir_cmd_s `S15 1 t ]
+"165
+[u S17 `S15 1 `uc 1 ]
+[n S17 . c b ]
+"169
+[s S16 `uc 1 `S17 1 `S5 1 `S1 1 ]
+[n S16 . mark cmd mid sum_u ]
+[v _UHF_BIR_s `S16 1 t ]
+"182
+[s S18 `uc 1 :3 `uc 1 :4 `uc 1 :1 `uc 1 `uc 1 `S1 1 `uc 1 `S1 1 ]
+[n S18 . mark gmsk_u3 type ms type_ctl sidx grp_u8 sum_u ]
+[v _UhfCtrlSearchCTSt `S18 1 t ]
+"194
+[s S19 `uc 1 :3 `uc 1 :4 `uc 1 :1 `uc 1 `uc 1 `S5 1 `S1 1 ]
+[n S19 . mark . type ms type_ctl mid sum_u ]
+[v _UhfCtrlQueryCTSt `S19 1 t ]
+"211
+[s S20 `uc 1 :3 `uc 1 :4 `uc 1 :1 `uc 1 `uc 1 `S5 1 `uc 1 `uc 1 `uc 1 `uc 1 `S1 1 ]
+[n S20 . mark . type ms type_ctl mid state wdog_resets vers_boot vers sum_u ]
+[v _UhfCtrlSearchQueryRTSt `S20 1 t ]
+"223
+[s S21 `uc 1 :3 `uc 1 :4 `uc 1 :1 `uc 1 `uc 1 `S5 1 `S1 1 ]
+[n S21 . mark . type ms type_ctl mid sum_u ]
+[v _UhfCtrlBootModeCTSt `S21 1 t ]
+"235
+[s S22 `uc 1 :3 `uc 1 :4 `uc 1 :1 `uc 1 `uc 1 `S5 1 `S1 1 ]
+[n S22 . mark . type ms type_ctl mid sum_u ]
+[v _UhfCtrlDLInitTSt `S22 1 t ]
+"251
+[s S23 `uc 1 :3 `uc 1 :4 `uc 1 :1 `uc 1 `uc 1 `uc 1 `us 1 `us 1 `us -> 32 `i `S1 1 ]
+[n S23 . mark . type ms type_ctl len seq address data sum_u ]
+[v _UhfCtrlDLDataTSt `S23 1 t ]
+"264
+[s S24 `uc 1 :3 `uc 1 :4 `uc 1 :1 `uc 1 `uc 1 `S5 1 `us 1 `S1 1 ]
+[n S24 . mark . type ms type_ctl mid seq sum_u ]
+[v _UhfCtrlDLEndCTSt `S24 1 t ]
+"278
+[s S25 `uc 1 :3 `uc 1 :4 `uc 1 :1 `uc 1 `uc 1 `S5 1 `us 1 `S1 1 ]
+[n S25 . mark . type ms type_ctl mid test_mode sum_u ]
+[v _UHF_CRTL_TEST_s `S25 1 t ]
+"294
+[s S26 `uc 1 :3 `uc 1 :4 `uc 1 :1 `uc 1 `uc 1 `uc 1 `S1 1 ]
+[n S26 . mark . type ms type_ctl status sum_u ]
+[v _UhfCtrlDLEndRTSt `S26 1 t ]
+"307
+[s S27 `uc 1 :3 `uc 1 :4 `uc 1 :1 `uc 1 `uc 1 `S5 1 `us -> 4 `i `S1 1 ]
+[n S27 . mark . type ms type_ctl curr_mid data_au16 sum_u ]
+[v _UhfCtrlSetIdCTSt `S27 1 t ]
+"320
+[s S28 `uc 1 :3 `uc 1 :4 `uc 1 :1 `uc 1 `uc 1 `uc 1 `S1 1 ]
+[n S28 . mark . type ms type_ctl success sum_u ]
+[v _UhfCtrlSetIdRTSt `S28 1 t ]
+"350
+[u S29 `S10 1 `S12 1 `S13 1 `S14 1 `S16 1 `S18 1 `S19 1 `S20 1 `S21 1 `S22 1 `S23 1 `S24 1 `S26 1 `S27 1 `S28 1 `S25 1 `S11 1 `uc -> # `S23 `ui ]
+[n S29 . bi birc birc_e ii bir csc cqc csqr cbmc cdi cdd cdec cder csic csir ctst vlf data ]
+[v _UhfPktTU `S29 1 t ]
+[c E1052
+"354
+0
+"355
+1
+"356
+2
+"358
+3
+"359
+4
+"362
+15
+.. ]
+[n E1052 UHF_PKT_TYPES UHF_BI_PKT UHF_BIRC_PKT UHF_II_PKT UHF_RESERV UHF_VLF_PKT UHF_CONTROL_PKT ]
+[c E1059
+"365
+0
+"366
+1
+"367
+2
+"368
+3
+"369
+4
+"371
+5
+.. ]
+[n E1059 UHF_CONTROL_TYPES UHFC_SEARCH UHFC_QUERY UHFC_BOOTMODE UHFC_3 UHFC_4 UHFC_TESTMODE ]
+"414
+[s S30 `uc 1 `uc 1 `uc 1 `uc 1 `S29 1 ]
+[n S30 Uhf_pkt_s rxt_state idx len brx_pkt_cnt pkt ]
+[v _Uhf_pkt_s `S30 1 t ]
+[c E1073
+"35 ..\..\Common\include\uhf_cmn.h
+0
+"36
+1
+"37
+2
+"38
+3
+"39
+4
+"40
+5
+"41
+6
+"43
+7
+.. ]
+[n E1073 UHF_RXTX_STATES UHF_RXTX_PREAMBLE UHF_RXTX_RESYNC UHF_RX_HDR UHF_RXTX_PKT UHF_RX_COMPLETE UHF_TX_TRAILER UHF_TX_END UHF_TX_COMPLETE ]
+[c E1102
+"65 ..\..\Common\include\cc1000.h
+0
+"67
+1
+.. ]
+[n E1102 UHF_MODES UHF_RX_MODE UHF_TX_MODE ]
+"4 C:\PICC\std\9.60\include\stdlib.h
+[v _ptrdiff_t `i 1 t ]
+"5
+[v _size_t `ui 1 t ]
+"6
+[v _wchar_t `us 1 t ]
+"30
+[s S31 `i 1 `i 1 ]
+[n S31 . rem quot ]
+[v _div_t `S31 1 t ]
+"34
+[s S32 `ui 1 `ui 1 ]
+[n S32 . rem quot ]
+[v _udiv_t `S32 1 t ]
+"38
+[s S33 `l 1 `l 1 ]
+[n S33 . quot rem ]
+[v _ldiv_t `S33 1 t ]
+"42
+[s S34 `ul 1 `ul 1 ]
+[n S34 . quot rem ]
+[v _uldiv_t `S34 1 t ]
+"122
+[v F1196 `(v 1 tf ]
+"126
+[v F1208 `(i 1 tf2`*Cv`*Cv ]
+"127
+[v F1217 `(i 1 tf2`*Cv`*Cv ]
+[c E1228
+"85 ..\..\Common\include\vlf_pkt.h
+0
+"86
+1
+"87
+2
+"88
+3
+"89
+4
+"90
+5
+"91
+6
+"92
+7
+"93
+8
+"98
+9
+.. ]
+[n E1228 VLF_COMMS_PACKET_TYPES VLF_MU_DETECT VLF_MU_MASK VLF_MU_QUICK_SEARCH_Y VLF_MU_QUICK_SEARCH_Z VLF_MU_LOCATE VLF_MU_VLF_RX_CONTROL VLF_MU_QUICK_SEARCH_X VLF_MU_TEST VLF_MU_MASK_FULL VLF_NO_PACKET ]
+"105
+[s S35 `uc 1 `uc 1 ]
+[n S35 . sid seq ]
+[v _DetectCommand_P2 `S35 1 t ]
+"113
+[s S36 `S6 1 `uc 1 `uc 1 ]
+[n S36 . mid_s sid seq ]
+[v _MaskCommand_P2 `S36 1 t ]
+"119
+[s S37 `S6 1 `uc 1 ]
+[n S37 . mid_s timer ]
+[v _MaskFullCommand_P3 `S37 1 t ]
+"127
+[s S38 `S6 1 `uc 1 ]
+[n S38 . mid_s duration ]
+[v _LocateCommand_P2 `S38 1 t ]
+"150
+[s S41 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S41 . mobility bit5 bit6 batteryproblem masked ]
+"152
+[u S40 `S41 1 `uc 1 ]
+[n S40 . s status ]
+"153
+[s S39 `S6 1 `S40 1 ]
+[n S39 . mid_s m ]
+[v _GenericResponse_P2 `S39 1 t ]
+"172
+[u S43 `uc -> 8 `i `S35 1 `S38 1 `S36 1 `S37 1 `S39 1 ]
+[n S43 . data det_cmd loc_cmd msk_cmd msk_full_cmd responce ]
+"173
+[s S42 `Vuc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `S43 1 ]
+[n S42 Pkt_tx_buf_st state cnt idx shifter seq sid type u ]
+[v _Pkt_tx_buf_st `S42 1 t ]
+"196
+[s S46 :1 `uc 1 :1 `uc 1 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S46 aps tail enable bit_score unlock combiner ]
+"198
+[u S45 `S46 1 `uc 1 ]
+[n S45 flags aps aps_state ]
+"203
+[s S44 `Vuc 1 `uc 1 `uc 1 `*uc 1 `uc 1 `us 1 `us 1 `uc 1 `uc 1 `uc * -> 12 `i -> 4 `i `S45 1 `uc 1 `uc 1 `us 1 ]
+[n S44 Pkt_rx_buf_st state cnt len ptr shifter preamble_score prev_preamble_score score unlocked preamble flags aps_lock_cnt aps_score aps_timeout ]
+[v _Pkt_rx_buf_st `S44 1 t ]
+[c E1317
+"67 ..\include\vlf_comms.h
+0
+"68
+1
+"70
+2
+.. ]
+[n E1317 VLF_STATE VLF_STATE_IDLE VLF_STATE_READBIT VLF_STATE_PACKET_TRANSMITTED ]
+[c E1321
+"74
+0
+"75
+1
+"76
+2
+"77
+3
+"79
+4
+.. ]
+[n E1321 VLF_RX_STATES VLF_RX_APS VLF_RX_SEEKING VLF_RX_LOCKED VLF_RX_RECEIVING VLF_PACKET_READY ]
+[c E1327
+"83
+0
+"84
+1
+"85
+2
+"86
+3
+"87
+4
+"89
+5
+.. ]
+[n E1327 TX_STATE VLF_TX_IDLE VLF_TX_LOCATE VLF_TX_PACKET_PREAMBLE VLF_TX_PACKET_TYPE VLF_TX_PACKET_DATA VLF_TX_PACKET_DONE ]
+"42 C:\Users\Shchitnikov\Desktop\HPT2\Application\src\uhf_comms.c
+[v _uhf `YS30 1 e ]
+"44
+[v _uhf_registration_timeout `us 1 e ]
+"46
+[v _bb `ZS3 -> 8 `i e ]
+"47
+[v _bi `ZS3 -> 8 `i e ]
+"48
+[v _combine_id `Zus 1 e ]
+"49
+[v _bid_temp `Zus 1 e ]
+"51
+[v _bl_version `Zuc 1 e ]
+"53
+[v _uhf_ctrl_sidx `us 1 s ]
+"54
+[v _uhf_ctrl_sctr `uc 1 s ]
+"56
+[v _SendUHFPkt `(v 0 sf ]
+"62
+[v _PrepareSearchQueryReply `(v 1 sf ]
+{
+[e :U _PrepareSearchQueryReply ]
+[f ]
+[; ;uhf_comms.c: 61: static void PrepareSearchQueryReply(void)
+[; ;uhf_comms.c: 62: {
+[; ;uhf_comms.c: 63: uhf.pkt.csqr.mid = mid;
+"63
+[v _mid `S5 0 e ]
+[e = . . . _uhf 4 7 5 _mid ]
+[; ;uhf_comms.c: 65: if( ( lamp_state == LAMP_NORMAL_STATE )&&( mu_flags & (0x04) ) )
+"65
+[v _lamp_state `uc 0 e ]
+[v _mu_flags `uc 0 e ]
+[e $ ! && == -> _lamp_state `i -> . `E811 10 `i != & -> _mu_flags `i -> 4 `i -> 0 `i 48 ]
+[; ;uhf_comms.c: 66: uhf.pkt.csqr.state = LAMP_INVERT_STATE;
+"66
+[e = . . . _uhf 4 7 6 -> . `E811 11 `uc ]
+[e $U 49 ]
+"67
+[e :U 48 ]
+[; ;uhf_comms.c: 67: else
+[; ;uhf_comms.c: 68: uhf.pkt.csqr.state = lamp_state;
+"68
+[e = . . . _uhf 4 7 6 _lamp_state ]
+[e :U 49 ]
+[; ;uhf_comms.c: 75: uhf.pkt.csqr.wdog_resets = eeprom_read( ((BYTE)(&((EeSharedDataTSt*)0)->wdog_resets)) );
+"75
+[v _eeprom_read `(uc 0 ef1`uc ]
+[e = . . . _uhf 4 7 7 ( _eeprom_read (1 -> &U . *U -> -> 0 `i `*S9 2 `uc ]
+[; ;uhf_comms.c: 83: uhf.pkt.csqr.vers_boot = bl_version;
+"83
+[e = . . . _uhf 4 7 8 _bl_version ]
+[; ;uhf_comms.c: 87: uhf.pkt.csqr.vers = 0x8E;
+"87
+[e = . . . _uhf 4 7 9 -> -> 142 `i `uc ]
+"89
+[; ;uhf_comms.c: 89: }
+[e :UE 47 ]
+}
+"97
+[v _UHFBusy `(uc 1 ef ]
+{
+[e :U _UHFBusy ]
+[f ]
+[; ;uhf_comms.c: 96: BYTE UHFBusy(void)
+[; ;uhf_comms.c: 97: {
+[; ;uhf_comms.c: 98: if( uhf.rxt_state == UHF_RXTX_PREAMBLE )
+"98
+[e $ ! == -> . _uhf 0 `i -> . `E1073 0 `i 51 ]
+[; ;uhf_comms.c: 99: return( 0 );
+"99
+[e ) -> -> 0 `i `uc ]
+[e $UE 50 ]
+[e :U 51 ]
+[; ;uhf_comms.c: 101: return( 1 );
+"101
+[e ) -> -> 1 `i `uc ]
+[e $UE 50 ]
+"102
+[; ;uhf_comms.c: 102: }
+[e :UE 50 ]
+}
+"109
+[v _ProcessUHFPacket `(uc 1 ef ]
+{
+[e :U _ProcessUHFPacket ]
+[f ]
+[; ;uhf_comms.c: 108: BYTE ProcessUHFPacket(void)
+[; ;uhf_comms.c: 109: {
+[; ;uhf_comms.c: 111: if( uhf.pkt.bi.ms == 1 )
+"111
+[e $ ! == -> . . . _uhf 4 0 3 `i -> 1 `i 53 ]
+[; ;uhf_comms.c: 112: { if( CalcUHFChecksum( 0 ) )
+"112
+[v _CalcUHFChecksum `(uc 0 ef1`uc ]
+[e $ ! != -> ( _CalcUHFChecksum (1 -> -> 0 `i `uc `i -> -> -> 0 `i `uc `i 54 ]
+[; ;uhf_comms.c: 113: { CREN = 1;
+"113
+[e = _CREN -> -> 1 `i `b ]
+[; ;uhf_comms.c: 114: RCIE = 1;
+"114
+[e = _RCIE -> -> 1 `i `b ]
+[; ;uhf_comms.c: 115: return( 1 );
+"115
+[e ) -> -> 1 `i `uc ]
+[e $UE 52 ]
+"116
+[e :U 54 ]
+"117
+[; ;uhf_comms.c: 116: }
+[; ;uhf_comms.c: 117: }
+[e $U 55 ]
+"118
+[e :U 53 ]
+[; ;uhf_comms.c: 118: else
+[; ;uhf_comms.c: 119: { CREN = 1;
+"119
+[e = _CREN -> -> 1 `i `b ]
+[; ;uhf_comms.c: 120: RCIE = 1;
+"120
+[e = _RCIE -> -> 1 `i `b ]
+[; ;uhf_comms.c: 121: return( (0) );
+"121
+[e ) -> -> 0 `i `uc ]
+[e $UE 52 ]
+"122
+[e :U 55 ]
+[; ;uhf_comms.c: 122: }
+[; ;uhf_comms.c: 127: switch( uhf.pkt.bi.type )
+"127
+[e $U 57 ]
+[; ;uhf_comms.c: 128: {
+[; ;uhf_comms.c: 130: case UHF_BI_PKT:
+"130
+[e :U 58 ]
+[; ;uhf_comms.c: 149: if(uhf.pkt.bi.ext_reserv & (( 1U << (1) )))
+"149
+[e $ ! != & -> . . . _uhf 4 0 9 `ui << -> 1 `ui -> 1 `i -> -> 0 `i `ui 59 ]
+[; ;uhf_comms.c: 150: {
+[; ;uhf_comms.c: 151: vrx.state = VLF_RX_APS;
+"151
+[v _vrx `XS44 0 e ]
+[e = . _vrx 0 -> . `E1321 0 `uc ]
+[; ;uhf_comms.c: 153: vrx.flags.aps.enable = (1);
+"153
+[e = . . . _vrx 10 0 1 -> -> 1 `i `uc ]
+[; ;uhf_comms.c: 154: vrx.aps_timeout = (timer.cnt + (ushort)((120*(15.2588))));
+"154
+[v _timer `VS7 0 e ]
+[e = . _vrx 13 -> + -> . _timer 2 `ui -> -> * -> -> 120 `i `d .15.2588 `us `ui `us ]
+[; ;uhf_comms.c: 156: combine_id = uhf.pkt.bi.bid.w;
+"156
+[e = _combine_id . . . . _uhf 4 0 4 1 ]
+[; ;uhf_comms.c: 157: combine_id = ( ( (combine_id) >> 8 )|( (combine_id) << 8 ) ) & 0x0FFF;
+"157
+[e = _combine_id -> & | >> -> _combine_id `ui -> 8 `i << -> _combine_id `ui -> 8 `i -> -> 4095 `i `ui `us ]
+"158
+[e :U 59 ]
+[; ;uhf_comms.c: 158: }
+[; ;uhf_comms.c: 162: bid_temp = uhf.pkt.bi.bid.w;
+"162
+[e = _bid_temp . . . . _uhf 4 0 4 1 ]
+[; ;uhf_comms.c: 163: bid_temp = ( ( (bid_temp) >> 8 )|( (bid_temp) << 8 ) ) & 0x0FFF;
+"163
+[e = _bid_temp -> & | >> -> _bid_temp `ui -> 8 `i << -> _bid_temp `ui -> 8 `i -> -> 4095 `i `ui `us ]
+[; ;uhf_comms.c: 164: if ( (combine_id == bid_temp ) && ((uhf.pkt.bi.ext_reserv & (( 1U << (1) ))) == (0)) )
+"164
+[e $ ! && == -> _combine_id `ui -> _bid_temp `ui == & -> . . . _uhf 4 0 9 `ui << -> 1 `ui -> 1 `i -> -> 0 `i `ui 60 ]
+[; ;uhf_comms.c: 165: {
+[; ;uhf_comms.c: 167: RB0 = 1;
+"167
+[e = _RB0 -> -> 1 `i `b ]
+[; ;uhf_comms.c: 168: vrx.state = VLF_RX_SEEKING;
+"168
+[e = . _vrx 0 -> . `E1321 1 `uc ]
+[; ;uhf_comms.c: 169: vrx.flags.aps.enable = (0);
+"169
+[e = . . . _vrx 10 0 1 -> -> 0 `i `uc ]
+[; ;uhf_comms.c: 170: vrx.flags.aps.combiner = (0);
+"170
+[e = . . . _vrx 10 0 4 -> -> 0 `i `uc ]
+[; ;uhf_comms.c: 171: mu_flags &=~((0x80));
+"171
+[e =& _mu_flags -> ~ -> 128 `i `uc ]
+"172
+[e :U 60 ]
+[; ;uhf_comms.c: 172: }
+[; ;uhf_comms.c: 177: if( uhf.pkt.bi.ext &&( ( mu_flags & (0x10) ) == 0 ) )
+"177
+[e $ ! && != -> . . . _uhf 4 0 8 `i -> -> -> 0 `i `Yuc `i == & -> _mu_flags `i -> 16 `i -> 0 `i 61 ]
+[; ;uhf_comms.c: 178: { mu_flags |= (0x10);
+"178
+[e =| _mu_flags -> -> 16 `i `uc ]
+[; ;uhf_comms.c: 179: bb[uhf.pkt.bi.bid.ho.lo & ( ((8)) - 1 )].w = 0;
+"179
+[e = . *U + &U _bb * -> -> & -> . . . . . _uhf 4 0 4 2 1 `i - -> 8 `i -> 1 `i `ui `ux -> -> # `ZS3 `ui `ux 1 -> -> 0 `i `us ]
+"180
+[e :U 61 ]
+[; ;uhf_comms.c: 180: }
+[; ;uhf_comms.c: 186: if((vrx.flags.aps.combiner == (0))&&( vrx.flags.aps.enable == (1)))
+"186
+[e $ ! && == -> . . . _vrx 10 0 4 `i -> 0 `i == -> . . . _vrx 10 0 1 `i -> 1 `i 62 ]
+[; ;uhf_comms.c: 187: {
+[; ;uhf_comms.c: 188: if( mu_flags & (0x80) )
+"188
+[e $ ! != & -> _mu_flags `i -> 128 `i -> 0 `i 63 ]
+[; ;uhf_comms.c: 189: {
+"190
+{
+[v _i `uc 1 a ]
+[; ;uhf_comms.c: 190: char i;
+[; ;uhf_comms.c: 191: mu_flags &= (~((0x02)|(0x10)|(0x20)) );
+"191
+[e =& _mu_flags -> ~ | | -> 2 `i -> 16 `i -> 32 `i `uc ]
+[; ;uhf_comms.c: 193: for( i=0; i<(8); i++ )
+"193
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 8 `i 64 ]
+[e $U 65 ]
+"194
+[e :U 64 ]
+[; ;uhf_comms.c: 194: bb[i].w = bi[i].w = 0;
+[e = . *U + &U _bb * -> _i `ux -> -> # `ZS3 `ui `ux 1 = . *U + &U _bi * -> _i `ux -> -> # `ZS3 `ui `ux 1 -> -> 0 `i `us ]
+"193
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 8 `i 64 ]
+[e :U 65 ]
+"195
+}
+[e :U 63 ]
+"196
+[e :U 62 ]
+[; ;uhf_comms.c: 195: }
+[; ;uhf_comms.c: 196: }
+[; ;uhf_comms.c: 198: if( bb[uhf.pkt.bi.bid.ho.lo & ( ((8)) - 1 )].w != uhf.pkt.bi.bid.w )
+"198
+[e $ ! != -> . *U + &U _bb * -> -> & -> . . . . . _uhf 4 0 4 2 1 `i - -> 8 `i -> 1 `i `ui `ux -> -> # `ZS3 `ui `ux 1 `ui -> . . . . _uhf 4 0 4 1 `ui 67 ]
+[; ;uhf_comms.c: 199: {
+[; ;uhf_comms.c: 205: if( uhf.pkt.bi.cur_grp == ( mid.b[3] &( (1 << uhf.pkt.bi.no_grp_u3)-1)) )
+"205
+[e $ ! == -> . . . _uhf 4 0 5 `i & -> *U + &U . _mid 0 * -> -> -> 3 `i `ui `ux -> -> # `uc `ui `ux `i - << -> 1 `i -> . . . _uhf 4 0 7 `i -> 1 `i 68 ]
+[; ;uhf_comms.c: 206: {
+[; ;uhf_comms.c: 208: bi[uhf.pkt.bi.bid.ho.lo & ( ((8)) - 1 )].w = uhf.pkt.bi.bid.w;
+"208
+[e = . *U + &U _bi * -> -> & -> . . . . . _uhf 4 0 4 2 1 `i - -> 8 `i -> 1 `i `ui `ux -> -> # `ZS3 `ui `ux 1 . . . . _uhf 4 0 4 1 ]
+[; ;uhf_comms.c: 210: switch( uhf.pkt.bi.ext )
+"210
+[e $U 70 ]
+[; ;uhf_comms.c: 211: {
+[; ;uhf_comms.c: 214: case 1:
+"214
+[e :U 71 ]
+[; ;uhf_comms.c: 216: if( lamp_state <= LAMP_NORMAL_STATE )
+"216
+[e $ ! <= -> _lamp_state `i -> . `E811 10 `i 72 ]
+[; ;uhf_comms.c: 217: { lamp_state = LAMP_PAGER_CALL_1;
+"217
+[e = _lamp_state -> . `E811 6 `uc ]
+[; ;uhf_comms.c: 218: lamp_timeout = (timer.cnt + (ushort)((ushort)( 5*(( 8 ) * 8))));
+"218
+[v _lamp_timeout `us 0 e ]
+[e = _lamp_timeout -> + -> . _timer 2 `ui -> -> * -> 5 `i * -> 8 `i -> 8 `i `us `ui `us ]
+[; ;uhf_comms.c: 219: mu_flags |= (0x08);
+"219
+[e =| _mu_flags -> -> 8 `i `uc ]
+"220
+[e :U 72 ]
+[; ;uhf_comms.c: 220: }
+[; ;uhf_comms.c: 221: break;
+"221
+[e $U 69 ]
+[; ;uhf_comms.c: 223: case 2:
+"223
+[e :U 73 ]
+[; ;uhf_comms.c: 225: if( lamp_state >= LAMP_PAGER_ALARM )
+"225
+[e $ ! >= -> _lamp_state `i -> . `E811 5 `i 74 ]
+[; ;uhf_comms.c: 226: { lamp_state = LAMP_PAGER_ALARM;
+"226
+[e = _lamp_state -> . `E811 5 `uc ]
+[; ;uhf_comms.c: 227: lamp_timeout = (timer.cnt + (ushort)((ushort)(60*(15.2588))));
+"227
+[e = _lamp_timeout -> + -> . _timer 2 `ui -> -> * -> -> 60 `i `d .15.2588 `us `ui `us ]
+[; ;uhf_comms.c: 228: mu_flags |= (0x08);
+"228
+[e =| _mu_flags -> -> 8 `i `uc ]
+"229
+[e :U 74 ]
+[; ;uhf_comms.c: 229: }
+[; ;uhf_comms.c: 230: break;
+"230
+[e $U 69 ]
+[; ;uhf_comms.c: 232: case 3:
+"232
+[e :U 75 ]
+[; ;uhf_comms.c: 234: mu_flags |= (0x08);
+"234
+[e =| _mu_flags -> -> 8 `i `uc ]
+[; ;uhf_comms.c: 235: break;
+"235
+[e $U 69 ]
+"237
+[; ;uhf_comms.c: 237: }
+[e $U 69 ]
+"210
+[e :U 70 ]
+[e [\ . . . _uhf 4 0 8 , $ -> -> 1 `i `uc 71
+ , $ -> -> 2 `i `uc 73
+ , $ -> -> 3 `i `uc 75
+ 69 ]
+"237
+[e :U 69 ]
+[; ;uhf_comms.c: 243: delay_uhf_ts( (BYTE)( rand() &( (1 << uhf.pkt.bi.no_slt ) - 1 ) ) );
+"243
+[v _delay_uhf_ts `(v 0 ef1`uc ]
+[v _rand `(i 0 ef ]
+[e ( _delay_uhf_ts (1 -> & ( _rand ..  - << -> 1 `i -> . . . _uhf 4 0 1 `i -> 1 `i `uc ]
+[; ;uhf_comms.c: 244: uhf.pkt.bir.mid = mid;
+"244
+[e = . . . _uhf 4 4 2 _mid ]
+[; ;uhf_comms.c: 246: uhf.pkt.bir.cmd.b = (UHF_BI_PKT<<3);
+"246
+[e = . . . . _uhf 4 4 1 1 -> << -> . `E1052 0 `i -> 3 `i `uc ]
+[; ;uhf_comms.c: 247: if( mu_flags & (0x08) )
+"247
+[e $ ! != & -> _mu_flags `i -> 8 `i -> 0 `i 76 ]
+[; ;uhf_comms.c: 248: uhf.pkt.bir.cmd.b |= (1);
+"248
+[e =| . . . . _uhf 4 4 1 1 -> -> 1 `i `uc ]
+[e :U 76 ]
+[; ;uhf_comms.c: 254: if( mu_flags & (0x80))
+"254
+[e $ ! != & -> _mu_flags `i -> 128 `i -> 0 `i 77 ]
+[; ;uhf_comms.c: 255: uhf.pkt.bir.cmd.b |= (4);
+"255
+[e =| . . . . _uhf 4 4 1 1 -> -> 4 `i `uc ]
+[e :U 77 ]
+[; ;uhf_comms.c: 258: uhf_registration_timeout = (timer.cnt + (ushort)((3*60*(15.2588))));
+"258
+[e = _uhf_registration_timeout -> + -> . _timer 2 `ui -> -> * -> * -> 3 `i -> 60 `i `d .15.2588 `us `ui `us ]
+[; ;uhf_comms.c: 259: mu_flags |= ((0x01)|(0x02));
+"259
+[e =| _mu_flags -> | -> 1 `i -> 2 `i `uc ]
+"260
+[e :U 68 ]
+"261
+[e :U 67 ]
+[; ;uhf_comms.c: 260: }
+[; ;uhf_comms.c: 261: }
+[; ;uhf_comms.c: 262: break;
+"262
+[e $U 56 ]
+[; ;uhf_comms.c: 265: case UHF_BIRC_PKT:
+"265
+[e :U 78 ]
+[; ;uhf_comms.c: 270: if( uhf.pkt.birc.mid.w == mid.w )
+"270
+[e $ ! == . . . . _uhf 4 1 4 1 . _mid 1 79 ]
+[; ;uhf_comms.c: 271: { ushort bid;
+"271
+{
+[v _bid `us 1 a ]
+[; ;uhf_comms.c: 272: {
+"274
+{
+[v _i `uc 1 a ]
+[; ;uhf_comms.c: 274: char i;
+[; ;uhf_comms.c: 275: for( i=0; i<(8); i++ )
+"275
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 8 `i 80 ]
+[e $U 81 ]
+"276
+[e :U 80 ]
+[; ;uhf_comms.c: 276: { bid_u bid_cur;
+{
+[v _bid_cur `S3 1 a ]
+[; ;uhf_comms.c: 277: bid_cur.w = bi[i].w;
+"277
+[e = . _bid_cur 1 . *U + &U _bi * -> _i `ux -> -> # `ZS3 `ui `ux 1 ]
+[; ;uhf_comms.c: 278: if( bid_cur.w )
+"278
+[e $ ! != -> . _bid_cur 1 `ui -> -> -> 0 `i `us `ui 83 ]
+[; ;uhf_comms.c: 279: bb[i].w = bid = bid_cur.w;
+"279
+[e = . *U + &U _bb * -> _i `ux -> -> # `ZS3 `ui `ux 1 = _bid . _bid_cur 1 ]
+[e :U 83 ]
+"280
+}
+"275
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 8 `i 80 ]
+[e :U 81 ]
+"281
+}
+[; ;uhf_comms.c: 280: }
+[; ;uhf_comms.c: 281: }
+[; ;uhf_comms.c: 283: bid = ( ( (bid) >> 8 )|( (bid) << 8 ) ) & 0x0FFF;
+"283
+[e = _bid -> & | >> -> _bid `ui -> 8 `i << -> _bid `ui -> 8 `i -> -> 4095 `i `ui `us ]
+[; ;uhf_comms.c: 309: if( uhf.pkt.birc.ext & (( 1U << (0) )) )
+"309
+[e $ ! != & -> . . . _uhf 4 1 1 `ui << -> 1 `ui -> 0 `i -> -> 0 `i `ui 84 ]
+[; ;uhf_comms.c: 310: {
+[; ;uhf_comms.c: 312: if( lamp_state == LAMP_NORMAL_STATE )
+"312
+[e $ ! == -> _lamp_state `i -> . `E811 10 `i 85 ]
+[; ;uhf_comms.c: 313: { lamp_state = LAMP_PAGER_CALL_1;
+"313
+[e = _lamp_state -> . `E811 6 `uc ]
+[; ;uhf_comms.c: 314: lamp_timeout = (timer.cnt + (ushort)((ushort)( 5*(( 8 ) * 8))));
+"314
+[e = _lamp_timeout -> + -> . _timer 2 `ui -> -> * -> 5 `i * -> 8 `i -> 8 `i `us `ui `us ]
+"315
+[e :U 85 ]
+"316
+[e :U 84 ]
+[; ;uhf_comms.c: 315: }
+[; ;uhf_comms.c: 316: }
+[; ;uhf_comms.c: 320: if( bid == combine_id )
+"320
+[e $ ! == -> _bid `ui -> _combine_id `ui 86 ]
+[; ;uhf_comms.c: 321: {
+[; ;uhf_comms.c: 322: if( uhf.pkt.birc.ext & (( 1U << (2) )) )
+"322
+[e $ ! != & -> . . . _uhf 4 1 1 `ui << -> 1 `ui -> 2 `i -> -> 0 `i `ui 87 ]
+[; ;uhf_comms.c: 323: {
+[; ;uhf_comms.c: 325: vrx.flags.aps.combiner = (1);
+"325
+[e = . . . _vrx 10 0 4 -> -> 1 `i `uc ]
+"326
+[; ;uhf_comms.c: 326: }
+[e $U 88 ]
+"327
+[e :U 87 ]
+[; ;uhf_comms.c: 327: else
+[; ;uhf_comms.c: 328: {
+[; ;uhf_comms.c: 329: vrx.flags.aps.combiner = (0);
+"329
+[e = . . . _vrx 10 0 4 -> -> 0 `i `uc ]
+"330
+[e :U 88 ]
+"331
+[e :U 86 ]
+[; ;uhf_comms.c: 330: }
+[; ;uhf_comms.c: 331: }
+[; ;uhf_comms.c: 335: if( ( bid <= 4 )||( ( bid >= 8 )&&( bid <= 12 ) ) )
+"335
+[e $ ! || <= -> _bid `ui -> -> 4 `i `ui && >= -> _bid `ui -> -> 8 `i `ui <= -> _bid `ui -> -> 12 `i `ui 89 ]
+[; ;uhf_comms.c: 336: uhf_registration_timeout = (timer.cnt + (ushort)((3*60*(15.2588)) * 4));
+"336
+[e = _uhf_registration_timeout -> + -> . _timer 2 `ui -> -> * * -> * -> 3 `i -> 60 `i `d .15.2588 -> -> 4 `i `d `us `ui `us ]
+[e $U 90 ]
+"337
+[e :U 89 ]
+[; ;uhf_comms.c: 337: else
+[; ;uhf_comms.c: 338: uhf_registration_timeout = (timer.cnt + (ushort)((3*60*(15.2588))));
+"338
+[e = _uhf_registration_timeout -> + -> . _timer 2 `ui -> -> * -> * -> 3 `i -> 60 `i `d .15.2588 `us `ui `us ]
+[e :U 90 ]
+[; ;uhf_comms.c: 340: if(vrx.flags.aps.combiner == (1))
+"340
+[e $ ! == -> . . . _vrx 10 0 4 `i -> 1 `i 91 ]
+[; ;uhf_comms.c: 341: {
+[; ;uhf_comms.c: 342: if (bid == combine_id )
+"342
+[e $ ! == -> _bid `ui -> _combine_id `ui 92 ]
+[; ;uhf_comms.c: 343: {
+[; ;uhf_comms.c: 344: uhf_registration_timeout = (timer.cnt + (ushort)(( 15 * (15.2588))));
+"344
+[e = _uhf_registration_timeout -> + -> . _timer 2 `ui -> -> * -> -> 15 `i `d .15.2588 `us `ui `us ]
+"345
+[e :U 92 ]
+"346
+[e :U 91 ]
+[; ;uhf_comms.c: 345: }
+[; ;uhf_comms.c: 346: }
+[; ;uhf_comms.c: 349: mu_flags |= (0x02);
+"349
+[e =| _mu_flags -> -> 2 `i `uc ]
+[; ;uhf_comms.c: 354: mu_flags &= (~((0x08)|(0x80)));
+"354
+[e =& _mu_flags -> ~ | -> 8 `i -> 128 `i `uc ]
+"356
+}
+[e :U 79 ]
+[; ;uhf_comms.c: 356: }
+[; ;uhf_comms.c: 357: break;
+"357
+[e $U 56 ]
+[; ;uhf_comms.c: 360: case UHF_II_PKT:
+"360
+[e :U 93 ]
+[; ;uhf_comms.c: 368: if( uhf.pkt.ii.mid.w == mid.w )
+"368
+[e $ ! == . . . . _uhf 4 3 5 1 . _mid 1 94 ]
+[; ;uhf_comms.c: 369: {
+[; ;uhf_comms.c: 370: uhf.pkt.bir.mid = mid;
+"370
+[e = . . . _uhf 4 4 2 _mid ]
+[; ;uhf_comms.c: 373: uhf_registration_timeout = (timer.cnt + (ushort)((3*60*(15.2588))));
+"373
+[e = _uhf_registration_timeout -> + -> . _timer 2 `ui -> -> * -> * -> 3 `i -> 60 `i `d .15.2588 `us `ui `us ]
+[; ;uhf_comms.c: 381: switch( uhf.pkt.ii.ext )
+"381
+[e $U 96 ]
+[; ;uhf_comms.c: 382: {
+[; ;uhf_comms.c: 383: case 1:
+"383
+[e :U 97 ]
+[; ;uhf_comms.c: 384: mu_flags |= ((0x20)|(0x01));
+"384
+[e =| _mu_flags -> | -> 32 `i -> 1 `i `uc ]
+[; ;uhf_comms.c: 385: break;
+"385
+[e $U 95 ]
+[; ;uhf_comms.c: 387: case 5:
+"387
+[e :U 98 ]
+[; ;uhf_comms.c: 389: VLF_SendGeneric();
+"389
+[v _VLF_SendGeneric `(v 0 ef ]
+[e ( _VLF_SendGeneric ..  ]
+[; ;uhf_comms.c: 390: mu_flags |= (0x01);
+"390
+[e =| _mu_flags -> -> 1 `i `uc ]
+[; ;uhf_comms.c: 391: break;
+"391
+[e $U 95 ]
+[; ;uhf_comms.c: 394: case 7:
+"394
+[e :U 99 ]
+[; ;uhf_comms.c: 395: if( lamp_state == LAMP_NORMAL_STATE )
+"395
+[e $ ! == -> _lamp_state `i -> . `E811 10 `i 100 ]
+[; ;uhf_comms.c: 396: { lamp_state = LAMP_PAGER_CALL_1;
+"396
+[e = _lamp_state -> . `E811 6 `uc ]
+[; ;uhf_comms.c: 397: lamp_timeout = (timer.cnt + (ushort)((ushort)( 5*(( 8 ) * 8))));
+"397
+[e = _lamp_timeout -> + -> . _timer 2 `ui -> -> * -> 5 `i * -> 8 `i -> 8 `i `us `ui `us ]
+"398
+[e :U 100 ]
+[; ;uhf_comms.c: 398: }
+[; ;uhf_comms.c: 399: mu_flags |= (0x01);
+"399
+[e =| _mu_flags -> -> 1 `i `uc ]
+[; ;uhf_comms.c: 400: break;
+"400
+[e $U 95 ]
+[; ;uhf_comms.c: 402: default:
+"402
+[e :U 101 ]
+[; ;uhf_comms.c: 404: mu_flags |= (0x01);
+"404
+[e =| _mu_flags -> -> 1 `i `uc ]
+"406
+[; ;uhf_comms.c: 406: }
+[e $U 95 ]
+"381
+[e :U 96 ]
+[e [\ . . . _uhf 4 3 1 , $ -> -> 1 `i `uc 97
+ , $ -> -> 5 `i `uc 98
+ , $ -> -> 7 `i `uc 99
+ 101 ]
+"406
+[e :U 95 ]
+[; ;uhf_comms.c: 407: uhf.pkt.bir.cmd.b = (UHF_II_PKT<<3);
+"407
+[e = . . . . _uhf 4 4 1 1 -> << -> . `E1052 2 `i -> 3 `i `uc ]
+"409
+[e :U 94 ]
+[; ;uhf_comms.c: 409: }
+[; ;uhf_comms.c: 410: break;
+"410
+[e $U 56 ]
+[; ;uhf_comms.c: 414: case UHF_VLF_PKT:
+"414
+[e :U 102 ]
+[; ;uhf_comms.c: 417: switch( uhf.pkt.vlf.vlf_cmd )
+"417
+[e $U 104 ]
+[; ;uhf_comms.c: 418: {
+[; ;uhf_comms.c: 420: case VLF_MU_DETECT:
+"420
+[e :U 105 ]
+[; ;uhf_comms.c: 422: if( ( uhf.pkt.vlf.sid != vtx.sid )||( uhf.pkt.vlf.seq_dur != vtx.seq ) )
+"422
+[v _vtx `XS42 0 e ]
+[e $ ! || != -> . . . _uhf 4 16 4 `i -> . _vtx 5 `i != -> . . . _uhf 4 16 5 `i -> . _vtx 4 `i 106 ]
+[; ;uhf_comms.c: 423: {
+[; ;uhf_comms.c: 424: if( lamp_state == LAMP_SEARCH_IN_PROGRESS )
+"424
+[e $ ! == -> _lamp_state `i -> . `E811 2 `i 107 ]
+[; ;uhf_comms.c: 425: { lamp_state = LAMP_NORMAL_STATE;
+"425
+[e = _lamp_state -> . `E811 10 `uc ]
+[; ;uhf_comms.c: 428: RC1 = ( mu_flags & (0x04) ) ? 1 : 0;
+"428
+[e = _RC1 -> ? != & -> _mu_flags `i -> 4 `i -> 0 `i : -> 1 `i -> 0 `i `b ]
+"432
+[e :U 107 ]
+[; ;uhf_comms.c: 432: }
+[; ;uhf_comms.c: 434: if( lamp_state != LAMP_VLF_BLOCKED_STATE )
+"434
+[e $ ! != -> _lamp_state `i -> . `E811 8 `i 108 ]
+[; ;uhf_comms.c: 435: { delay_ms( ((5*85)+20) * 2 );
+"435
+[v _delay_ms `(v 0 ef1`us ]
+[e ( _delay_ms (1 -> * + * -> 5 `i -> 85 `i -> 20 `i -> 2 `i `us ]
+[; ;uhf_comms.c: 436: VLF_ReplyToBroadcastRequest( 10 );
+"436
+[v _VLF_ReplyToBroadcastRequest `(v 0 ef1`uc ]
+[e ( _VLF_ReplyToBroadcastRequest (1 -> -> 10 `i `uc ]
+"437
+[e :U 108 ]
+"438
+[e :U 106 ]
+[; ;uhf_comms.c: 437: }
+[; ;uhf_comms.c: 438: }
+[; ;uhf_comms.c: 439: break;
+"439
+[e $U 103 ]
+[; ;uhf_comms.c: 441: case VLF_MU_MASK:
+"441
+[e :U 109 ]
+[; ;uhf_comms.c: 442: if( ( uhf.pkt.vlf.mid_s.val[2] == mid.b[1] )&&
+"444
+[; ;uhf_comms.c: 443: ( uhf.pkt.vlf.mid_s.val[1] == mid.b[2] )&&
+[; ;uhf_comms.c: 444: ( uhf.pkt.vlf.mid_s.val[0] == mid.b[3] ) )
+[e $ ! && && == -> *U + &U . . . . _uhf 4 16 6 0 * -> -> -> 2 `i `ui `ux -> -> # `Yuc `ui `ux `i -> *U + &U . _mid 0 * -> -> -> 1 `i `ui `ux -> -> # `uc `ui `ux `i == -> *U + &U . . . . _uhf 4 16 6 0 * -> -> -> 1 `i `ui `ux -> -> # `Yuc `ui `ux `i -> *U + &U . _mid 0 * -> -> -> 2 `i `ui `ux -> -> # `uc `ui `ux `i == -> *U + &U . . . . _uhf 4 16 6 0 * -> -> -> 0 `i `ui `ux -> -> # `Yuc `ui `ux `i -> *U + &U . _mid 0 * -> -> -> 3 `i `ui `ux -> -> # `uc `ui `ux `i 110 ]
+[; ;uhf_comms.c: 445: {
+[; ;uhf_comms.c: 446: delay_ms( ((8*85)+20) * 2 );
+"446
+[e ( _delay_ms (1 -> * + * -> 8 `i -> 85 `i -> 20 `i -> 2 `i `us ]
+[; ;uhf_comms.c: 448: if( uhf.pkt.vlf.sid == 0x00 )
+"448
+[e $ ! == -> . . . _uhf 4 16 4 `i -> 0 `i 111 ]
+[; ;uhf_comms.c: 449: {
+[; ;uhf_comms.c: 450: lamp_min_cnt = uhf.pkt.vlf.seq_dur;
+"450
+[v _lamp_min_cnt `uc 0 e ]
+[e = _lamp_min_cnt . . . _uhf 4 16 5 ]
+[; ;uhf_comms.c: 451: if( lamp_min_cnt )
+"451
+[e $ ! != -> _lamp_min_cnt `i -> -> -> 0 `i `uc `i 112 ]
+[; ;uhf_comms.c: 452: { lamp_state = LAMP_VLF_BLOCKED_STATE;
+"452
+[e = _lamp_state -> . `E811 8 `uc ]
+[; ;uhf_comms.c: 453: lamp_timeout = (timer.cnt + (ushort)((ushort)( 60*(15.2588))));
+"453
+[e = _lamp_timeout -> + -> . _timer 2 `ui -> -> * -> -> 60 `i `d .15.2588 `us `ui `us ]
+"454
+[; ;uhf_comms.c: 454: }
+[e $U 113 ]
+"455
+[e :U 112 ]
+[; ;uhf_comms.c: 455: else
+[; ;uhf_comms.c: 456: { lamp_state = LAMP_NORMAL_STATE;
+"456
+[e = _lamp_state -> . `E811 10 `uc ]
+[; ;uhf_comms.c: 458: RC1 = ( mu_flags & (0x04) ) ? 1 : 0;
+"458
+[e = _RC1 -> ? != & -> _mu_flags `i -> 4 `i -> 0 `i : -> 1 `i -> 0 `i `b ]
+"462
+[e :U 113 ]
+"463
+[; ;uhf_comms.c: 462: }
+[; ;uhf_comms.c: 463: }
+[e $U 114 ]
+"464
+[e :U 111 ]
+[; ;uhf_comms.c: 464: else
+[; ;uhf_comms.c: 465: { if( lamp_state != LAMP_SEARCH_IN_PROGRESS )
+"465
+[e $ ! != -> _lamp_state `i -> . `E811 2 `i 115 ]
+[; ;uhf_comms.c: 466: { lamp_state = LAMP_SEARCH_IN_PROGRESS;
+"466
+[e = _lamp_state -> . `E811 2 `uc ]
+[; ;uhf_comms.c: 467: lamp_timeout = (timer.cnt + (ushort)((ushort)( 3*60*(15.2588))));
+"467
+[e = _lamp_timeout -> + -> . _timer 2 `ui -> -> * -> * -> 3 `i -> 60 `i `d .15.2588 `us `ui `us ]
+"468
+[e :U 115 ]
+[; ;uhf_comms.c: 468: }
+[; ;uhf_comms.c: 469: vtx.seq = uhf.pkt.vlf.seq_dur;
+"469
+[e = . _vtx 4 . . . _uhf 4 16 5 ]
+[; ;uhf_comms.c: 470: vtx.sid = uhf.pkt.vlf.sid;
+"470
+[e = . _vtx 5 . . . _uhf 4 16 4 ]
+"471
+[e :U 114 ]
+[; ;uhf_comms.c: 471: }
+[; ;uhf_comms.c: 473: VLF_SendGeneric();
+"473
+[e ( _VLF_SendGeneric ..  ]
+"474
+[e :U 110 ]
+[; ;uhf_comms.c: 474: }
+[; ;uhf_comms.c: 475: break;
+"475
+[e $U 103 ]
+[; ;uhf_comms.c: 480: case VLF_MU_VLF_RX_CONTROL:
+"480
+[e :U 116 ]
+[; ;uhf_comms.c: 481: if( uhf.pkt.vlf.seq_dur == 0x5A )
+"481
+[e $ ! == -> . . . _uhf 4 16 5 `i -> 90 `i 117 ]
+[; ;uhf_comms.c: 482: VLF_StopReceiver();
+"482
+[v _VLF_StopReceiver `(v 0 ef ]
+[e ( _VLF_StopReceiver ..  ]
+[e $U 118 ]
+"483
+[e :U 117 ]
+[; ;uhf_comms.c: 483: else
+[; ;uhf_comms.c: 484: VLF_StartReceiver();
+"484
+[v _VLF_StartReceiver `(v 0 ef ]
+[e ( _VLF_StartReceiver ..  ]
+[e :U 118 ]
+[; ;uhf_comms.c: 494: break;
+"494
+[e $U 103 ]
+[; ;uhf_comms.c: 498: case VLF_MU_QUICK_SEARCH_X:
+"498
+[e :U 119 ]
+[; ;uhf_comms.c: 499: delay_ms( ((3*85)+20) );
+"499
+[e ( _delay_ms (1 -> + * -> 3 `i -> 85 `i -> 20 `i `us ]
+[; ;uhf_comms.c: 501: case VLF_MU_QUICK_SEARCH_Y:
+"501
+[e :U 120 ]
+[; ;uhf_comms.c: 502: delay_ms( ((3*85)+20) );
+"502
+[e ( _delay_ms (1 -> + * -> 3 `i -> 85 `i -> 20 `i `us ]
+[; ;uhf_comms.c: 504: case VLF_MU_QUICK_SEARCH_Z:
+"504
+[e :U 121 ]
+[; ;uhf_comms.c: 506: if( lamp_state != LAMP_VLF_BLOCKED_STATE )
+"506
+[e $ ! != -> _lamp_state `i -> . `E811 8 `i 122 ]
+[; ;uhf_comms.c: 507: VLF_ReplyToBroadcastRequest( 5 );
+"507
+[e ( _VLF_ReplyToBroadcastRequest (1 -> -> 5 `i `uc ]
+[e :U 122 ]
+[; ;uhf_comms.c: 509: break;
+"509
+[e $U 103 ]
+[; ;uhf_comms.c: 512: case VLF_MU_LOCATE:
+"512
+[e :U 123 ]
+[; ;uhf_comms.c: 513: if(
+"516
+[; ;uhf_comms.c: 514: ( uhf.pkt.vlf.mid_s.val[2] == mid.b[1]) &&
+[; ;uhf_comms.c: 515: ( uhf.pkt.vlf.mid_s.val[1] == mid.b[2]) &&
+[; ;uhf_comms.c: 516: ( uhf.pkt.vlf.mid_s.val[0] == mid.b[3]) )
+[e $ ! && && == -> *U + &U . . . . _uhf 4 16 6 0 * -> -> -> 2 `i `ui `ux -> -> # `Yuc `ui `ux `i -> *U + &U . _mid 0 * -> -> -> 1 `i `ui `ux -> -> # `uc `ui `ux `i == -> *U + &U . . . . _uhf 4 16 6 0 * -> -> -> 1 `i `ui `ux -> -> # `Yuc `ui `ux `i -> *U + &U . _mid 0 * -> -> -> 2 `i `ui `ux -> -> # `uc `ui `ux `i == -> *U + &U . . . . _uhf 4 16 6 0 * -> -> -> 0 `i `ui `ux -> -> # `Yuc `ui `ux `i -> *U + &U . _mid 0 * -> -> -> 3 `i `ui `ux -> -> # `uc `ui `ux `i 124 ]
+[; ;uhf_comms.c: 517: {
+[; ;uhf_comms.c: 518: delay_ms( ((7*85)+20) * 2 );
+"518
+[e ( _delay_ms (1 -> * + * -> 7 `i -> 85 `i -> 20 `i -> 2 `i `us ]
+[; ;uhf_comms.c: 519: VLF_ReplyLocateRequest( uhf.pkt.vlf.seq_dur );
+"519
+[v _VLF_ReplyLocateRequest `(v 0 ef1`uc ]
+[e ( _VLF_ReplyLocateRequest (1 . . . _uhf 4 16 5 ]
+"521
+[e :U 124 ]
+[; ;uhf_comms.c: 521: }
+[; ;uhf_comms.c: 523: break;
+"523
+[e $U 103 ]
+[; ;uhf_comms.c: 526: case VLF_MU_TEST:
+"526
+[e :U 125 ]
+[; ;uhf_comms.c: 533: VLF_SendGeneric();
+"533
+[e ( _VLF_SendGeneric ..  ]
+[; ;uhf_comms.c: 535: break;
+"535
+[e $U 103 ]
+"566
+[; ;uhf_comms.c: 566: }
+[e $U 103 ]
+"417
+[e :U 104 ]
+[e [\ . . . _uhf 4 16 1 , $ -> . `E1228 0 `uc 105
+ , $ -> . `E1228 1 `uc 109
+ , $ -> . `E1228 5 `uc 116
+ , $ -> . `E1228 6 `uc 119
+ , $ -> . `E1228 2 `uc 120
+ , $ -> . `E1228 3 `uc 121
+ , $ -> . `E1228 4 `uc 123
+ , $ -> . `E1228 7 `uc 125
+ 103 ]
+"566
+[e :U 103 ]
+[; ;uhf_comms.c: 567: break;
+"567
+[e $U 56 ]
+[; ;uhf_comms.c: 570: case UHF_CONTROL_PKT:
+"570
+[e :U 126 ]
+[; ;uhf_comms.c: 572: switch( uhf.pkt.cqc.type_ctl )
+"572
+[e $U 128 ]
+[; ;uhf_comms.c: 573: {
+[; ;uhf_comms.c: 574: case UHFC_SEARCH:
+"574
+[e :U 129 ]
+[; ;uhf_comms.c: 579: if( uhf_ctrl_sidx != uhf.pkt.csc.sidx.w )
+"579
+[e $ ! != -> _uhf_ctrl_sidx `ui -> . . . . _uhf 4 5 5 1 `ui 130 ]
+[; ;uhf_comms.c: 580: { uhf_ctrl_sidx = uhf.pkt.csc.sidx.w;
+"580
+[e = _uhf_ctrl_sidx . . . . _uhf 4 5 5 1 ]
+[; ;uhf_comms.c: 581: uhf_ctrl_sctr = 0;
+"581
+[e = _uhf_ctrl_sctr -> -> 0 `i `uc ]
+"582
+[e :U 130 ]
+[; ;uhf_comms.c: 582: }
+[; ;uhf_comms.c: 585: if( ( uhf_ctrl_sctr < 7 )
+"590
+[; ;uhf_comms.c: 590: )
+[e $ ! < -> _uhf_ctrl_sctr `i -> 7 `i 131 ]
+[; ;uhf_comms.c: 591: { uhf_ctrl_sctr++;
+"591
+[e ++ _uhf_ctrl_sctr -> -> 1 `i `uc ]
+[; ;uhf_comms.c: 593: delay_uhf_ts( (BYTE)rand() );
+"593
+[e ( _delay_uhf_ts (1 -> ( _rand ..  `uc ]
+[; ;uhf_comms.c: 594: PrepareSearchQueryReply();
+"594
+[e ( _PrepareSearchQueryReply ..  ]
+[; ;uhf_comms.c: 595: mu_flags |= (0x01);
+"595
+[e =| _mu_flags -> -> 1 `i `uc ]
+"596
+[e :U 131 ]
+[; ;uhf_comms.c: 596: }
+[; ;uhf_comms.c: 597: break;
+"597
+[e $U 127 ]
+[; ;uhf_comms.c: 601: case UHFC_QUERY:
+"601
+[e :U 132 ]
+[; ;uhf_comms.c: 605: if( uhf.pkt.cqc.mid.w == mid.w )
+"605
+[e $ ! == . . . . _uhf 4 6 5 1 . _mid 1 133 ]
+[; ;uhf_comms.c: 606: { PrepareSearchQueryReply();
+"606
+[e ( _PrepareSearchQueryReply ..  ]
+[; ;uhf_comms.c: 607: mu_flags |= (0x01);
+"607
+[e =| _mu_flags -> -> 1 `i `uc ]
+"608
+[e :U 133 ]
+[; ;uhf_comms.c: 608: }
+[; ;uhf_comms.c: 609: break;
+"609
+[e $U 127 ]
+[; ;uhf_comms.c: 612: case UHFC_BOOTMODE:
+"612
+[e :U 134 ]
+[; ;uhf_comms.c: 616: if( uhf.pkt.cbmc.mid.w == mid.w )
+"616
+[e $ ! == . . . . _uhf 4 8 5 1 . _mid 1 135 ]
+[; ;uhf_comms.c: 617: { (GIE = 0);
+"617
+[e = _GIE -> -> 0 `i `b ]
+[; ;uhf_comms.c: 618: do{ while(WR)continue;EEADR=(((BYTE)(&((EeSharedDataTSt*)0)->warm_boot)));EEDATA=(1); EECON1&=0x7F;CARRY=0;if(GIE)CARRY=1;GIE=0; WREN=1;EECON2=0x55;EECON2=0xAA;WR=1;WREN=0; if(CARRY)GIE=1; }while(0);
+"618
+[e :U 138 ]
+[e $U 139 ]
+[e :U 140 ]
+[e $U 139 ]
+[e :U 139 ]
+[e $ _WR 140 ]
+[e :U 141 ]
+[e = _EEADR -> &U . *U -> -> 0 `i `*S9 0 `uc ]
+[e = _EEDATA -> -> 1 `i `uc ]
+[e =& _EECON1 -> -> 127 `i `uc ]
+[e = _CARRY -> -> 0 `i `b ]
+[e $ ! _GIE 142 ]
+[e = _CARRY -> -> 1 `i `b ]
+[e :U 142 ]
+[e = _GIE -> -> 0 `i `b ]
+[e = _WREN -> -> 1 `i `b ]
+[e = _EECON2 -> -> 85 `i `uc ]
+[e = _EECON2 -> -> 170 `i `uc ]
+[e = _WR -> -> 1 `i `b ]
+[e = _WREN -> -> 0 `i `b ]
+[e $ ! _CARRY 143 ]
+[e = _GIE -> -> 1 `i `b ]
+[e :U 143 ]
+[e :U 137 ]
+[; ;uhf_comms.c: 620: SWDTEN = 1;
+"620
+[e = _SWDTEN -> -> 1 `i `b ]
+[; ;uhf_comms.c: 621: for( ; ; );
+"621
+[e :U 144 ]
+[e $U 144 ]
+[e :U 145 ]
+"622
+[e :U 135 ]
+[; ;uhf_comms.c: 622: }
+[; ;uhf_comms.c: 623: break;
+"623
+[e $U 127 ]
+[; ;uhf_comms.c: 627: case UHFC_TESTMODE:
+"627
+[e :U 147 ]
+[; ;uhf_comms.c: 629: if( uhf.pkt.ctst.mid.w == mid.w )
+"629
+[e $ ! == . . . . _uhf 4 15 5 1 . _mid 1 148 ]
+[; ;uhf_comms.c: 630: {
+[; ;uhf_comms.c: 631: switch( uhf.pkt.ctst.test_mode )
+"631
+[e $U 150 ]
+[; ;uhf_comms.c: 632: {
+[; ;uhf_comms.c: 633: case 0x8000:
+"633
+[e :U 151 ]
+[; ;uhf_comms.c: 634: if( lamp_state == LAMP_TEST_STATE )
+"634
+[e $ ! == -> _lamp_state `i -> . `E811 12 `i 152 ]
+[; ;uhf_comms.c: 635: lamp_state = LAMP_NORMAL_STATE;
+"635
+[e = _lamp_state -> . `E811 10 `uc ]
+[e :U 152 ]
+[; ;uhf_comms.c: 637: RC1 = ( mu_flags & (0x04) ) ? 1 : 0;
+"637
+[e = _RC1 -> ? != & -> _mu_flags `i -> 4 `i -> 0 `i : -> 1 `i -> 0 `i `b ]
+[; ;uhf_comms.c: 641: mu_flags |= (0x01);
+"641
+[e =| _mu_flags -> -> 1 `i `uc ]
+[; ;uhf_comms.c: 642: break;
+"642
+[e $U 149 ]
+[; ;uhf_comms.c: 644: case 0x8001:
+"644
+[e :U 153 ]
+[; ;uhf_comms.c: 646: lamp_state = LAMP_TEST_STATE;
+"646
+[e = _lamp_state -> . `E811 12 `uc ]
+[; ;uhf_comms.c: 648: RC1 = ( mu_flags & (0x04) ) ? 0 : 1;
+"648
+[e = _RC1 -> ? != & -> _mu_flags `i -> 4 `i -> 0 `i : -> 0 `i -> 1 `i `b ]
+[; ;uhf_comms.c: 652: mu_flags |= (0x01);
+"652
+[e =| _mu_flags -> -> 1 `i `uc ]
+[; ;uhf_comms.c: 653: break;
+"653
+[e $U 149 ]
+[; ;uhf_comms.c: 656: case 0x8002:
+"656
+[e :U 154 ]
+[; ;uhf_comms.c: 657: mu_flags ^= (0x04);
+"657
+[e =^ _mu_flags -> -> 4 `i `uc ]
+[; ;uhf_comms.c: 659: eeprom_write( ((BYTE)(&((EeSharedDataTSt*)0)->lamp_mode)), ( mu_flags & (0x04) ) ? 0x77 : 0x00 );
+"659
+[v _eeprom_write `(v 0 ef2`uc`uc ]
+[e ( _eeprom_write (2 , -> &U . *U -> -> 0 `i `*S9 6 `uc -> ? != & -> _mu_flags `i -> 4 `i -> 0 `i : -> 119 `i -> 0 `i `uc ]
+[; ;uhf_comms.c: 660: RC1 = ( mu_flags & (0x04) ) ? 1 : 0;
+"660
+[e = _RC1 -> ? != & -> _mu_flags `i -> 4 `i -> 0 `i : -> 1 `i -> 0 `i `b ]
+[; ;uhf_comms.c: 661: mu_flags |= (0x01);
+"661
+[e =| _mu_flags -> -> 1 `i `uc ]
+[; ;uhf_comms.c: 662: break;
+"662
+[e $U 149 ]
+"664
+[; ;uhf_comms.c: 664: }
+[e $U 149 ]
+"631
+[e :U 150 ]
+[e [\ . . . _uhf 4 15 6 , $ -> -> 32768 `ui `us 151
+ , $ -> -> 32769 `ui `us 153
+ , $ -> -> 32770 `ui `us 154
+ 149 ]
+"664
+[e :U 149 ]
+[; ;uhf_comms.c: 666: if( mu_flags & (0x01) )
+"666
+[e $ ! != & -> _mu_flags `i -> 1 `i -> 0 `i 155 ]
+[; ;uhf_comms.c: 667: { uhf.pkt.cqc.type_ctl = UHFC_QUERY;
+"667
+[e = . . . _uhf 4 6 4 -> . `E1059 1 `uc ]
+[; ;uhf_comms.c: 668: PrepareSearchQueryReply();
+"668
+[e ( _PrepareSearchQueryReply ..  ]
+"669
+[e :U 155 ]
+"670
+[e :U 148 ]
+"671
+[; ;uhf_comms.c: 669: }
+[; ;uhf_comms.c: 670: }
+[; ;uhf_comms.c: 671: }
+[e $U 127 ]
+"572
+[e :U 128 ]
+[e [\ . . . _uhf 4 6 4 , $ -> . `E1059 0 `uc 129
+ , $ -> . `E1059 1 `uc 132
+ , $ -> . `E1059 2 `uc 134
+ , $ -> . `E1059 5 `uc 147
+ 127 ]
+"671
+[e :U 127 ]
+[; ;uhf_comms.c: 672: break;
+"672
+[e $U 56 ]
+"673
+[; ;uhf_comms.c: 673: }
+[e $U 56 ]
+"127
+[e :U 57 ]
+[e [\ . . . _uhf 4 0 2 , $ -> . `E1052 0 `uc 58
+ , $ -> . `E1052 1 `uc 78
+ , $ -> . `E1052 2 `uc 93
+ , $ -> . `E1052 4 `uc 102
+ , $ -> . `E1052 5 `uc 126
+ 56 ]
+"673
+[e :U 56 ]
+[; ;uhf_comms.c: 675: if( mu_flags & (0x01) )
+"675
+[e $ ! != & -> _mu_flags `i -> 1 `i -> 0 `i 156 ]
+[; ;uhf_comms.c: 676: { SendUHFPkt();
+"676
+[e ( _SendUHFPkt ..  ]
+[; ;uhf_comms.c: 677: mu_flags &= (~(0x01));
+"677
+[e =& _mu_flags -> ~ -> 1 `i `uc ]
+"678
+[; ;uhf_comms.c: 678: }
+[e $U 157 ]
+"679
+[e :U 156 ]
+[; ;uhf_comms.c: 679: else
+[; ;uhf_comms.c: 680: { CREN = 1;
+"680
+[e = _CREN -> -> 1 `i `b ]
+[; ;uhf_comms.c: 681: RCIE = 1;
+"681
+[e = _RCIE -> -> 1 `i `b ]
+"682
+[e :U 157 ]
+[; ;uhf_comms.c: 682: }
+[; ;uhf_comms.c: 687: return( (0) );
+"687
+[e ) -> -> 0 `i `uc ]
+[e $UE 52 ]
+"688
+[; ;uhf_comms.c: 688: }
+[e :UE 52 ]
+}
+"694
+[v _SendUHFPkt `(v 1 sf ]
+{
+[e :U _SendUHFPkt ]
+[f ]
+[; ;uhf_comms.c: 693: static void SendUHFPkt(void)
+[; ;uhf_comms.c: 694: {
+[; ;uhf_comms.c: 700: uhf.rxt_state = UHF_RXTX_PREAMBLE;
+"700
+[e = . _uhf 0 -> . `E1073 0 `uc ]
+[; ;uhf_comms.c: 701: uhf.idx = 0;
+"701
+[e = . _uhf 1 -> -> 0 `i `uc ]
+[; ;uhf_comms.c: 704: if( SetUHFMode( UHF_TX_MODE ) )
+"704
+[v _SetUHFMode `(uc 0 ef1`uc ]
+[e $ ! != -> ( _SetUHFMode (1 -> . `E1102 1 `uc `i -> -> -> 0 `i `uc `i 159 ]
+[; ;uhf_comms.c: 705: {
+[; ;uhf_comms.c: 706: lamp_state = LAMP_POST_ERROR;
+"706
+[e = _lamp_state -> . `E811 0 `uc ]
+[; ;uhf_comms.c: 707: lamp_timeout = (timer.cnt + (ushort)(32000));
+"707
+[e = _lamp_timeout -> + -> . _timer 2 `ui -> -> -> 32000 `i `us `ui `us ]
+"709
+[e :U 159 ]
+[; ;uhf_comms.c: 709: }
+[; ;uhf_comms.c: 711: uhf.pkt.data[0] = 0x5A;
+"711
+[e = *U + &U . . _uhf 4 17 * -> -> -> 0 `i `ui `ux -> -> # `Yuc `ui `ux -> -> 90 `i `uc ]
+[; ;uhf_comms.c: 712: uhf.pkt.data[1] &= (~0x80);
+"712
+[e =& *U + &U . . _uhf 4 17 * -> -> -> 1 `i `ui `ux -> -> # `Yuc `ui `ux -> ~ -> 128 `i `uc ]
+[; ;uhf_comms.c: 714: CalcUHFChecksum( 1 );
+"714
+[e ( _CalcUHFChecksum (1 -> -> 1 `i `uc ]
+[; ;uhf_comms.c: 716: TXEN = 1;
+"716
+[e = _TXEN -> -> 1 `i `b ]
+[; ;uhf_comms.c: 717: TXIE = 1;
+"717
+[e = _TXIE -> -> 1 `i `b ]
+"718
+[; ;uhf_comms.c: 718: }
+[e :UE 158 ]
+}

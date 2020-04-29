@@ -1,0 +1,1126 @@
+
+
+HI-TECH Software PICC Macro Assembler V9.60PL3 build 3862 
+                                                      Tue Feb 04 13:05:10 2020
+
+HI-TECH Software Code Generator build 3862
+     1                           	processor	16F887
+     2                           	opt	pw 79
+     3                           	psect	strings,global,class=STRING,delta=2
+     4                           	psect	const1,local,class=CONST,delta=2
+     5                           	psect	text1,local,class=CODE,delta=2
+     6                           	psect	text2,local,class=CODE,delta=2
+     7                           	psect	text4,local,class=CODE,delta=2
+     8                           	psect	rdata_0,global,class=BANK0,space=1,delta
+      +                          =1
+     9                           	psect	idata_0,global,class=CODE,delta=2
+    10                           	psect	text6,local,class=CODE,delta=2
+    11                           	psect	text7,local,class=CODE,delta=2
+    12                           	psect	text8,local,class=CODE,delta=2
+    13                           	psect	temp,global,ovrld,class=BANK0,space=1,de
+      +                          lta=1
+    14  0000                     
+    15  0000                     
+    16  0000                     
+    17  0000                     
+    18  0000                     
+    19  0000                     
+    20  0000                     
+    21  0000                     
+    22  0000                     
+    23  0000                     
+    24  0000                     
+    25                           
+    26                           	psect	const1
+    27  1083  0782               	addwf	2
+    28  1084                     _c_uhf_modes_ast
+    29  1084  3411               	retlw	17
+    30  1085  3444               	retlw	68
+    31  1086  3460               	retlw	96
+    32  1087  3400               	retlw	0
+    33  1088  34E1               	retlw	-31
+    34  1089  3481               	retlw	-127
+    35  108A  3448               	retlw	72
+    36  108B  34C0               	retlw	-64
+    37  0000                     _cc1000_wr$val_u8	set	?_cc1000_wr
+    38                           
+    39                           	psect	text1
+    40  1663                     __end_of_cc1000_wr
+    41  1663                     _cc1000_rd
+    42                           ;	_addr_u8 assigned to ?a_cc1000_rd+0
+    43  0000                     _cc1000_rd$addr_u8	set	?a_cc1000_rd
+    44                           ;_addr_u8 stored from w
+    45  1663  0183               	clrf	3	;select bank 0
+    46  1664  00BD               	movwf	?a_cc1000_rd
+    47                           ;cc1000.c: 77: BYTE cc1000_rd( BYTE addr_u8 )
+    48  1665  1003               	bcf	3,0
+    49  1666  0DBD               	rlf	?a_cc1000_rd
+    50                           ;cc1000.c: 81: (GIE = 0);
+    51  1667  138B               	bcf	11,7
+    52                           ;cc1000.c: 82: RC0 = 0;
+    53  1668  1007               	bcf	7,0
+    54                           ;cc1000.c: 83: SSPBUF = addr_u8;
+    55  1669  083D               	movf	?a_cc1000_rd,w
+    56  166A  0093               	movwf	19	;volatile
+    57                           ;cc1000.c: 84: while ( !BF );
+    58  166B                     l18
+    59  166B  1683               	bsf	3,5
+    60  166C  1C14               	btfss	20,0
+    61  166D  2E6B               	goto	l18
+    62                           ;cc1000.c: 87: TRISC |= 0x20;
+    63  166E  1687               	bsf	7,5	;volatile
+    64                           ;cc1000.c: 88: RC0 = 1;
+    65  166F  1283               	bcf	3,5
+    66  1670  1407               	bsf	7,0
+    67                           ;cc1000.c: 90: SSPBUF = 0x00;
+    68  1671  0193               	clrf	19	;volatile
+    69                           ;cc1000.c: 91: while ( !BF );
+    70  1672                     l21
+    71  1672  1683               	bsf	3,5
+    72  1673  1C14               	btfss	20,0
+    73  1674  2E72               	goto	l21
+    74                           ;cc1000.c: 92: TRISC &= ~0x20;
+    75  1675  1287               	bcf	7,5	;volatile
+    76                           ;cc1000.c: 94: addr_u8 = SSPBUF;
+    77  1676  1283               	bcf	3,5
+    78  1677  0813               	movf	19,w	;volatile
+    79  1678  00BD               	movwf	?a_cc1000_rd
+    80                           ;cc1000.c: 95: (GIE = 1);
+    81  1679  178B               	bsf	11,7
+    82                           ;cc1000.c: 98: }
+    83  167A  0008               	return	;uses W
+    84  167B                     _cc1000_wr
+    85                           ;	_addr_u8 assigned to ?a_cc1000_wr+0
+    86  0000                     _cc1000_wr$addr_u8	set	?a_cc1000_wr
+    87                           ;_addr_u8 stored from w
+    88  167B  0183               	clrf	3	;select bank 0
+    89  167C  00C6               	movwf	?a_cc1000_wr
+    90                           ;cc1000.c: 58: void cc1000_wr( BYTE addr_u8, BY
+      +                          TE val_u8 )
+    91  167D  1003               	bcf	3,0
+    92  167E  0DC6               	rlf	?a_cc1000_wr
+    93                           ;cc1000.c: 61: addr_u8 |= 1;
+    94  167F  1446               	bsf	?a_cc1000_wr,0
+    95                           ;cc1000.c: 63: (GIE = 0);
+    96  1680  138B               	bcf	11,7
+    97                           ;cc1000.c: 64: RC0 = 0;
+    98  1681  1007               	bcf	7,0
+    99                           ;cc1000.c: 65: SSPBUF = addr_u8;
+   100  1682  0846               	movf	?a_cc1000_wr,w
+   101  1683  0093               	movwf	19	;volatile
+   102                           ;cc1000.c: 66: while ( !BF );
+   103  1684                     l11
+   104  1684  1683               	bsf	3,5
+   105  1685  1C14               	btfss	20,0
+   106  1686  2E84               	goto	l11
+   107                           ;cc1000.c: 67: RC0 = 1;
+   108  1687  1283               	bcf	3,5
+   109  1688  1407               	bsf	7,0
+   110                           ;cc1000.c: 69: SSPBUF = val_u8;
+   111  1689  0845               	movf	?_cc1000_wr,w
+   112  168A  0093               	movwf	19	;volatile
+   113                           ;cc1000.c: 70: while ( !BF );
+   114  168B                     l14
+   115  168B  1683               	bsf	3,5
+   116  168C  1C14               	btfss	20,0
+   117  168D  2E8B               	goto	l14
+   118                           ;cc1000.c: 71: (GIE = 1);
+   119  168E  178B               	bsf	11,7
+   120                           ;cc1000.c: 72: }
+   121  168F  1283               	bcf	3,5
+   122  1690  0008               	return	;W free
+   123  1691                     __end_of_pager_write
+   124  1691                     _InitUHFTranceiver
+   125                           ;cc1000.c: 124: BYTE InitUHFTranceiver( void )
+   126  1691  303A               	movlw	58
+   127  1692  0183               	clrf	3	;select bank 0
+   128  1693  00C5               	movwf	?_cc1000_wr
+   129  1694  3000               	movlw	0
+   130  1695  267B               	fcall	_cc1000_wr
+   131                           ;cc1000.c: 129: delay_ms( 10 );
+   132  1696  300A               	movlw	10
+   133  1697  00C6               	movwf	?_delay_ms
+   134  1698  01C7               	clrf	?_delay_ms+1
+   135  1699  120A  158A  203F   	fcall	_delay_ms
+      +       160A  118A         
+   136                           ;cc1000.c: 133: cc1000_wr( 0, 0x3B );
+   137  169E  303B               	movlw	59
+   138  169F  00C5               	movwf	?_cc1000_wr
+   139  16A0  3000               	movlw	0
+   140  16A1  267B               	fcall	_cc1000_wr
+   141                           ;cc1000.c: 135: delay_ms( 10 );
+   142  16A2  300A               	movlw	10
+   143  16A3  00C6               	movwf	?_delay_ms
+   144  16A4  01C7               	clrf	?_delay_ms+1
+   145  16A5  120A  158A  203F   	fcall	_delay_ms
+      +       160A  118A         
+   146                           ;cc1000.c: 139: cc1000_wr( 0x01, 0x58 );
+   147  16AA  3058               	movlw	88
+   148  16AB  00C5               	movwf	?_cc1000_wr
+   149  16AC  3001               	movlw	1
+   150  16AD  267B               	fcall	_cc1000_wr
+   151                           ;cc1000.c: 140: cc1000_wr( 0x02, 0x20 );
+   152  16AE  3020               	movlw	32
+   153  16AF  00C5               	movwf	?_cc1000_wr
+   154  16B0  3002               	movlw	2
+   155  16B1  267B               	fcall	_cc1000_wr
+   156                           ;cc1000.c: 141: cc1000_wr( 0x03, 0 );
+   157  16B2  01C5               	clrf	?_cc1000_wr
+   158  16B3  3003               	movlw	3
+   159  16B4  267B               	fcall	_cc1000_wr
+   160                           ;cc1000.c: 144: if( cc1000_rd( 0x01 ) != 0x58 )
+   161  16B5  3001               	movlw	1
+   162  16B6  2663               	fcall	_cc1000_rd
+   163  16B7  3A58               	xorlw	88
+   164  16B8  1D03               	btfss	3,2
+   165                           ;cc1000.c: 145: return( 1 );
+   166  16B9  3401               	retlw	1
+   167                           ;cc1000.c: 146: if( cc1000_rd( 0x02 ) != 0x20 )
+   168  16BA  3002               	movlw	2
+   169  16BB  2663               	fcall	_cc1000_rd
+   170  16BC  3A20               	xorlw	32
+   171  16BD  1D03               	btfss	3,2
+   172                           ;cc1000.c: 147: return( 1 );
+   173  16BE  3401               	retlw	1
+   174                           ;cc1000.c: 148: if( cc1000_rd( 0x03 ) != 0 )
+   175  16BF  3003               	movlw	3
+   176  16C0  2663               	fcall	_cc1000_rd
+   177  16C1  3800               	iorlw	0
+   178  16C2  1D03               	btfss	3,2
+   179                           ;cc1000.c: 149: return( 1 );
+   180  16C3  3401               	retlw	1
+   181                           ;cc1000.c: 152: cc1000_wr( 0x04, 0x42 );
+   182  16C4  3042               	movlw	66
+   183  16C5  00C5               	movwf	?_cc1000_wr
+   184  16C6  3004               	movlw	4
+   185  16C7  267B               	fcall	_cc1000_wr
+   186                           ;cc1000.c: 153: cc1000_wr( 0x05, 0x14 );
+   187  16C8  3014               	movlw	20
+   188  16C9  00C5               	movwf	?_cc1000_wr
+   189  16CA  3005               	movlw	5
+   190  16CB  267B               	fcall	_cc1000_wr
+   191                           ;cc1000.c: 154: cc1000_wr( 0x06, 0x9c );
+   192  16CC  309C               	movlw	-100
+   193  16CD  00C5               	movwf	?_cc1000_wr
+   194  16CE  3006               	movlw	6
+   195  16CF  267B               	fcall	_cc1000_wr
+   196                           ;cc1000.c: 157: if( cc1000_rd( 0x04 ) != 0x42 )
+   197  16D0  3004               	movlw	4
+   198  16D1  2663               	fcall	_cc1000_rd
+   199  16D2  3A42               	xorlw	66
+   200  16D3  1D03               	btfss	3,2
+   201                           ;cc1000.c: 158: return( 1 );
+   202  16D4  3401               	retlw	1
+   203                           ;cc1000.c: 159: if( cc1000_rd( 0x05 ) != 0x14 )
+   204  16D5  3005               	movlw	5
+   205  16D6  2663               	fcall	_cc1000_rd
+   206  16D7  3A14               	xorlw	20
+   207  16D8  1D03               	btfss	3,2
+   208                           ;cc1000.c: 160: return( 1 );
+   209  16D9  3401               	retlw	1
+   210                           ;cc1000.c: 161: if( cc1000_rd( 0x06 ) != 0x9c )
+   211  16DA  3006               	movlw	6
+   212  16DB  2663               	fcall	_cc1000_rd
+   213  16DC  3A9C               	xorlw	-100
+   214  16DD  1D03               	btfss	3,2
+   215                           ;cc1000.c: 162: return( 1 );
+   216  16DE  3401               	retlw	1
+   217                           ;cc1000.c: 169: cc1000_wr( 0x07, 0x02 );
+   218  16DF  3002               	movlw	2
+   219  16E0  00C5               	movwf	?_cc1000_wr
+   220  16E1  3007               	movlw	7
+   221  16E2  267B               	fcall	_cc1000_wr
+   222                           ;cc1000.c: 170: cc1000_wr( 0x08, 0x80 );
+   223  16E3  3080               	movlw	-128
+   224  16E4  00C5               	movwf	?_cc1000_wr
+   225  16E5  3008               	movlw	8
+   226  16E6  267B               	fcall	_cc1000_wr
+   227                           ;cc1000.c: 177: cc1000_wr( 0x0A, 0x12 );
+   228  16E7  3012               	movlw	18
+   229  16E8  00C5               	movwf	?_cc1000_wr
+   230  16E9  300A               	movlw	10
+   231  16EA  267B               	fcall	_cc1000_wr
+   232                           ;cc1000.c: 180: cc1000_wr( 0x0B, 0 );
+   233  16EB  01C5               	clrf	?_cc1000_wr
+   234  16EC  300B               	movlw	11
+   235  16ED  267B               	fcall	_cc1000_wr
+   236                           ;cc1000.c: 182: cc1000_wr( 0x0C, c_uhf_modes_as
+      +                          t[ UHF_RX_MODE ].pll_u8 );
+   237  16EE  3010               	movlw	_c_uhf_modes_ast shr (0+8)
+   238  16EF  008A               	movwf	10
+   239  16F0  3002               	movlw	2
+   240  16F1  2083               	call	((_c_uhf_modes_ast+-1)& (0+2047))| (($)& 
+      +                          (0+-2048))
+   241  16F2  00C5               	movwf	?_cc1000_wr
+   242  16F3  300C               	movlw	12
+   243  16F4  160A  118A  267B   	fcall	_cc1000_wr
+   244                           ;cc1000.c: 188: cc1000_wr( 0x0D, 0x10 );
+   245  16F7  3010               	movlw	16
+   246  16F8  00C5               	movwf	?_cc1000_wr
+   247  16F9  300D               	movlw	13
+   248  16FA  267B               	fcall	_cc1000_wr
+   249                           ;cc1000.c: 191: cc1000_wr( 0x0E, 0x26 );
+   250  16FB  3026               	movlw	38
+   251  16FC  00C5               	movwf	?_cc1000_wr
+   252  16FD  300E               	movlw	14
+   253  16FE  267B               	fcall	_cc1000_wr
+   254                           ;cc1000.c: 198: cc1000_wr( 0x0F, 0x9C );
+   255  16FF  309C               	movlw	-100
+   256  1700  00C5               	movwf	?_cc1000_wr
+   257  1701  300F               	movlw	15
+   258  1702  267B               	fcall	_cc1000_wr
+   259                           ;cc1000.c: 199: cc1000_wr( 0x10, 0x6B );
+   260  1703  306B               	movlw	107
+   261  1704  00C5               	movwf	?_cc1000_wr
+   262  1705  3010               	movlw	16
+   263  1706  267B               	fcall	_cc1000_wr
+   264                           ;cc1000.c: 200: cc1000_wr( 0x11, 0x5B );
+   265  1707  305B               	movlw	91
+   266  1708  00C5               	movwf	?_cc1000_wr
+   267  1709  3011               	movlw	17
+   268  170A  267B               	fcall	_cc1000_wr
+   269                           ;cc1000.c: 202: cc1000_wr( 0x12, 0x70 );
+   270  170B  3070               	movlw	112
+   271  170C  00C5               	movwf	?_cc1000_wr
+   272  170D  3012               	movlw	18
+   273  170E  267B               	fcall	_cc1000_wr
+   274                           ;cc1000.c: 203: cc1000_wr( 0x13, 0x01 );
+   275  170F  01C5               	clrf	?_cc1000_wr
+   276  1710  0AC5               	incf	?_cc1000_wr
+   277  1711  3013               	movlw	19
+   278  1712  267B               	fcall	_cc1000_wr
+   279                           ;cc1000.c: 204: cc1000_wr( 0x1C, 0 );
+   280  1713  01C5               	clrf	?_cc1000_wr
+   281  1714  301C               	movlw	28
+   282  1715  267B               	fcall	_cc1000_wr
+   283                           ;cc1000.c: 205: cc1000_wr( 0x40, 0x10 );
+   284  1716  3010               	movlw	16
+   285  1717  00C5               	movwf	?_cc1000_wr
+   286  1718  3040               	movlw	64
+   287  1719  267B               	fcall	_cc1000_wr
+   288                           ;cc1000.c: 206: cc1000_wr( 0x41, 0x08 );
+   289  171A  3008               	movlw	8
+   290  171B  00C5               	movwf	?_cc1000_wr
+   291  171C  3041               	movlw	65
+   292  171D  267B               	fcall	_cc1000_wr
+   293                           ;cc1000.c: 207: cc1000_wr( 0x42, 0x3F );
+   294  171E  303F               	movlw	63
+   295  171F  00C5               	movwf	?_cc1000_wr
+   296  1720  3042               	movlw	66
+   297  1721  267B               	fcall	_cc1000_wr
+   298                           ;cc1000.c: 208: cc1000_wr( 0x43, 0x04 );
+   299  1722  3004               	movlw	4
+   300  1723  00C5               	movwf	?_cc1000_wr
+   301  1724  3043               	movlw	67
+   302  1725  267B               	fcall	_cc1000_wr
+   303                           ;cc1000.c: 209: cc1000_wr( 0x44, 0 );
+   304  1726  01C5               	clrf	?_cc1000_wr
+   305  1727  3044               	movlw	68
+   306  1728  267B               	fcall	_cc1000_wr
+   307                           ;cc1000.c: 210: cc1000_wr( 0x45, 0 );
+   308  1729  01C5               	clrf	?_cc1000_wr
+   309  172A  3045               	movlw	69
+   310  172B  267B               	fcall	_cc1000_wr
+   311                           ;cc1000.c: 211: cc1000_wr( 0x46, 0 );
+   312  172C  01C5               	clrf	?_cc1000_wr
+   313  172D  3046               	movlw	70
+   314  172E  267B               	fcall	_cc1000_wr
+   315                           ;cc1000.c: 215: cc1000_wr( 0, c_uhf_modes_ast[ 
+      +                          UHF_RX_MODE ].main_u8 );
+   316  172F  160A  118A  2084   	fcall	_c_uhf_modes_ast
+      +       160A  118A         
+   317  1734  00C5               	movwf	?_cc1000_wr
+   318  1735  3000               	movlw	0
+   319  1736  267B               	fcall	_cc1000_wr
+   320                           ;cc1000.c: 217: cc1000_wr( 0x09, c_uhf_modes_as
+      +                          t[ UHF_RX_MODE ].current_u8 );
+   321  1737  3010               	movlw	_c_uhf_modes_ast shr (0+8)
+   322  1738  008A               	movwf	10
+   323  1739  3001               	movlw	1
+   324  173A  2083               	call	((_c_uhf_modes_ast+-1)& (0+2047))| (($)& 
+      +                          (0+-2048))
+   325  173B  00C5               	movwf	?_cc1000_wr
+   326  173C  3009               	movlw	9
+   327  173D  160A  118A  267B   	fcall	_cc1000_wr
+   328                           ;cc1000.c: 219: cc1000_wr( 0x0C , c_uhf_modes_a
+      +                          st[ UHF_RX_MODE ].pll_u8 );
+   329  1740  3010               	movlw	_c_uhf_modes_ast shr (0+8)
+   330  1741  008A               	movwf	10
+   331  1742  3002               	movlw	2
+   332  1743  2083               	call	((_c_uhf_modes_ast+-1)& (0+2047))| (($)& 
+      +                          (0+-2048))
+   333  1744  00C5               	movwf	?_cc1000_wr
+   334  1745  300C               	movlw	12
+   335  1746  160A  118A  267B   	fcall	_cc1000_wr
+   336                           ;cc1000.c: 220: cc1000_wr( 0x0E, 0xA6 );
+   337  1749  30A6               	movlw	-90
+   338  174A  00C5               	movwf	?_cc1000_wr
+   339  174B  300E               	movlw	14
+   340  174C  267B               	fcall	_cc1000_wr
+   341                           ;cc1000.c: 221: while ( (cc1000_rd( 0x0E ) & 0x
+      +                          08 ) == 0 );
+   342  174D                     l35
+   343  174D  300E               	movlw	14
+   344  174E  2663               	fcall	_cc1000_rd
+   345  174F  00F4               	movwf	btemp
+   346  1750  1DF4               	btfss	btemp,3
+   347  1751  2F4D               	goto	l35
+   348                           ;cc1000.c: 226: cc1000_wr( 0x0E, 0x26 );
+   349  1752  3026               	movlw	38
+   350  1753  00C5               	movwf	?_cc1000_wr
+   351  1754  300E               	movlw	14
+   352  1755  267B               	fcall	_cc1000_wr
+   353                           ;cc1000.c: 229: cc1000_wr( 0, c_uhf_modes_ast[ 
+      +                          UHF_TX_MODE ].main_u8 );
+   354  1756  3010               	movlw	_c_uhf_modes_ast shr (0+8)
+   355  1757  008A               	movwf	10
+   356  1758  3004               	movlw	4
+   357  1759  2083               	call	((_c_uhf_modes_ast+-1)& (0+2047))| (($)& 
+      +                          (0+-2048))
+   358  175A  00C5               	movwf	?_cc1000_wr
+   359  175B  3000               	movlw	0
+   360  175C  160A  118A  267B   	fcall	_cc1000_wr
+   361                           ;cc1000.c: 230: cc1000_wr( 0x09, c_uhf_modes_as
+      +                          t[ UHF_TX_MODE ].current_u8 );
+   362  175F  3010               	movlw	_c_uhf_modes_ast shr (0+8)
+   363  1760  008A               	movwf	10
+   364  1761  3005               	movlw	5
+   365  1762  2083               	call	((_c_uhf_modes_ast+-1)& (0+2047))| (($)& 
+      +                          (0+-2048))
+   366  1763  00C5               	movwf	?_cc1000_wr
+   367  1764  3009               	movlw	9
+   368  1765  160A  118A  267B   	fcall	_cc1000_wr
+   369                           ;cc1000.c: 231: cc1000_wr( 0x0C , c_uhf_modes_a
+      +                          st[ UHF_TX_MODE ].pll_u8 );
+   370  1768  3010               	movlw	_c_uhf_modes_ast shr (0+8)
+   371  1769  008A               	movwf	10
+   372  176A  3006               	movlw	6
+   373  176B  2083               	call	((_c_uhf_modes_ast+-1)& (0+2047))| (($)& 
+      +                          (0+-2048))
+   374  176C  00C5               	movwf	?_cc1000_wr
+   375  176D  300C               	movlw	12
+   376  176E  160A  118A  267B   	fcall	_cc1000_wr
+   377                           ;cc1000.c: 232: cc1000_wr( 0x0E, 0xA6 );
+   378  1771  30A6               	movlw	-90
+   379  1772  00C5               	movwf	?_cc1000_wr
+   380  1773  300E               	movlw	14
+   381  1774  267B               	fcall	_cc1000_wr
+   382                           ;cc1000.c: 233: while ( ( cc1000_rd( 0x0E ) & 0
+      +                          x08 ) == 0 );
+   383  1775                     l38
+   384  1775  300E               	movlw	14
+   385  1776  2663               	fcall	_cc1000_rd
+   386  1777  00F4               	movwf	btemp
+   387  1778  1DF4               	btfss	btemp,3
+   388  1779  2F75               	goto	l38
+   389                           ;cc1000.c: 236: cc1000_wr( 0x0E, 0x26 );
+   390  177A  3026               	movlw	38
+   391  177B  00C5               	movwf	?_cc1000_wr
+   392  177C  300E               	movlw	14
+   393  177D  267B               	fcall	_cc1000_wr
+   394                           ;cc1000.c: 240: cc1000_wr( 0, 0x3F );
+   395  177E  303F               	movlw	63
+   396  177F  00C5               	movwf	?_cc1000_wr
+   397  1780  3000               	movlw	0
+   398  1781  267B               	fcall	_cc1000_wr
+   399                           ;cc1000.c: 243: cc1000_wr( 0x0B, 0x55 );
+   400  1782  3055               	movlw	85
+   401  1783  00C5               	movwf	?_cc1000_wr
+   402  1784  300B               	movlw	11
+   403  1785  267B               	fcall	_cc1000_wr
+   404                           ;cc1000.c: 244: if( cc1000_rd( 0x0B ) != 0x55 )
+   405  1786  300B               	movlw	11
+   406  1787  2663               	fcall	_cc1000_rd
+   407  1788  3A55               	xorlw	85
+   408  1789  1D03               	btfss	3,2
+   409                           ;cc1000.c: 245: return( 1 );
+   410  178A  3401               	retlw	1
+   411                           ;cc1000.c: 247: cc1000_wr( 0x0B, 0xAA );
+   412  178B  30AA               	movlw	-86
+   413  178C  00C5               	movwf	?_cc1000_wr
+   414  178D  300B               	movlw	11
+   415  178E  267B               	fcall	_cc1000_wr
+   416                           ;cc1000.c: 248: if( cc1000_rd( 0x0B ) != 0xAA )
+   417  178F  300B               	movlw	11
+   418  1790  2663               	fcall	_cc1000_rd
+   419  1791  3AAA               	xorlw	-86
+   420  1792  1D03               	btfss	3,2
+   421                           ;cc1000.c: 249: return( 2 );
+   422  1793  3402               	retlw	2
+   423                           ;cc1000.c: 251: cc1000_wr( 0x0B, 0 );
+   424  1794  01C5               	clrf	?_cc1000_wr
+   425  1795  300B               	movlw	11
+   426  1796  267B               	fcall	_cc1000_wr
+   427                           ;cc1000.c: 255: cc1000_wr( 0, 0x7B );
+   428  1797  307B               	movlw	123
+   429  1798  00C5               	movwf	?_cc1000_wr
+   430  1799  3000               	movlw	0
+   431  179A  267B               	fcall	_cc1000_wr
+   432                           ;cc1000.c: 256: delay_ms( 2 );
+   433  179B  3002               	movlw	2
+   434  179C  00C6               	movwf	?_delay_ms
+   435  179D  01C7               	clrf	?_delay_ms+1
+   436  179E  120A  158A  203F   	fcall	_delay_ms
+      +       160A  118A         
+   437                           ;cc1000.c: 257: cc1000_wr( 0, 0x79 );
+   438  17A3  3079               	movlw	121
+   439  17A4  00C5               	movwf	?_cc1000_wr
+   440  17A5  3000               	movlw	0
+   441  17A6  267B               	fcall	_cc1000_wr
+   442                           ;cc1000.c: 258: Wait250Us();
+   443  17A7  160A  118A  254C   	fcall	_Wait250Us
+      +       160A  118A         
+   444                           ;cc1000.c: 260: return( 0 );
+   445  17AC  3400               	retlw	0
+   446  17AD                     __end_of_GetUHFMode
+   447  17AD                     _SetUHFMode
+   448                           ;	_mode_u8 assigned to ?a_SetUHFMode+0
+   449  0000                     _SetUHFMode$mode_u8	set	?a_SetUHFMode
+   450                           ;_mode_u8 stored from w
+   451  17AD  0183               	clrf	3	;select bank 0
+   452  17AE  00C4               	movwf	?a_SetUHFMode
+   453                           ;cc1000.c: 279: BYTE SetUHFMode( BYTE mode_u8 )
+   454  17AF  0064               	clrwdt	;#
+   455                           ;cc1000.c: 283: uhf_mode_u8 = mode_u8;
+   456  17B0  00D0               	movwf	_uhf_mode_u8
+   457                           ;cc1000.c: 290: cc1000_wr( 0, c_uhf_modes_ast[ 
+      +                          mode_u8 ].main_u8 );
+   458  17B1  3010               	movlw	_c_uhf_modes_ast shr (0+8)
+   459  17B2  008A               	movwf	10
+   460  17B3  0844               	movf	?a_SetUHFMode,w
+   461  17B4  00F4               	movwf	btemp
+   462  17B5  1003               	bcf	3,0
+   463  17B6  0DF4               	rlf	btemp
+   464  17B7  1003               	bcf	3,0
+   465  17B8  0D74               	rlf	btemp,w
+   466  17B9  2083               	call	((_c_uhf_modes_ast+-1)& (0+2047))| (($)& 
+      +                          (0+-2048))
+   467  17BA  00C5               	movwf	?_cc1000_wr
+   468  17BB  3000               	movlw	0
+   469  17BC  160A  118A  267B   	fcall	_cc1000_wr
+   470                           ;cc1000.c: 291: cc1000_wr( 0x09, c_uhf_modes_as
+      +                          t[ mode_u8 ].current_u8 );
+   471  17BF  3010               	movlw	_c_uhf_modes_ast shr (0+8)
+   472  17C0  008A               	movwf	10
+   473  17C1  0844               	movf	?a_SetUHFMode,w
+   474  17C2  00F4               	movwf	btemp
+   475  17C3  1003               	bcf	3,0
+   476  17C4  0DF4               	rlf	btemp
+   477  17C5  1003               	bcf	3,0
+   478  17C6  0D74               	rlf	btemp,w
+   479  17C7  00F4               	movwf	btemp
+   480  17C8  0A74               	incf	btemp,w
+   481  17C9  2083               	call	((_c_uhf_modes_ast+-1)& (0+2047))| (($)& 
+      +                          (0+-2048))
+   482  17CA  00C5               	movwf	?_cc1000_wr
+   483  17CB  3009               	movlw	9
+   484  17CC  160A  118A  267B   	fcall	_cc1000_wr
+   485                           ;cc1000.c: 292: cc1000_wr( 0x0C , c_uhf_modes_a
+      +                          st[ mode_u8 ].pll_u8 );
+   486  17CF  3010               	movlw	_c_uhf_modes_ast shr (0+8)
+   487  17D0  008A               	movwf	10
+   488  17D1  0844               	movf	?a_SetUHFMode,w
+   489  17D2  00F4               	movwf	btemp
+   490  17D3  1003               	bcf	3,0
+   491  17D4  0DF4               	rlf	btemp
+   492  17D5  1003               	bcf	3,0
+   493  17D6  0D74               	rlf	btemp,w
+   494  17D7  3E02               	addlw	2
+   495  17D8  2083               	call	((_c_uhf_modes_ast+-1)& (0+2047))| (($)& 
+      +                          (0+-2048))
+   496  17D9  00C5               	movwf	?_cc1000_wr
+   497  17DA  300C               	movlw	12
+   498  17DB  160A  118A  267B   	fcall	_cc1000_wr
+   499                           ;cc1000.c: 293: if( mode_u8 == UHF_RX_MODE )
+   500  17DE  08C4               	movf	?a_SetUHFMode
+   501  17DF  1D03               	btfss	3,2
+   502  17E0  2FE4               	goto	l45
+   503                           ;cc1000.c: 294: {
+   504  17E1  01C5               	clrf	?_cc1000_wr
+   505  17E2  300B               	movlw	11
+   506  17E3  267B               	fcall	_cc1000_wr
+   507  17E4                     l45
+   508                           ;cc1000.c: 296: }
+   509  17E4  160A  118A  254C   	fcall	_Wait250Us
+      +       160A  118A         
+   510                           ;cc1000.c: 299: if( mode_u8 == UHF_TX_MODE )
+   511  17E9  0B44               	decfsz	?a_SetUHFMode,w
+   512  17EA  3400               	retlw	0
+   513                           ;cc1000.c: 300: {
+   514  17EB  3010               	movlw	_c_uhf_modes_ast shr (0+8)
+   515  17EC  008A               	movwf	10
+   516  17ED  0844               	movf	?a_SetUHFMode,w
+   517  17EE  00F4               	movwf	btemp
+   518  17EF  1003               	bcf	3,0
+   519  17F0  0DF4               	rlf	btemp
+   520  17F1  1003               	bcf	3,0
+   521  17F2  0D74               	rlf	btemp,w
+   522  17F3  3E03               	addlw	3
+   523  17F4  2083               	call	((_c_uhf_modes_ast+-1)& (0+2047))| (($)& 
+      +                          (0+-2048))
+   524  17F5  00C5               	movwf	?_cc1000_wr
+   525  17F6  300B               	movlw	11
+   526  17F7  160A  118A  267B   	fcall	_cc1000_wr
+   527                           ;cc1000.c: 302: Wait25Us();
+   528  17FA  160A  118A  2540   	fcall	_Wait25Us
+      +       160A  118A         
+   529                           ;cc1000.c: 303: }
+   530  17FF  3400               	retlw	0
+   531                           
+   532                           	psect	text2
+   533  1569                     __end_of_cc1000_rd
+   534  1569                     _pager_write
+   535                           ;	_value assigned to ?a_pager_write+0
+   536  0000                     _pager_write$value	set	?a_pager_write
+   537                           ;_value stored from w
+   538  1569  0183               	clrf	3	;select bank 0
+   539  156A  00BD               	movwf	?a_pager_write
+   540                           ;cc1000.c: 104: void pager_write( BYTE value )
+   541  156B  138B               	bcf	11,7
+   542                           ;cc1000.c: 107: RB2 = 0;
+   543  156C  1106               	bcf	6,2
+   544                           ;cc1000.c: 108: asm("nop");
+   545  156D  0000               	nop	;#
+   546                           ;cc1000.c: 109: SSPBUF = value;
+   547  156E  083D               	movf	?a_pager_write,w
+   548  156F  0093               	movwf	19	;volatile
+   549                           ;cc1000.c: 110: while ( !BF );
+   550  1570                     l25
+   551  1570  1683               	bsf	3,5
+   552  1571  1C14               	btfss	20,0
+   553  1572  2D70               	goto	l25
+   554                           ;cc1000.c: 111: asm("nop");
+   555  1573  0000               	nop	;#
+   556                           ;cc1000.c: 112: RB2 = 1;
+   557  1574  1283               	bcf	3,5
+   558  1575  1506               	bsf	6,2
+   559                           ;cc1000.c: 113: (GIE = 1);
+   560  1576  178B               	bsf	11,7
+   561                           ;cc1000.c: 114: }
+   562  1577  0008               	return	;W free
+   563                           
+   564                           	psect	text4
+   565  07FB                     __end_of_InitUHFTranceiver
+   566  07FB                     _GetUHFMode
+   567                           ;cc1000.c: 268: BYTE GetUHFMode(void)
+   568  07FB  0183               	clrf	3	;select bank 0
+   569  07FC  0850               	movf	_uhf_mode_u8,w
+   570                           ;cc1000.c: 271: };
+   571  07FD  0008               	return	;uses W
+   572                           
+   573                           	psect	rdata_0
+   574  0050                     _uhf_mode_u8
+                     _uhf_mode_u8
+   575  0050                     	ds	1
+   576                           
+   577                           	psect	idata_0
+   578  026E  3400               	retlw	0
+   579                           
+   580                           	psect	text6
+   581  1578                     __end_of_SetUHFMode
+   582  1578                     _LockUHFThresh
+   583                           ;cc1000.c: 328: void LockUHFThresh(void)
+   584  1578  0183               	clrf	3	;select bank 0
+   585  1579  1007               	bcf	7,0
+   586                           ;cc1000.c: 331: SSPBUF = (0x10 << 1) | 0x01;
+   587  157A  3021               	movlw	33
+   588  157B  0093               	movwf	19	;volatile
+   589                           ;cc1000.c: 332: while( !BF );
+   590  157C                     l48
+   591  157C  1683               	bsf	3,5
+   592  157D  1C14               	btfss	20,0
+   593  157E  2D7C               	goto	l48
+   594                           ;cc1000.c: 333: RC0 = 1;
+   595  157F  1283               	bcf	3,5
+   596  1580  1407               	bsf	7,0
+   597                           ;cc1000.c: 334: SSPBUF = 0x7B;
+   598  1581  307B               	movlw	123
+   599  1582  0093               	movwf	19	;volatile
+   600                           ;cc1000.c: 335: while( !BF );
+   601  1583                     l51
+   602  1583  1683               	bsf	3,5
+   603  1584  1C14               	btfss	20,0
+   604  1585  2D83               	goto	l51
+   605                           ;cc1000.c: 336: }
+   606  1586  1283               	bcf	3,5
+   607  1587  0008               	return	;W free
+   608                           
+   609                           	psect	text7
+   610  1588                     __end_of_LockUHFThresh
+   611  1588                     _UnlockUHFThresh
+   612                           ;cc1000.c: 343: void UnlockUHFThresh(void)
+   613  1588  0183               	clrf	3	;select bank 0
+   614  1589  1007               	bcf	7,0
+   615                           ;cc1000.c: 346: SSPBUF = (0x10 << 1) | 0x01;
+   616  158A  3021               	movlw	33
+   617  158B  0093               	movwf	19	;volatile
+   618                           ;cc1000.c: 347: while( !BF );
+   619  158C                     l55
+   620  158C  1683               	bsf	3,5
+   621  158D  1C14               	btfss	20,0
+   622  158E  2D8C               	goto	l55
+   623                           ;cc1000.c: 348: RC0 = 1;
+   624  158F  1283               	bcf	3,5
+   625  1590  1407               	bsf	7,0
+   626                           ;cc1000.c: 350: SSPBUF = 0x6B;
+   627  1591  306B               	movlw	107
+   628  1592  0093               	movwf	19	;volatile
+   629                           ;cc1000.c: 351: while( !BF );
+   630  1593                     l58
+   631  1593  1683               	bsf	3,5
+   632  1594  1C14               	btfss	20,0
+   633  1595  2D93               	goto	l58
+   634                           ;cc1000.c: 352: }
+   635  1596  1283               	bcf	3,5
+   636  1597  0008               	return	;W free
+   637                           
+   638                           	psect	text8
+   639  07FE                     __end_of_UnlockUHFThresh
+   640  0000                     
+   641  0000                     
+   642  0000                     
+   643  0000                     
+   644  0000                     
+   645  0000                     
+   646  0000                     
+   647  0000                     
+   648  0000                     
+   649  0000                     
+   650  0000                     
+   651  0000                     
+   652  0000                     
+   653  0000                     
+   654  0000                     
+   655  0000                     
+   656  0000                     
+   657  0000                     
+   658  0000                     
+   659  0000                     
+   660  0000                     
+   661  0000                     
+   662  0000                     
+   663  0000                     
+   664  0000                     
+   665  0000                     
+   666  0000                     
+   667  0000                     
+   668  0000                     
+   669  0000                     
+   670  0000                     
+   671  0000                     
+   672  0000                     
+   673  0000                     
+   674  0000                     
+   675  0000                     
+   676  0000                     
+   677  0000                     
+   678  0000                     
+   679  0000                     
+   680  0000                     
+   681  0000                     
+   682  0000                     
+   683  0000                     
+   684  0000                     
+   685  0000                     
+   686  0000                     
+   687  0000                     
+   688  0000                     
+   689  0000                     
+   690  0000                     
+   691  0000                     
+   692  0000                     
+   693  0000                     
+   694  0000                     
+   695  0000                     
+   696  0000                     
+   697  0000                     
+   698  0000                     
+   699  0000                     
+   700  0000                     
+   701  0000                     
+   702  0000                     
+   703  0000                     
+   704  0000                     
+   705  0000                     
+   706  0000                     
+   707  0000                     
+   708  0000                     
+   709  0000                     
+   710  0000                     
+   711  0000                     
+   712  0000                     
+   713  0000                     
+   714  0000                     
+   715  0000                     
+   716  0000                     
+   717  0000                     
+   718  0000                     
+   719  0000                     
+   720  0000                     
+   721  0000                     
+   722  0000                     
+   723  0000                     
+   724  0000                     
+   725  0000                     
+   726  0000                     
+   727  0000                     
+   728  0000                     
+   729  0000                     
+   730  0000                     
+   731  0000                     
+   732  0000                     
+   733  0000                     
+   734  0000                     
+   735  0000                     
+   736  0000                     
+   737  0000                     
+   738  0000                     
+   739  0000                     
+   740  0000                     
+   741  0000                     
+   742  0000                     
+   743  0000                     
+   744  0000                     
+   745  0000                     
+   746  0000                     
+   747  0000                     
+   748  0000                     
+   749  0000                     
+   750  0000                     
+   751  0000                     
+   752  0000                     
+   753  0000                     
+   754  0000                     
+   755  0000                     
+   756  0000                     
+   757  0000                     
+   758  0000                     
+   759  0000                     
+   760  0000                     
+   761  0000                     
+   762  0000                     
+   763  0000                     
+   764  0000                     
+   765  0000                     
+   766  0000                     
+   767  0000                     
+   768  0000                     
+   769  0000                     
+   770  0000                     
+   771  0000                     
+   772  0000                     
+   773  0000                     
+   774  0000                     
+   775  0000                     
+   776  0000                     
+   777  0000                     
+   778  0000                     
+   779  0000                     
+   780  0000                     
+   781  0000                     
+   782  0000                     
+   783  0000                     
+   784  0000                     
+   785  0000                     
+   786  0000                     
+   787  0000                     
+   788  0000                     
+   789  0000                     
+   790  0000                     
+   791  0000                     
+   792  0000                     
+   793  0000                     
+   794  0000                     
+   795  0000                     
+   796  0000                     
+   797  0000                     
+   798  0000                     
+   799  0000                     
+   800  0000                     
+   801  0000                     
+   802  0000                     
+   803  0000                     
+   804  0000                     
+   805  0000                     
+   806  0000                     
+   807  0000                     
+   808  0000                     
+   809  0000                     
+   810  0000                     
+   811  0000                     
+   812  0000                     
+   813  0000                     
+   814  0000                     
+   815  0000                     
+   816  0000                     
+   817  0000                     
+   818  0000                     
+   819  0000                     
+   820  0000                     
+   821  0000                     
+   822  0000                     
+   823  0000                     
+   824  0000                     
+   825  0000                     
+   826  0000                     
+   827  0000                     
+   828  0000                     
+   829  0000                     
+   830  0000                     
+   831  0000                     
+   832  0000                     
+   833  0000                     
+   834  0000                     
+   835  0000                     
+   836  0000                     
+   837  0000                     
+   838  0000                     
+   839  0000                     
+   840  0000                     
+   841  0000                     
+   842  0000                     
+   843  0000                     
+   844  0000                     
+   845  0000                     
+   846  0000                     
+   847  0000                     
+   848  0000                     
+   849  0000                     
+   850  0000                     
+   851  0000                     
+   852  0000                     
+   853  0000                     
+   854  0000                     
+   855  0000                     
+   856  0000                     
+   857  0000                     
+   858  0000                     
+   859  0000                     
+   860  0000                     
+   861  0000                     
+   862  0000                     
+   863  0000                     
+   864  0000                     
+   865  0000                     
+   866  0000                     
+   867  0000                     
+   868  0000                     
+   869  0000                     
+   870  0000                     
+   871  0000                     
+   872  0000                     
+   873  0000                     
+   874  0000                     
+   875  0000                     
+   876  0000                     
+   877  0000                     
+   878  0000                     
+   879  0000                     
+   880  0000                     
+   881  0000                     
+   882  0000                     
+   883  0000                     
+   884  0000                     
+   885  0000                     
+   886  0000                     
+   887  0000                     
+   888  0000                     
+   889  0000                     
+   890  0000                     
+   891  0000                     
+   892  0000                     
+   893  0000                     
+   894  0000                     
+   895  0000                     
+   896  0000                     
+   897  0000                     
+   898  0000                     
+   899  0000                     
+   900  0000                     
+   901  0000                     
+   902  0000                     
+   903  0000                     
+   904  0000                     
+   905  0000                     
+   906  0000                     
+   907  0000                     
+   908  0000                     
+   909  0000                     
+   910  0000                     
+   911  0000                     
+   912  0000                     
+   913  0000                     
+   914  0000                     
+   915  0000                     
+   916  0000                     
+   917  0000                     
+   918  0000                     
+   919  0000                     
+   920  0000                     
+   921  0000                     
+   922  0000                     
+   923  0000                     
+   924  0000                     
+   925  0000                     
+   926  0000                     
+   927  0000                     
+   928  0000                     
+   929  0000                     
+   930  0000                     
+   931  0000                     
+   932  0000                     
+   933  0000                     
+   934  0000                     
+   935  0000                     
+   936  0000                     
+   937  0000                     
+   938  0000                     
+   939  0000                     
+   940  0000                     
+   941  0000                     
+   942  0000                     
+   943  0000                     
+   944  0000                     
+   945  0000                     
+   946  0000                     
+   947  0000                     
+   948  0000                     
+   949  0000                     
+   950  0000                     
+   951  0000                     
+   952  0000                     
+   953  0000                     
+   954  0000                     
+   955  0000                     
+   956  0000                     
+   957  0000                     
+   958  0000                     
+   959  0000                     
+   960  0000                     
+   961  0000                     
+   962  0000                     
+   963  0000                     
+   964  0000                     
+   965  0000                     
+   966  0000                     
+   967  0000                     
+   968  0000                     
+   969  0000                     
+   970  0000                     
+   971  0000                     
+   972  0000                     
+   973  0000                     
+   974  0000                     
+   975  0000                     
+   976  0000                     
+   977  0000                     
+   978  0000                     
+   979  0000                     
+   980  0000                     
+   981  0000                     
+   982  0000                     
+   983  0000                     
+   984  0000                     
+   985  0000                     
+   986  0000                     
+   987  0000                     
+   988  0000                     
+   989  0000                     
+   990  0000                     
+   991  0000                     
+   992  0000                     
+   993  0000                     
+   994  0000                     
+   995  0000                     
+   996  0000                     
+   997  0000                     
+   998  0000                     
+   999  0000                     
+  1000  0000                     
+  1001  0000                     
+  1002  0000                     
+  1003  0000                     
+  1004  0000                     
+  1005  0000                     
+  1006  0000                     
+  1007  0000                     
+  1008  0000                     
+  1009  0000                     
+  1010  0000                     
+  1011  0000                     
+  1012  0000                     
+  1013  0000                     
+  1014  0000                     
+  1015  0000                     
+  1016  0000                     
+  1017  0000                     
+  1018  0000                     
+  1019  0000                     
+  1020  0000                     
+  1021  0000                     
+  1022  0000                     
+  1023  0000                     
+  1024  0000                     
+  1025  0000                     
+  1026  0000                     
+  1027  0000                     
+  1028  0000                     
+  1029  0000                     
+  1030  0000                     
+  1031  0000                     
+  1032  0000                     
+  1033  0000                     
+  1034  0000                     
+  1035  0000                     
+  1036  0000                     
+  1037  0000                     
+  1038  0000                     
+  1039  0000                     
+  1040  0000                     
+  1041  0000                     
+  1042  0000                     
+  1043  0000                     
+  1044  0000                     
+  1045  0000                     
+  1046  0000                     
+  1047  0000                     
+  1048  0000                     
+  1049  0000                     
+  1050  0000                     
+  1051  0000                     
+  1052  0000                     
+  1053  0000                     
+  1054  0000                     
+  1055  0000                     
+  1056                           
+  1057                           	psect	temp
+  1058  0074                     btemp
+                     btemp
+  1059  0074                     	ds	1
+
+
+HI-TECH Software PICC Macro Assembler V9.60PL3 build 3862 
+Symbol Table                                          Tue Feb 04 13:05:10 2020
+
+                 _delay_ms 083F                          pc 0002  
+               _SetUHFMode 17AD                         l11 1684  
+                       l21 1672                         l14 168B  
+                       l25 1570                         l18 166B  
+                       l51 1583                         l35 174D  
+                       l45 17E4                         l38 1775  
+                       l55 158C                         l48 157C  
+                       l58 1593                ?a_cc1000_rd 003D  
+              ?a_cc1000_wr 0046                _pager_write 1569  
+                ?_delay_ms 0046                  _cc1000_rd 1663  
+                _cc1000_wr 167B                       btemp 0074  
+            _LockUHFThresh 1578    __end_of_UnlockUHFThresh 07FE  
+               _GetUHFMode 07FB         __end_of_SetUHFMode 1578  
+    __end_of_LockUHFThresh 1588              ?a_pager_write 003D  
+__end_of_InitUHFTranceiver 07FB          __end_of_cc1000_rd 1569  
+        __end_of_cc1000_wr 1663                  _Wait250Us 154C  
+                    pclath 000A               ?a_SetUHFMode 0044  
+                    status 0003                 ?_cc1000_wr 0045  
+                 _Wait25Us 1540         __end_of_GetUHFMode 17AD  
+          _c_uhf_modes_ast 1084                _uhf_mode_u8 0050  
+        _InitUHFTranceiver 1691        __end_of_pager_write 1691  
+          _UnlockUHFThresh 1588                 used_btemp0 0001  

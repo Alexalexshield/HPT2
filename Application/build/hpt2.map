@@ -1,0 +1,744 @@
+HI-TECH Software C Compiler 
+
+Linker command line:
+
+--edf=C:\PICC\std\9.60\dat\en_msgs.txt -h+hpt2.sym -z -Q16F887 -ol.obj \
+  -Mhpt2.map -E1 -ACODE=00h-07FFhx4 -ACONST=00h-0FFhx32 -AENTRY=00h-0FFhx32 \
+  -ASTRING=00h-0FFhx32 -ABANK0=020h-07Fh -ABANK1=0A0h-0EFh \
+  -ABANK2=0110h-016Fh -ABANK3=0190h-01EFh -ACOMBANK=070h-07Fh \
+  -preset_vec=00h,intentry=04h,intcode,intret,init,init23,end_init,clrtext,maintext,stringtable,pstrings,strings \
+  -ppowerup=CODE -ptemp=-COMBANK -pintsave_0=-COMBANK \
+  -prbit_0=BANK0,rbss_0=BANK0,rdata_0=BANK0,idata_0=CODE -pnvram=BANK0 \
+  -pintsave_1=BANK1 -prbit_1=BANK1,rbss_1=BANK1,rdata_1=BANK1,idata_1=CODE \
+  -pnvram_1=BANK1,nvbit_1=BANK1 -pintsave_2=BANK2 \
+  -prbit_2=BANK2,rbss_2=BANK2,rdata_2=BANK2,idata_2=CODE \
+  -pnvram_2=BANK2,nvbit_2=BANK2 -pintsave_3=BANK3 \
+  -prbit_3=BANK3,rbss_3=BANK3,rdata_3=BANK3,idata_3=CODE \
+  -pnvram_3=BANK3,nvbit_3=BANK3 -ACONFIG=02007h-02008h -pconfig=CONFIG \
+  -AIDLOC=02000h-02003h -pidloc=IDLOC -AEEDATA=00h-0FFh/02100h \
+  -peeprom_data=EEDATA -pfloat_text0=CODE,float_text1=CODE,float_text2=CODE \
+  -pfloat_text3=CODE,float_text4=CODE \
+  C:\Users\SHCHIT~1\AppData\Local\Temp\slfs.obj main.obj mobility.obj \
+  uhf_comms.obj vlf_comms2.obj cc1000.obj init30a.obj time.obj uhf_cmn.obj \
+  wait.obj C:\PICC\std\9.60\lib\pic618-p.lib \
+  C:\PICC\std\9.60\lib\pic32--u.lib C:\PICC\std\9.60\lib\pic42c-c.lib \
+  C:\PICC\std\9.60\lib\pic32--u.lib 
+
+Object code version is 3.10
+
+Machine type is 16F887
+
+Call graph:
+
+*_main size 0,2 offset 0
+     _init_board size 0,0 offset 2
+     _eeprom_read size 0,1 offset 9
+     _eeprom_write size 1,1 offset 9
+     _srand size 2,0 offset 11
+     _pager_write size 0,1 offset 2
+     _delay_ms size 2,4 offset 11
+     _UHFCommsInit size 0,0 offset 2
+         _InitUHFTranceiver size 0,0 offset 2
+             _cc1000_wr size 1,1 offset 10
+             _delay_ms size 2,4 offset 11
+             _cc1000_rd size 0,1 offset 2
+             _Wait250Us size 0,1 offset 10
+         _SetUHFMode size 0,1 offset 9
+             _cc1000_wr size 1,1 offset 10
+             _Wait250Us size 0,1 offset 10
+             _Wait25Us size 0,1 offset 10
+     _VLF_StartReceiver size 0,0 offset 9
+     _VLF_ProcessBitRead size 0,1 offset 2
+     _VLF_ProcessPacket size 0,1 offset 2
+         _VLF_StartReceiver size 0,0 offset 9
+         _get_crc size 1,2 offset 16
+         _buffcrc size 2,1 offset 13
+             _get_crc size 1,2 offset 16
+         _delay_ms size 2,4 offset 11
+         _VLF_ReplyToBroadcastRequest size 0,2 offset 9
+             _rand size 0,0 offset 11
+                 _srand size 2,0 offset 11
+                 almul size 0,0 offset 11
+             _delay_ms size 2,4 offset 11
+             _VLF_SendGeneric size 0,1 offset 12
+                 _buffcrc size 2,1 offset 13
+                     _get_crc size 1,2 offset 16
+                 _get_crc size 1,2 offset 16
+                 _VLF_SendPacket size 0,0 offset 13
+             awmod size 0,0 offset 11
+         _VLF_SendGeneric size 0,1 offset 12
+             _buffcrc size 2,1 offset 13
+                 _get_crc size 1,2 offset 16
+             _get_crc size 1,2 offset 16
+             _VLF_SendPacket size 0,0 offset 13
+         _VLF_ReplyLocateRequest size 0,3 offset 9
+             _VLF_SendGeneric size 0,1 offset 12
+                 _buffcrc size 2,1 offset 13
+                     _get_crc size 1,2 offset 16
+                 _get_crc size 1,2 offset 16
+                 _VLF_SendPacket size 0,0 offset 13
+             _chk_timeout size 2,0 offset 12
+*    _ProcessUHFPacket size 0,7 offset 2
+         _CalcUHFChecksum size 0,6 offset 9
+             _get_pkt_len size 0,0 offset 20
+         _rand size 0,0 offset 11
+             _srand size 2,0 offset 11
+             almul size 0,0 offset 11
+         _delay_uhf_ts size 0,5 offset 9
+*        _VLF_SendGeneric size 0,1 offset 12
+*            _buffcrc size 2,1 offset 13
+*                _get_crc size 1,2 offset 16
+*            _get_crc size 1,2 offset 16
+             _VLF_SendPacket size 0,0 offset 13
+         _delay_ms size 2,4 offset 11
+         _VLF_ReplyToBroadcastRequest size 0,2 offset 9
+             _rand size 0,0 offset 11
+                 _srand size 2,0 offset 11
+                 almul size 0,0 offset 11
+             _delay_ms size 2,4 offset 11
+             _VLF_SendGeneric size 0,1 offset 12
+                 _buffcrc size 2,1 offset 13
+                     _get_crc size 1,2 offset 16
+                 _get_crc size 1,2 offset 16
+                 _VLF_SendPacket size 0,0 offset 13
+             awmod size 0,0 offset 11
+         _VLF_StopReceiver size 0,0 offset 9
+         _VLF_StartReceiver size 0,0 offset 9
+*        _VLF_ReplyLocateRequest size 0,3 offset 9
+*            _VLF_SendGeneric size 0,1 offset 12
+*                _buffcrc size 2,1 offset 13
+*                    _get_crc size 1,2 offset 16
+*                _get_crc size 1,2 offset 16
+                 _VLF_SendPacket size 0,0 offset 13
+             _chk_timeout size 2,0 offset 12
+         _PrepareSearchQueryReply size 0,0 offset 9
+             _eeprom_read size 0,1 offset 9
+         _eeprom_write size 1,1 offset 9
+         _SendUHFPkt size 0,0 offset 9
+             _SetUHFMode size 0,1 offset 9
+                 _cc1000_wr size 1,1 offset 10
+                 _Wait250Us size 0,1 offset 10
+                 _Wait25Us size 0,1 offset 10
+             _CalcUHFChecksum size 0,6 offset 9
+                 _get_pkt_len size 0,0 offset 20
+     _SetUHFMode size 0,1 offset 9
+         _cc1000_wr size 1,1 offset 10
+         _Wait250Us size 0,1 offset 10
+         _Wait25Us size 0,1 offset 10
+     _chk_timeout size 2,0 offset 12
+
+Estimated maximum call depth: 5
+
+*_int_handler size 0,1 offset 19
+*    _UnlockUHFThresh size 0,0 offset 20
+*    _LockUHFThresh size 0,0 offset 20
+*    _get_pkt_len size 0,0 offset 20
+*    string_table size 0,0 offset 20
+
+Estimated maximum call depth: 2
+
+
+		Name          Link     Load   Length Selector Space Scale
+C:\Users\SHCHIT~1\AppData\Local\Temp\slfs.obj
+		reset_vec        0        0        3       0     0
+		init           226      226       10       8     0
+		end_init       23F      23F       18       8     0
+		init23         236      236        9       8     0
+		temp            74       74        1      74     1
+main.obj        intcode         29       29      1D8       8     0
+		intentry         4        4        9       8     0
+		intret         21D      21D        9       8     0
+		intsave_0       73       73        1      73     1
+		rbss_0          20       20        E      20     1
+		temp            74       74        3      74     1
+		intsave         51       51        3      20     1
+		const1        1000     1000       49    2000     0
+		text0          DA6      DA6      25A    1B4C     0
+mobility.obj    
+uhf_comms.obj   rbss_3         190      190       25     190     1
+		rbss_2         110      110       4E     110     1
+		rbss_0          2E       2E        5      20     1
+		temp            74       74        4      74     1
+		text1         1553     1553        A    2AA6     0
+		text3          2FB      2FB      4E8       8     0
+vlf_comms2.obj  idata_0        26D      26D        1       8     0
+		rdata_0         4F       4F        1      20     1
+		rbss_1          A0       A0       4F      A0     1
+		temp            74       74        4      74     1
+		text8         1546     1546        6    2A8C     0
+		text4          97C      97C      206    12F8     0
+		text2         155D     155D        C    2ABA     0
+		text9          B82      B82      224    1704     0
+		const4        1079     1079        A    2000     0
+		const2        106E     106E        B    2000     0
+		const1        1049     1049        D    2000     0
+		const3        108C     108C        9    2000     0
+cc1000.obj      idata_0        26E      26E        1       8     0
+		rdata_0         50       50        1      20     1
+		temp            74       74        1      74     1
+		text4          7FB      7FB        3       8     0
+		text6         1578     1578       10    2AF0     0
+		text7         1588     1588       10    2B10     0
+		const1        1083     1083        9    2000     0
+		text1         1663     1663      19D    2CC6     0
+		text2         1569     1569        F    2AD2     0
+init30a.obj     config        2007     2007        2    400E     0
+		text1          7E3      7E3       18       8     0
+		text0          802      802       3D    1004     0
+time.obj        rbss_0          33       33        3      20     1
+		temp            74       74        2      74     1
+		text0         15AA     15AA       20    2B54     0
+uhf_cmn.obj     temp            74       74        2      74     1
+		text2          8E9      8E9       93    11D2     0
+		text0         15EA     15EA       29    2BD4     0
+		const1        1063     1063        B    2000     0
+		const2        1056     1056        D    2000     0
+wait.obj        temp            74       74        2      74     1
+		text3         1540     1540        6    2A80     0
+		text2         154C     154C        7    2A98     0
+		text0          891      891       58    1122     0
+		text1          83F      83F       52    107E     0
+
+C:\PICC\std\9.60\lib\pic618-p.lib
+
+C:\PICC\std\9.60\lib\pic32--u.lib
+eeread.obj      text0         1598     1598       12    2B30     0
+eewrite.obj     text0         15CA     15CA       20    2B94     0
+
+C:\PICC\std\9.60\lib\pic42c-c.lib
+rand.obj        rbss_0          36       36        5      20     1
+		temp            74       74        C      74     1
+		text0         1613     1613       50    2C26     0
+awdiv.obj       float_tex      2AC      2AC       15       8     0
+		temp            74       74        7      74     1
+btemp0.obj      temp            74       74        1      74     1
+btemp10.obj     temp            74       74        B      74     1
+btemp11.obj     temp            74       74        C      74     1
+btemp1.obj      temp            74       74        2      74     1
+btemp2.obj      temp            74       74        3      74     1
+btemp3.obj      temp            74       74        4      74     1
+btemp4.obj      temp            74       74        5      74     1
+btemp5.obj      temp            74       74        6      74     1
+btemp6.obj      temp            74       74        7      74     1
+btemp7.obj      temp            74       74        8      74     1
+btemp8.obj      temp            74       74        9      74     1
+btemp9.obj      temp            74       74        A      74     1
+codeptr.obj     
+lmul.obj        float_tex      26F      26F       2E       8     0
+		temp            74       74        C      74     1
+sbtemp0.obj     intcode        201      201        2       8     0
+		intentry         D        D        2       8     0
+		intsave         5C       5C        1      20     1
+sbtemp10.obj    intcode        203      203        2       8     0
+		intentry         F        F        2       8     0
+		intsave         5B       5B        1      20     1
+sbtemp11.obj    intcode        205      205        2       8     0
+		intentry        11       11        2       8     0
+		intsave         5A       5A        1      20     1
+sbtemp12.obj    
+sbtemp13.obj    
+sbtemp14.obj    
+sbtemp1.obj     intcode        207      207        2       8     0
+		intentry        13       13        2       8     0
+		intsave         63       63        1      20     1
+sbtemp2.obj     intcode        209      209        2       8     0
+		intentry        15       15        2       8     0
+		intsave         60       60        1      20     1
+sbtemp3.obj     intcode        20B      20B        2       8     0
+		intentry        17       17        2       8     0
+		intsave         5D       5D        1      20     1
+sbtemp4.obj     intcode        20D      20D        2       8     0
+		intentry        19       19        2       8     0
+		intsave         5E       5E        1      20     1
+sbtemp5.obj     intcode        20F      20F        2       8     0
+		intentry        1B       1B        2       8     0
+		intsave         5F       5F        1      20     1
+sbtemp6.obj     intcode        211      211        2       8     0
+		intentry        1D       1D        2       8     0
+		intsave         62       62        1      20     1
+sbtemp7.obj     intcode        213      213        2       8     0
+		intentry        1F       1F        2       8     0
+		intsave         61       61        1      20     1
+sbtemp8.obj     intcode        215      215        2       8     0
+		intentry        21       21        2       8     0
+		intsave         59       59        1      20     1
+sbtemp9.obj     intcode        217      217        2       8     0
+		intentry        23       23        2       8     0
+		intsave         58       58        1      20     1
+scodeptr.obj    intcode        219      219        4       8     0
+		intentry        25       25        4       8     0
+		intsave         56       56        2      20     1
+store.obj       float_tex      29D      29D        F       8     0
+		temp            74       74        4      74     1
+stringtab.obj   stringtab      257      257       16       8     0
+		code_ptr        54       54        2      20     1
+wdiv.obj        float_tex      2C1      2C1       3A       8     0
+		temp            74       74        7      74     1
+
+C:\PICC\std\9.60\lib\pic32--u.lib
+
+COMMON          rbss_0          3B       3B       14      20     1
+
+TOTAL		Name          Link     Load   Length
+	CLASS	CODE     
+		intcode         29       29      1F4
+		intentry         4        4       25
+		intret         21D      21D        9
+		reset_vec        0        0        3
+		idata_0        26D      26D        2
+		float_tex      2AC      2AC       4F
+		float_tex      26F      26F       3D
+		init           226      226       10
+		end_init       23F      23F       18
+		init23         236      236        9
+		text0          DA6      DA6      25A
+		text1         1553     1553        A
+		text3          2FB      2FB      4E8
+		text8         1546     1546        6
+		text4          97C      97C      206
+		text2         155D     155D        C
+		text9          B82      B82      224
+		text4          7FB      7FB        3
+		text6         1578     1578       10
+		text7         1588     1588       10
+		text1         1663     1663      19D
+		text2         1569     1569        F
+		text1          7E3      7E3       18
+		text0          802      802       3D
+		text0         15AA     15AA       20
+		text2          8E9      8E9       93
+		text0         15EA     15EA       29
+		text3         1540     1540        6
+		text2         154C     154C        7
+		text0          891      891       58
+		text1          83F      83F       52
+		text0         1598     1598       12
+		text0         15CA     15CA       20
+		text0         1613     1613       50
+
+	CLASS	CONST    
+		const1        1000     1000       49
+		const4        1079     1079        A
+		const2        106E     106E        B
+		const1        1049     1049        D
+		const3        108C     108C        9
+		const1        1083     1083        9
+		const1        1063     1063        B
+		const2        1056     1056        D
+
+	CLASS	ENTRY    
+		stringtab      257      257       16
+
+	CLASS	STRING   
+
+	CLASS	BANK0    
+		rdata_0         4F       4F        2
+		rbss_0          20       20       2F
+		temp            74       74        C
+		intsave         51       51        3
+		code_ptr        54       54        2
+		intsave         5C       5C        1
+		intsave         5B       5B        1
+		intsave         5A       5A        1
+		intsave         63       63        1
+		intsave         60       60        1
+		intsave         5D       5D        1
+		intsave         5E       5E        1
+		intsave         5F       5F        1
+		intsave         62       62        1
+		intsave         61       61        1
+		intsave         59       59        1
+		intsave         58       58        1
+		intsave         56       56        2
+
+	CLASS	BANK1    
+		rbss_1          A0       A0       4F
+
+	CLASS	BANK2    
+		rbss_2         110      110       4E
+
+	CLASS	BANK3    
+		rbss_3         190      190       25
+
+	CLASS	COMBANK  
+		intsave_0       73       73        1
+
+	CLASS	CONFIG   
+		config        2007     2007        2
+
+	CLASS	IDLOC    
+
+	CLASS	EEDATA   
+
+
+
+SEGMENTS	Name		Load	Length	 Top	Selector    Space Class
+
+		reset_vec       000000	000003	000003	       0       0  CODE    
+		intentry        000004	0007FA	0007FE	       8       0  CODE    
+		rbit_0          000020	000044	000064	      20       1  BANK0   
+		intsave_0       000073	000001	000074	      73       1  COMBANK 
+		temp            000074	00000C	000080	      74       1  COMBANK 
+		intsave_1       0000A0	00004F	0000EF	      A0       1  BANK1   
+		intsave_2       000110	00004E	00015E	     110       1  BANK2   
+		intsave_3       000190	000025	0001B5	     190       1  BANK3   
+		text0           000802	00003D	00083F	    1004       0  CODE    
+		text1           00083F	000052	000891	    107E       0  CODE    
+		text0           000891	000058	0008E9	    1122       0  CODE    
+		text2           0008E9	000093	00097C	    11D2       0  CODE    
+		text4           00097C	000206	000B82	    12F8       0  CODE    
+		text9           000B82	000224	000DA6	    1704       0  CODE    
+		text0           000DA6	00025A	001000	    1B4C       0  CODE    
+		const1          001000	000095	001095	    2000       0  CONST   
+		text3           001540	000006	001546	    2A80       0  CODE    
+		text8           001546	000006	00154C	    2A8C       0  CODE    
+		text2           00154C	000007	001553	    2A98       0  CODE    
+		text1           001553	00000A	00155D	    2AA6       0  CODE    
+		text2           00155D	00000C	001569	    2ABA       0  CODE    
+		text2           001569	00000F	001578	    2AD2       0  CODE    
+		text6           001578	000010	001588	    2AF0       0  CODE    
+		text7           001588	000010	001598	    2B10       0  CODE    
+		text0           001598	000012	0015AA	    2B30       0  CODE    
+		text0           0015AA	000020	0015CA	    2B54       0  CODE    
+		text0           0015CA	000020	0015EA	    2B94       0  CODE    
+		text0           0015EA	000029	001613	    2BD4       0  CODE    
+		text0           001613	000050	001663	    2C26       0  CODE    
+		text1           001663	00019D	001800	    2CC6       0  CODE    
+		config          002007	000002	002009	    400E       0  CONFIG  
+
+
+UNUSED ADDRESS RANGES
+
+	BANK0            0064-0072
+	BANK1            00EF-00EF
+	BANK2            015E-016F
+	BANK3            01B5-01EF
+	CODE             0003-0003
+	                 07FE-0801
+	                 1095-153F
+	                 1800-1FFF
+	COMBANK          0070-0072
+	CONST            0003-0003
+	                 07FE-0801
+	                 1095-153F
+	                 1800-1FFF
+	EEDATA           2100-21FF
+	ENTRY            0003-0003
+	                 07FE-0801
+	                 1095-153F
+	                 1800-1FFF
+	IDLOC            2000-2003
+	STRING           0003-0003
+	                 07FE-0801
+	                 1095-153F
+	                 1800-1FFF
+
+                                  Symbol Table
+
+?_cc1000_wr                          rbss_0      0045
+?_chk_timeout                        rbss_0      0047
+?_delay_ms                           rbss_0      0046
+?_eeprom_write                       rbss_0      0044
+?_srand                              rbss_0      0046
+?a_CalcUHFChecksum                   rbss_0      0044
+?a_ProcessUHFPacket                  rbss_0      003D
+?a_ReadADChannel                     rbss_0      003B
+?a_SetUHFMode                        rbss_0      0044
+?a_VLF_ProcessBitRead                rbss_0      003D
+?a_VLF_ProcessPacket                 rbss_0      003D
+?a_VLF_ReplyLocateRequest            rbss_0      0044
+?a_VLF_ReplyToBroadcastRequest       rbss_0      0044
+?a_VLF_SendGeneric                   rbss_0      0047
+?a_Wait250Us                         rbss_0      0045
+?a_Wait25Us                          rbss_0      0045
+?a_cc1000_rd                         rbss_0      003D
+?a_cc1000_wr                         rbss_0      0046
+?a_delay_ms                          rbss_0      0048
+?a_delay_uhf_ts                      rbss_0      0044
+?a_eeprom_read                       rbss_0      0044
+?a_eeprom_write                      rbss_0      0045
+?a_int_handler                       rbss_0      004E
+?a_main                              rbss_0      003B
+?a_pager_write                       rbss_0      003D
+_CalcUHFChecksum                     text2       0923
+_GetUHFMode                          text4       07FB
+_InitUHFTranceiver                   text1       1691
+_LockUHFThresh                       text6       1578
+_ProcessUHFPacket                    text3       034B
+_ReadADChannel                       text1       07E3
+_SetUHFMode                          text1       17AD
+_UHFBusy                             text1       1553
+_UHFCommsInit                        text0       15EA
+_UnlockUHFThresh                     text7       1588
+_VLF_Busy                            text2       155D
+_VLF_ProcessBitRead                  text4       097C
+_VLF_ProcessPacket                   text9       0BFA
+_VLF_ReplyLocateRequest              text9       0D7F
+_VLF_ReplyToBroadcastRequest         text9       0D5F
+_VLF_SendGeneric                     text9       0D1C
+_VLF_StartReceiver                   text9       0BD1
+_VLF_StopReceiver                    text8       1546
+_Wait250Us                           text2       154C
+_Wait25Us                            text3       1540
+__Beeprom_data                       eeprom_data 2100
+__Bnvbit_0                           nvbit_0     05F6
+__Bnvbit_1                           nvbit_1     00EF
+__Bnvbit_2                           nvbit_2     015E
+__Bnvbit_3                           nvbit_3     01B5
+__Bptbit_0                           ptbit_0     05F6
+__Brbit_0                            rbit_0      0020
+__Brbit_1                            rbit_1      00A0
+__Brbit_2                            rbit_2      0110
+__Brbit_3                            rbit_3      0190
+__Hclrtext                           clrtext     0257
+__Hcode                              code        05F6
+__Hcode_ptr                          code_ptr    0056
+__Hcommon_ram                        common_ram  05F6
+__Hconfig                            config      2009
+__Heeprom_data                       eeprom_data 0000
+__Hend_init                          end_init    0257
+__Hfloat_text0                       float_text0 02AC
+__Hfloat_text1                       float_text1 02FB
+__Hfloat_text2                       float_text2 02FB
+__Hfloat_text3                       float_text3 02FB
+__Hfloat_text4                       float_text4 02FB
+__Hidata_0                           idata_0     026F
+__Hidata_1                           idata_1     026F
+__Hidata_2                           idata_2     026F
+__Hidata_3                           idata_3     026F
+__Hidloc                             idloc       2000
+__Hinit                              init        0236
+__Hinit23                            init23      023F
+__Hintcode                           intcode     021D
+__Hintentry                          intentry    0029
+__Hintret                            intret      0226
+__Hintsave                           intsave     05F6
+__Hintsave_0                         intsave_0   0074
+__Hintsave_1                         intsave_1   00A0
+__Hintsave_2                         intsave_2   0110
+__Hintsave_3                         intsave_3   0190
+__Hmaintext                          maintext    0257
+__Hnvbit_0                           nvbit_0     2FB0
+__Hnvbit_1                           nvbit_1     0778
+__Hnvbit_2                           nvbit_2     0AF0
+__Hnvbit_3                           nvbit_3     0DA8
+__Hnvram                             nvram       0051
+__Hnvram_1                           nvram_1     00EF
+__Hnvram_2                           nvram_2     015E
+__Hnvram_3                           nvram_3     01B5
+__Hpowerup                           powerup     026D
+__Hpstrings                          pstrings    026D
+__Hptbit_0                           ptbit_0     2FB0
+__Hrbit_0                            rbit_0      0100
+__Hrbit_1                            rbit_1      0500
+__Hrbit_2                            rbit_2      0880
+__Hrbit_3                            rbit_3      0C80
+__Hrbss_0                            rbss_0      004F
+__Hrbss_1                            rbss_1      00EF
+__Hrbss_2                            rbss_2      015E
+__Hrbss_3                            rbss_3      01B5
+__Hrdata_0                           rdata_0     0051
+__Hrdata_1                           rdata_1     00EF
+__Hrdata_2                           rdata_2     015E
+__Hrdata_3                           rdata_3     01B5
+__Hreset_vec                         reset_vec   0003
+__Hstrings                           strings     026D
+__Hstringtable                       stringtable 026D
+__Hstruct                            struct      0064
+__Htemp                              temp        0080
+__Htext                              text        05F6
+__Hxtemp                             xtemp       0064
+__Lclrtext                           clrtext     0257
+__Lcode                              code        05F6
+__Lcode_ptr                          code_ptr    0054
+__Lcommon_ram                        common_ram  05F6
+__Lconfig                            config      2007
+__Leeprom_data                       eeprom_data 0000
+__Lend_init                          end_init    023F
+__Lfloat_text0                       float_text0 026F
+__Lfloat_text1                       float_text1 02AC
+__Lfloat_text2                       float_text2 02FB
+__Lfloat_text3                       float_text3 02FB
+__Lfloat_text4                       float_text4 02FB
+__Lidata_0                           idata_0     026D
+__Lidata_1                           idata_1     026F
+__Lidata_2                           idata_2     026F
+__Lidata_3                           idata_3     026F
+__Lidloc                             idloc       2000
+__Linit                              init        0226
+__Linit23                            init23      0236
+__Lintcode                           intcode     0029
+__Lintentry                          intentry    0004
+__Lintret                            intret      021D
+__Lintsave                           intsave     05F6
+__Lintsave_0                         intsave_0   0073
+__Lintsave_1                         intsave_1   00A0
+__Lintsave_2                         intsave_2   0110
+__Lintsave_3                         intsave_3   0190
+__Lmaintext                          maintext    0257
+__Lnvbit_0                           nvbit_0     2FB0
+__Lnvbit_1                           nvbit_1     0778
+__Lnvbit_2                           nvbit_2     0AF0
+__Lnvbit_3                           nvbit_3     0DA8
+__Lnvram                             nvram       0051
+__Lnvram_1                           nvram_1     00EF
+__Lnvram_2                           nvram_2     015E
+__Lnvram_3                           nvram_3     01B5
+__Lpowerup                           powerup     026D
+__Lpstrings                          pstrings    026D
+__Lptbit_0                           ptbit_0     2FB0
+__Lrbit_0                            rbit_0      0100
+__Lrbit_1                            rbit_1      0500
+__Lrbit_2                            rbit_2      0880
+__Lrbit_3                            rbit_3      0C80
+__Lrbss_0                            rbss_0      0020
+__Lrbss_1                            rbss_1      00A0
+__Lrbss_2                            rbss_2      0110
+__Lrbss_3                            rbss_3      0190
+__Lrdata_0                           rdata_0     004F
+__Lrdata_1                           rdata_1     00EF
+__Lrdata_2                           rdata_2     015E
+__Lrdata_3                           rdata_3     01B5
+__Lreset_vec                         reset_vec   0000
+__Lstrings                           strings     026D
+__Lstringtable                       stringtable 0257
+__Lstruct                            struct      0064
+__Ltemp                              temp        0074
+__Ltext                              text        05F6
+__Lxtemp                             xtemp       0064
+__S0                                 (abs)       2009
+__S1                                 (abs)       01B5
+__S2                                 (abs)       2100
+__end_of_CalcUHFChecksum             text2       08E9
+__end_of_GetUHFMode                  text1       17AD
+__end_of_InitUHFTranceiver           text4       07FB
+__end_of_LockUHFThresh               text7       1588
+__end_of_ProcessUHFPacket            text3       02FB
+__end_of_ReadADChannel               text2       07FE
+__end_of_SetUHFMode                  text6       1578
+__end_of_UHFBusy                     text3       034B
+__end_of_UHFCommsInit                text2       0923
+__end_of_UnlockUHFThresh             text8       07FE
+__end_of_VLF_Busy                    text9       0BFA
+__end_of_VLF_ProcessBitRead          text9       0D5F
+__end_of_VLF_ProcessPacket           text4       097C
+__end_of_VLF_ReplyLocateRequest      text9       0BD1
+__end_of_VLF_ReplyToBroadcastRequest text9       0D7F
+__end_of_VLF_SendGeneric             text11      07FE
+__end_of_VLF_StartReceiver           text8       1546
+__end_of_VLF_StopReceiver            text9       0B82
+__end_of_Wait250Us                   text3       1540
+__end_of_Wait25Us                    text4       07FE
+__end_of_cc1000_rd                   text2       1569
+__end_of_cc1000_wr                   text1       1663
+__end_of_chk_timeout                 text1       07FE
+__end_of_delay_ms                    text2       154C
+__end_of_delay_uhf_ts                text1       083F
+__end_of_eeprom_read                 text1       07FE
+__end_of_eeprom_write                text1       07FE
+__end_of_get_pkt_len                 text3       07FE
+__end_of_init_board                  text1       07E3
+__end_of_int_handler                 intentry    000D
+__end_of_main                        text1       07FE
+__end_of_pager_write                 text1       1691
+__end_of_rand                        text2       07FE
+__end_of_srand                       text0       161D
+_aps_preamble                        const2      106F
+_bb                                  rbss_3      0195
+_bi                                  rbss_3      01A5
+_bid_temp                            rbss_3      0191
+_bl_version                          rbss_3      0190
+_cc1000_rd                           text1       1663
+_cc1000_wr                           text1       167B
+_chk_timeout                         text0       15AA
+_combine_id                          rbss_3      0193
+_delay_ms                            text1       083F
+_delay_uhf_ts                        text0       0891
+_eeprom_read                         text0       1598
+_eeprom_tmp                          rbss_0      0020
+_eeprom_write                        text0       15CA
+_exit                                init        0226
+_get_pkt_len                         text2       08E9
+_init_board                          text0       0802
+_int_handler                         intcode     0029
+_lamp_min_cnt                        rbss_0      0021
+_lamp_state                          rbss_0      0022
+_lamp_tick                           rbss_0      0023
+_lamp_timeout                        rbss_0      0026
+_main                                text0       0DA6
+_mid                                 rbss_0      002A
+_mu2su_preamble                      const3      108D
+_mu_flags                            rbss_0      0024
+_pager_cnt                           rbss_0      0025
+_pager_write                         text2       1569
+_rand                                text0       161D
+_srand                               text0       1613
+_su2mu_preamble                      const1      104A
+_timer                               rbss_0      0034
+_timer_last_tick                     rbss_0      0033
+_uhf                                 rbss_2      0110
+_uhf_registration_timeout            rbss_0      0031
+_uncoded_rx_data_size                const4      107A
+_vlf_state                           rdata_0     004F
+_vrx                                 rbss_1      00AF
+_vtx                                 rbss_1      00A0
+almul                                float_text0 026F
+almul_x                              float_text0 0270
+awdiv                                float_text1 02AC
+awmod                                float_text1 02AC
+clear_bank0                          init        0226
+clear_bank1                          init        0232
+clear_bank2                          init23      0237
+clear_bank3                          init23      023B
+clear_bit0                           init        0226
+clear_bit1                           init        0232
+clear_bit2                           init23      0237
+clear_bit3                           init23      023B
+clear_ram                            end_init    0245
+code_ptr                             code_ptr    0054
+copy_bank0                           init        022A
+copy_data                            end_init    024A
+dowdiv                               float_text1 02C2
+int_entry                            intentry    0004
+int_func                             intcode     0029
+int_restore                          intret      0221
+intlevel0                            intentry    0004
+intlevel1                            intentry    0004
+llmul                                float_text0 026F
+llmul_x                              float_text0 0270
+lwdiv                                float_text1 02C1
+lwmod                                float_text1 02C1
+reset_vec                            reset_vec   0000
+save_btemp0                          intentry    000D
+save_btemp1                          intentry    0013
+save_btemp10                         intentry    000F
+save_btemp11                         intentry    0011
+save_btemp12                         intentry    0013
+save_btemp13                         intentry    0013
+save_btemp14                         intentry    0013
+save_btemp2                          intentry    0015
+save_btemp3                          intentry    0017
+save_btemp4                          intentry    0019
+save_btemp5                          intentry    001B
+save_btemp6                          intentry    001D
+save_btemp7                          intentry    001F
+save_btemp8                          intentry    0021
+save_btemp9                          intentry    0023
+save_code_ptr                        intentry    0025
+start                                init        0226
+storeback                            float_text0 029D
+string_indir                         stringtable 025A
+string_table                         stringtable 0257
+used_btemp0                          (abs)       0001
+used_btemp1                          (abs)       0001
+used_btemp10                         (abs)       0001
+used_btemp11                         (abs)       0001
+used_btemp2                          (abs)       0001
+used_btemp3                          (abs)       0001
+used_btemp4                          (abs)       0001
+used_btemp5                          (abs)       0001
+used_btemp6                          (abs)       0001
+used_btemp7                          (abs)       0001
+used_btemp8                          (abs)       0001
+used_btemp9                          (abs)       0001
+used_code_ptr                        (abs)       0001

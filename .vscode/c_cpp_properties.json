@@ -1,0 +1,26 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:\\PICC/std/9.60",
+                "C:\\PICC/std/9.60/include",
+                "./Application/include",
+                "./Common/include"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE",
+                "__PICC__",
+                "_16F886"
+            ],
+            "compilerPath": "C:\\PICC/std/9.60/bin/picc.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}

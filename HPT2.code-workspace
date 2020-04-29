@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"types.h": "c",
+			"htc.h": "c",
+			"stdlib.h": "c",
+			"mu.h": "c",
+			"time.h": "c",
+			"pic.h": "c",
+			"vlf_pkt.h": "c"
+		}
+	}
+}

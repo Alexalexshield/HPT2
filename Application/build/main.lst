@@ -1,0 +1,2108 @@
+
+
+HI-TECH Software PICC Macro Assembler V9.60PL3 build 3862 
+                                                      Tue Feb 04 13:05:08 2020
+
+HI-TECH Software Code Generator build 3862
+     1                           	processor	16F887
+     2                           	opt	pw 79
+     3                           	psect	strings,global,class=STRING,delta=2
+     4                           	psect	const1,local,class=CONST,delta=2
+     5                           	psect	text0,local,class=CODE,delta=2
+     6                           	psect	text1,local,class=CODE,delta=2
+     7                           	psect	intcode,global,class=CODE,delta=2
+     8                           	psect	intsave_0,global,ovrld,class=COMBANK,spa
+      +                          ce=1,delta=1
+     9                           	psect	intret,global,class=CODE,delta=2
+    10                           	psect	intentry,global,class=CODE,delta=2
+    11                           	psect	intsave,global,class=BANK0,space=1,delta
+      +                          =1
+    12                           	psect	rbss_0,global,class=BANK0,space=1,delta=
+      +                          1
+    13                           	psect	temp,global,ovrld,class=BANK0,space=1,de
+      +                          lta=1
+    14  0000                     
+    15  0000                     
+    16  0000                     
+    17  0000                     
+    18  0000                     
+    19  0000                     
+    20  0000                     
+    21  0000                     
+    22  0000                     
+    23  0000                     
+    24  0000                     
+    25                           
+    26                           	psect	const1
+    27  1000  0782               	addwf	2
+    28  1001                     _lamp_schedule
+    29  1001  34CC               	retlw	-52
+    30  1002  34CC               	retlw	-52
+    31  1003  34CC               	retlw	-52
+    32  1004  34CC               	retlw	-52
+    33  1005  34CC               	retlw	-52
+    34  1006  34CC               	retlw	-52
+    35  1007  34CC               	retlw	-52
+    36  1008  34CC               	retlw	-52
+    37  1009  34FF               	retlw	-1
+    38  100A  3400               	retlw	0
+    39  100B  34FF               	retlw	-1
+    40  100C  3400               	retlw	0
+    41  100D  34FF               	retlw	-1
+    42  100E  3400               	retlw	0
+    43  100F  34FF               	retlw	-1
+    44  1010  3400               	retlw	0
+    45  1011  34FF               	retlw	-1
+    46  1012  34FF               	retlw	-1
+    47  1013  34FF               	retlw	-1
+    48  1014  34FF               	retlw	-1
+    49  1015  34FF               	retlw	-1
+    50  1016  34FF               	retlw	-1
+    51  1017  34FF               	retlw	-1
+    52  1018  34FF               	retlw	-1
+    53  1019  34FF               	retlw	-1
+    54  101A  34FF               	retlw	-1
+    55  101B  34FF               	retlw	-1
+    56  101C  34FF               	retlw	-1
+    57  101D  34FF               	retlw	-1
+    58  101E  34FF               	retlw	-1
+    59  101F  34FF               	retlw	-1
+    60  1020  34FF               	retlw	-1
+    61  1021  34F9               	retlw	-7
+    62  1022  34FF               	retlw	-1
+    63  1023  34FF               	retlw	-1
+    64  1024  34FF               	retlw	-1
+    65  1025  34FF               	retlw	-1
+    66  1026  34FF               	retlw	-1
+    67  1027  34FF               	retlw	-1
+    68  1028  34FF               	retlw	-1
+    69  1029  34EE               	retlw	-18
+    70  102A  34EE               	retlw	-18
+    71  102B  34AA               	retlw	-86
+    72  102C  34AA               	retlw	-86
+    73  102D  34FF               	retlw	-1
+    74  102E  34FF               	retlw	-1
+    75  102F  34FF               	retlw	-1
+    76  1030  34FF               	retlw	-1
+    77  1031  34CC               	retlw	-52
+    78  1032  34FC               	retlw	-4
+    79  1033  34FF               	retlw	-1
+    80  1034  34FF               	retlw	-1
+    81  1035  34FF               	retlw	-1
+    82  1036  34FF               	retlw	-1
+    83  1037  34FF               	retlw	-1
+    84  1038  34FF               	retlw	-1
+    85  1039  34CC               	retlw	-52
+    86  103A  34CC               	retlw	-52
+    87  103B  34CC               	retlw	-52
+    88  103C  34FF               	retlw	-1
+    89  103D  34FF               	retlw	-1
+    90  103E  34FF               	retlw	-1
+    91  103F  34FF               	retlw	-1
+    92  1040  34FF               	retlw	-1
+    93  1041  34FF               	retlw	-1
+    94  1042  34FF               	retlw	-1
+    95  1043  34FF               	retlw	-1
+    96  1044  34FF               	retlw	-1
+    97  1045  34FF               	retlw	-1
+    98  1046  34FF               	retlw	-1
+    99  1047  34FF               	retlw	-1
+   100  1048  34FF               	retlw	-1
+   101                           
+   102                           	psect	text0
+   103  0DA6                     _main
+   104                           ;	_uid assigned to ?a_main+0
+   105  0000                     _main$uid	set	?a_main
+   106                           ;	_i assigned to ?a_main+0
+   107  0000                     _main$i	set	?a_main
+   108                           ;main.c: 249: void main( void )
+   109  0DA6  3003               	movlw	3
+   110  0DA7  1683               	bsf	3,5
+   111  0DA8  1303               	bcf	3,6	;carry unused
+   112  0DA9  048E               	iorwf	14	;volatile
+   113                           ;main.c: 255: WDTCON = 0b00010110;
+   114  0DAA  3016               	movlw	22
+   115  0DAB  1283               	bcf	3,5
+   116  0DAC  1703               	bsf	3,6
+   117  0DAD  0085               	movwf	5	;volatile
+   118                           ;main.c: 256: asm("clrwdt");
+   119  0DAE  0064               	clrwdt	;#
+   120                           ;main.c: 257: SWDTEN = 1;
+   121  0DAF  1405               	bsf	5,0
+   122                           ;main.c: 259: init_board();
+   123  0DB0  120A  158A  2002   	fcall	_init_board
+      +       120A  158A         
+   124                           ;main.c: 269: mid.b[0] = 0x16;
+   125  0DB5  3016               	movlw	22
+   126  0DB6  00AA               	movwf	_mid
+   127                           ;main.c: 284: mid.b[1] = (EEADR=((ushort)0x1FFC
+      +                           + 1)&0xff, EEADRH=((ushort)0x1FFC + 1)>>8, WRE
+      +                          N=0, EECON1 |= 0x80, RD=1, DC=0, DC=0, (EEDATH 
+      +                          << 8) | EEDATA);
+   128  0DB7  30FD               	movlw	-3
+   129  0DB8  1703               	bsf	3,6
+   130  0DB9  008D               	movwf	13
+   131  0DBA  301F               	movlw	31
+   132  0DBB  008F               	movwf	15
+   133  0DBC  1683               	bsf	3,5
+   134  0DBD  110C               	bcf	12,2
+   135  0DBE  178C               	bsf	12,7	;volatile
+   136  0DBF  140C               	bsf	12,0
+   137  0DC0  1083               	bcf	3,1
+   138  0DC1  1083               	bcf	3,1
+   139  0DC2  1283               	bcf	3,5
+   140  0DC3  080E               	movf	14,w	;volatile
+   141  0DC4  080C               	movf	12,w	;volatile
+   142  0DC5  1303               	bcf	3,6	;carry unused
+   143  0DC6  00AB               	movwf	_mid+1
+   144                           ;main.c: 288: mid.b[2] = (EEADR=((ushort)0x1FFC
+      +                           + 2)&0xff, EEADRH=((ushort)0x1FFC + 2)>>8, WRE
+      +                          N=0, EECON1 |= 0x80, RD=1, DC=0, DC=0, (EEDATH 
+      +                          << 8) | EEDATA);
+   145  0DC7  30FE               	movlw	-2
+   146  0DC8  1703               	bsf	3,6
+   147  0DC9  008D               	movwf	13
+   148  0DCA  301F               	movlw	31
+   149  0DCB  008F               	movwf	15
+   150  0DCC  1683               	bsf	3,5
+   151  0DCD  110C               	bcf	12,2
+   152  0DCE  178C               	bsf	12,7	;volatile
+   153  0DCF  140C               	bsf	12,0
+   154  0DD0  1083               	bcf	3,1
+   155  0DD1  1083               	bcf	3,1
+   156  0DD2  1283               	bcf	3,5
+   157  0DD3  080E               	movf	14,w	;volatile
+   158  0DD4  080C               	movf	12,w	;volatile
+   159  0DD5  1303               	bcf	3,6	;carry unused
+   160  0DD6  00AC               	movwf	_mid+2
+   161                           ;main.c: 289: mid.b[3] = (EEADR=((ushort)0x1FFC
+      +                           + 3)&0xff, EEADRH=((ushort)0x1FFC + 3)>>8, WRE
+      +                          N=0, EECON1 |= 0x80, RD=1, DC=0, DC=0, (EEDATH 
+      +                          << 8) | EEDATA);
+   162  0DD7  30FF               	movlw	-1
+   163  0DD8  1703               	bsf	3,6
+   164  0DD9  008D               	movwf	13
+   165  0DDA  301F               	movlw	31
+   166  0DDB  008F               	movwf	15
+   167  0DDC  1683               	bsf	3,5
+   168  0DDD  110C               	bcf	12,2
+   169  0DDE  178C               	bsf	12,7	;volatile
+   170  0DDF  140C               	bsf	12,0
+   171  0DE0  1083               	bcf	3,1
+   172  0DE1  1083               	bcf	3,1
+   173  0DE2  1283               	bcf	3,5
+   174  0DE3  080E               	movf	14,w	;volatile
+   175  0DE4  080C               	movf	12,w	;volatile
+   176  0DE5  1303               	bcf	3,6	;carry unused
+   177  0DE6  00AD               	movwf	_mid+3
+   178                           ;main.c: 318: eeprom_tmp = eeprom_read( ((BYTE)
+      +                          (&((EeSharedDataTSt*)0)->lamp_mode)) );
+   179  0DE7  3006               	movlw	6
+   180  0DE8  160A  118A  2598   	fcall	_eeprom_read
+      +       120A  158A         
+   181  0DED  00A0               	movwf	_eeprom_tmp
+   182                           ;main.c: 319: if( eeprom_tmp == 0x77 )
+   183  0DEE  3A77               	xorlw	119
+   184  0DEF  1D03               	btfss	3,2
+   185  0DF0  2DF4               	goto	l48
+   186                           ;main.c: 320: mu_flags = (0x04);
+   187  0DF1  3004               	movlw	4
+   188  0DF2  00A4               	movwf	_mu_flags
+   189  0DF3  2E03               	goto	l49
+   190  0DF4                     l48
+   191                           ;main.c: 321: else
+   192  0DF4  01A4               	clrf	_mu_flags
+   193                           ;main.c: 323: if( eeprom_tmp != 0x00 )
+   194  0DF5  08A0               	movf	_eeprom_tmp
+   195  0DF6  1903               	btfsc	3,2
+   196  0DF7  2E03               	goto	l49
+   197                           ;main.c: 324: { asm("nop");
+   198  0DF8  0000               	nop	;#
+   199                           ;main.c: 325: asm("nop");
+   200  0DF9  0000               	nop	;#
+   201                           ;main.c: 326: asm("nop");
+   202  0DFA  0000               	nop	;#
+   203                           ;main.c: 327: asm("nop");
+   204  0DFB  0000               	nop	;#
+   205                           ;main.c: 328: eeprom_write( ((BYTE)(&((EeShared
+      +                          DataTSt*)0)->lamp_mode)), 0x00 );
+   206  0DFC  01C4               	clrf	?_eeprom_write
+   207  0DFD  3006               	movlw	6
+   208  0DFE  160A  118A  25CA   	fcall	_eeprom_write
+      +       120A  158A         
+   209  0E03                     l49
+   210                           ;main.c: 329: }
+   211  0E03  1D24               	btfss	_mu_flags,2
+   212  0E04  2E07               	goto	u30
+   213  0E05  1487               	bsf	7,1
+   214  0E06  2E08               	goto	u44
+   215  0E07                     u30
+   216  0E07  1087               	bcf	7,1
+   217  0E08                     u44
+   218                           ;main.c: 354: {
+   219  0E08  082C               	movf	_mid+2,w
+   220  0E09  00BB               	movwf	?a_main
+   221  0E0A  01BC               	clrf	?a_main+1
+   222                           ;main.c: 357: uid <<= 8;
+   223  0E0B  00BC               	movwf	?a_main+1
+   224  0E0C  01BB               	clrf	?a_main
+   225                           ;main.c: 358: uid |= mid.b[3];
+   226  0E0D  082D               	movf	_mid+3,w
+   227  0E0E  04BB               	iorwf	?a_main
+   228                           ;main.c: 359: srand( uid );
+   229  0E0F  083B               	movf	?a_main,w
+   230  0E10  00C6               	movwf	?_srand
+   231  0E11  083C               	movf	?a_main+1,w
+   232  0E12  00C7               	movwf	?_srand+1
+   233  0E13  160A  118A  2613   	fcall	_srand
+   234                           ;main.c: 360: }
+   235  0E16  30C0               	movlw	-64
+   236  0E17  008B               	movwf	11	;volatile
+   237                           ;main.c: 366: bl_version = eeprom_read( ((BYTE)
+      +                          (&((EeSharedDataTSt*)0)->bl_ver)) );
+   238  0E18  3003               	movlw	3
+   239  0E19  160A  118A  2598   	fcall	_eeprom_read
+      +       120A  158A         
+   240  0E1E  1683               	bsf	3,5
+   241  0E1F  1703               	bsf	3,6
+   242  0E20  0090               	movwf	_bl_version^(0+384)
+   243                           ;main.c: 368: if( ( bl_version == 0xFF )||( bl_
+      +                          version == 0x1F ) )
+   244  0E21  0F10               	incfsz	_bl_version^(0+384),w
+   245  0E22  2E24               	goto	u51
+   246  0E23  2E28               	goto	u70
+   247  0E24                     u51
+   248  0E24  0810               	movf	_bl_version^(0+384),w
+   249  0E25  3A1F               	xorlw	31
+   250  0E26  1D03               	btfss	3,2
+   251  0E27  2E34               	goto	l51
+   252  0E28                     u70
+   253                           ;main.c: 369: { asm("nop");
+   254  0E28  0000               	nop	;#
+   255                           ;main.c: 370: asm("nop");
+   256  0E29  0000               	nop	;#
+   257                           ;main.c: 371: asm("nop");
+   258  0E2A  0000               	nop	;#
+   259                           ;main.c: 372: bl_version = 0x21;
+   260  0E2B  3021               	movlw	33
+   261  0E2C  0090               	movwf	_bl_version^(0+384)
+   262                           ;main.c: 373: eeprom_write( ((BYTE)(&((EeShared
+      +                          DataTSt*)0)->bl_ver)), bl_version );
+   263  0E2D  1283               	bcf	3,5
+   264  0E2E  1303               	bcf	3,6	;carry unused
+   265  0E2F  00C4               	movwf	?_eeprom_write
+   266  0E30  3003               	movlw	3
+   267  0E31  160A  118A  25CA   	fcall	_eeprom_write
+   268  0E34                     l51
+   269                           ;main.c: 374: }
+   270  0E34  3004               	movlw	4
+   271  0E35  160A  118A  2598   	fcall	_eeprom_read
+      +       120A  158A         
+   272  0E3A  00A0               	movwf	_eeprom_tmp
+   273                           ;main.c: 378: if( eeprom_tmp != 0x8E )
+   274  0E3B  3A8E               	xorlw	-114
+   275  0E3C  1903               	btfsc	3,2
+   276  0E3D  2E48               	goto	l52
+   277                           ;main.c: 379: { asm("nop");
+   278  0E3E  0000               	nop	;#
+   279                           ;main.c: 380: asm("nop");
+   280  0E3F  0000               	nop	;#
+   281                           ;main.c: 381: asm("nop");
+   282  0E40  0000               	nop	;#
+   283                           ;main.c: 382: asm("nop");
+   284  0E41  0000               	nop	;#
+   285                           ;main.c: 383: eeprom_write( ((BYTE)(&((EeShared
+      +                          DataTSt*)0)->app_ver_u8)), 0x8E );
+   286  0E42  308E               	movlw	-114
+   287  0E43  00C4               	movwf	?_eeprom_write
+   288  0E44  3004               	movlw	4
+   289  0E45  160A  118A  25CA   	fcall	_eeprom_write
+   290  0E48                     l52
+   291                           ;main.c: 384: }
+   292  0E48  3008               	movlw	8
+   293  0E49  160A  118A  2598   	fcall	_eeprom_read
+      +       120A  158A         
+   294  0E4E  00A0               	movwf	_eeprom_tmp
+   295                           ;main.c: 407: if( eeprom_tmp !=0x00)
+   296  0E4F  08A0               	movf	_eeprom_tmp
+   297  0E50  1903               	btfsc	3,2
+   298  0E51  2E5F               	goto	l53
+   299                           ;main.c: 408: {
+   300  0E52  01C4               	clrf	?_eeprom_write
+   301  0E53  3008               	movlw	8
+   302  0E54  160A  118A  25CA   	fcall	_eeprom_write
+      +       120A  158A         
+   303                           ;main.c: 411: lamp_state = LAMP_NORMAL_STATE;
+   304  0E59  30F0               	movlw	-16
+   305  0E5A  00A2               	movwf	_lamp_state
+   306                           ;main.c: 413: TRISB |= ((( 1U << (2) ))|(( 1U <
+      +                          < (5) )));
+   307  0E5B  3024               	movlw	36
+   308  0E5C  1683               	bsf	3,5
+   309  0E5D  0486               	iorwf	6	;volatile
+   310                           ;main.c: 415: }
+   311  0E5E  2EC1               	goto	l54
+   312  0E5F                     l53
+   313                           ;main.c: 416: else
+   314  0E5F  3000               	movlw	0
+   315  0E60  160A  118A  2569   	fcall	_pager_write
+   316                           ;main.c: 419: delay_ms( 50 );
+   317  0E63  3032               	movlw	50
+   318  0E64  00C6               	movwf	?_delay_ms
+   319  0E65  01C7               	clrf	?_delay_ms+1
+   320  0E66  120A  158A  203F   	fcall	_delay_ms
+   321                           ;main.c: 421: pager_write( 0xAA );
+   322  0E69  30AA               	movlw	-86
+   323  0E6A  160A  118A  2569   	fcall	_pager_write
+   324                           ;main.c: 422: delay_ms( 50 );
+   325  0E6D  3032               	movlw	50
+   326  0E6E  00C6               	movwf	?_delay_ms
+   327  0E6F  01C7               	clrf	?_delay_ms+1
+   328  0E70  120A  158A  203F   	fcall	_delay_ms
+   329                           ;main.c: 448: pager_write( (BYTE)( mid.b[1] + m
+      +                          id.b[2] + mid.b[3] ) );
+   330  0E73  082B               	movf	_mid+1,w
+   331  0E74  072D               	addwf	_mid+3,w
+   332  0E75  072C               	addwf	_mid+2,w
+   333  0E76  160A  118A  2569   	fcall	_pager_write
+   334                           ;main.c: 449: delay_ms( 50 );
+   335  0E79  3032               	movlw	50
+   336  0E7A  00C6               	movwf	?_delay_ms
+   337  0E7B  01C7               	clrf	?_delay_ms+1
+   338  0E7C  120A  158A  203F   	fcall	_delay_ms
+   339                           ;main.c: 451: pager_write( mid.b[1] );
+   340  0E7F  082B               	movf	_mid+1,w
+   341  0E80  160A  118A  2569   	fcall	_pager_write
+   342                           ;main.c: 452: delay_ms( 50 );
+   343  0E83  3032               	movlw	50
+   344  0E84  00C6               	movwf	?_delay_ms
+   345  0E85  01C7               	clrf	?_delay_ms+1
+   346  0E86  120A  158A  203F   	fcall	_delay_ms
+   347                           ;main.c: 454: pager_write( mid.b[2] );
+   348  0E89  082C               	movf	_mid+2,w
+   349  0E8A  160A  118A  2569   	fcall	_pager_write
+   350                           ;main.c: 455: delay_ms( 50 );
+   351  0E8D  3032               	movlw	50
+   352  0E8E  00C6               	movwf	?_delay_ms
+   353  0E8F  01C7               	clrf	?_delay_ms+1
+   354  0E90  120A  158A  203F   	fcall	_delay_ms
+   355                           ;main.c: 457: pager_write( mid.b[3] );
+   356  0E93  082D               	movf	_mid+3,w
+   357  0E94  160A  118A  2569   	fcall	_pager_write
+   358                           ;main.c: 460: delay_ms( 10 );
+   359  0E97  300A               	movlw	10
+   360  0E98  00C6               	movwf	?_delay_ms
+   361  0E99  01C7               	clrf	?_delay_ms+1
+   362  0E9A  120A  158A  203F   	fcall	_delay_ms
+   363                           ;main.c: 461: TRISB |= (( 1U << (2) ));
+   364  0E9D  1683               	bsf	3,5
+   365  0E9E  1506               	bsf	6,2	;volatile
+   366                           ;main.c: 462: delay_ms( 50 );
+   367  0E9F  3032               	movlw	50
+   368  0EA0  1283               	bcf	3,5
+   369  0EA1  00C6               	movwf	?_delay_ms
+   370  0EA2  01C7               	clrf	?_delay_ms+1
+   371  0EA3  120A  158A  203F   	fcall	_delay_ms
+      +       120A  158A         
+   372                           ;main.c: 464: if( RB2 == 0 )
+   373  0EA8  1D06               	btfss	6,2
+   374  0EA9  2EB5               	goto	u110
+   375                           ;main.c: 465: {
+   376                           ;main.c: 467: lamp_timeout = (timer.cnt + (usho
+      +                          rt)(32000));
+   377                           ;main.c: 468: }
+   378                           ;main.c: 469: else
+   379  0EAA  305E               	movlw	94
+   380  0EAB  00C6               	movwf	?_delay_ms
+   381  0EAC  3001               	movlw	1
+   382  0EAD  00C7               	movwf	?_delay_ms+1
+   383  0EAE  120A  158A  203F   	fcall	_delay_ms
+      +       120A  158A         
+   384                           ;main.c: 474: if( RB2 == 1 )
+   385  0EB3  1D06               	btfss	6,2
+   386  0EB4  2EBF               	goto	l57
+   387  0EB5                     u110
+   388                           ;main.c: 475: {
+   389  0EB5  01A2               	clrf	_lamp_state
+   390                           ;main.c: 477: lamp_timeout = (timer.cnt + (usho
+      +                          rt)(32000));
+   391  0EB6  3000               	movlw	0
+   392  0EB7  0734               	addwf	_timer,w	;volatile
+   393  0EB8  00A6               	movwf	_lamp_timeout
+   394  0EB9  307D               	movlw	125
+   395  0EBA  1803               	btfsc	3,0
+   396  0EBB  307E               	movlw	126
+   397  0EBC  0735               	addwf	_timer+1,w	;volatile
+   398  0EBD  00A7               	movwf	_lamp_timeout+1
+   399                           ;main.c: 478: }
+   400  0EBE  2EC1               	goto	l54
+   401  0EBF                     l57
+   402                           ;main.c: 479: else
+   403  0EBF  30F0               	movlw	-16
+   404  0EC0  00A2               	movwf	_lamp_state
+   405  0EC1                     l54
+   406                           ;main.c: 486: }
+   407  0EC1  160A  118A  25EA   	fcall	_UHFCommsInit
+      +       120A  158A         
+   408  0EC6  3800               	iorlw	0
+   409  0EC7  1903               	btfsc	3,2
+   410  0EC8  2ED2               	goto	l59
+   411                           ;main.c: 504: {
+   412  0EC9  01A2               	clrf	_lamp_state
+   413                           ;main.c: 506: lamp_timeout = (timer.cnt + (usho
+      +                          rt)(32000));
+   414  0ECA  3000               	movlw	0
+   415  0ECB  0734               	addwf	_timer,w	;volatile
+   416  0ECC  00A6               	movwf	_lamp_timeout
+   417  0ECD  307D               	movlw	125
+   418  0ECE  1803               	btfsc	3,0
+   419  0ECF  307E               	movlw	126
+   420  0ED0  0735               	addwf	_timer+1,w	;volatile
+   421  0ED1  00A7               	movwf	_lamp_timeout+1
+   422  0ED2                     l59
+   423                           ;main.c: 507: }
+   424  0ED2  1683               	bsf	3,5
+   425  0ED3  140C               	bsf	12,0
+   426                           ;main.c: 519: uhf_reset_timeout = (timer.cnt + 
+      +                          (ushort)((2*60*(15.2588))));
+   427  0ED4  3027               	movlw	39
+   428  0ED5  1283               	bcf	3,5
+   429  0ED6  0734               	addwf	_timer,w	;volatile
+   430  0ED7  00A8               	movwf	_uhf_reset_timeout
+   431  0ED8  3007               	movlw	7
+   432  0ED9  1803               	btfsc	3,0
+   433  0EDA  3008               	movlw	8
+   434  0EDB  0735               	addwf	_timer+1,w	;volatile
+   435  0EDC  00A9               	movwf	_uhf_reset_timeout+1
+   436                           ;main.c: 542: VLF_StartReceiver();
+   437  0EDD  120A  158A  23D1   	fcall	_VLF_StartReceiver
+      +       120A  158A         
+   438                           ;main.c: 545: RB0 = 1;
+   439  0EE2  1406               	bsf	6,0
+   440  0EE3                     l60
+   441                           ;main.c: 562: for( ; ; )
+   442                           ;main.c: 563: {
+   443  0EE3  1283               	bcf	3,5
+   444  0EE4  1303               	bcf	3,6	;carry unused
+   445  0EE5  08A5               	movf	_pager_cnt
+   446  0EE6  1D03               	btfss	3,2
+   447                           ;main.c: 638: { if( RB2 == 0 )
+   448  0EE7  1906               	btfsc	6,2
+   449  0EE8  2F0B               	goto	l63
+   450                           ;main.c: 639: { if( lamp_state >= LAMP_PAGER_AL
+      +                          ARM )
+   451  0EE9  3005               	movlw	5
+   452  0EEA  0222               	subwf	_lamp_state,w
+   453  0EEB  1C03               	btfss	3,0
+   454  0EEC  2F0A               	goto	l65
+   455                           ;main.c: 640: {
+   456  0EED  300B               	movlw	11
+   457  0EEE  0225               	subwf	_pager_cnt,w
+   458  0EEF  1803               	btfsc	3,0
+   459  0EF0  2F0A               	goto	l65
+   460                           ;main.c: 642: {
+   461                           ;main.c: 645: else if( pager_cnt >= (9-1) )
+   462  0EF1  3008               	movlw	8
+   463  0EF2  0225               	subwf	_pager_cnt,w
+   464                           ;main.c: 646: { lamp_state = LAMP_PAGER_ALARM;
+   465  0EF3  3005               	movlw	5
+   466  0EF4  1803               	btfsc	3,0
+   467  0EF5  2F00               	goto	L2
+   468                           ;main.c: 650: lamp_timeout = (timer.cnt + (usho
+      +                          rt)((ushort)( 5*(( 8 ) * 8))));
+   469                           ;main.c: 652: mu_flags |= (0x08);
+   470                           ;main.c: 653: }
+   471                           ;main.c: 654: else if( pager_cnt >= (6-1) )
+   472  0EF6  0225               	subwf	_pager_cnt,w
+   473  0EF7  1C03               	btfss	3,0
+   474  0EF8  2EFB               	goto	l70
+   475                           ;main.c: 655: { lamp_state = LAMP_PAGER_CALL_1;
+   476  0EF9  3006               	movlw	6
+   477  0EFA  2F00               	goto	L2
+   478                           ;main.c: 659: lamp_timeout = (timer.cnt + (usho
+      +                          rt)((ushort)( 5*(( 8 ) * 8))));
+   479                           ;main.c: 661: mu_flags |= (0x08);
+   480                           ;main.c: 662: }
+   481  0EFB                     l70
+   482                           ;main.c: 663: else if( pager_cnt >= (3-1) )
+   483  0EFB  3002               	movlw	2
+   484  0EFC  0225               	subwf	_pager_cnt,w
+   485  0EFD  1C03               	btfss	3,0
+   486  0EFE  2F0A               	goto	l65
+   487                           ;main.c: 664: { lamp_state = LAMP_PAGER_CALL_2;
+   488  0EFF  3007               	movlw	7
+   489  0F00                     L2
+   490  0F00  00A2               	movwf	_lamp_state
+   491                           ;main.c: 668: lamp_timeout = (timer.cnt + (usho
+      +                          rt)((ushort)( 5*(( 8 ) * 8))));
+   492  0F01  3040               	movlw	64
+   493  0F02  0734               	addwf	_timer,w	;volatile
+   494  0F03  00A6               	movwf	_lamp_timeout
+   495  0F04  3001               	movlw	1
+   496  0F05  1803               	btfsc	3,0
+   497  0F06  3002               	movlw	2
+   498  0F07  0735               	addwf	_timer+1,w	;volatile
+   499  0F08  00A7               	movwf	_lamp_timeout+1
+   500                           ;main.c: 670: mu_flags |= (0x08);
+   501  0F09  15A4               	bsf	_mu_flags,3
+   502  0F0A                     l65
+   503                           ;main.c: 671: }
+   504  0F0A  01A5               	clrf	_pager_cnt
+   505  0F0B                     l63
+   506                           ;main.c: 685: }
+   507  0F0B  084F               	movf	_vlf_state,w	;volatile
+   508  0F0C  1903               	btfsc	3,2
+   509  0F0D  2F24               	goto	l73
+   510                           ;main.c: 706: { if( vlf_state == VLF_STATE_READ
+      +                          BIT )
+   511  0F0E  0B4F               	decfsz	_vlf_state,w	;volatile
+   512  0F0F  2F1F               	goto	l74
+   513                           ;main.c: 707: { vlf_state = VLF_STATE_IDLE;
+   514  0F10  01CF               	clrf	_vlf_state	;volatile
+   515                           ;main.c: 708: if( VLF_ProcessBitRead() == (1) )
+   516  0F11  120A  158A  217C   	fcall	_VLF_ProcessBitRead
+      +       120A  158A         
+   517  0F16  3A01               	xorlw	1
+   518  0F17  1D03               	btfss	3,2
+   519  0F18  2F24               	goto	l73
+   520                           ;main.c: 709: VLF_ProcessPacket();
+   521  0F19  120A  158A  23FA   	fcall	_VLF_ProcessPacket
+      +       120A  158A         
+   522                           ;main.c: 710: }
+   523  0F1E  2F24               	goto	l73
+   524  0F1F                     l74
+   525                           ;main.c: 711: else
+   526  0F1F  120A  158A  23D1   	fcall	_VLF_StartReceiver
+      +       120A  158A         
+   527  0F24                     l73
+   528                           ;main.c: 717: }
+   529  0F24  1703               	bsf	3,6
+   530  0F25  0810               	movf	_uhf^(0+256),w
+   531  0F26  3A04               	xorlw	4
+   532  0F27  1D03               	btfss	3,2
+   533  0F28  2F36               	goto	l77
+   534                           ;main.c: 723: { if( ProcessUHFPacket() == (0) )
+   535  0F29  120A  118A  234B   	fcall	_ProcessUHFPacket
+      +       120A  158A         
+   536  0F2E  3800               	iorlw	0
+   537                           ;main.c: 724: { if( ++uhf.brx_pkt_cnt == 0 )
+   538  0F2F  1703               	bsf	3,6
+   539  0F30  1D03               	btfss	3,2
+   540  0F31  2F45               	goto	L6
+   541  0F32  0F93               	incfsz	(_uhf+3)^(0+256)
+   542  0F33  2F44               	goto	L3
+   543                           ;main.c: 725: uhf.brx_pkt_cnt++;
+   544  0F34  0A93               	incf	(_uhf+3)^(0+256)
+   545  0F35  2F44               	goto	L3
+   546                           ;main.c: 729: }
+   547                           ;main.c: 740: }
+   548  0F36                     l77
+   549                           ;main.c: 744: else if( uhf.rxt_state == UHF_TX_
+      +                          COMPLETE )
+   550  0F36  0810               	movf	_uhf^(0+256),w
+   551  0F37  3A07               	xorlw	7
+   552  0F38  1D03               	btfss	3,2
+   553  0F39  2F46               	goto	l80
+   554                           ;main.c: 745: {
+   555  0F3A  3000               	movlw	0
+   556  0F3B  160A  118A  27AD   	fcall	_SetUHFMode
+      +       120A  158A         
+   557                           ;main.c: 747: CREN = 1;
+   558  0F40  1618               	bsf	24,4
+   559                           ;main.c: 748: RCIE = 1;
+   560  0F41  1683               	bsf	3,5
+   561  0F42  168C               	bsf	12,5
+   562                           ;main.c: 753: uhf.rxt_state = UHF_RXTX_PREAMBLE
+      +                          ;
+   563  0F43  1283               	bcf	3,5
+   564  0F44                     L3
+   565  0F44  1703               	bsf	3,6
+   566  0F45                     L6
+   567  0F45  0190               	clrf	_uhf^(0+256)
+   568  0F46                     l80
+   569                           ;main.c: 754: }
+   570  0F46  1303               	bcf	3,6	;carry unused
+   571  0F47  0833               	movf	_timer_last_tick,w
+   572  0F48  0634               	xorwf	_timer,w	;volatile
+   573  0F49  1903               	btfsc	3,2
+   574  0F4A  2EE3               	goto	l60
+   575                           ;main.c: 758: {
+   576  0F4B  0064               	clrwdt	;#
+   577                           ;main.c: 777: timer_last_tick = timer.cnt_byte;
+   578  0F4C  0834               	movf	_timer,w	;volatile
+   579  0F4D  00B3               	movwf	_timer_last_tick
+   580                           ;main.c: 782: if( ( mu_flags & (0x02) ) == 0 )
+   581  0F4E  18A4               	btfsc	_mu_flags,1
+   582  0F4F  2F72               	goto	l83
+   583                           ;main.c: 783: { if( chk_timeout( uhf_reset_time
+      +                          out ) )
+   584  0F50  0828               	movf	_uhf_reset_timeout,w
+   585  0F51  00C7               	movwf	?_chk_timeout
+   586  0F52  0829               	movf	_uhf_reset_timeout+1,w
+   587  0F53  00C8               	movwf	?_chk_timeout+1
+   588  0F54  160A  118A  25AA   	fcall	_chk_timeout
+      +       120A  158A         
+   589  0F59  00F4               	movwf	btemp
+   590  0F5A  01F5               	clrf	btemp+1
+   591  0F5B  0475               	iorwf	btemp+1,w
+   592  0F5C  1903               	btfsc	3,2
+   593  0F5D  2F9E               	goto	l87
+   594                           ;main.c: 784: { uhf_reset_timeout = (timer.cnt 
+      +                          + (ushort)((2*60*(15.2588))));
+   595  0F5E  3027               	movlw	39
+   596  0F5F  0734               	addwf	_timer,w	;volatile
+   597  0F60  00A8               	movwf	_uhf_reset_timeout
+   598  0F61  3007               	movlw	7
+   599  0F62  1803               	btfsc	3,0
+   600  0F63  3008               	movlw	8
+   601  0F64  0735               	addwf	_timer+1,w	;volatile
+   602  0F65  00A9               	movwf	_uhf_reset_timeout+1
+   603                           ;main.c: 785: if( uhf.brx_pkt_cnt )
+   604  0F66  1703               	bsf	3,6
+   605  0F67  0893               	movf	(_uhf+3)^(0+256)
+   606  0F68  1903               	btfsc	3,2
+   607  0F69  2F6C               	goto	l85
+   608                           ;main.c: 786: uhf.brx_pkt_cnt = 0;
+   609  0F6A  0193               	clrf	(_uhf+3)^(0+256)
+   610  0F6B  2F9E               	goto	l87
+   611  0F6C                     l85
+   612                           ;main.c: 787: else
+   613  0F6C  160A  118A  25EA   	fcall	_UHFCommsInit
+      +       120A  158A         
+   614                           ;main.c: 789: }
+   615  0F71  2F9E               	goto	l87
+   616  0F72                     l83
+   617                           ;main.c: 791: else
+   618  0F72  0831               	movf	_uhf_registration_timeout,w
+   619  0F73  00C7               	movwf	?_chk_timeout
+   620  0F74  0832               	movf	_uhf_registration_timeout+1,w
+   621  0F75  00C8               	movwf	?_chk_timeout+1
+   622  0F76  160A  118A  25AA   	fcall	_chk_timeout
+      +       120A  158A         
+   623  0F7B  00F4               	movwf	btemp
+   624  0F7C  01F5               	clrf	btemp+1
+   625  0F7D  0475               	iorwf	btemp+1,w
+   626  0F7E  1903               	btfsc	3,2
+   627  0F7F  2F9E               	goto	l87
+   628                           ;main.c: 793: { char i;
+   629  0F80  30CD               	movlw	-51
+   630  0F81  05A4               	andwf	_mu_flags
+   631                           ;main.c: 798: for( i=0; i<(8); i++ )
+   632  0F82  01BB               	clrf	?a_main
+   633  0F83                     l89
+   634                           ;main.c: 799: bb[i].w = bi[i].w = 0;
+   635  0F83  01F4               	clrf	btemp
+   636  0F84  01F5               	clrf	btemp+1
+   637  0F85  083B               	movf	?a_main,w
+   638  0F86  073B               	addwf	?a_main,w
+   639  0F87  3EA5               	addlw	_bi^(0+256)
+   640  0F88  0084               	movwf	4
+   641  0F89  1783               	bsf	3,7
+   642  0F8A  0874               	movf	btemp,w
+   643  0F8B  0080               	movwf	0
+   644  0F8C  0A84               	incf	4
+   645  0F8D  0875               	movf	btemp+1,w
+   646  0F8E  0080               	movwf	0
+   647  0F8F  083B               	movf	?a_main,w
+   648  0F90  073B               	addwf	?a_main,w
+   649  0F91  3E95               	addlw	_bb^(0+256)
+   650  0F92  0084               	movwf	4
+   651  0F93  1783               	bsf	3,7
+   652  0F94  0874               	movf	btemp,w
+   653  0F95  0080               	movwf	0
+   654  0F96  0A84               	incf	4
+   655  0F97  0875               	movf	btemp+1,w
+   656  0F98  0080               	movwf	0
+   657  0F99  0ABB               	incf	?a_main
+   658  0F9A  3008               	movlw	8
+   659  0F9B  023B               	subwf	?a_main,w
+   660  0F9C  1C03               	btfss	3,0
+   661  0F9D  2F83               	goto	l89
+   662  0F9E                     l87
+   663                           ;main.c: 800: }
+   664  0F9E  1683               	bsf	3,5
+   665  0F9F  1303               	bcf	3,6	;carry unused
+   666  0FA0  1CEA               	btfss	(_vrx+59)^(0+128),1
+   667  0FA1  2FBF               	goto	l92
+   668                           ;main.c: 806: {
+   669  0FA2  086D               	movf	(_vrx+62)^(0+128),w
+   670  0FA3  1283               	bcf	3,5
+   671  0FA4  00C7               	movwf	?_chk_timeout
+   672  0FA5  1683               	bsf	3,5
+   673  0FA6  086E               	movf	(_vrx+63)^(0+128),w
+   674  0FA7  1283               	bcf	3,5
+   675  0FA8  00C8               	movwf	?_chk_timeout+1
+   676  0FA9  160A  118A  25AA   	fcall	_chk_timeout
+      +       120A  158A         
+   677  0FAE  00F4               	movwf	btemp
+   678  0FAF  01F5               	clrf	btemp+1
+   679  0FB0  0475               	iorwf	btemp+1,w
+   680  0FB1  1903               	btfsc	3,2
+   681  0FB2  2FBF               	goto	l92
+   682                           ;main.c: 808: {
+   683  0FB3  1406               	bsf	6,0
+   684                           ;main.c: 810: vrx.state = VLF_RX_SEEKING;
+   685  0FB4  1683               	bsf	3,5
+   686  0FB5  01AF               	clrf	_vrx^(0+128)
+   687  0FB6  0AAF               	incf	_vrx^(0+128)
+   688                           ;main.c: 811: vrx.flags.aps.enable = (0);
+   689  0FB7  10EA               	bcf	(_vrx+59)^(0+128),1
+   690                           ;main.c: 812: vrx.flags.aps.combiner = (0);
+   691  0FB8  13EA               	bcf	(_vrx+59)^(0+128),7
+   692                           ;main.c: 813: mu_flags &=~((0x80));
+   693  0FB9  1283               	bcf	3,5
+   694  0FBA  13A4               	bcf	_mu_flags,7
+   695                           ;main.c: 814: combine_id = 0;
+   696  0FBB  1683               	bsf	3,5
+   697  0FBC  1703               	bsf	3,6
+   698  0FBD  0193               	clrf	_combine_id^(0+384)
+   699  0FBE  0194               	clrf	(_combine_id+1)^(0+384)
+   700  0FBF                     l92
+   701                           ;main.c: 815: }
+   702  0FBF  30F0               	movlw	-16
+   703  0FC0  1283               	bcf	3,5
+   704  0FC1  1303               	bcf	3,6	;carry unused
+   705  0FC2  0222               	subwf	_lamp_state,w
+   706  0FC3  1803               	btfsc	3,0
+   707  0FC4  2EE3               	goto	l60
+   708                           ;main.c: 822: {
+   709  0FC5  300A               	movlw	10
+   710  0FC6  0222               	subwf	_lamp_state,w
+   711  0FC7  1C03               	btfss	3,0
+   712  0FC8  2FCC               	goto	l95
+   713                           ;main.c: 824: lamp_state = LAMP_NORMAL_STATE;
+   714  0FC9  30F0               	movlw	-16
+   715  0FCA  1383               	bcf	3,7
+   716  0FCB  00A2               	movwf	_lamp_state
+   717  0FCC                     l95
+   718                           ;main.c: 826: if( chk_timeout( lamp_timeout ) )
+   719  0FCC  0826               	movf	_lamp_timeout,w
+   720  0FCD  00C7               	movwf	?_chk_timeout
+   721  0FCE  0827               	movf	_lamp_timeout+1,w
+   722  0FCF  00C8               	movwf	?_chk_timeout+1
+   723  0FD0  160A  118A  25AA   	fcall	_chk_timeout
+      +       120A  158A         
+   724  0FD5  00F4               	movwf	btemp
+   725  0FD6  01F5               	clrf	btemp+1
+   726  0FD7  0475               	iorwf	btemp+1,w
+   727  0FD8  1903               	btfsc	3,2
+   728  0FD9  2EE3               	goto	l60
+   729                           ;main.c: 827: { lamp_tick = 0;
+   730  0FDA  01A3               	clrf	_lamp_tick
+   731                           ;main.c: 832: if( lamp_state == LAMP_SEARCH_IN_
+      +                          PROGRESS )
+   732  0FDB  0822               	movf	_lamp_state,w
+   733  0FDC  3A02               	xorlw	2
+   734  0FDD  1D03               	btfss	3,2
+   735  0FDE  2FE5               	goto	l97
+   736                           ;main.c: 833: { vtx.sid = 0;
+   737  0FDF  1683               	bsf	3,5
+   738  0FE0  01A5               	clrf	(_vtx+5)^(0+128)
+   739                           ;main.c: 834: lamp_state = LAMP_NORMAL_STATE;
+   740  0FE1  30F0               	movlw	-16
+   741  0FE2  1383               	bcf	3,7
+   742  0FE3  1283               	bcf	3,5
+   743  0FE4  2FF9               	goto	L4
+   744                           ;main.c: 835: }
+   745  0FE5                     l97
+   746                           ;main.c: 836: else
+   747  0FE5  0822               	movf	_lamp_state,w
+   748  0FE6  3A08               	xorlw	8
+   749  0FE7  1D03               	btfss	3,2
+   750  0FE8  2FF8               	goto	l99
+   751                           ;main.c: 838: { if( lamp_min_cnt )
+   752  0FE9  08A1               	movf	_lamp_min_cnt
+   753  0FEA  1903               	btfsc	3,2
+   754  0FEB  2FFA               	goto	l98
+   755                           ;main.c: 839: { if( --lamp_min_cnt == 0 )
+   756  0FEC  0BA1               	decfsz	_lamp_min_cnt
+   757  0FED  2FEF               	goto	l101
+   758  0FEE  2FF8               	goto	l99
+   759                           ;main.c: 840: lamp_state = LAMP_NORMAL_STATE;
+   760  0FEF                     l101
+   761                           ;main.c: 841: else
+   762  0FEF  3093               	movlw	147
+   763  0FF0  0734               	addwf	_timer,w	;volatile
+   764  0FF1  00A6               	movwf	_lamp_timeout
+   765  0FF2  3003               	movlw	3
+   766  0FF3  1803               	btfsc	3,0
+   767  0FF4  3004               	movlw	4
+   768  0FF5  0735               	addwf	_timer+1,w	;volatile
+   769  0FF6  00A7               	movwf	_lamp_timeout+1
+   770                           ;main.c: 843: }
+   771  0FF7  2FFA               	goto	l98
+   772  0FF8                     l99
+   773                           ;main.c: 845: else
+   774  0FF8  30F0               	movlw	-16
+   775  0FF9                     L4
+   776  0FF9  00A2               	movwf	_lamp_state
+   777  0FFA                     l98
+   778                           ;main.c: 851: RC1 = ( mu_flags & (0x04) ) ? 1 :
+      +                           0;
+   779  0FFA  1D24               	btfss	_mu_flags,2
+   780  0FFB  2FFE               	goto	u420
+   781  0FFC  1487               	bsf	7,1
+   782  0FFD  2EE3               	goto	l60
+   783  0FFE                     u420
+   784  0FFE  1087               	bcf	7,1
+   785                           ;main.c: 855: }
+   786  0FFF  2EE3               	goto	l60
+   787                           
+   788                           	psect	text1
+   789  07FE                     __end_of_main
+   790                           
+   791                           	psect	intcode
+   792  0029                     _int_handler
+   793  0029                     int_func
+   794                           ;	_uhf_char assigned to ?a_int_handler+0
+   795  0000                     _int_handler$uhf_char	set	?a_int_handler
+   796                           ;main.c: 892: void interrupt int_handler(void)
+   797  0029  1683               	bsf	3,5
+   798  002A  1303               	bcf	3,6	;carry unused
+   799  002B  1C8C               	btfss	12,1
+   800  002C  285B               	goto	l105
+   801  002D  1283               	bcf	3,5
+   802  002E  1C8C               	btfss	12,1
+   803  002F  285B               	goto	l105
+   804                           ;main.c: 902: {
+   805  0030  1283               	bcf	3,5
+   806  0031  0801               	movf	1,w	;volatile
+   807  0032  1683               	bsf	3,5
+   808  0033  00E9               	movwf	(_vrx+58)^(0+128)
+   809                           ;main.c: 909: TMR0 = 0;
+   810  0034  1283               	bcf	3,5
+   811  0035  0181               	clrf	1	;volatile
+   812                           ;main.c: 910: TMR2IF = 0;
+   813  0036  108C               	bcf	12,1
+   814                           ;main.c: 927: if( lamp_state == LAMP_TEST_STATE
+      +                           )
+   815  0037  0822               	movf	_lamp_state,w
+   816  0038  3AF2               	xorlw	-14
+   817  0039  1D03               	btfss	3,2
+   818  003A  2849               	goto	l106
+   819                           ;main.c: 928: { if( vrx.preamble[(sizeof(vrx.pr
+      +                          eamble)-1)] == 20 )
+   820  003B  1683               	bsf	3,5
+   821  003C  0869               	movf	(_vrx+58)^(0+128),w
+   822  003D  3A14               	xorlw	20
+   823                           ;main.c: 929: RC1 = ( mu_flags & (0x04) ) ? 1 :
+      +                           0;
+   824  003E  1283               	bcf	3,5
+   825  003F  1D03               	btfss	3,2
+   826  0040  2844               	goto	L14
+   827  0041  1924               	btfsc	_mu_flags,2
+   828  0042  2846               	goto	L8
+   829  0043  2848               	goto	u510
+   830                           ;main.c: 930: else
+   831  0044                     L14
+   832  0044  1924               	btfsc	_mu_flags,2
+   833  0045  2848               	goto	u510
+   834  0046                     L8
+   835  0046  1487               	bsf	7,1
+   836  0047  2849               	goto	l106
+   837  0048                     u510
+   838  0048  1087               	bcf	7,1
+   839  0049                     l106
+   840                           ;main.c: 932: }
+   841  0049  3012               	movlw	18
+   842  004A  1683               	bsf	3,5
+   843  004B  1303               	bcf	3,6	;carry unused
+   844  004C  0269               	subwf	(_vrx+58)^(0+128),w
+   845  004D  1803               	btfsc	3,0
+   846  004E  2851               	goto	l109
+   847                           ;main.c: 936: { vrx.preamble[(sizeof(vrx.preamb
+      +                          le)-1)] = 0;
+   848  004F  01E9               	clrf	(_vrx+58)^(0+128)
+   849                           ;main.c: 938: }
+   850  0050  2857               	goto	l110
+   851  0051                     l109
+   852                           ;main.c: 939: else
+   853  0051  3017               	movlw	23
+   854  0052  0269               	subwf	(_vrx+58)^(0+128),w
+   855  0053  1C03               	btfss	3,0
+   856  0054  2857               	goto	l110
+   857                           ;main.c: 941: {
+   858  0055  3008               	movlw	8
+   859  0056  00E9               	movwf	(_vrx+58)^(0+128)
+   860  0057                     l110
+   861                           ;main.c: 947: }
+   862  0057  3001               	movlw	1
+   863  0058  1283               	bcf	3,5
+   864  0059  00CF               	movwf	_vlf_state	;volatile
+   865                           ;main.c: 954: }
+   866  005A  28BF               	goto	l112
+   867  005B                     l105
+   868                           ;main.c: 956: else
+   869  005B  1A8B               	btfsc	11,5
+   870  005C  1D0B               	btfss	11,2
+   871  005D  28BF               	goto	l112
+   872                           ;main.c: 961: { TMR0 += ((BYTE)((ulong)257 - (u
+      +                          long)2000000/(ulong)( 190.7349)/((ulong)1<<((ul
+      +                          ong)5+(ulong)1))));
+   873  005E  305D               	movlw	93
+   874  005F  1283               	bcf	3,5
+   875  0060  0781               	addwf	1	;volatile
+   876                           ;main.c: 970: switch( vtx.state )
+   877  0061  28B3               	goto	l115
+   878  0062                     l116
+   879                           ;main.c: 971: {
+   880                           ;main.c: 992: if( mu2su_preamble[vtx.cnt] == 1 
+      +                          )
+   881  0062  0821               	movf	(_vtx+1)^(0+128),w
+   882  0063  00F4               	movwf	btemp
+   883  0064  01F5               	clrf	btemp+1
+   884  0065  0875               	movf	btemp+1,w
+   885  0066  3E10               	addlw	high _mu2su_preamble
+   886  0067  1283               	bcf	3,5
+   887  0068  00D5               	movwf	code_ptr+1
+   888  0069  0874               	movf	btemp,w
+   889  006A  3E8D               	addlw	low _mu2su_preamble
+   890  006B  1803               	btfsc	3,0
+   891  006C  0AD5               	incf	code_ptr+1
+   892  006D  120A  118A  2257   	fcall	string_table
+      +       120A  118A         
+   893  0072  3A01               	xorlw	1
+   894  0073  1D03               	btfss	3,2
+   895  0074  2878               	goto	l117
+   896                           ;main.c: 993: CCP1CON |= 0x0C;
+   897  0075  300C               	movlw	12
+   898  0076  0497               	iorwf	23	;volatile
+   899  0077  287B               	goto	l118
+   900  0078                     l117
+   901                           ;main.c: 994: else
+   902  0078  1107               	bcf	7,2
+   903                           ;main.c: 996: CCP1CON &= ~0x0C;
+   904  0079  30F3               	movlw	-13
+   905  007A  0597               	andwf	23	;volatile
+   906  007B                     l118
+   907                           ;main.c: 997: }
+   908  007B  1683               	bsf	3,5
+   909  007C  0AA1               	incf	(_vtx+1)^(0+128)
+   910  007D  0821               	movf	(_vtx+1)^(0+128),w
+   911  007E  3A08               	xorlw	8
+   912  007F  1D03               	btfss	3,2
+   913  0080  28BE               	goto	l114
+   914                           ;main.c: 999: { vtx.cnt = 4 + 1;
+   915  0081  3005               	movlw	5
+   916  0082  00A1               	movwf	(_vtx+1)^(0+128)
+   917                           ;main.c: 1000: vtx.shifter = 0x01;
+   918  0083  01A3               	clrf	(_vtx+3)^(0+128)
+   919  0084  0AA3               	incf	(_vtx+3)^(0+128)
+   920                           ;main.c: 1001: vtx.idx = 0;
+   921  0085  01A2               	clrf	(_vtx+2)^(0+128)
+   922                           ;main.c: 1002: vtx.state = VLF_TX_PACKET_DATA;
+   923  0086  3004               	movlw	4
+   924  0087  28A6               	goto	L13
+   925                           ;main.c: 1003: }
+   926  0088                     l120
+   927                           ;main.c: 1007: case VLF_TX_PACKET_DATA:
+   928                           ;main.c: 1013: if( vtx.u.data[vtx.idx] & vtx.sh
+      +                          ifter )
+   929  0088  0822               	movf	(_vtx+2)^(0+128),w
+   930  0089  3EA7               	addlw	_vtx+7
+   931  008A  0084               	movwf	4
+   932  008B  1383               	bcf	3,7
+   933  008C  0800               	movf	0,w
+   934  008D  0523               	andwf	(_vtx+3)^(0+128),w
+   935  008E  1903               	btfsc	3,2
+   936  008F  2894               	goto	l121
+   937                           ;main.c: 1014: CCP1CON |= 0x00C;
+   938  0090  300C               	movlw	12
+   939  0091  1283               	bcf	3,5
+   940  0092  0497               	iorwf	23	;volatile
+   941  0093  2898               	goto	l122
+   942  0094                     l121
+   943                           ;main.c: 1015: else
+   944  0094  1283               	bcf	3,5
+   945  0095  1107               	bcf	7,2
+   946                           ;main.c: 1017: CCP1CON &= ~0x0C;
+   947  0096  30F3               	movlw	-13
+   948  0097  0597               	andwf	23	;volatile
+   949  0098                     l122
+   950                           ;main.c: 1018: }
+   951  0098  3080               	movlw	-128
+   952  0099  1683               	bsf	3,5
+   953  009A  0223               	subwf	(_vtx+3)^(0+128),w
+   954  009B  1803               	btfsc	3,0
+   955  009C  28A0               	goto	l123
+   956                           ;main.c: 1021: vtx.shifter <<= 1;
+   957  009D  1003               	bcf	3,0
+   958  009E  0DA3               	rlf	(_vtx+3)^(0+128)
+   959  009F  28BE               	goto	l114
+   960  00A0                     l123
+   961                           ;main.c: 1022: else
+   962  00A0  01A3               	clrf	(_vtx+3)^(0+128)
+   963  00A1  0AA3               	incf	(_vtx+3)^(0+128)
+   964                           ;main.c: 1024: vtx.idx++;
+   965  00A2  0AA2               	incf	(_vtx+2)^(0+128)
+   966                           ;main.c: 1025: if( !( --vtx.cnt ) )
+   967  00A3  0BA1               	decfsz	(_vtx+1)^(0+128)
+   968  00A4  28BE               	goto	l114
+   969                           ;main.c: 1026: vtx.state = VLF_TX_PACKET_DONE;
+   970  00A5  3005               	movlw	5
+   971  00A6                     L13
+   972  00A6  00A0               	movwf	_vtx^(0+128)
+   973                           ;main.c: 1027: }
+   974  00A7  28BE               	goto	l114
+   975  00A8                     l126
+   976                           ;main.c: 1031: case VLF_TX_PACKET_DONE:
+   977                           ;main.c: 1032: CCP1CON &= ~0x0C;
+   978  00A8  30F3               	movlw	-13
+   979  00A9  1283               	bcf	3,5
+   980  00AA  0597               	andwf	23	;volatile
+   981                           ;main.c: 1033: RC2 = 0;
+   982  00AB  1107               	bcf	7,2
+   983                           ;main.c: 1034: T0IE = 0;
+   984  00AC  128B               	bcf	11,5
+   985                           ;main.c: 1035: vtx.state = VLF_TX_IDLE;
+   986  00AD  1683               	bsf	3,5
+   987  00AE  01A0               	clrf	_vtx^(0+128)
+   988                           ;main.c: 1036: vlf_state = VLF_STATE_PACKET_TRA
+      +                          NSMITTED;
+   989  00AF  3002               	movlw	2
+   990  00B0  1283               	bcf	3,5
+   991  00B1  00CF               	movwf	_vlf_state	;volatile
+   992                           ;main.c: 1038: break;
+   993  00B2  28BE               	goto	l114
+   994  00B3                     l115
+   995  00B3  1683               	bsf	3,5
+   996  00B4  0820               	movf	_vtx^(0+128),w
+   997  00B5  3A02               	xorlw	2
+   998  00B6  1903               	btfsc	3,2
+   999  00B7  2862               	goto	l116
+  1000  00B8  3A06               	xorlw	6
+  1001  00B9  1903               	btfsc	3,2
+  1002  00BA  2888               	goto	l120
+  1003  00BB  3A01               	xorlw	1
+  1004  00BC  1903               	btfsc	3,2
+  1005  00BD  28A8               	goto	l126
+  1006  00BE                     l114
+  1007                           ;main.c: 1040: T0IF = 0;
+  1008  00BE  110B               	bcf	11,2
+  1009  00BF                     l112
+  1010                           ;main.c: 1041: }
+  1011  00BF  1683               	bsf	3,5
+  1012  00C0  1E8C               	btfss	12,5
+  1013  00C1  295C               	goto	l127
+  1014  00C2  1283               	bcf	3,5
+  1015  00C3  1E8C               	btfss	12,5
+  1016  00C4  295C               	goto	l127
+  1017                           ;main.c: 1050: {
+  1018  00C5  1283               	bcf	3,5
+  1019  00C6  081A               	movf	26,w	;volatile
+  1020  00C7  00CE               	movwf	?a_int_handler
+  1021                           ;main.c: 1065: if( FERR || OERR )
+  1022  00C8  1918               	btfsc	24,2
+  1023  00C9  28CC               	goto	u680
+  1024  00CA  1C98               	btfss	24,1
+  1025  00CB  294B               	goto	l134
+  1026  00CC                     u680
+  1027                           ;main.c: 1066: { if( OERR )
+  1028  00CC  1C98               	btfss	24,1
+  1029  00CD  28D1               	goto	l129
+  1030                           ;main.c: 1067: { CREN = 0;
+  1031  00CE  1218               	bcf	24,4
+  1032                           ;main.c: 1068: asm("nop");
+  1033  00CF  0000               	nop	;#
+  1034                           ;main.c: 1069: CREN = 1;
+  1035  00D0  1618               	bsf	24,4
+  1036  00D1                     l129
+  1037                           ;main.c: 1070: }
+  1038  00D1  3002               	movlw	2
+  1039  00D2  1703               	bsf	3,6
+  1040  00D3  0210               	subwf	_uhf^(0+256),w
+  1041  00D4  1C03               	btfss	3,0
+  1042  00D5  29BA               	goto	l151
+  1043                           ;main.c: 1073: {
+  1044  00D6  160A  118A  2588   	fcall	_UnlockUHFThresh
+      +       120A  118A         
+  1045                           ;main.c: 1075: uhf.idx = 0;
+  1046  00DB  1703               	bsf	3,6
+  1047  00DC  0191               	clrf	(_uhf+1)^(0+256)
+  1048                           ;main.c: 1076: if( uhf.rxt_state != UHF_RX_COMP
+      +                          LETE )
+  1049  00DD  0810               	movf	_uhf^(0+256),w
+  1050  00DE  3A04               	xorlw	4
+  1051  00DF  1903               	btfsc	3,2
+  1052  00E0  29BA               	goto	l151
+  1053  00E1  2949               	goto	L10
+  1054                           ;main.c: 1077: uhf.rxt_state = UHF_RXTX_PREAMBL
+      +                          E;
+  1055                           ;main.c: 1078: }
+  1056                           ;main.c: 1080: else
+  1057  00E2                     l135
+  1058                           ;main.c: 1084: {
+  1059                           ;main.c: 1086: if( uhf_char == 0x55 )
+  1060  00E2  1303               	bcf	3,6	;carry unused
+  1061  00E3  084E               	movf	?a_int_handler,w
+  1062  00E4  3A55               	xorlw	85
+  1063                           ;main.c: 1087: { if( ++uhf.idx == 4 )
+  1064  00E5  1703               	bsf	3,6
+  1065  00E6  1D03               	btfss	3,2
+  1066  00E7  28F7               	goto	L15
+  1067  00E8  0A91               	incf	(_uhf+1)^(0+256)
+  1068  00E9  0811               	movf	(_uhf+1)^(0+256),w
+  1069  00EA  3A04               	xorlw	4
+  1070  00EB  1D03               	btfss	3,2
+  1071  00EC  29BA               	goto	l151
+  1072                           ;main.c: 1088: {
+  1073  00ED  160A  118A  2578   	fcall	_LockUHFThresh
+      +       120A  118A         
+  1074                           ;main.c: 1090: uhf.idx = 0;
+  1075  00F2  1703               	bsf	3,6
+  1076  00F3  0191               	clrf	(_uhf+1)^(0+256)
+  1077                           ;main.c: 1094: uhf.rxt_state = UHF_RXTX_RESYNC;
+  1078  00F4  0190               	clrf	_uhf^(0+256)
+  1079  00F5  0A90               	incf	_uhf^(0+256)
+  1080                           ;main.c: 1107: }
+  1081  00F6  29BA               	goto	l151
+  1082                           ;main.c: 1109: else
+  1083  00F7                     L15
+  1084  00F7  0191               	clrf	(_uhf+1)^(0+256)
+  1085                           ;main.c: 1111: break;
+  1086  00F8  29BA               	goto	l151
+  1087  00F9                     l139
+  1088                           ;main.c: 1113: case UHF_RXTX_RESYNC:
+  1089                           ;main.c: 1114: if( uhf_char == 0x5A )
+  1090  00F9  1303               	bcf	3,6	;carry unused
+  1091  00FA  084E               	movf	?a_int_handler,w
+  1092  00FB  3A5A               	xorlw	90
+  1093  00FC  1D03               	btfss	3,2
+  1094  00FD  2905               	goto	l140
+  1095                           ;main.c: 1115: { uhf.pkt.data[0] = 0x5A;
+  1096  00FE  305A               	movlw	90
+  1097  00FF  1703               	bsf	3,6
+  1098  0100  0094               	movwf	(_uhf+4)^(0+256)
+  1099                           ;main.c: 1116: uhf.idx = 1;
+  1100  0101  0191               	clrf	(_uhf+1)^(0+256)
+  1101  0102  0A91               	incf	(_uhf+1)^(0+256)
+  1102                           ;main.c: 1120: uhf.rxt_state = UHF_RX_HDR;
+  1103  0103  3002               	movlw	2
+  1104  0104  2940               	goto	L11
+  1105                           ;main.c: 1122: }
+  1106  0105                     l140
+  1107                           ;main.c: 1123: else if( ++uhf.idx == 8 )
+  1108  0105  1703               	bsf	3,6
+  1109  0106  0A91               	incf	(_uhf+1)^(0+256)
+  1110  0107  0811               	movf	(_uhf+1)^(0+256),w
+  1111  0108  3A08               	xorlw	8
+  1112  0109  1D03               	btfss	3,2
+  1113  010A  29BA               	goto	l151
+  1114  010B  2942               	goto	l150
+  1115                           ;main.c: 1124: {
+  1116                           ;main.c: 1126: uhf.idx = 0;
+  1117                           ;main.c: 1127: uhf.rxt_state = UHF_RXTX_PREAMBL
+      +                          E;
+  1118                           ;main.c: 1128: }
+  1119  010C                     l143
+  1120                           ;main.c: 1131: case UHF_RX_HDR:
+  1121                           ;main.c: 1133: uhf.pkt.data[uhf.idx++] = uhf_ch
+      +                          ar;
+  1122  010C  0A91               	incf	(_uhf+1)^(0+256)
+  1123  010D  0311               	decf	(_uhf+1)^(0+256),w
+  1124  010E  3E14               	addlw	(_uhf+4)^(0+256)
+  1125  010F  0084               	movwf	4
+  1126  0110  1783               	bsf	3,7
+  1127  0111  1303               	bcf	3,6	;carry unused
+  1128  0112  084E               	movf	?a_int_handler,w
+  1129  0113  0080               	movwf	0
+  1130                           ;main.c: 1134: if( uhf.idx == 4 )
+  1131  0114  1703               	bsf	3,6
+  1132  0115  0811               	movf	(_uhf+1)^(0+256),w
+  1133  0116  3A04               	xorlw	4
+  1134  0117  1D03               	btfss	3,2
+  1135  0118  29BA               	goto	l151
+  1136                           ;main.c: 1135: {
+  1137  0119  120A  158A  20E9   	fcall	_get_pkt_len
+      +       120A  118A         
+  1138  011E  1703               	bsf	3,6
+  1139  011F  0092               	movwf	(_uhf+2)^(0+256)
+  1140                           ;main.c: 1137: if( uhf.len == 0xFF )
+  1141  0120  0F12               	incfsz	(_uhf+2)^(0+256),w
+  1142  0121  2923               	goto	l145
+  1143  0122  2942               	goto	l150
+  1144                           ;main.c: 1138: { UnlockUHFThresh();
+  1145                           ;main.c: 1139: uhf.idx = 0;
+  1146                           ;main.c: 1140: uhf.rxt_state = UHF_RXTX_PREAMBL
+      +                          E;
+  1147                           ;main.c: 1141: }
+  1148  0123                     l145
+  1149                           ;main.c: 1142: else
+  1150  0123  3003               	movlw	3
+  1151  0124  2940               	goto	L11
+  1152                           ;main.c: 1144: }
+  1153  0125                     l147
+  1154                           ;main.c: 1147: case UHF_RXTX_PKT:
+  1155                           ;main.c: 1148: uhf.pkt.data[uhf.idx++] = uhf_ch
+      +                          ar;
+  1156  0125  0A91               	incf	(_uhf+1)^(0+256)
+  1157  0126  0311               	decf	(_uhf+1)^(0+256),w
+  1158  0127  3E14               	addlw	(_uhf+4)^(0+256)
+  1159  0128  0084               	movwf	4
+  1160  0129  1783               	bsf	3,7
+  1161  012A  1303               	bcf	3,6	;carry unused
+  1162  012B  084E               	movf	?a_int_handler,w
+  1163  012C  0080               	movwf	0
+  1164                           ;main.c: 1149: if( uhf.idx >= uhf.len )
+  1165  012D  1703               	bsf	3,6
+  1166  012E  0812               	movf	(_uhf+2)^(0+256),w
+  1167  012F  0211               	subwf	(_uhf+1)^(0+256),w
+  1168  0130  1C03               	btfss	3,0
+  1169  0131  29BA               	goto	l151
+  1170                           ;main.c: 1150: {
+  1171  0132  1303               	bcf	3,6	;carry unused
+  1172  0133  1218               	bcf	24,4
+  1173                           ;main.c: 1155: RCIE = 0;
+  1174  0134  1683               	bsf	3,5
+  1175  0135  128C               	bcf	12,5
+  1176                           ;main.c: 1156: uhf.idx = 0;
+  1177  0136  1283               	bcf	3,5
+  1178  0137  1703               	bsf	3,6
+  1179  0138  0191               	clrf	(_uhf+1)^(0+256)
+  1180                           ;main.c: 1157: UnlockUHFThresh();
+  1181  0139  160A  118A  2588   	fcall	_UnlockUHFThresh
+      +       120A  118A         
+  1182                           ;main.c: 1158: uhf.rxt_state = UHF_RX_COMPLETE;
+  1183  013E  3004               	movlw	4
+  1184  013F  1703               	bsf	3,6
+  1185  0140                     L11
+  1186  0140  0090               	movwf	_uhf^(0+256)
+  1187                           ;main.c: 1159: }
+  1188                           ;main.c: 1162: case UHF_RX_COMPLETE:
+  1189                           ;main.c: 1164: break;
+  1190  0141  29BA               	goto	l151
+  1191  0142                     l150
+  1192                           ;main.c: 1166: default:
+  1193                           ;main.c: 1170: UnlockUHFThresh();
+  1194  0142  160A  118A  2588   	fcall	_UnlockUHFThresh
+      +       120A  118A         
+  1195                           ;main.c: 1171: uhf.idx = 0;
+  1196  0147  1703               	bsf	3,6
+  1197  0148  0191               	clrf	(_uhf+1)^(0+256)
+  1198  0149                     L10
+  1199                           ;main.c: 1172: uhf.rxt_state = UHF_RXTX_PREAMBL
+      +                          E;
+  1200  0149  0190               	clrf	_uhf^(0+256)
+  1201                           ;main.c: 1173: break;
+  1202  014A  29BA               	goto	l151
+  1203  014B                     l134
+  1204  014B  1703               	bsf	3,6
+  1205  014C  0810               	movf	_uhf^(0+256),w
+  1206  014D  1903               	btfsc	3,2
+  1207  014E  28E2               	goto	l135
+  1208  014F  3A01               	xorlw	1
+  1209  0150  1903               	btfsc	3,2
+  1210  0151  28F9               	goto	l139
+  1211  0152  3A03               	xorlw	3
+  1212  0153  1903               	btfsc	3,2
+  1213  0154  290C               	goto	l143
+  1214  0155  3A01               	xorlw	1
+  1215  0156  1903               	btfsc	3,2
+  1216  0157  2925               	goto	l147
+  1217  0158  3A07               	xorlw	7
+  1218  0159  1903               	btfsc	3,2
+  1219  015A  29BA               	goto	l151
+  1220  015B  2942               	goto	l150
+  1221                           ;main.c: 1176: }
+  1222  015C                     l127
+  1223                           ;main.c: 1181: else if( TXIE && TXIF )
+  1224  015C  1683               	bsf	3,5
+  1225  015D  1E0C               	btfss	12,4
+  1226  015E  29BA               	goto	l151
+  1227  015F  1283               	bcf	3,5
+  1228  0160  1E0C               	btfss	12,4
+  1229  0161  29BA               	goto	l151
+  1230  0162  29A7               	goto	l154
+  1231                           ;main.c: 1182: {
+  1232  0163                     l155
+  1233                           ;main.c: 1186: {
+  1234                           ;main.c: 1188: TXREG = 0x55;
+  1235  0163  3055               	movlw	85
+  1236  0164  1303               	bcf	3,6	;carry unused
+  1237  0165  0099               	movwf	25	;volatile
+  1238                           ;main.c: 1189: if( ++uhf.idx == 10 )
+  1239  0166  1703               	bsf	3,6
+  1240  0167  0A91               	incf	(_uhf+1)^(0+256)
+  1241  0168  0811               	movf	(_uhf+1)^(0+256),w
+  1242  0169  3A0A               	xorlw	10
+  1243  016A  1D03               	btfss	3,2
+  1244  016B  29B8               	goto	l153
+  1245                           ;main.c: 1190: { uhf.idx = 0;
+  1246  016C  0191               	clrf	(_uhf+1)^(0+256)
+  1247                           ;main.c: 1191: uhf.rxt_state = UHF_RXTX_RESYNC;
+  1248  016D  0190               	clrf	_uhf^(0+256)
+  1249  016E  0A90               	incf	_uhf^(0+256)
+  1250                           ;main.c: 1192: }
+  1251  016F  29B8               	goto	l153
+  1252  0170                     l157
+  1253                           ;main.c: 1195: case UHF_RXTX_RESYNC:
+  1254                           ;main.c: 1196: TXREG = 0xFF;
+  1255  0170  30FF               	movlw	-1
+  1256  0171  1303               	bcf	3,6	;carry unused
+  1257  0172  0099               	movwf	25	;volatile
+  1258                           ;main.c: 1197: if( ++uhf.idx == 2 )
+  1259  0173  1703               	bsf	3,6
+  1260  0174  0A91               	incf	(_uhf+1)^(0+256)
+  1261  0175  0811               	movf	(_uhf+1)^(0+256),w
+  1262  0176  3A02               	xorlw	2
+  1263  0177  1D03               	btfss	3,2
+  1264  0178  29B8               	goto	l153
+  1265                           ;main.c: 1198: { uhf.len = get_pkt_len();
+  1266  0179  120A  158A  20E9   	fcall	_get_pkt_len
+      +       120A  118A         
+  1267  017E  1703               	bsf	3,6
+  1268  017F  0092               	movwf	(_uhf+2)^(0+256)
+  1269                           ;main.c: 1199: uhf.idx = 0;
+  1270  0180  0191               	clrf	(_uhf+1)^(0+256)
+  1271                           ;main.c: 1200: uhf.rxt_state = UHF_RXTX_PKT;
+  1272  0181  3003               	movlw	3
+  1273  0182  29A5               	goto	L7
+  1274                           ;main.c: 1201: }
+  1275  0183                     l159
+  1276                           ;main.c: 1204: case UHF_RXTX_PKT:
+  1277                           ;main.c: 1205: TXREG = uhf.pkt.data[uhf.idx++];
+  1278  0183  0A91               	incf	(_uhf+1)^(0+256)
+  1279  0184  0311               	decf	(_uhf+1)^(0+256),w
+  1280  0185  3E14               	addlw	(_uhf+4)^(0+256)
+  1281  0186  0084               	movwf	4
+  1282  0187  1783               	bsf	3,7
+  1283  0188  0800               	movf	0,w
+  1284  0189  1303               	bcf	3,6	;carry unused
+  1285  018A  0099               	movwf	25	;volatile
+  1286                           ;main.c: 1206: if( uhf.idx >= uhf.len )
+  1287  018B  1703               	bsf	3,6
+  1288  018C  0812               	movf	(_uhf+2)^(0+256),w
+  1289  018D  0211               	subwf	(_uhf+1)^(0+256),w
+  1290  018E  1C03               	btfss	3,0
+  1291  018F  29B8               	goto	l153
+  1292                           ;main.c: 1207: { uhf.idx = 0;
+  1293  0190  0191               	clrf	(_uhf+1)^(0+256)
+  1294                           ;main.c: 1208: uhf.rxt_state = UHF_TX_TRAILER;
+  1295  0191  3005               	movlw	5
+  1296  0192  29A5               	goto	L7
+  1297                           ;main.c: 1209: }
+  1298  0193                     l161
+  1299                           ;main.c: 1212: case UHF_TX_TRAILER:
+  1300                           ;main.c: 1213: TXREG = 0x5C;
+  1301  0193  305C               	movlw	92
+  1302  0194  1303               	bcf	3,6	;carry unused
+  1303  0195  0099               	movwf	25	;volatile
+  1304                           ;main.c: 1214: if( ++uhf.idx == 1 )
+  1305  0196  1703               	bsf	3,6
+  1306  0197  0A91               	incf	(_uhf+1)^(0+256)
+  1307  0198  0311               	decf	(_uhf+1)^(0+256),w
+  1308  0199  1D03               	btfss	3,2
+  1309  019A  29B8               	goto	l153
+  1310                           ;main.c: 1215: uhf.rxt_state = UHF_TX_END;
+  1311  019B  3006               	movlw	6
+  1312  019C  29A5               	goto	L7
+  1313                           ;main.c: 1216: break;
+  1314  019D                     l163
+  1315                           ;main.c: 1218: case UHF_TX_END:
+  1316                           ;main.c: 1219: TXEN = 0;
+  1317  019D  1683               	bsf	3,5
+  1318  019E  1303               	bcf	3,6	;carry unused
+  1319  019F  1298               	bcf	24,5
+  1320                           ;main.c: 1220: TXIE = 0;
+  1321  01A0  120C               	bcf	12,4
+  1322                           ;main.c: 1221: uhf.idx = 0;
+  1323  01A1  1283               	bcf	3,5
+  1324  01A2  1703               	bsf	3,6
+  1325  01A3  0191               	clrf	(_uhf+1)^(0+256)
+  1326                           ;main.c: 1222: uhf.rxt_state = UHF_TX_COMPLETE;
+  1327  01A4  3007               	movlw	7
+  1328  01A5                     L7
+  1329  01A5  0090               	movwf	_uhf^(0+256)
+  1330                           ;main.c: 1223: break;
+  1331  01A6  29B8               	goto	l153
+  1332  01A7                     l154
+  1333  01A7  1283               	bcf	3,5
+  1334  01A8  1703               	bsf	3,6
+  1335  01A9  0810               	movf	_uhf^(0+256),w
+  1336  01AA  1903               	btfsc	3,2
+  1337  01AB  2963               	goto	l155
+  1338  01AC  3A01               	xorlw	1
+  1339  01AD  1903               	btfsc	3,2
+  1340  01AE  2970               	goto	l157
+  1341  01AF  3A02               	xorlw	2
+  1342  01B0  1903               	btfsc	3,2
+  1343  01B1  2983               	goto	l159
+  1344  01B2  3A06               	xorlw	6
+  1345  01B3  1903               	btfsc	3,2
+  1346  01B4  2993               	goto	l161
+  1347  01B5  3A03               	xorlw	3
+  1348  01B6  1903               	btfsc	3,2
+  1349  01B7  299D               	goto	l163
+  1350  01B8                     l153
+  1351                           ;main.c: 1226: TXIF = 0;
+  1352  01B8  1303               	bcf	3,6	;carry unused
+  1353  01B9  120C               	bcf	12,4
+  1354  01BA                     l151
+  1355                           ;main.c: 1227: }
+  1356  01BA  1283               	bcf	3,5
+  1357  01BB  1303               	bcf	3,6	;carry unused
+  1358  01BC  1C0C               	btfss	12,0
+  1359  01BD  29FF               	goto	l104
+  1360  01BE  1683               	bsf	3,5
+  1361  01BF  1C0C               	btfss	12,0
+  1362  01C0  29FF               	goto	l104
+  1363                           ;main.c: 1231: {
+  1364  01C1  1283               	bcf	3,5
+  1365  01C2  0AB4               	incf	_timer	;volatile
+  1366  01C3  1903               	btfsc	3,2
+  1367  01C4  0AB5               	incf	_timer+1	;volatile
+  1368                           ;main.c: 1235: if( RB2 )
+  1369  01C5  1906               	btfsc	6,2
+  1370                           ;main.c: 1236: ++pager_cnt;
+  1371  01C6  0AA5               	incf	_pager_cnt
+  1372                           ;main.c: 1264: if( lamp_state < LAMP_NORMAL_STA
+      +                          TE )
+  1373  01C7  30F0               	movlw	-16
+  1374  01C8  0222               	subwf	_lamp_state,w
+  1375  01C9  1803               	btfsc	3,0
+  1376  01CA  29FE               	goto	l166
+  1377                           ;main.c: 1265: { if( ( lamp_schedule[lamp_state
+      +                          ][(lamp_tick >> 3) & ((( 8 ))-1)] ) &
+  1378  01CB  3010               	movlw	_lamp_schedule shr (0+8)
+  1379  01CC  008A               	movwf	10
+  1380  01CD  0822               	movf	_lamp_state,w
+  1381  01CE  00F4               	movwf	btemp
+  1382  01CF  1003               	bcf	3,0
+  1383  01D0  0DF4               	rlf	btemp
+  1384  01D1  1003               	bcf	3,0
+  1385  01D2  0DF4               	rlf	btemp
+  1386  01D3  1003               	bcf	3,0
+  1387  01D4  0D74               	rlf	btemp,w
+  1388  01D5  00F4               	movwf	btemp
+  1389  01D6  0823               	movf	_lamp_tick,w
+  1390  01D7  00F5               	movwf	btemp+1
+  1391  01D8  1003               	bcf	3,0
+  1392  01D9  0CF5               	rrf	btemp+1
+  1393  01DA  1003               	bcf	3,0
+  1394  01DB  0CF5               	rrf	btemp+1
+  1395  01DC  1003               	bcf	3,0
+  1396  01DD  0C75               	rrf	btemp+1,w
+  1397  01DE  3907               	andlw	7
+  1398  01DF  0774               	addwf	btemp,w
+  1399  01E0  2000               	call	((_lamp_schedule+-1)& (0+2047))| (($)& (0
+      +                          +-2048))
+  1400  01E1  120A  118A         	pagesel	$
+  1401  01E3  00F4               	movwf	btemp
+  1402  01E4  3001               	movlw	1
+  1403  01E5  00F5               	movwf	btemp+1
+  1404  01E6  0823               	movf	_lamp_tick,w
+  1405  01E7  3907               	andlw	7
+  1406  01E8  00F6               	movwf	btemp+2
+  1407  01E9  0AF6               	incf	btemp+2
+  1408  01EA  29ED               	goto	u914
+  1409  01EB                     u915
+  1410  01EB  1003               	bcf	3,0
+  1411  01EC  0DF5               	rlf	btemp+1
+  1412  01ED                     u914
+  1413  01ED  0BF6               	decfsz	btemp+2
+  1414  01EE  29EB               	goto	u915
+  1415  01EF  0875               	movf	btemp+1,w
+  1416  01F0  0574               	andwf	btemp,w
+  1417  01F1  1903               	btfsc	3,2
+  1418  01F2  29F6               	goto	l167
+  1419                           ;main.c: 1286: RC1 = ( mu_flags & (0x04) ) ? 1 
+      +                          : 0;
+  1420  01F3  1924               	btfsc	_mu_flags,2
+  1421  01F4  29F8               	goto	L12
+  1422  01F5  29FA               	goto	u950
+  1423  01F6                     l167
+  1424                           ;main.c: 1287: else
+  1425  01F6  1924               	btfsc	_mu_flags,2
+  1426  01F7  29FA               	goto	u950
+  1427  01F8                     L12
+  1428  01F8  1487               	bsf	7,1
+  1429  01F9  29FB               	goto	l168
+  1430  01FA                     u950
+  1431  01FA  1087               	bcf	7,1
+  1432  01FB                     l168
+  1433                           ;main.c: 1296: lamp_tick++;
+  1434  01FB  1283               	bcf	3,5
+  1435  01FC  1303               	bcf	3,6	;carry unused
+  1436  01FD  0AA3               	incf	_lamp_tick
+  1437  01FE                     l166
+  1438                           ;main.c: 1297: }
+  1439  01FE  100C               	bcf	12,0
+  1440                           ;main.c: 1316: }
+  1441  01FF                     l104
+  1442  01FF  1303               	bcf	3,6	;carry unused
+  1443  0200  1283               	bcf	3,5
+  1444                           
+  1445                           	psect	intsave_0
+  1446  0073                     saved_w
+                     saved_w
+  1447  0073                     	ds	1
+  1448                           
+  1449                           	psect	intret
+  1450  021D  0852               	movf	saved_fsr,w
+  1451  021E  0084               	movwf	4	;restore FSR
+  1452  021F  0853               	movf	saved_pclath,w
+  1453  0220  008A               	movwf	10
+  1454  0221                     int_restore
+  1455  0221  0851               	movf	saved_status,w
+  1456  0222  0083               	movwf	3
+  1457  0223  0EF3               	swapf	saved_w
+  1458  0224  0E73               	swapf	saved_w,w
+  1459  0225  0009               	retfie
+  1460                           
+  1461                           	psect	intentry
+  1462  0004                     int_entry
+  1463  0004  00F3               	movwf	saved_w
+  1464  0005  0803               	movf	3,w
+  1465  0006  0183               	clrf	3
+  1466  0007  00D1               	movwf	saved_status
+  1467  0008  0804               	movf	4,w
+  1468  0009  00D2               	movwf	saved_fsr
+  1469  000A  080A               	movf	10,w
+  1470  000B  00D3               	movwf	saved_pclath
+  1471  000C  018A               	clrf	10
+  1472  000D                     __end_of_int_handler
+  1473  0000                     
+  1474  0000                     
+  1475  0000                     
+  1476  0000                     
+  1477  0000                     
+  1478  0000                     
+  1479  0000                     
+  1480  0000                     
+  1481  0000                     
+  1482  0000                     
+  1483  0000                     
+  1484  0000                     
+  1485  0000                     
+  1486  0000                     
+  1487  0000                     
+  1488  0000                     
+  1489  0000                     
+  1490  0000                     
+  1491  0000                     
+  1492  0000                     
+  1493  0000                     
+  1494  0000                     
+  1495  0000                     
+  1496  0000                     
+  1497  0000                     
+  1498  0000                     
+  1499  0000                     
+  1500  0000                     
+  1501  0000                     
+  1502  0000                     
+  1503  0000                     
+  1504  0000                     
+  1505  0000                     
+  1506  0000                     
+  1507  0000                     
+  1508  0000                     
+  1509  0000                     
+  1510  0000                     
+  1511  0000                     
+  1512  0000                     
+  1513  0000                     
+  1514  0000                     
+  1515  0000                     
+  1516  0000                     
+  1517  0000                     
+  1518  0000                     
+  1519  0000                     
+  1520  0000                     
+  1521  0000                     
+  1522  0000                     
+  1523  0000                     
+  1524  0000                     
+  1525  0000                     
+  1526  0000                     
+  1527  0000                     
+  1528  0000                     
+  1529  0000                     
+  1530  0000                     
+  1531  0000                     
+  1532  0000                     
+  1533  0000                     
+  1534  0000                     
+  1535  0000                     
+  1536  0000                     
+  1537  0000                     
+  1538  0000                     
+  1539  0000                     
+  1540  0000                     
+  1541  0000                     
+  1542  0000                     
+  1543  0000                     
+  1544  0000                     
+  1545  0000                     
+  1546  0000                     
+  1547  0000                     
+  1548  0000                     
+  1549  0000                     
+  1550  0000                     
+  1551  0000                     
+  1552  0000                     
+  1553  0000                     
+  1554  0000                     
+  1555  0000                     
+  1556  0000                     
+  1557  0000                     
+  1558  0000                     
+  1559  0000                     
+  1560  0000                     
+  1561  0000                     
+  1562  0000                     
+  1563  0000                     
+  1564  0000                     
+  1565  0000                     
+  1566  0000                     
+  1567  0000                     
+  1568  0000                     
+  1569  0000                     
+  1570  0000                     
+  1571  0000                     
+  1572  0000                     
+  1573  0000                     
+  1574  0000                     
+  1575  0000                     
+  1576  0000                     
+  1577  0000                     
+  1578  0000                     
+  1579  0000                     
+  1580  0000                     
+  1581  0000                     
+  1582  0000                     
+  1583  0000                     
+  1584  0000                     
+  1585  0000                     
+  1586  0000                     
+  1587  0000                     
+  1588  0000                     
+  1589  0000                     
+  1590  0000                     
+  1591  0000                     
+  1592  0000                     
+  1593  0000                     
+  1594  0000                     
+  1595  0000                     
+  1596  0000                     
+  1597  0000                     
+  1598  0000                     
+  1599  0000                     
+  1600  0000                     
+  1601  0000                     
+  1602  0000                     
+  1603  0000                     
+  1604  0000                     
+  1605  0000                     
+  1606  0000                     
+  1607  0000                     
+  1608  0000                     
+  1609  0000                     
+  1610  0000                     
+  1611  0000                     
+  1612  0000                     
+  1613  0000                     
+  1614  0000                     
+  1615  0000                     
+  1616  0000                     
+  1617  0000                     
+  1618  0000                     
+  1619  0000                     
+  1620  0000                     
+  1621  0000                     
+  1622  0000                     
+  1623  0000                     
+  1624  0000                     
+  1625  0000                     
+  1626  0000                     
+  1627  0000                     
+  1628  0000                     
+  1629  0000                     
+  1630  0000                     
+  1631  0000                     
+  1632  0000                     
+  1633  0000                     
+  1634  0000                     
+  1635  0000                     
+  1636  0000                     
+  1637  0000                     
+  1638  0000                     
+  1639  0000                     
+  1640  0000                     
+  1641  0000                     
+  1642  0000                     
+  1643  0000                     
+  1644  0000                     
+  1645  0000                     
+  1646  0000                     
+  1647  0000                     
+  1648  0000                     
+  1649  0000                     
+  1650  0000                     
+  1651  0000                     
+  1652  0000                     
+  1653  0000                     
+  1654  0000                     
+  1655  0000                     
+  1656  0000                     
+  1657  0000                     
+  1658  0000                     
+  1659  0000                     
+  1660  0000                     
+  1661  0000                     
+  1662  0000                     
+  1663  0000                     
+  1664  0000                     
+  1665  0000                     
+  1666  0000                     
+  1667  0000                     
+  1668  0000                     
+  1669  0000                     
+  1670  0000                     
+  1671  0000                     
+  1672  0000                     
+  1673  0000                     
+  1674  0000                     
+  1675  0000                     
+  1676  0000                     
+  1677  0000                     
+  1678  0000                     
+  1679  0000                     
+  1680  0000                     
+  1681  0000                     
+  1682  0000                     
+  1683  0000                     
+  1684  0000                     
+  1685  0000                     
+  1686  0000                     
+  1687  0000                     
+  1688  0000                     
+  1689  0000                     
+  1690  0000                     
+  1691  0000                     
+  1692  0000                     
+  1693  0000                     
+  1694  0000                     
+  1695  0000                     
+  1696  0000                     
+  1697  0000                     
+  1698  0000                     
+  1699  0000                     
+  1700  0000                     
+  1701  0000                     
+  1702  0000                     
+  1703  0000                     
+  1704  0000                     
+  1705  0000                     
+  1706  0000                     
+  1707  0000                     
+  1708  0000                     
+  1709  0000                     
+  1710  0000                     
+  1711  0000                     
+  1712  0000                     
+  1713  0000                     
+  1714  0000                     
+  1715  0000                     
+  1716  0000                     
+  1717  0000                     
+  1718  0000                     
+  1719  0000                     
+  1720  0000                     
+  1721  0000                     
+  1722  0000                     
+  1723  0000                     
+  1724  0000                     
+  1725  0000                     
+  1726  0000                     
+  1727  0000                     
+  1728  0000                     
+  1729  0000                     
+  1730  0000                     
+  1731  0000                     
+  1732  0000                     
+  1733  0000                     
+  1734  0000                     
+  1735  0000                     
+  1736  0000                     
+  1737  0000                     
+  1738  0000                     
+  1739  0000                     
+  1740  0000                     
+  1741  0000                     
+  1742  0000                     
+  1743  0000                     
+  1744  0000                     
+  1745  0000                     
+  1746  0000                     
+  1747  0000                     
+  1748  0000                     
+  1749  0000                     
+  1750  0000                     
+  1751  0000                     
+  1752  0000                     
+  1753  0000                     
+  1754  0000                     
+  1755  0000                     
+  1756  0000                     
+  1757  0000                     
+  1758  0000                     
+  1759  0000                     
+  1760  0000                     
+  1761  0000                     
+  1762  0000                     
+  1763  0000                     
+  1764  0000                     
+  1765  0000                     
+  1766  0000                     
+  1767  0000                     
+  1768  0000                     
+  1769  0000                     
+  1770  0000                     
+  1771  0000                     
+  1772  0000                     
+  1773  0000                     
+  1774  0000                     
+  1775  0000                     
+  1776  0000                     
+  1777  0000                     
+  1778  0000                     
+  1779  0000                     
+  1780  0000                     
+  1781  0000                     
+  1782  0000                     
+  1783  0000                     
+  1784  0000                     
+  1785  0000                     
+  1786  0000                     
+  1787  0000                     
+  1788  0000                     
+  1789  0000                     
+  1790  0000                     
+  1791  0000                     
+  1792  0000                     
+  1793  0000                     
+  1794  0000                     
+  1795  0000                     
+  1796  0000                     
+  1797  0000                     
+  1798  0000                     
+  1799  0000                     
+  1800  0000                     
+  1801  0000                     
+  1802  0000                     
+  1803  0000                     
+  1804  0000                     
+  1805  0000                     
+  1806  0000                     
+  1807  0000                     
+  1808  0000                     
+  1809  0000                     
+  1810  0000                     
+  1811  0000                     
+  1812  0000                     
+  1813  0000                     
+  1814  0000                     
+  1815  0000                     
+  1816  0000                     
+  1817  0000                     
+  1818  0000                     
+  1819  0000                     
+  1820  0000                     
+  1821  0000                     
+  1822  0000                     
+  1823  0000                     
+  1824  0000                     
+  1825  0000                     
+  1826  0000                     
+  1827  0000                     
+  1828  0000                     
+  1829  0000                     
+  1830  0000                     
+  1831  0000                     
+  1832  0000                     
+  1833  0000                     
+  1834  0000                     
+  1835  0000                     
+  1836  0000                     
+  1837  0000                     
+  1838  0000                     
+  1839  0000                     
+  1840  0000                     
+  1841  0000                     
+  1842  0000                     
+  1843  0000                     
+  1844  0000                     
+  1845  0000                     
+  1846  0000                     
+  1847  0000                     
+  1848  0000                     
+  1849  0000                     
+  1850  0000                     
+  1851  0000                     
+  1852  0000                     
+  1853  0000                     
+  1854  0000                     
+  1855  0000                     
+  1856  0000                     
+  1857  0000                     
+  1858  0000                     
+  1859  0000                     
+  1860  0000                     
+  1861  0000                     
+  1862  0000                     
+  1863  0000                     
+  1864  0000                     
+  1865  0000                     
+  1866  0000                     
+  1867  0000                     
+  1868  0000                     
+  1869  0000                     
+  1870  0000                     
+  1871  0000                     
+  1872  0000                     
+  1873  0000                     
+  1874  0000                     
+  1875  0000                     
+  1876  0000                     
+  1877  0000                     
+  1878  0000                     
+  1879  0000                     
+  1880  0000                     
+  1881  0000                     
+  1882  0000                     
+  1883  0000                     
+  1884  0000                     
+  1885  0000                     
+  1886  0000                     
+  1887  0000                     
+  1888  0000                     
+  1889                           
+  1890                           	psect	intsave
+  1891  0051                     saved_status
+                     saved_status
+  1892  0051                     	ds	1
+  1893  0052                     saved_fsr
+                     saved_fsr
+  1894  0052                     	ds	1
+  1895  0053                     saved_pclath
+                     saved_pclath
+  1896  0053                     	ds	1
+  1897                           
+  1898                           	psect	rbss_0
+  1899  0020                     _eeprom_tmp
+                     _eeprom_tmp
+  1900  0020                     	ds	1
+  1901  0021                     _lamp_min_cnt
+                     _lamp_min_cnt
+  1902  0021                     	ds	1
+  1903  0022                     _lamp_state
+                     _lamp_state
+  1904  0022                     	ds	1
+  1905  0023                     _lamp_tick
+                     _lamp_tick
+  1906  0023                     	ds	1
+  1907  0024                     _mu_flags
+                     _mu_flags
+  1908  0024                     	ds	1
+  1909  0025                     _pager_cnt
+                     _pager_cnt
+  1910  0025                     	ds	1
+  1911  0026                     _lamp_timeout
+                     _lamp_timeout
+  1912  0026                     	ds	2
+  1913  0028                     _uhf_reset_timeout
+                     _uhf_reset_timeout
+  1914  0028                     	ds	2
+  1915  002A                     _mid
+                     _mid
+  1916  002A                     	ds	4
+  1917                           
+  1918                           	psect	temp
+  1919  0074                     btemp
+                     btemp
+  1920  0074                     	ds	3
+
+
+HI-TECH Software PICC Macro Assembler V9.60PL3 build 3862 
+Symbol Table                                          Tue Feb 04 13:05:08 2020
+
+                  ?a_main 003B                  _delay_ms 083F  
+                       pc 0002              ?_chk_timeout 0047  
+                  ?_srand 0046                _SetUHFMode 17AD  
+                      l51 0E34                        l60 0EE3  
+                      l52 0E48                        l53 0E5F  
+                      l70 0EFB                        l54 0EC1  
+                      l63 0F0B                        l80 0F46  
+                      l48 0DF4                        l73 0F24  
+                      l65 0F0A                        l57 0EBF  
+                      l49 0E03                        l74 0F1F  
+                      l83 0F72                        l59 0ED2  
+                      l92 0FBF                        l85 0F6C  
+                      l77 0F36                        l95 0FCC  
+                      l87 0F9E                        l97 0FE5  
+                      l89 0F83                        l98 0FFA  
+                      l99 0FF8                        u30 0E07  
+                      u51 0E24                        u44 0E08  
+                      u70 0E28                        _bb 0195  
+                      _bi 01A5                        fsr 0004  
+     __end_of_int_handler 000D                       l101 0FEF  
+                     l110 0057                       l104 01FF  
+                     l120 0088                       l112 00BF  
+                     l121 0094                       l105 005B  
+                     l122 0098                       l114 00BE  
+                     l106 0049                       l123 00A0  
+                     l115 00B3                       l140 0105  
+                     l116 0062                       l117 0078  
+                     l109 0051                       l150 0142  
+                     l134 014B                       l126 00A8  
+                     l118 007B                       l151 01BA  
+                     l143 010C                       l135 00E2  
+                     l127 015C                       l161 0193  
+                     l153 01B8                       l145 0123  
+                     l129 00D1                       l154 01A7  
+                     l163 019D                       l155 0163  
+                     l147 0125                       l139 00F9  
+                     l157 0170                       l166 01FE  
+                     l167 01F6                       l159 0183  
+                     l168 01FB                       u110 0EB5  
+                     u420 0FFE                       u510 0048  
+                     u680 00CC                       u914 01ED  
+                     u915 01EB                       u950 01FA  
+              _bl_version 0190                       _mid 002A  
+                     _uhf 0110                       _vrx 00AF  
+                     _vtx 00A0               _pager_write 1569  
+         _timer_last_tick 0033        _VLF_ProcessBitRead 097C  
+                _mu_flags 0024              save_code_ptr 0025  
+_uhf_registration_timeout 0031                 _lamp_tick 0023  
+               ?_delay_ms 0046               _chk_timeout 15AA  
+               _pager_cnt 0025                save_btemp0 000D  
+              save_btemp1 0013                save_btemp2 0015  
+              save_btemp3 0017                save_btemp4 0019  
+              save_btemp5 001B                save_btemp6 001D  
+              save_btemp7 001F                save_btemp8 0021  
+              save_btemp9 0023               _int_handler 0029  
+              _combine_id 0193                      _main 0DA6  
+            _eeprom_write 15CA                _eeprom_tmp 0020  
+                    btemp 0074             _LockUHFThresh 1578  
+                    start 0226                    saved_w 0073  
+            __end_of_main 07FE                  int_entry 0004  
+              _lamp_state 0022         _VLF_StartReceiver 0BD1  
+               _vlf_state 004F                  saved_fsr 0052  
+           ?a_int_handler 004E          _ProcessUHFPacket 034B  
+             save_btemp10 000F               save_btemp11 0011  
+             save_btemp12 0013               save_btemp13 0013  
+             save_btemp14 0013                   code_ptr 0054  
+              _init_board 0802         _VLF_ProcessPacket 0BFA  
+             string_table 0257               _eeprom_read 1598  
+             saved_pclath 0053                     _timer 0034  
+                   _srand 1613                     pclath 000A  
+             saved_status 0051                     status 0003  
+             _get_pkt_len 08E9              _UHFCommsInit 15EA  
+       _uhf_reset_timeout 0028                   int_func 0029  
+          _mu2su_preamble 108D             ?_eeprom_write 0044  
+           _lamp_schedule 1001              used_code_ptr 0001  
+            _lamp_min_cnt 0021                int_restore 0221  
+         _UnlockUHFThresh 1588                used_btemp0 0001  
+              used_btemp1 0001                used_btemp2 0001  
+            _lamp_timeout 0026  
